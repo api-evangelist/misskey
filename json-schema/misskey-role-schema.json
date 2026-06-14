@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Role",
+  "title": "Role",
+  "type": "object",
+  "allOf": [
+    {
+      "type": "object",
+      "$ref": "#/components/schemas/RoleLite"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "target": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "conditional"
+          ]
+        },
+        "condFormula": {
+          "type": "object",
+          "$ref": "#/components/schemas/RoleCondFormulaValue"
+        },
+        "isPublic": {
+          "type": "boolean",
+          "example": false
+        },
+        "isExplorable": {
+          "type": "boolean",
+          "example": false
+        },
+        "asBadge": {
+          "type": "boolean",
+          "example": false
+        },
+        "preserveAssignmentOnMoveAccount": {
+          "type": "boolean",
+          "example": false
+        },
+        "badgeBehavior": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "canEditMembersByModerator": {
+          "type": "boolean",
+          "example": false
+        },
+        "policies": {
+          "type": "object",
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "oneOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "boolean"
+                      }
+                    ]
+                  },
+                  "priority": {
+                    "type": "integer"
+                  },
+                  "useDefault": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "usersCount": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "createdAt",
+        "updatedAt",
+        "target",
+        "condFormula",
+        "isPublic",
+        "isExplorable",
+        "asBadge",
+        "preserveAssignmentOnMoveAccount",
+        "badgeBehavior",
+        "canEditMembersByModerator",
+        "policies",
+        "usersCount"
+      ]
+    }
+  ]
+}

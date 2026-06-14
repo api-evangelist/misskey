@@ -1,0 +1,65 @@
+{
+  "endpoint": "/admin/ad/create",
+  "method": "POST",
+  "operationId": "post___admin___ad___create",
+  "summary": "admin/ad/create",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:ad*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "memo": {
+          "type": "string"
+        },
+        "place": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "string"
+        },
+        "ratio": {
+          "type": "integer"
+        },
+        "expiresAt": {
+          "type": "integer"
+        },
+        "startsAt": {
+          "type": "integer"
+        },
+        "imageUrl": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dayOfWeek": {
+          "type": "integer"
+        },
+        "isSensitive": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "url",
+        "memo",
+        "place",
+        "priority",
+        "ratio",
+        "expiresAt",
+        "startsAt",
+        "imageUrl",
+        "dayOfWeek"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

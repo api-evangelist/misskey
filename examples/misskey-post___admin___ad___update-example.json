@@ -1,0 +1,60 @@
+{
+  "endpoint": "/admin/ad/update",
+  "method": "POST",
+  "operationId": "post___admin___ad___update",
+  "summary": "admin/ad/update",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:ad*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "memo": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "imageUrl": {
+          "type": "string",
+          "minLength": 1
+        },
+        "place": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "string"
+        },
+        "ratio": {
+          "type": "integer"
+        },
+        "expiresAt": {
+          "type": "integer"
+        },
+        "startsAt": {
+          "type": "integer"
+        },
+        "dayOfWeek": {
+          "type": "integer"
+        },
+        "isSensitive": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

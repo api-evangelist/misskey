@@ -1,0 +1,319 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Note",
+  "title": "Note",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "deletedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cw": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "userId": {
+      "type": "string",
+      "format": "id"
+    },
+    "user": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    },
+    "replyId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "renoteId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "reply": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Note"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "renote": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Note"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "isHidden": {
+      "type": "boolean"
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "home",
+        "followers",
+        "specified"
+      ]
+    },
+    "mentions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "visibleUserIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "fileIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/components/schemas/DriveFile"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "poll": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "expiresAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "multiple": {
+          "type": "boolean"
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "isVoted": {
+                "type": "boolean"
+              },
+              "text": {
+                "type": "string"
+              },
+              "votes": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "isVoted",
+              "text",
+              "votes"
+            ]
+          }
+        }
+      },
+      "required": [
+        "multiple",
+        "choices"
+      ]
+    },
+    "emojis": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "channelId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "channel": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "isSensitive": {
+          "type": "boolean"
+        },
+        "allowRenoteToExternal": {
+          "type": "boolean"
+        },
+        "userId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "color",
+        "isSensitive",
+        "allowRenoteToExternal",
+        "userId"
+      ]
+    },
+    "localOnly": {
+      "type": "boolean"
+    },
+    "dimension": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "reactionAcceptance": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "likeOnly",
+        "likeOnlyForRemote",
+        "nonSensitiveOnly",
+        "nonSensitiveOnlyForLocalLikeOnlyForRemote",
+        null
+      ]
+    },
+    "reactionEmojis": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "reactions": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "number"
+          }
+        ]
+      }
+    },
+    "reactionCount": {
+      "type": "number"
+    },
+    "renoteCount": {
+      "type": "number"
+    },
+    "repliesCount": {
+      "type": "number"
+    },
+    "uri": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "reactionAndUserPairCache": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "clippedCount": {
+      "type": "number"
+    },
+    "myReaction": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "text",
+    "userId",
+    "user",
+    "visibility",
+    "reactionAcceptance",
+    "reactionEmojis",
+    "reactions",
+    "reactionCount",
+    "renoteCount",
+    "repliesCount"
+  ]
+}

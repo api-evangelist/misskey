@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/DriveFolder",
+  "title": "DriveFolder",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string"
+    },
+    "parentId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "foldersCount": {
+      "type": "number"
+    },
+    "filesCount": {
+      "type": "number"
+    },
+    "parent": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/DriveFolder"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "name",
+    "parentId"
+  ]
+}

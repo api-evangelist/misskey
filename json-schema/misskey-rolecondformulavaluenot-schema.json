@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/RoleCondFormulaValueNot",
+  "title": "RoleCondFormulaValueNot",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "not"
+      ]
+    },
+    "value": {
+      "type": "object",
+      "$ref": "#/components/schemas/RoleCondFormulaValue"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "value"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "endpoint": "/admin/accounts/create",
+  "method": "POST",
+  "operationId": "post___admin___accounts___create",
+  "summary": "admin/accounts/create",
+  "description": "No description provided.\n\n**Credential required**: *No*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "pattern": "^\\w{1,20}$"
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        },
+        "setupPassword": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "username",
+        "password"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

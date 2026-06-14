@@ -1,0 +1,12 @@
+{
+  "endpoint": "/admin/drive/clean-remote-files",
+  "method": "POST",
+  "operationId": "post___admin___drive___clean-remote-files",
+  "summary": "admin/drive/clean-remote-files",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:drive*",
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

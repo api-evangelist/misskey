@@ -23,6 +23,16 @@ apis:
         type: RateLimits
       - url: finops/misskey-finops.yml
         type: FinOps
+      - url: openapi/misskey-openapi.json
+        type: OpenAPI
+      - url: json-ld/misskey-context.jsonld
+        type: JSONLDContext
+      - url: json-ld/misskey-api.jsonld
+        type: JSONLDDescription
+      - url: vocabulary/misskey-vocabulary.json
+        type: Vocabulary
+      - url: vocabulary/misskey-tags.json
+        type: Tags
     description: >-
       Misskey provides a comprehensive HTTP and streaming API for building clients,
       integration web services, bots, and similar applications. All HTTP API endpoints

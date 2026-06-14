@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/RoleCondFormulaValueIsLocalOrRemote",
+  "title": "RoleCondFormulaValueIsLocalOrRemote",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "isLocal",
+        "isRemote"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "type"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/RoleCondFormulaFollowersOrFollowingOrNotes",
+  "title": "RoleCondFormulaFollowersOrFollowingOrNotes",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "followersLessThanOrEq",
+        "followersMoreThanOrEq",
+        "followingLessThanOrEq",
+        "followingMoreThanOrEq",
+        "notesLessThanOrEq",
+        "notesMoreThanOrEq"
+      ]
+    },
+    "value": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "value"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/InviteCode",
+  "title": "InviteCode",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "code": {
+      "type": "string",
+      "example": "GR6S02ERUA5VR"
+    },
+    "expiresAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserLite"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "usedBy": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserLite"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "usedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "used": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "code",
+    "expiresAt",
+    "createdAt",
+    "createdBy",
+    "usedBy",
+    "usedAt",
+    "used"
+  ]
+}

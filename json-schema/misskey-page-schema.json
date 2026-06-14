@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Page",
+  "title": "Page",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "userId": {
+      "type": "string",
+      "format": "id"
+    },
+    "user": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    },
+    "content": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/components/schemas/PageBlock"
+      }
+    },
+    "variables": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "title": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "hideTitleWhenPinned": {
+      "type": "boolean"
+    },
+    "alignCenter": {
+      "type": "boolean"
+    },
+    "font": {
+      "type": "string"
+    },
+    "script": {
+      "type": "string"
+    },
+    "eyeCatchingImageId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "eyeCatchingImage": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/DriveFile"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "attachedFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/components/schemas/DriveFile"
+      }
+    },
+    "likedCount": {
+      "type": "number"
+    },
+    "isLiked": {
+      "type": "boolean"
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "private"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "updatedAt",
+    "userId",
+    "user",
+    "content",
+    "variables",
+    "title",
+    "name",
+    "summary",
+    "hideTitleWhenPinned",
+    "alignCenter",
+    "font",
+    "script",
+    "eyeCatchingImageId",
+    "eyeCatchingImage",
+    "attachedFiles",
+    "likedCount",
+    "visibility"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/MetaDetailed",
+  "title": "MetaDetailed",
+  "type": "object",
+  "allOf": [
+    {
+      "type": "object",
+      "$ref": "#/components/schemas/MetaLite"
+    },
+    {
+      "type": "object",
+      "$ref": "#/components/schemas/MetaDetailedOnly"
+    }
+  ]
+}

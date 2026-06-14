@@ -1,0 +1,28 @@
+{
+  "endpoint": "/admin/announcements/delete",
+  "method": "POST",
+  "operationId": "post___admin___announcements___delete",
+  "summary": "admin/announcements/delete",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:announcements*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "misskey:id"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

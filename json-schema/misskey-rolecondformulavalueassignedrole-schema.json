@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/RoleCondFormulaValueAssignedRole",
+  "title": "RoleCondFormulaValueAssignedRole",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "roleAssignedTo"
+      ]
+    },
+    "roleId": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "roleId"
+  ]
+}

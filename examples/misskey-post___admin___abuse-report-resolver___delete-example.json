@@ -1,0 +1,28 @@
+{
+  "endpoint": "/admin/abuse-report-resolver/delete",
+  "method": "POST",
+  "operationId": "post___admin___abuse-report-resolver___delete",
+  "summary": "admin/abuse-report-resolver/delete",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:abuse-report-resolvers*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "resolverId": {
+          "type": "string",
+          "format": "misskey:id"
+        }
+      },
+      "required": [
+        "resolverId"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

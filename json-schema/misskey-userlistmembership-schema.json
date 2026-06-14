@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/UserListMembership",
+  "title": "UserListMembership",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "userId": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "user": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    },
+    "withReplies": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "userId",
+    "user",
+    "withReplies"
+  ]
+}

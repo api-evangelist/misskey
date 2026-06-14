@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/NoteDraft",
+  "title": "NoteDraft",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "misskey:id"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scheduledAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "channel": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "renote": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "misskey:id"
+            },
+            "username": {
+              "type": "string"
+            },
+            "host": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "username",
+            "host"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "user"
+      ]
+    },
+    "reply": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "misskey:id"
+            },
+            "username": {
+              "type": "string"
+            },
+            "host": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "username",
+            "host"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "user"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "useCw": {
+          "type": "boolean"
+        },
+        "cw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "public",
+            "home",
+            "followers",
+            "specified"
+          ]
+        },
+        "localOnly": {
+          "type": "boolean"
+        },
+        "lang": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dimension": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/components/schemas/DriveFile"
+          }
+        },
+        "poll": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "choices": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "multiple": {
+              "type": "boolean"
+            },
+            "expiresAt": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "expiredAfter": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            }
+          },
+          "required": [
+            "choices",
+            "multiple",
+            "expiresAt",
+            "expiredAfter"
+          ]
+        },
+        "visibleUserIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "misskey:id"
+          }
+        }
+      },
+      "required": [
+        "text",
+        "useCw",
+        "cw",
+        "visibility",
+        "localOnly",
+        "files",
+        "poll"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "updatedAt",
+    "scheduledAt",
+    "data"
+  ]
+}

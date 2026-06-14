@@ -1,0 +1,1742 @@
+{
+  "@context": {
+    "@vocab": "https://misskey.io/vocab/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "misskey": "https://misskey.io/vocab/",
+    "activitypub": "https://www.w3.org/ns/activitystreams#",
+    "Error": {
+      "@id": "misskey:Error",
+      "@type": "@id"
+    },
+    "error": {
+      "@id": "misskey:error"
+    },
+    "UserLite": {
+      "@id": "misskey:UserLite",
+      "@type": "@id"
+    },
+    "id": {
+      "@id": "misskey:id"
+    },
+    "name": {
+      "@id": "misskey:name"
+    },
+    "username": {
+      "@id": "misskey:username"
+    },
+    "host": {
+      "@id": "misskey:host"
+    },
+    "avatarUrl": {
+      "@id": "misskey:avatarUrl"
+    },
+    "avatarBlurhash": {
+      "@id": "misskey:avatarBlurhash"
+    },
+    "avatarDecorations": {
+      "@id": "misskey:avatarDecorations"
+    },
+    "isBot": {
+      "@id": "misskey:isBot",
+      "@type": "xsd:boolean"
+    },
+    "isCat": {
+      "@id": "misskey:isCat",
+      "@type": "xsd:boolean"
+    },
+    "requireSigninToViewContents": {
+      "@id": "misskey:requireSigninToViewContents",
+      "@type": "xsd:boolean"
+    },
+    "makeNotesFollowersOnlyBefore": {
+      "@id": "misskey:makeNotesFollowersOnlyBefore"
+    },
+    "makeNotesHiddenBefore": {
+      "@id": "misskey:makeNotesHiddenBefore"
+    },
+    "instance": {
+      "@id": "misskey:instance"
+    },
+    "emojis": {
+      "@id": "misskey:emojis"
+    },
+    "onlineStatus": {
+      "@id": "misskey:onlineStatus"
+    },
+    "badgeRoles": {
+      "@id": "misskey:badgeRoles"
+    },
+    "UserDetailedNotMeOnly": {
+      "@id": "misskey:UserDetailedNotMeOnly",
+      "@type": "@id"
+    },
+    "url": {
+      "@id": "misskey:url"
+    },
+    "uri": {
+      "@id": "misskey:uri"
+    },
+    "movedTo": {
+      "@id": "misskey:movedTo"
+    },
+    "alsoKnownAs": {
+      "@id": "misskey:alsoKnownAs"
+    },
+    "createdAt": {
+      "@id": "misskey:createdAt"
+    },
+    "updatedAt": {
+      "@id": "misskey:updatedAt"
+    },
+    "lastFetchedAt": {
+      "@id": "misskey:lastFetchedAt"
+    },
+    "bannerUrl": {
+      "@id": "misskey:bannerUrl"
+    },
+    "bannerBlurhash": {
+      "@id": "misskey:bannerBlurhash"
+    },
+    "isLocked": {
+      "@id": "misskey:isLocked",
+      "@type": "xsd:boolean"
+    },
+    "isSilenced": {
+      "@id": "misskey:isSilenced",
+      "@type": "xsd:boolean"
+    },
+    "isLimited": {
+      "@id": "misskey:isLimited",
+      "@type": "xsd:boolean"
+    },
+    "isSuspended": {
+      "@id": "misskey:isSuspended",
+      "@type": "xsd:boolean"
+    },
+    "description": {
+      "@id": "misskey:description"
+    },
+    "location": {
+      "@id": "misskey:location"
+    },
+    "birthday": {
+      "@id": "misskey:birthday"
+    },
+    "lang": {
+      "@id": "misskey:lang"
+    },
+    "fields": {
+      "@id": "misskey:fields"
+    },
+    "verifiedLinks": {
+      "@id": "misskey:verifiedLinks"
+    },
+    "followersCount": {
+      "@id": "misskey:followersCount",
+      "@type": "xsd:integer"
+    },
+    "followingCount": {
+      "@id": "misskey:followingCount",
+      "@type": "xsd:integer"
+    },
+    "notesCount": {
+      "@id": "misskey:notesCount",
+      "@type": "xsd:integer"
+    },
+    "pinnedNoteIds": {
+      "@id": "misskey:pinnedNoteIds"
+    },
+    "pinnedNotes": {
+      "@id": "misskey:pinnedNotes"
+    },
+    "pinnedPageId": {
+      "@id": "misskey:pinnedPageId"
+    },
+    "pinnedPage": {
+      "@id": "misskey:pinnedPage"
+    },
+    "publicReactions": {
+      "@id": "misskey:publicReactions",
+      "@type": "xsd:boolean"
+    },
+    "followingVisibility": {
+      "@id": "misskey:followingVisibility"
+    },
+    "followersVisibility": {
+      "@id": "misskey:followersVisibility"
+    },
+    "chatScope": {
+      "@id": "misskey:chatScope"
+    },
+    "canChat": {
+      "@id": "misskey:canChat",
+      "@type": "xsd:boolean"
+    },
+    "roles": {
+      "@id": "misskey:roles"
+    },
+    "followedMessage": {
+      "@id": "misskey:followedMessage"
+    },
+    "memo": {
+      "@id": "misskey:memo"
+    },
+    "moderationNote": {
+      "@id": "misskey:moderationNote"
+    },
+    "twoFactorEnabled": {
+      "@id": "misskey:twoFactorEnabled",
+      "@type": "xsd:boolean"
+    },
+    "usePasswordLessLogin": {
+      "@id": "misskey:usePasswordLessLogin",
+      "@type": "xsd:boolean"
+    },
+    "securityKeys": {
+      "@id": "misskey:securityKeys",
+      "@type": "xsd:boolean"
+    },
+    "mutualLinkSections": {
+      "@id": "misskey:mutualLinkSections"
+    },
+    "isFollowing": {
+      "@id": "misskey:isFollowing",
+      "@type": "xsd:boolean"
+    },
+    "isFollowed": {
+      "@id": "misskey:isFollowed",
+      "@type": "xsd:boolean"
+    },
+    "hasPendingFollowRequestFromYou": {
+      "@id": "misskey:hasPendingFollowRequestFromYou",
+      "@type": "xsd:boolean"
+    },
+    "hasPendingFollowRequestToYou": {
+      "@id": "misskey:hasPendingFollowRequestToYou",
+      "@type": "xsd:boolean"
+    },
+    "isBlocking": {
+      "@id": "misskey:isBlocking",
+      "@type": "xsd:boolean"
+    },
+    "isBlocked": {
+      "@id": "misskey:isBlocked",
+      "@type": "xsd:boolean"
+    },
+    "isMuted": {
+      "@id": "misskey:isMuted",
+      "@type": "xsd:boolean"
+    },
+    "isRenoteMuted": {
+      "@id": "misskey:isRenoteMuted",
+      "@type": "xsd:boolean"
+    },
+    "notify": {
+      "@id": "misskey:notify"
+    },
+    "withReplies": {
+      "@id": "misskey:withReplies",
+      "@type": "xsd:boolean"
+    },
+    "MeDetailedOnly": {
+      "@id": "misskey:MeDetailedOnly",
+      "@type": "@id"
+    },
+    "avatarId": {
+      "@id": "misskey:avatarId"
+    },
+    "bannerId": {
+      "@id": "misskey:bannerId"
+    },
+    "isModerator": {
+      "@id": "misskey:isModerator"
+    },
+    "isAdmin": {
+      "@id": "misskey:isAdmin"
+    },
+    "injectFeaturedNote": {
+      "@id": "misskey:injectFeaturedNote",
+      "@type": "xsd:boolean"
+    },
+    "receiveAnnouncementEmail": {
+      "@id": "misskey:receiveAnnouncementEmail",
+      "@type": "xsd:boolean"
+    },
+    "alwaysMarkNsfw": {
+      "@id": "misskey:alwaysMarkNsfw",
+      "@type": "xsd:boolean"
+    },
+    "autoSensitive": {
+      "@id": "misskey:autoSensitive",
+      "@type": "xsd:boolean"
+    },
+    "carefulBot": {
+      "@id": "misskey:carefulBot",
+      "@type": "xsd:boolean"
+    },
+    "autoAcceptFollowed": {
+      "@id": "misskey:autoAcceptFollowed",
+      "@type": "xsd:boolean"
+    },
+    "noCrawle": {
+      "@id": "misskey:noCrawle",
+      "@type": "xsd:boolean"
+    },
+    "preventAiLearning": {
+      "@id": "misskey:preventAiLearning",
+      "@type": "xsd:boolean"
+    },
+    "isExplorable": {
+      "@id": "misskey:isExplorable",
+      "@type": "xsd:boolean"
+    },
+    "isDeleted": {
+      "@id": "misskey:isDeleted",
+      "@type": "xsd:boolean"
+    },
+    "twoFactorBackupCodesStock": {
+      "@id": "misskey:twoFactorBackupCodesStock"
+    },
+    "hideOnlineStatus": {
+      "@id": "misskey:hideOnlineStatus",
+      "@type": "xsd:boolean"
+    },
+    "hasUnreadSpecifiedNotes": {
+      "@id": "misskey:hasUnreadSpecifiedNotes",
+      "@type": "xsd:boolean"
+    },
+    "hasUnreadMentions": {
+      "@id": "misskey:hasUnreadMentions",
+      "@type": "xsd:boolean"
+    },
+    "hasUnreadAnnouncement": {
+      "@id": "misskey:hasUnreadAnnouncement",
+      "@type": "xsd:boolean"
+    },
+    "unreadAnnouncements": {
+      "@id": "misskey:unreadAnnouncements"
+    },
+    "hasUnreadAntenna": {
+      "@id": "misskey:hasUnreadAntenna",
+      "@type": "xsd:boolean"
+    },
+    "hasUnreadChannel": {
+      "@id": "misskey:hasUnreadChannel",
+      "@type": "xsd:boolean"
+    },
+    "hasUnreadChatMessages": {
+      "@id": "misskey:hasUnreadChatMessages",
+      "@type": "xsd:boolean"
+    },
+    "hasUnreadNotification": {
+      "@id": "misskey:hasUnreadNotification",
+      "@type": "xsd:boolean"
+    },
+    "hasPendingReceivedFollowRequest": {
+      "@id": "misskey:hasPendingReceivedFollowRequest",
+      "@type": "xsd:boolean"
+    },
+    "unreadNotificationsCount": {
+      "@id": "misskey:unreadNotificationsCount",
+      "@type": "xsd:integer"
+    },
+    "mutedWords": {
+      "@id": "misskey:mutedWords"
+    },
+    "mutedInstances": {
+      "@id": "misskey:mutedInstances"
+    },
+    "postingLang": {
+      "@id": "misskey:postingLang"
+    },
+    "viewingLangs": {
+      "@id": "misskey:viewingLangs"
+    },
+    "showMediaInAllLanguages": {
+      "@id": "misskey:showMediaInAllLanguages",
+      "@type": "xsd:boolean"
+    },
+    "showHashtagsInAllLanguages": {
+      "@id": "misskey:showHashtagsInAllLanguages",
+      "@type": "xsd:boolean"
+    },
+    "notificationRecieveConfig": {
+      "@id": "misskey:notificationRecieveConfig"
+    },
+    "emailNotificationTypes": {
+      "@id": "misskey:emailNotificationTypes"
+    },
+    "achievements": {
+      "@id": "misskey:achievements"
+    },
+    "loggedInDays": {
+      "@id": "misskey:loggedInDays",
+      "@type": "xsd:integer"
+    },
+    "policies": {
+      "@id": "misskey:policies"
+    },
+    "email": {
+      "@id": "misskey:email"
+    },
+    "emailVerified": {
+      "@id": "misskey:emailVerified"
+    },
+    "securityKeysList": {
+      "@id": "misskey:securityKeysList"
+    },
+    "UserDetailedNotMe": {
+      "@id": "misskey:UserDetailedNotMe",
+      "@type": "@id"
+    },
+    "MeDetailed": {
+      "@id": "misskey:MeDetailed",
+      "@type": "@id"
+    },
+    "UserDetailed": {
+      "@id": "misskey:UserDetailed",
+      "@type": "@id"
+    },
+    "User": {
+      "@id": "misskey:User",
+      "@type": "@id"
+    },
+    "UserList": {
+      "@id": "misskey:UserList",
+      "@type": "@id"
+    },
+    "userIds": {
+      "@id": "misskey:userIds"
+    },
+    "isPublic": {
+      "@id": "misskey:isPublic",
+      "@type": "xsd:boolean"
+    },
+    "UserListMembership": {
+      "@id": "misskey:UserListMembership",
+      "@type": "@id"
+    },
+    "userId": {
+      "@id": "misskey:userId"
+    },
+    "user": {
+      "@id": "misskey:user"
+    },
+    "UserAccountMoveLog": {
+      "@id": "misskey:UserAccountMoveLog",
+      "@type": "@id"
+    },
+    "movedToId": {
+      "@id": "misskey:movedToId"
+    },
+    "movedFromId": {
+      "@id": "misskey:movedFromId"
+    },
+    "movedFrom": {
+      "@id": "misskey:movedFrom"
+    },
+    "Ad": {
+      "@id": "misskey:Ad",
+      "@type": "@id"
+    },
+    "expiresAt": {
+      "@id": "misskey:expiresAt"
+    },
+    "startsAt": {
+      "@id": "misskey:startsAt"
+    },
+    "place": {
+      "@id": "misskey:place"
+    },
+    "priority": {
+      "@id": "misskey:priority"
+    },
+    "ratio": {
+      "@id": "misskey:ratio",
+      "@type": "xsd:integer"
+    },
+    "imageUrl": {
+      "@id": "misskey:imageUrl"
+    },
+    "imageBlurhash": {
+      "@id": "misskey:imageBlurhash"
+    },
+    "dayOfWeek": {
+      "@id": "misskey:dayOfWeek",
+      "@type": "xsd:integer"
+    },
+    "isSensitive": {
+      "@id": "misskey:isSensitive",
+      "@type": "xsd:boolean"
+    },
+    "Announcement": {
+      "@id": "misskey:Announcement",
+      "@type": "@id"
+    },
+    "text": {
+      "@id": "misskey:text"
+    },
+    "title": {
+      "@id": "misskey:title"
+    },
+    "icon": {
+      "@id": "misskey:icon"
+    },
+    "display": {
+      "@id": "misskey:display"
+    },
+    "needConfirmationToRead": {
+      "@id": "misskey:needConfirmationToRead",
+      "@type": "xsd:boolean"
+    },
+    "needEnrollmentTutorialToRead": {
+      "@id": "misskey:needEnrollmentTutorialToRead",
+      "@type": "xsd:boolean"
+    },
+    "forYou": {
+      "@id": "misskey:forYou",
+      "@type": "xsd:boolean"
+    },
+    "closeDuration": {
+      "@id": "misskey:closeDuration",
+      "@type": "xsd:integer"
+    },
+    "displayOrder": {
+      "@id": "misskey:displayOrder",
+      "@type": "xsd:integer"
+    },
+    "silence": {
+      "@id": "misskey:silence",
+      "@type": "xsd:boolean"
+    },
+    "isRead": {
+      "@id": "misskey:isRead",
+      "@type": "xsd:boolean"
+    },
+    "App": {
+      "@id": "misskey:App",
+      "@type": "@id"
+    },
+    "callbackUrl": {
+      "@id": "misskey:callbackUrl"
+    },
+    "permission": {
+      "@id": "misskey:permission"
+    },
+    "secret": {
+      "@id": "misskey:secret"
+    },
+    "isAuthorized": {
+      "@id": "misskey:isAuthorized",
+      "@type": "xsd:boolean"
+    },
+    "Note": {
+      "@id": "misskey:Note",
+      "@type": "@id"
+    },
+    "deletedAt": {
+      "@id": "misskey:deletedAt"
+    },
+    "cw": {
+      "@id": "misskey:cw"
+    },
+    "replyId": {
+      "@id": "misskey:replyId"
+    },
+    "renoteId": {
+      "@id": "misskey:renoteId"
+    },
+    "reply": {
+      "@id": "misskey:reply"
+    },
+    "renote": {
+      "@id": "misskey:renote"
+    },
+    "isHidden": {
+      "@id": "misskey:isHidden",
+      "@type": "xsd:boolean"
+    },
+    "visibility": {
+      "@id": "misskey:visibility"
+    },
+    "mentions": {
+      "@id": "misskey:mentions"
+    },
+    "visibleUserIds": {
+      "@id": "misskey:visibleUserIds"
+    },
+    "fileIds": {
+      "@id": "misskey:fileIds"
+    },
+    "files": {
+      "@id": "misskey:files"
+    },
+    "tags": {
+      "@id": "misskey:tags"
+    },
+    "poll": {
+      "@id": "misskey:poll"
+    },
+    "channelId": {
+      "@id": "misskey:channelId"
+    },
+    "channel": {
+      "@id": "misskey:channel"
+    },
+    "localOnly": {
+      "@id": "misskey:localOnly",
+      "@type": "xsd:boolean"
+    },
+    "dimension": {
+      "@id": "misskey:dimension"
+    },
+    "reactionAcceptance": {
+      "@id": "misskey:reactionAcceptance"
+    },
+    "reactionEmojis": {
+      "@id": "misskey:reactionEmojis"
+    },
+    "reactions": {
+      "@id": "misskey:reactions"
+    },
+    "reactionCount": {
+      "@id": "misskey:reactionCount",
+      "@type": "xsd:integer"
+    },
+    "renoteCount": {
+      "@id": "misskey:renoteCount",
+      "@type": "xsd:integer"
+    },
+    "repliesCount": {
+      "@id": "misskey:repliesCount",
+      "@type": "xsd:integer"
+    },
+    "reactionAndUserPairCache": {
+      "@id": "misskey:reactionAndUserPairCache"
+    },
+    "clippedCount": {
+      "@id": "misskey:clippedCount",
+      "@type": "xsd:integer"
+    },
+    "myReaction": {
+      "@id": "misskey:myReaction"
+    },
+    "NoteDraft": {
+      "@id": "misskey:NoteDraft",
+      "@type": "@id"
+    },
+    "scheduledAt": {
+      "@id": "misskey:scheduledAt"
+    },
+    "reason": {
+      "@id": "misskey:reason"
+    },
+    "data": {
+      "@id": "misskey:data"
+    },
+    "NoteReaction": {
+      "@id": "misskey:NoteReaction",
+      "@type": "@id"
+    },
+    "type": {
+      "@id": "misskey:type"
+    },
+    "NoteFavorite": {
+      "@id": "misskey:NoteFavorite",
+      "@type": "@id"
+    },
+    "note": {
+      "@id": "misskey:note"
+    },
+    "noteId": {
+      "@id": "misskey:noteId"
+    },
+    "Notification": {
+      "@id": "misskey:Notification",
+      "@type": "@id"
+    },
+    "DriveFile": {
+      "@id": "misskey:DriveFile",
+      "@type": "@id"
+    },
+    "md5": {
+      "@id": "misskey:md5"
+    },
+    "size": {
+      "@id": "misskey:size",
+      "@type": "xsd:integer"
+    },
+    "isSensitiveByModerator": {
+      "@id": "misskey:isSensitiveByModerator"
+    },
+    "blurhash": {
+      "@id": "misskey:blurhash"
+    },
+    "properties": {
+      "@id": "misskey:properties"
+    },
+    "thumbnailUrl": {
+      "@id": "misskey:thumbnailUrl"
+    },
+    "comment": {
+      "@id": "misskey:comment"
+    },
+    "folderId": {
+      "@id": "misskey:folderId"
+    },
+    "folder": {
+      "@id": "misskey:folder"
+    },
+    "DriveFolder": {
+      "@id": "misskey:DriveFolder",
+      "@type": "@id"
+    },
+    "parentId": {
+      "@id": "misskey:parentId"
+    },
+    "foldersCount": {
+      "@id": "misskey:foldersCount",
+      "@type": "xsd:integer"
+    },
+    "filesCount": {
+      "@id": "misskey:filesCount",
+      "@type": "xsd:integer"
+    },
+    "parent": {
+      "@id": "misskey:parent"
+    },
+    "Following": {
+      "@id": "misskey:Following",
+      "@type": "@id"
+    },
+    "followeeId": {
+      "@id": "misskey:followeeId"
+    },
+    "followerId": {
+      "@id": "misskey:followerId"
+    },
+    "followee": {
+      "@id": "misskey:followee"
+    },
+    "follower": {
+      "@id": "misskey:follower"
+    },
+    "FollowRequest": {
+      "@id": "misskey:FollowRequest",
+      "@type": "@id"
+    },
+    "Muting": {
+      "@id": "misskey:Muting",
+      "@type": "@id"
+    },
+    "muteeId": {
+      "@id": "misskey:muteeId"
+    },
+    "mutee": {
+      "@id": "misskey:mutee"
+    },
+    "RenoteMuting": {
+      "@id": "misskey:RenoteMuting",
+      "@type": "@id"
+    },
+    "Blocking": {
+      "@id": "misskey:Blocking",
+      "@type": "@id"
+    },
+    "blockeeId": {
+      "@id": "misskey:blockeeId"
+    },
+    "blockee": {
+      "@id": "misskey:blockee"
+    },
+    "Hashtag": {
+      "@id": "misskey:Hashtag",
+      "@type": "@id"
+    },
+    "tag": {
+      "@id": "misskey:tag"
+    },
+    "mentionedUsersCount": {
+      "@id": "misskey:mentionedUsersCount",
+      "@type": "xsd:integer"
+    },
+    "mentionedLocalUsersCount": {
+      "@id": "misskey:mentionedLocalUsersCount",
+      "@type": "xsd:integer"
+    },
+    "mentionedRemoteUsersCount": {
+      "@id": "misskey:mentionedRemoteUsersCount",
+      "@type": "xsd:integer"
+    },
+    "attachedUsersCount": {
+      "@id": "misskey:attachedUsersCount",
+      "@type": "xsd:integer"
+    },
+    "attachedLocalUsersCount": {
+      "@id": "misskey:attachedLocalUsersCount",
+      "@type": "xsd:integer"
+    },
+    "attachedRemoteUsersCount": {
+      "@id": "misskey:attachedRemoteUsersCount",
+      "@type": "xsd:integer"
+    },
+    "InviteCode": {
+      "@id": "misskey:InviteCode",
+      "@type": "@id"
+    },
+    "code": {
+      "@id": "misskey:code"
+    },
+    "createdBy": {
+      "@id": "misskey:createdBy"
+    },
+    "usedBy": {
+      "@id": "misskey:usedBy"
+    },
+    "usedAt": {
+      "@id": "misskey:usedAt"
+    },
+    "used": {
+      "@id": "misskey:used",
+      "@type": "xsd:boolean"
+    },
+    "Page": {
+      "@id": "misskey:Page",
+      "@type": "@id"
+    },
+    "content": {
+      "@id": "misskey:content"
+    },
+    "variables": {
+      "@id": "misskey:variables"
+    },
+    "summary": {
+      "@id": "misskey:summary"
+    },
+    "hideTitleWhenPinned": {
+      "@id": "misskey:hideTitleWhenPinned",
+      "@type": "xsd:boolean"
+    },
+    "alignCenter": {
+      "@id": "misskey:alignCenter",
+      "@type": "xsd:boolean"
+    },
+    "font": {
+      "@id": "misskey:font"
+    },
+    "script": {
+      "@id": "misskey:script"
+    },
+    "eyeCatchingImageId": {
+      "@id": "misskey:eyeCatchingImageId"
+    },
+    "eyeCatchingImage": {
+      "@id": "misskey:eyeCatchingImage"
+    },
+    "attachedFiles": {
+      "@id": "misskey:attachedFiles"
+    },
+    "likedCount": {
+      "@id": "misskey:likedCount",
+      "@type": "xsd:integer"
+    },
+    "isLiked": {
+      "@id": "misskey:isLiked",
+      "@type": "xsd:boolean"
+    },
+    "PageBlock": {
+      "@id": "misskey:PageBlock",
+      "@type": "@id"
+    },
+    "PageLike": {
+      "@id": "misskey:PageLike",
+      "@type": "@id"
+    },
+    "page": {
+      "@id": "misskey:page"
+    },
+    "Channel": {
+      "@id": "misskey:Channel",
+      "@type": "@id"
+    },
+    "lastNotedAt": {
+      "@id": "misskey:lastNotedAt"
+    },
+    "color": {
+      "@id": "misskey:color"
+    },
+    "isArchived": {
+      "@id": "misskey:isArchived",
+      "@type": "xsd:boolean"
+    },
+    "usersCount": {
+      "@id": "misskey:usersCount",
+      "@type": "xsd:integer"
+    },
+    "allowRenoteToExternal": {
+      "@id": "misskey:allowRenoteToExternal",
+      "@type": "xsd:boolean"
+    },
+    "isFavorited": {
+      "@id": "misskey:isFavorited",
+      "@type": "xsd:boolean"
+    },
+    "QueueCount": {
+      "@id": "misskey:QueueCount",
+      "@type": "@id"
+    },
+    "waiting": {
+      "@id": "misskey:waiting",
+      "@type": "xsd:integer"
+    },
+    "active": {
+      "@id": "misskey:active",
+      "@type": "xsd:integer"
+    },
+    "completed": {
+      "@id": "misskey:completed",
+      "@type": "xsd:integer"
+    },
+    "failed": {
+      "@id": "misskey:failed",
+      "@type": "xsd:integer"
+    },
+    "delayed": {
+      "@id": "misskey:delayed",
+      "@type": "xsd:integer"
+    },
+    "Antenna": {
+      "@id": "misskey:Antenna",
+      "@type": "@id"
+    },
+    "keywords": {
+      "@id": "misskey:keywords"
+    },
+    "excludeKeywords": {
+      "@id": "misskey:excludeKeywords"
+    },
+    "src": {
+      "@id": "misskey:src"
+    },
+    "userListId": {
+      "@id": "misskey:userListId"
+    },
+    "users": {
+      "@id": "misskey:users"
+    },
+    "caseSensitive": {
+      "@id": "misskey:caseSensitive",
+      "@type": "xsd:boolean"
+    },
+    "excludeBots": {
+      "@id": "misskey:excludeBots",
+      "@type": "xsd:boolean"
+    },
+    "withFile": {
+      "@id": "misskey:withFile",
+      "@type": "xsd:boolean"
+    },
+    "isActive": {
+      "@id": "misskey:isActive",
+      "@type": "xsd:boolean"
+    },
+    "hasUnreadNote": {
+      "@id": "misskey:hasUnreadNote",
+      "@type": "xsd:boolean"
+    },
+    "excludeNotesInSensitiveChannel": {
+      "@id": "misskey:excludeNotesInSensitiveChannel",
+      "@type": "xsd:boolean"
+    },
+    "Clip": {
+      "@id": "misskey:Clip",
+      "@type": "@id"
+    },
+    "lastClippedAt": {
+      "@id": "misskey:lastClippedAt"
+    },
+    "favoritedCount": {
+      "@id": "misskey:favoritedCount",
+      "@type": "xsd:integer"
+    },
+    "FederationInstance": {
+      "@id": "misskey:FederationInstance",
+      "@type": "@id"
+    },
+    "firstRetrievedAt": {
+      "@id": "misskey:firstRetrievedAt"
+    },
+    "isNotResponding": {
+      "@id": "misskey:isNotResponding",
+      "@type": "xsd:boolean"
+    },
+    "suspensionState": {
+      "@id": "misskey:suspensionState"
+    },
+    "softwareName": {
+      "@id": "misskey:softwareName"
+    },
+    "softwareVersion": {
+      "@id": "misskey:softwareVersion"
+    },
+    "openRegistrations": {
+      "@id": "misskey:openRegistrations"
+    },
+    "maintainerName": {
+      "@id": "misskey:maintainerName"
+    },
+    "maintainerEmail": {
+      "@id": "misskey:maintainerEmail"
+    },
+    "isSensitiveMedia": {
+      "@id": "misskey:isSensitiveMedia",
+      "@type": "xsd:boolean"
+    },
+    "iconUrl": {
+      "@id": "misskey:iconUrl"
+    },
+    "faviconUrl": {
+      "@id": "misskey:faviconUrl"
+    },
+    "themeColor": {
+      "@id": "misskey:themeColor"
+    },
+    "infoUpdatedAt": {
+      "@id": "misskey:infoUpdatedAt"
+    },
+    "latestRequestReceivedAt": {
+      "@id": "misskey:latestRequestReceivedAt"
+    },
+    "GalleryPost": {
+      "@id": "misskey:GalleryPost",
+      "@type": "@id"
+    },
+    "GalleryLike": {
+      "@id": "misskey:GalleryLike",
+      "@type": "@id"
+    },
+    "post": {
+      "@id": "misskey:post"
+    },
+    "EmojiSimple": {
+      "@id": "misskey:EmojiSimple",
+      "@type": "@id"
+    },
+    "aliases": {
+      "@id": "misskey:aliases"
+    },
+    "category": {
+      "@id": "misskey:category"
+    },
+    "roleIdsThatCanBeUsedThisEmojiAsReaction": {
+      "@id": "misskey:roleIdsThatCanBeUsedThisEmojiAsReaction"
+    },
+    "roleIdsThatCanNotBeUsedThisEmojiAsReaction": {
+      "@id": "misskey:roleIdsThatCanNotBeUsedThisEmojiAsReaction"
+    },
+    "EmojiDetailed": {
+      "@id": "misskey:EmojiDetailed",
+      "@type": "@id"
+    },
+    "license": {
+      "@id": "misskey:license"
+    },
+    "requestedBy": {
+      "@id": "misskey:requestedBy"
+    },
+    "EmojiDetailedAdmin": {
+      "@id": "misskey:EmojiDetailedAdmin",
+      "@type": "@id"
+    },
+    "publicUrl": {
+      "@id": "misskey:publicUrl"
+    },
+    "originalUrl": {
+      "@id": "misskey:originalUrl"
+    },
+    "Flash": {
+      "@id": "misskey:Flash",
+      "@type": "@id"
+    },
+    "FlashLike": {
+      "@id": "misskey:FlashLike",
+      "@type": "@id"
+    },
+    "flash": {
+      "@id": "misskey:flash"
+    },
+    "Signin": {
+      "@id": "misskey:Signin",
+      "@type": "@id"
+    },
+    "ip": {
+      "@id": "misskey:ip"
+    },
+    "headers": {
+      "@id": "misskey:headers"
+    },
+    "success": {
+      "@id": "misskey:success",
+      "@type": "xsd:boolean"
+    },
+    "RoleCondFormulaLogics": {
+      "@id": "misskey:RoleCondFormulaLogics",
+      "@type": "@id"
+    },
+    "values": {
+      "@id": "misskey:values"
+    },
+    "RoleCondFormulaValueNot": {
+      "@id": "misskey:RoleCondFormulaValueNot",
+      "@type": "@id"
+    },
+    "value": {
+      "@id": "misskey:value"
+    },
+    "RoleCondFormulaValueIsLocalOrRemote": {
+      "@id": "misskey:RoleCondFormulaValueIsLocalOrRemote",
+      "@type": "@id"
+    },
+    "RoleCondFormulaValueUserSettingBooleanSchema": {
+      "@id": "misskey:RoleCondFormulaValueUserSettingBooleanSchema",
+      "@type": "@id"
+    },
+    "RoleCondFormulaValueAssignedRole": {
+      "@id": "misskey:RoleCondFormulaValueAssignedRole",
+      "@type": "@id"
+    },
+    "roleId": {
+      "@id": "misskey:roleId"
+    },
+    "RoleCondFormulaValueCreated": {
+      "@id": "misskey:RoleCondFormulaValueCreated",
+      "@type": "@id"
+    },
+    "sec": {
+      "@id": "misskey:sec",
+      "@type": "xsd:integer"
+    },
+    "RoleCondFormulaFollowersOrFollowingOrNotes": {
+      "@id": "misskey:RoleCondFormulaFollowersOrFollowingOrNotes",
+      "@type": "@id"
+    },
+    "RoleCondFormulaValue": {
+      "@id": "misskey:RoleCondFormulaValue",
+      "@type": "@id"
+    },
+    "RoleLite": {
+      "@id": "misskey:RoleLite",
+      "@type": "@id"
+    },
+    "isAdministrator": {
+      "@id": "misskey:isAdministrator",
+      "@type": "xsd:boolean"
+    },
+    "Role": {
+      "@id": "misskey:Role",
+      "@type": "@id"
+    },
+    "RolePolicies": {
+      "@id": "misskey:RolePolicies",
+      "@type": "@id"
+    },
+    "gtlAvailable": {
+      "@id": "misskey:gtlAvailable",
+      "@type": "xsd:boolean"
+    },
+    "ltlAvailable": {
+      "@id": "misskey:ltlAvailable",
+      "@type": "xsd:boolean"
+    },
+    "canPublicNote": {
+      "@id": "misskey:canPublicNote",
+      "@type": "xsd:boolean"
+    },
+    "canScheduleNote": {
+      "@id": "misskey:canScheduleNote",
+      "@type": "xsd:boolean"
+    },
+    "scheduleNoteLimit": {
+      "@id": "misskey:scheduleNoteLimit",
+      "@type": "xsd:integer"
+    },
+    "scheduleNoteMaxDays": {
+      "@id": "misskey:scheduleNoteMaxDays",
+      "@type": "xsd:integer"
+    },
+    "canInitiateConversation": {
+      "@id": "misskey:canInitiateConversation",
+      "@type": "xsd:boolean"
+    },
+    "canCreateContent": {
+      "@id": "misskey:canCreateContent",
+      "@type": "xsd:boolean"
+    },
+    "canUpdateContent": {
+      "@id": "misskey:canUpdateContent",
+      "@type": "xsd:boolean"
+    },
+    "canDeleteContent": {
+      "@id": "misskey:canDeleteContent",
+      "@type": "xsd:boolean"
+    },
+    "canPurgeAccount": {
+      "@id": "misskey:canPurgeAccount",
+      "@type": "xsd:boolean"
+    },
+    "canUpdateAvatar": {
+      "@id": "misskey:canUpdateAvatar",
+      "@type": "xsd:boolean"
+    },
+    "canUpdateBanner": {
+      "@id": "misskey:canUpdateBanner",
+      "@type": "xsd:boolean"
+    },
+    "mentionLimit": {
+      "@id": "misskey:mentionLimit",
+      "@type": "xsd:integer"
+    },
+    "canInvite": {
+      "@id": "misskey:canInvite",
+      "@type": "xsd:boolean"
+    },
+    "inviteLimit": {
+      "@id": "misskey:inviteLimit",
+      "@type": "xsd:integer"
+    },
+    "inviteLimitCycle": {
+      "@id": "misskey:inviteLimitCycle",
+      "@type": "xsd:integer"
+    },
+    "inviteExpirationTime": {
+      "@id": "misskey:inviteExpirationTime",
+      "@type": "xsd:integer"
+    },
+    "canManageCustomEmojis": {
+      "@id": "misskey:canManageCustomEmojis",
+      "@type": "xsd:boolean"
+    },
+    "canManageAvatarDecorations": {
+      "@id": "misskey:canManageAvatarDecorations",
+      "@type": "xsd:boolean"
+    },
+    "canSearchNotes": {
+      "@id": "misskey:canSearchNotes",
+      "@type": "xsd:boolean"
+    },
+    "canUseTranslator": {
+      "@id": "misskey:canUseTranslator",
+      "@type": "xsd:boolean"
+    },
+    "canUseDriveFileInSoundSettings": {
+      "@id": "misskey:canUseDriveFileInSoundSettings",
+      "@type": "xsd:boolean"
+    },
+    "canUseReaction": {
+      "@id": "misskey:canUseReaction",
+      "@type": "xsd:boolean"
+    },
+    "canHideAds": {
+      "@id": "misskey:canHideAds",
+      "@type": "xsd:boolean"
+    },
+    "driveCapacityMb": {
+      "@id": "misskey:driveCapacityMb",
+      "@type": "xsd:integer"
+    },
+    "maxFileSizeMb": {
+      "@id": "misskey:maxFileSizeMb",
+      "@type": "xsd:integer"
+    },
+    "skipNsfwDetection": {
+      "@id": "misskey:skipNsfwDetection",
+      "@type": "xsd:boolean"
+    },
+    "canUpdateBioMedia": {
+      "@id": "misskey:canUpdateBioMedia",
+      "@type": "xsd:boolean"
+    },
+    "pinLimit": {
+      "@id": "misskey:pinLimit",
+      "@type": "xsd:integer"
+    },
+    "antennaLimit": {
+      "@id": "misskey:antennaLimit",
+      "@type": "xsd:integer"
+    },
+    "antennaNotesLimit": {
+      "@id": "misskey:antennaNotesLimit",
+      "@type": "xsd:integer"
+    },
+    "wordMuteLimit": {
+      "@id": "misskey:wordMuteLimit",
+      "@type": "xsd:integer"
+    },
+    "webhookLimit": {
+      "@id": "misskey:webhookLimit",
+      "@type": "xsd:integer"
+    },
+    "clipLimit": {
+      "@id": "misskey:clipLimit",
+      "@type": "xsd:integer"
+    },
+    "noteEachClipsLimit": {
+      "@id": "misskey:noteEachClipsLimit",
+      "@type": "xsd:integer"
+    },
+    "userListLimit": {
+      "@id": "misskey:userListLimit",
+      "@type": "xsd:integer"
+    },
+    "userEachUserListsLimit": {
+      "@id": "misskey:userEachUserListsLimit",
+      "@type": "xsd:integer"
+    },
+    "rateLimitFactor": {
+      "@id": "misskey:rateLimitFactor",
+      "@type": "xsd:integer"
+    },
+    "avatarDecorationLimit": {
+      "@id": "misskey:avatarDecorationLimit",
+      "@type": "xsd:integer"
+    },
+    "canImportAntennas": {
+      "@id": "misskey:canImportAntennas",
+      "@type": "xsd:boolean"
+    },
+    "canImportBlocking": {
+      "@id": "misskey:canImportBlocking",
+      "@type": "xsd:boolean"
+    },
+    "canImportFollowing": {
+      "@id": "misskey:canImportFollowing",
+      "@type": "xsd:boolean"
+    },
+    "canImportMuting": {
+      "@id": "misskey:canImportMuting",
+      "@type": "xsd:boolean"
+    },
+    "canImportUserLists": {
+      "@id": "misskey:canImportUserLists",
+      "@type": "xsd:boolean"
+    },
+    "mutualLinkSectionLimit": {
+      "@id": "misskey:mutualLinkSectionLimit",
+      "@type": "xsd:integer"
+    },
+    "mutualLinkLimit": {
+      "@id": "misskey:mutualLinkLimit",
+      "@type": "xsd:integer"
+    },
+    "chatAvailability": {
+      "@id": "misskey:chatAvailability"
+    },
+    "ReversiGameLite": {
+      "@id": "misskey:ReversiGameLite",
+      "@type": "@id"
+    },
+    "startedAt": {
+      "@id": "misskey:startedAt"
+    },
+    "endedAt": {
+      "@id": "misskey:endedAt"
+    },
+    "isStarted": {
+      "@id": "misskey:isStarted",
+      "@type": "xsd:boolean"
+    },
+    "isEnded": {
+      "@id": "misskey:isEnded",
+      "@type": "xsd:boolean"
+    },
+    "user1Id": {
+      "@id": "misskey:user1Id"
+    },
+    "user2Id": {
+      "@id": "misskey:user2Id"
+    },
+    "user1": {
+      "@id": "misskey:user1"
+    },
+    "user2": {
+      "@id": "misskey:user2"
+    },
+    "winnerId": {
+      "@id": "misskey:winnerId"
+    },
+    "winner": {
+      "@id": "misskey:winner"
+    },
+    "surrenderedUserId": {
+      "@id": "misskey:surrenderedUserId"
+    },
+    "timeoutUserId": {
+      "@id": "misskey:timeoutUserId"
+    },
+    "black": {
+      "@id": "misskey:black"
+    },
+    "bw": {
+      "@id": "misskey:bw"
+    },
+    "noIrregularRules": {
+      "@id": "misskey:noIrregularRules",
+      "@type": "xsd:boolean"
+    },
+    "isLlotheo": {
+      "@id": "misskey:isLlotheo",
+      "@type": "xsd:boolean"
+    },
+    "canPutEverywhere": {
+      "@id": "misskey:canPutEverywhere",
+      "@type": "xsd:boolean"
+    },
+    "loopedBoard": {
+      "@id": "misskey:loopedBoard",
+      "@type": "xsd:boolean"
+    },
+    "timeLimitForEachTurn": {
+      "@id": "misskey:timeLimitForEachTurn",
+      "@type": "xsd:integer"
+    },
+    "ReversiGameDetailed": {
+      "@id": "misskey:ReversiGameDetailed",
+      "@type": "@id"
+    },
+    "form1": {
+      "@id": "misskey:form1"
+    },
+    "form2": {
+      "@id": "misskey:form2"
+    },
+    "user1Ready": {
+      "@id": "misskey:user1Ready",
+      "@type": "xsd:boolean"
+    },
+    "user2Ready": {
+      "@id": "misskey:user2Ready",
+      "@type": "xsd:boolean"
+    },
+    "logs": {
+      "@id": "misskey:logs"
+    },
+    "map": {
+      "@id": "misskey:map"
+    },
+    "MetaLite": {
+      "@id": "misskey:MetaLite",
+      "@type": "@id"
+    },
+    "version": {
+      "@id": "misskey:version"
+    },
+    "shortName": {
+      "@id": "misskey:shortName"
+    },
+    "langs": {
+      "@id": "misskey:langs"
+    },
+    "dimensions": {
+      "@id": "misskey:dimensions",
+      "@type": "xsd:integer"
+    },
+    "tosUrl": {
+      "@id": "misskey:tosUrl"
+    },
+    "repositoryUrl": {
+      "@id": "misskey:repositoryUrl"
+    },
+    "feedbackUrl": {
+      "@id": "misskey:feedbackUrl"
+    },
+    "defaultDarkTheme": {
+      "@id": "misskey:defaultDarkTheme"
+    },
+    "defaultLightTheme": {
+      "@id": "misskey:defaultLightTheme"
+    },
+    "disableRegistration": {
+      "@id": "misskey:disableRegistration",
+      "@type": "xsd:boolean"
+    },
+    "emailRequiredForSignup": {
+      "@id": "misskey:emailRequiredForSignup",
+      "@type": "xsd:boolean"
+    },
+    "enableHcaptcha": {
+      "@id": "misskey:enableHcaptcha",
+      "@type": "xsd:boolean"
+    },
+    "hcaptchaSiteKey": {
+      "@id": "misskey:hcaptchaSiteKey"
+    },
+    "enableMcaptcha": {
+      "@id": "misskey:enableMcaptcha",
+      "@type": "xsd:boolean"
+    },
+    "mcaptchaSiteKey": {
+      "@id": "misskey:mcaptchaSiteKey"
+    },
+    "mcaptchaInstanceUrl": {
+      "@id": "misskey:mcaptchaInstanceUrl"
+    },
+    "enableRecaptcha": {
+      "@id": "misskey:enableRecaptcha",
+      "@type": "xsd:boolean"
+    },
+    "recaptchaSiteKey": {
+      "@id": "misskey:recaptchaSiteKey"
+    },
+    "enableTurnstile": {
+      "@id": "misskey:enableTurnstile",
+      "@type": "xsd:boolean"
+    },
+    "turnstileSiteKey": {
+      "@id": "misskey:turnstileSiteKey"
+    },
+    "googleAnalyticsId": {
+      "@id": "misskey:googleAnalyticsId"
+    },
+    "enableTestcaptcha": {
+      "@id": "misskey:enableTestcaptcha",
+      "@type": "xsd:boolean"
+    },
+    "swPublickey": {
+      "@id": "misskey:swPublickey"
+    },
+    "mascotImageUrl": {
+      "@id": "misskey:mascotImageUrl"
+    },
+    "serverErrorImageUrl": {
+      "@id": "misskey:serverErrorImageUrl"
+    },
+    "infoImageUrl": {
+      "@id": "misskey:infoImageUrl"
+    },
+    "notFoundImageUrl": {
+      "@id": "misskey:notFoundImageUrl"
+    },
+    "maxNoteTextLength": {
+      "@id": "misskey:maxNoteTextLength",
+      "@type": "xsd:integer"
+    },
+    "ads": {
+      "@id": "misskey:ads"
+    },
+    "wellKnownWebsites": {
+      "@id": "misskey:wellKnownWebsites"
+    },
+    "notesPerOneAd": {
+      "@id": "misskey:notesPerOneAd",
+      "@type": "xsd:integer"
+    },
+    "enableEmail": {
+      "@id": "misskey:enableEmail",
+      "@type": "xsd:boolean"
+    },
+    "enableServiceWorker": {
+      "@id": "misskey:enableServiceWorker",
+      "@type": "xsd:boolean"
+    },
+    "translatorAvailable": {
+      "@id": "misskey:translatorAvailable",
+      "@type": "xsd:boolean"
+    },
+    "sentryForFrontend": {
+      "@id": "misskey:sentryForFrontend"
+    },
+    "mediaProxy": {
+      "@id": "misskey:mediaProxy"
+    },
+    "enableUrlPreview": {
+      "@id": "misskey:enableUrlPreview",
+      "@type": "xsd:boolean"
+    },
+    "enableSkebStatus": {
+      "@id": "misskey:enableSkebStatus",
+      "@type": "xsd:boolean"
+    },
+    "backgroundImageUrl": {
+      "@id": "misskey:backgroundImageUrl"
+    },
+    "impressumUrl": {
+      "@id": "misskey:impressumUrl"
+    },
+    "logoImageUrl": {
+      "@id": "misskey:logoImageUrl"
+    },
+    "privacyPolicyUrl": {
+      "@id": "misskey:privacyPolicyUrl"
+    },
+    "inquiryUrl": {
+      "@id": "misskey:inquiryUrl"
+    },
+    "serverRules": {
+      "@id": "misskey:serverRules"
+    },
+    "noteSearchableScope": {
+      "@id": "misskey:noteSearchableScope"
+    },
+    "maxFileSize": {
+      "@id": "misskey:maxFileSize",
+      "@type": "xsd:integer"
+    },
+    "federation": {
+      "@id": "misskey:federation"
+    },
+    "MetaDetailedOnly": {
+      "@id": "misskey:MetaDetailedOnly",
+      "@type": "@id"
+    },
+    "features": {
+      "@id": "misskey:features"
+    },
+    "proxyAccountName": {
+      "@id": "misskey:proxyAccountName"
+    },
+    "requireSetup": {
+      "@id": "misskey:requireSetup",
+      "@type": "xsd:boolean"
+    },
+    "cacheRemoteFiles": {
+      "@id": "misskey:cacheRemoteFiles",
+      "@type": "xsd:boolean"
+    },
+    "cacheRemoteSensitiveFiles": {
+      "@id": "misskey:cacheRemoteSensitiveFiles",
+      "@type": "xsd:boolean"
+    },
+    "MetaDetailed": {
+      "@id": "misskey:MetaDetailed",
+      "@type": "@id"
+    },
+    "AbuseUserReport": {
+      "@id": "misskey:AbuseUserReport",
+      "@type": "@id"
+    },
+    "resolved": {
+      "@id": "misskey:resolved",
+      "@type": "xsd:boolean"
+    },
+    "reporterId": {
+      "@id": "misskey:reporterId"
+    },
+    "reporter": {
+      "@id": "misskey:reporter"
+    },
+    "targetUserId": {
+      "@id": "misskey:targetUserId"
+    },
+    "targetUser": {
+      "@id": "misskey:targetUser"
+    },
+    "assigneeId": {
+      "@id": "misskey:assigneeId"
+    },
+    "assignee": {
+      "@id": "misskey:assignee"
+    },
+    "forwarded": {
+      "@id": "misskey:forwarded",
+      "@type": "xsd:boolean"
+    },
+    "ModerationLog": {
+      "@id": "misskey:ModerationLog",
+      "@type": "@id"
+    },
+    "info": {
+      "@id": "misskey:info"
+    },
+    "SystemWebhook": {
+      "@id": "misskey:SystemWebhook",
+      "@type": "@id"
+    },
+    "latestSentAt": {
+      "@id": "misskey:latestSentAt"
+    },
+    "latestStatus": {
+      "@id": "misskey:latestStatus"
+    },
+    "on": {
+      "@id": "misskey:on"
+    },
+    "AbuseReportNotificationRecipient": {
+      "@id": "misskey:AbuseReportNotificationRecipient",
+      "@type": "@id"
+    },
+    "method": {
+      "@id": "misskey:method"
+    },
+    "systemWebhookId": {
+      "@id": "misskey:systemWebhookId"
+    },
+    "systemWebhook": {
+      "@id": "misskey:systemWebhook"
+    },
+    "ChatMessage": {
+      "@id": "misskey:ChatMessage",
+      "@type": "@id"
+    },
+    "fromUserId": {
+      "@id": "misskey:fromUserId"
+    },
+    "fromUser": {
+      "@id": "misskey:fromUser"
+    },
+    "toUserId": {
+      "@id": "misskey:toUserId"
+    },
+    "toUser": {
+      "@id": "misskey:toUser"
+    },
+    "toRoomId": {
+      "@id": "misskey:toRoomId"
+    },
+    "toRoom": {
+      "@id": "misskey:toRoom"
+    },
+    "fileId": {
+      "@id": "misskey:fileId"
+    },
+    "file": {
+      "@id": "misskey:file"
+    },
+    "ChatMessageLite": {
+      "@id": "misskey:ChatMessageLite",
+      "@type": "@id"
+    },
+    "ChatMessageLiteFor1on1": {
+      "@id": "misskey:ChatMessageLiteFor1on1",
+      "@type": "@id"
+    },
+    "ChatMessageLiteForRoom": {
+      "@id": "misskey:ChatMessageLiteForRoom",
+      "@type": "@id"
+    },
+    "ChatRoom": {
+      "@id": "misskey:ChatRoom",
+      "@type": "@id"
+    },
+    "ownerId": {
+      "@id": "misskey:ownerId"
+    },
+    "owner": {
+      "@id": "misskey:owner"
+    },
+    "ChatRoomInvitation": {
+      "@id": "misskey:ChatRoomInvitation",
+      "@type": "@id"
+    },
+    "roomId": {
+      "@id": "misskey:roomId"
+    },
+    "room": {
+      "@id": "misskey:room"
+    },
+    "ChatRoomMembership": {
+      "@id": "misskey:ChatRoomMembership",
+      "@type": "@id"
+    }
+  }
+}

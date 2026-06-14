@@ -1,0 +1,83 @@
+{
+  "endpoint": "/admin/announcements/update",
+  "method": "POST",
+  "operationId": "post___admin___announcements___update",
+  "summary": "admin/announcements/update",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:announcements*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "imageUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 0
+        },
+        "icon": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error",
+            "success"
+          ]
+        },
+        "display": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "banner",
+            "dialog"
+          ]
+        },
+        "forExistingUsers": {
+          "type": "boolean"
+        },
+        "needConfirmationToRead": {
+          "type": "boolean"
+        },
+        "needEnrollmentTutorialToRead": {
+          "type": "boolean"
+        },
+        "closeDuration": {
+          "type": "number",
+          "default": 0
+        },
+        "displayOrder": {
+          "type": "number",
+          "default": 0
+        },
+        "silence": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

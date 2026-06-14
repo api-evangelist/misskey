@@ -1,0 +1,33 @@
+{
+  "title": "Misskey API Tags",
+  "description": "API endpoint category tags from the Misskey OpenAPI spec",
+  "tags": [
+    "account",
+    "admin",
+    "antennas",
+    "app",
+    "auth",
+    "channels",
+    "charts",
+    "clip",
+    "clips",
+    "drive",
+    "federation",
+    "flash",
+    "flashs",
+    "following",
+    "gallery",
+    "hashtags",
+    "lists",
+    "meta",
+    "non-productive",
+    "notes",
+    "notifications",
+    "pages",
+    "reactions",
+    "reset password",
+    "role",
+    "users",
+    "webhooks"
+  ]
+}

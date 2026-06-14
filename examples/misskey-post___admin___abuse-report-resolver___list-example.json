@@ -1,0 +1,35 @@
+{
+  "endpoint": "/admin/abuse-report-resolver/list",
+  "method": "POST",
+  "operationId": "post___admin___abuse-report-resolver___list",
+  "summary": "admin/abuse-report-resolver/list",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:abuse-report-resolvers*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 10
+        },
+        "sinceId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "untilId": {
+          "type": "string",
+          "format": "misskey:id"
+        }
+      }
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

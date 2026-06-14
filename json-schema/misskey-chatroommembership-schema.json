@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/ChatRoomMembership",
+  "title": "ChatRoomMembership",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "user": {
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserLite"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "roomId": {
+      "type": "string"
+    },
+    "room": {
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ChatRoom"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "userId",
+    "roomId"
+  ]
+}

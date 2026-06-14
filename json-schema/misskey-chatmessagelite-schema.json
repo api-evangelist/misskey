@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/ChatMessageLite",
+  "title": "ChatMessageLite",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "fromUserId": {
+      "type": "string"
+    },
+    "fromUser": {
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserLite"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "toUserId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "toRoomId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fileId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "file": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/DriveFile"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reaction": {
+            "type": "string"
+          },
+          "user": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserLite"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "reaction"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "fromUserId",
+    "reactions"
+  ]
+}

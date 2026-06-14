@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Muting",
+  "title": "Muting",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expiresAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "muteeId": {
+      "type": "string",
+      "format": "id"
+    },
+    "mutee": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserDetailedNotMe"
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "expiresAt",
+    "muteeId",
+    "mutee"
+  ]
+}

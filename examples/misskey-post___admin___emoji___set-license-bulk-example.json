@@ -1,0 +1,38 @@
+{
+  "endpoint": "/admin/emoji/set-license-bulk",
+  "method": "POST",
+  "operationId": "post___admin___emoji___set-license-bulk",
+  "summary": "admin/emoji/set-license-bulk",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:emoji*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "misskey:id"
+          }
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Use `null` to reset the license."
+        }
+      },
+      "required": [
+        "ids"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

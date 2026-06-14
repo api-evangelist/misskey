@@ -1,0 +1,68 @@
+{
+  "endpoint": "/admin/abuse-report-resolver/create",
+  "method": "POST",
+  "operationId": "post___admin___abuse-report-resolver___create",
+  "summary": "admin/abuse-report-resolver/create",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:abuse-report-resolvers*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "targetUserPattern": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reporterPattern": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reportContentPattern": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expiresAt": {
+          "type": "string",
+          "enum": [
+            "1hour",
+            "12hours",
+            "1day",
+            "1week",
+            "1month",
+            "3months",
+            "6months",
+            "1year",
+            "indefinitely"
+          ]
+        },
+        "forward": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "targetUserPattern",
+        "reporterPattern",
+        "reportContentPattern",
+        "expiresAt",
+        "forward"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "endpoint": "/admin/emoji/delete-bulk",
+  "method": "POST",
+  "operationId": "post___admin___emoji___delete-bulk",
+  "summary": "admin/emoji/delete-bulk",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:emoji*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "misskey:id"
+          }
+        }
+      },
+      "required": [
+        "ids"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

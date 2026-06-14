@@ -1,0 +1,28 @@
+{
+  "endpoint": "/admin/emoji/copy",
+  "method": "POST",
+  "operationId": "post___admin___emoji___copy",
+  "summary": "admin/emoji/copy",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:emoji*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "emojiId": {
+          "type": "string",
+          "format": "misskey:id"
+        }
+      },
+      "required": [
+        "emojiId"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

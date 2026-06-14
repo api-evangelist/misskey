@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Hashtag",
+  "title": "Hashtag",
+  "type": "object",
+  "properties": {
+    "tag": {
+      "type": "string",
+      "example": "misskey"
+    },
+    "mentionedUsersCount": {
+      "type": "number"
+    },
+    "mentionedLocalUsersCount": {
+      "type": "number"
+    },
+    "mentionedRemoteUsersCount": {
+      "type": "number"
+    },
+    "attachedUsersCount": {
+      "type": "number"
+    },
+    "attachedLocalUsersCount": {
+      "type": "number"
+    },
+    "attachedRemoteUsersCount": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "tag",
+    "mentionedUsersCount",
+    "mentionedLocalUsersCount",
+    "mentionedRemoteUsersCount",
+    "attachedUsersCount",
+    "attachedLocalUsersCount",
+    "attachedRemoteUsersCount"
+  ]
+}

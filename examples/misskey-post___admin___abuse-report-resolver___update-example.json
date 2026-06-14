@@ -1,0 +1,66 @@
+{
+  "endpoint": "/admin/abuse-report-resolver/update",
+  "method": "POST",
+  "operationId": "post___admin___abuse-report-resolver___update",
+  "summary": "admin/abuse-report-resolver/update",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:abuse-report-resolvers*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "resolverId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "targetUserPattern": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reporterPattern": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reportContentPattern": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expiresAt": {
+          "type": "string",
+          "enum": [
+            "1hour",
+            "12hours",
+            "1day",
+            "1week",
+            "1month",
+            "3months",
+            "6months",
+            "1year",
+            "indefinitely"
+          ]
+        },
+        "forward": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "resolverId"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

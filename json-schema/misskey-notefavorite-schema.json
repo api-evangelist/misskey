@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/NoteFavorite",
+  "title": "NoteFavorite",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "note": {
+      "type": "object",
+      "$ref": "#/components/schemas/Note"
+    },
+    "noteId": {
+      "type": "string",
+      "format": "id"
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "note",
+    "noteId"
+  ]
+}

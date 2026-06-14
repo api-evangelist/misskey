@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/SystemWebhook",
+  "title": "SystemWebhook",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "latestSentAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "latestStatus": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "on": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "abuseReport",
+          "abuseReportResolved",
+          "userCreated",
+          "inactiveModeratorsWarning",
+          "inactiveModeratorsInvitationOnlyChanged",
+          "reportAutoResolved"
+        ]
+      }
+    },
+    "url": {
+      "type": "string"
+    },
+    "secret": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "isActive",
+    "updatedAt",
+    "latestSentAt",
+    "latestStatus",
+    "name",
+    "on",
+    "url",
+    "secret"
+  ]
+}

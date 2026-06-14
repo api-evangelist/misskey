@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/DriveFile",
+  "title": "DriveFile",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "example": "192.jpg"
+    },
+    "type": {
+      "type": "string",
+      "example": "image/jpeg"
+    },
+    "md5": {
+      "type": "string",
+      "format": "md5",
+      "example": "15eca7fba0480996e2245f5185bf39f2"
+    },
+    "size": {
+      "type": "number",
+      "example": 51469
+    },
+    "isSensitive": {
+      "type": "boolean"
+    },
+    "isSensitiveByModerator": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "blurhash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "number",
+          "example": 1280
+        },
+        "height": {
+          "type": "number",
+          "example": 720
+        },
+        "orientation": {
+          "type": "number",
+          "example": 8
+        },
+        "avgColor": {
+          "type": "string",
+          "example": "rgb(40,65,87)"
+        }
+      }
+    },
+    "url": {
+      "type": "string",
+      "format": "url"
+    },
+    "thumbnailUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "url"
+    },
+    "comment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "folderId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "folder": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/DriveFolder"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "userId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "user": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserLite"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "name",
+    "type",
+    "md5",
+    "size",
+    "isSensitive",
+    "blurhash",
+    "properties",
+    "url",
+    "thumbnailUrl",
+    "comment",
+    "folderId",
+    "userId"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/PageLike",
+  "title": "PageLike",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "page": {
+      "type": "object",
+      "$ref": "#/components/schemas/Page"
+    }
+  },
+  "required": [
+    "id",
+    "page"
+  ]
+}

@@ -1,0 +1,925 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/MeDetailedOnly",
+  "title": "MeDetailedOnly",
+  "type": "object",
+  "properties": {
+    "avatarId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id"
+    },
+    "bannerId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id"
+    },
+    "followedMessage": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "isModerator": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "isAdmin": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "injectFeaturedNote": {
+      "type": "boolean"
+    },
+    "receiveAnnouncementEmail": {
+      "type": "boolean"
+    },
+    "alwaysMarkNsfw": {
+      "type": "boolean"
+    },
+    "autoSensitive": {
+      "type": "boolean"
+    },
+    "carefulBot": {
+      "type": "boolean"
+    },
+    "autoAcceptFollowed": {
+      "type": "boolean"
+    },
+    "noCrawle": {
+      "type": "boolean"
+    },
+    "preventAiLearning": {
+      "type": "boolean"
+    },
+    "isExplorable": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "twoFactorBackupCodesStock": {
+      "type": "string",
+      "enum": [
+        "full",
+        "partial",
+        "none"
+      ]
+    },
+    "hideOnlineStatus": {
+      "type": "boolean"
+    },
+    "hasUnreadSpecifiedNotes": {
+      "type": "boolean"
+    },
+    "hasUnreadMentions": {
+      "type": "boolean"
+    },
+    "hasUnreadAnnouncement": {
+      "type": "boolean"
+    },
+    "unreadAnnouncements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/components/schemas/Announcement"
+      }
+    },
+    "hasUnreadAntenna": {
+      "type": "boolean"
+    },
+    "hasUnreadChannel": {
+      "type": "boolean"
+    },
+    "hasUnreadChatMessages": {
+      "type": "boolean"
+    },
+    "hasUnreadNotification": {
+      "type": "boolean"
+    },
+    "hasPendingReceivedFollowRequest": {
+      "type": "boolean"
+    },
+    "unreadNotificationsCount": {
+      "type": "number"
+    },
+    "mutedWords": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "mutedInstances": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "postingLang": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "example": "ja-JP"
+    },
+    "viewingLangs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "showMediaInAllLanguages": {
+      "type": "boolean"
+    },
+    "showHashtagsInAllLanguages": {
+      "type": "boolean"
+    },
+    "notificationRecieveConfig": {
+      "type": "object",
+      "properties": {
+        "note": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "follow": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "mention": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "reply": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "renote": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "quote": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "reaction": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "pollEnded": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "receiveFollowRequest": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "followRequestAccepted": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "roleAssigned": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "chatRoomInvitationReceived": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "achievementEarned": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "app": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        },
+        "test": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "following",
+                    "follower",
+                    "mutualFollow",
+                    "followingOrFollower",
+                    "never"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "list"
+                  ]
+                },
+                "userListId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                }
+              },
+              "required": [
+                "type",
+                "userListId"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "emailNotificationTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "achievements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "unlockedAt": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "name",
+          "unlockedAt"
+        ]
+      }
+    },
+    "loggedInDays": {
+      "type": "number"
+    },
+    "policies": {
+      "type": "object",
+      "$ref": "#/components/schemas/RolePolicies"
+    },
+    "twoFactorEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "usePasswordLessLogin": {
+      "type": "boolean",
+      "default": false
+    },
+    "securityKeys": {
+      "type": "boolean",
+      "default": false
+    },
+    "email": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "emailVerified": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "securityKeysList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "id",
+            "example": "xxxxxxxxxx"
+          },
+          "name": {
+            "type": "string"
+          },
+          "lastUsed": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "lastUsed"
+        ]
+      }
+    }
+  },
+  "required": [
+    "avatarId",
+    "bannerId",
+    "followedMessage",
+    "isModerator",
+    "isAdmin",
+    "injectFeaturedNote",
+    "receiveAnnouncementEmail",
+    "alwaysMarkNsfw",
+    "autoSensitive",
+    "carefulBot",
+    "autoAcceptFollowed",
+    "noCrawle",
+    "preventAiLearning",
+    "isExplorable",
+    "isDeleted",
+    "twoFactorBackupCodesStock",
+    "hideOnlineStatus",
+    "hasUnreadSpecifiedNotes",
+    "hasUnreadMentions",
+    "hasUnreadAnnouncement",
+    "unreadAnnouncements",
+    "hasUnreadAntenna",
+    "hasUnreadChannel",
+    "hasUnreadChatMessages",
+    "hasUnreadNotification",
+    "hasPendingReceivedFollowRequest",
+    "unreadNotificationsCount",
+    "mutedWords",
+    "mutedInstances",
+    "postingLang",
+    "viewingLangs",
+    "showMediaInAllLanguages",
+    "showHashtagsInAllLanguages",
+    "notificationRecieveConfig",
+    "emailNotificationTypes",
+    "achievements",
+    "loggedInDays",
+    "policies",
+    "twoFactorEnabled",
+    "usePasswordLessLogin",
+    "securityKeys"
+  ]
+}

@@ -1,0 +1,921 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Notification",
+  "title": "Notification",
+  "type": "object",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "note"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId",
+        "note"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "mention"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId",
+        "note"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "reply"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId",
+        "note"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "renote"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId",
+        "note"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "quote"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId",
+        "note"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "reaction"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        },
+        "reaction": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId",
+        "note",
+        "reaction"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "pollEnded"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId",
+        "note"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "follow"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "receiveFollowRequest"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "followRequestAccepted"
+          ]
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/components/schemas/UserLite"
+        },
+        "userId": {
+          "type": "string",
+          "format": "id"
+        },
+        "message": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "user",
+        "userId",
+        "message"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "roleAssigned"
+          ]
+        },
+        "role": {
+          "type": "object",
+          "$ref": "#/components/schemas/Role"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "role"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "chatRoomInvitationReceived"
+          ]
+        },
+        "invitation": {
+          "type": "object",
+          "$ref": "#/components/schemas/ChatRoomInvitation"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "invitation"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "achievementEarned"
+          ]
+        },
+        "achievement": {
+          "type": "string",
+          "enum": [
+            "notes1",
+            "notes10",
+            "notes100",
+            "notes500",
+            "notes1000",
+            "notes5000",
+            "notes10000",
+            "notes20000",
+            "notes30000",
+            "notes40000",
+            "notes50000",
+            "notes60000",
+            "notes70000",
+            "notes80000",
+            "notes90000",
+            "notes100000",
+            "login3",
+            "login7",
+            "login15",
+            "login30",
+            "login60",
+            "login100",
+            "login200",
+            "login300",
+            "login400",
+            "login500",
+            "login600",
+            "login700",
+            "login800",
+            "login900",
+            "login1000",
+            "passedSinceAccountCreated1",
+            "passedSinceAccountCreated2",
+            "passedSinceAccountCreated3",
+            "loggedInOnBirthday",
+            "loggedInOnNewYearsDay",
+            "noteClipped1",
+            "noteFavorited1",
+            "myNoteFavorited1",
+            "profileFilled",
+            "markedAsCat",
+            "following1",
+            "following10",
+            "following50",
+            "following100",
+            "following300",
+            "followers1",
+            "followers10",
+            "followers50",
+            "followers100",
+            "followers300",
+            "followers500",
+            "followers1000",
+            "collectAchievements30",
+            "viewAchievements3min",
+            "iLoveMisskey",
+            "foundTreasure",
+            "client30min",
+            "client60min",
+            "noteDeletedWithin1min",
+            "postedAtLateNight",
+            "postedAt0min0sec",
+            "selfQuote",
+            "htl20npm",
+            "viewInstanceChart",
+            "outputHelloWorldOnScratchpad",
+            "open3windows",
+            "driveFolderCircularReference",
+            "reactWithoutRead",
+            "clickedClickHere",
+            "justPlainLucky",
+            "setNameToSyuilo",
+            "cookieClicked",
+            "brainDiver",
+            "smashTestNotificationButton",
+            "tutorialCompleted",
+            "sensitiveContentConsentResponded",
+            "postingLanguageConfigured",
+            "viewingLanguagesConfigured",
+            "dimensionConfigured",
+            "bubbleGameExplodingHead",
+            "bubbleGameDoubleExplodingHead"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "achievement"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "exportCompleted"
+          ]
+        },
+        "exportedEntity": {
+          "type": "string",
+          "enum": [
+            "antenna",
+            "blocking",
+            "clip",
+            "customEmoji",
+            "favorite",
+            "following",
+            "muting",
+            "note",
+            "userList"
+          ]
+        },
+        "fileId": {
+          "type": "string",
+          "format": "id"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "exportedEntity",
+        "fileId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "login"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "noteScheduled"
+          ]
+        },
+        "draft": {
+          "type": "object",
+          "$ref": "#/components/schemas/NoteDraft"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "draft"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "scheduledNotePosted"
+          ]
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "note"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "scheduledNoteError"
+          ]
+        },
+        "draft": {
+          "type": "object",
+          "$ref": "#/components/schemas/NoteDraft"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "draft"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "sensitiveFlagAssigned"
+          ]
+        },
+        "fileId": {}
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "fileId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "createToken"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "app"
+          ]
+        },
+        "body": {
+          "type": "string"
+        },
+        "header": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "body",
+        "header",
+        "icon"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "reaction:grouped"
+          ]
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        },
+        "reactions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "user": {
+                "type": "object",
+                "$ref": "#/components/schemas/UserLite"
+              },
+              "reaction": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "user",
+              "reaction"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "note",
+        "reactions"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "renote:grouped"
+          ]
+        },
+        "note": {
+          "type": "object",
+          "$ref": "#/components/schemas/Note"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/components/schemas/UserLite"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type",
+        "note",
+        "users"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "id"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "test"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "type"
+      ]
+    }
+  ]
+}

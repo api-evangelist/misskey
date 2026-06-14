@@ -1,0 +1,40 @@
+{
+  "endpoint": "/admin/accounts/pending/revoke",
+  "method": "POST",
+  "operationId": "post___admin___accounts___pending___revoke",
+  "summary": "admin/accounts/pending/revoke",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:account*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "code": {
+          "type": "string"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "id"
+          ]
+        },
+        {
+          "required": [
+            "code"
+          ]
+        }
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/FlashLike",
+  "title": "FlashLike",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "flash": {
+      "type": "object",
+      "$ref": "#/components/schemas/Flash"
+    }
+  },
+  "required": [
+    "id",
+    "flash"
+  ]
+}

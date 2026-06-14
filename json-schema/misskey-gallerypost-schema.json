@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/GalleryPost",
+  "title": "GalleryPost",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "userId": {
+      "type": "string",
+      "format": "id"
+    },
+    "user": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fileIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/components/schemas/DriveFile"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "isSensitive": {
+      "type": "boolean"
+    },
+    "likedCount": {
+      "type": "number"
+    },
+    "isLiked": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "updatedAt",
+    "userId",
+    "user",
+    "title",
+    "description",
+    "isSensitive",
+    "likedCount"
+  ]
+}

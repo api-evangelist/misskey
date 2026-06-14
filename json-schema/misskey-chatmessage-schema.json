@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/ChatMessage",
+  "title": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "fromUserId": {
+      "type": "string"
+    },
+    "fromUser": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    },
+    "toUserId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "toUser": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserLite"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "toRoomId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "toRoom": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ChatRoom"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fileId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "file": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/DriveFile"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "isRead": {
+      "type": "boolean"
+    },
+    "reactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reaction": {
+            "type": "string"
+          },
+          "user": {
+            "type": "object",
+            "$ref": "#/components/schemas/UserLite"
+          }
+        },
+        "required": [
+          "reaction",
+          "user"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "fromUserId",
+    "fromUser",
+    "reactions"
+  ]
+}

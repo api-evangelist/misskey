@@ -1,0 +1,40 @@
+{
+  "endpoint": "/admin/drive/show-file",
+  "method": "POST",
+  "operationId": "post___admin___drive___show-file",
+  "summary": "admin/drive/show-file",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:drive*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "fileId"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

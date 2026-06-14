@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/AbuseUserReport",
+  "title": "AbuseUserReport",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "category": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "resolved": {
+      "type": "boolean"
+    },
+    "reporterId": {
+      "type": "string",
+      "format": "id"
+    },
+    "reporter": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserDetailed"
+    },
+    "targetUserId": {
+      "type": "string",
+      "format": "id"
+    },
+    "targetUser": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserDetailed"
+    },
+    "assigneeId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id"
+    },
+    "assignee": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserDetailed"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "forwarded": {
+      "type": "boolean"
+    },
+    "moderationNote": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "category",
+    "createdAt",
+    "comment",
+    "resolved",
+    "reporterId",
+    "reporter",
+    "targetUserId",
+    "targetUser",
+    "assigneeId",
+    "forwarded",
+    "moderationNote"
+  ]
+}

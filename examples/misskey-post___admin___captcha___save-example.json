@@ -1,0 +1,59 @@
+{
+  "endpoint": "/admin/captcha/save",
+  "method": "POST",
+  "operationId": "post___admin___captcha___save",
+  "summary": "admin/captcha/save",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:meta*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": [
+            "none",
+            "hcaptcha",
+            "mcaptcha",
+            "recaptcha",
+            "turnstile",
+            "testcaptcha"
+          ]
+        },
+        "captchaResult": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sitekey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "secret": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "instanceUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "provider"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

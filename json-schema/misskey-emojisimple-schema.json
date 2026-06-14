@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/EmojiSimple",
+  "title": "EmojiSimple",
+  "type": "object",
+  "properties": {
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "localOnly": {
+      "type": "boolean"
+    },
+    "isSensitive": {
+      "type": "boolean"
+    },
+    "roleIdsThatCanBeUsedThisEmojiAsReaction": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "roleIdsThatCanNotBeUsedThisEmojiAsReaction": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    }
+  },
+  "required": [
+    "aliases",
+    "name",
+    "category",
+    "url"
+  ]
+}

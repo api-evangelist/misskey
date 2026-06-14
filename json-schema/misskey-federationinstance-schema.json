@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/FederationInstance",
+  "title": "FederationInstance",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id"
+    },
+    "firstRetrievedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "host": {
+      "type": "string",
+      "example": "misskey.example.com"
+    },
+    "usersCount": {
+      "type": "number"
+    },
+    "notesCount": {
+      "type": "number"
+    },
+    "followingCount": {
+      "type": "number"
+    },
+    "followersCount": {
+      "type": "number"
+    },
+    "isNotResponding": {
+      "type": "boolean"
+    },
+    "isSuspended": {
+      "type": "boolean"
+    },
+    "suspensionState": {
+      "type": "string",
+      "enum": [
+        "none",
+        "manuallySuspended",
+        "goneSuspended",
+        "autoSuspendedForNotResponding"
+      ]
+    },
+    "isBlocked": {
+      "type": "boolean"
+    },
+    "softwareName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "example": "misskey"
+    },
+    "softwareVersion": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "openRegistrations": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "example": true
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "maintainerName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "maintainerEmail": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "isSilenced": {
+      "type": "boolean"
+    },
+    "isSensitiveMedia": {
+      "type": "boolean"
+    },
+    "iconUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "url"
+    },
+    "faviconUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "url"
+    },
+    "themeColor": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "infoUpdatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "latestRequestReceivedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "moderationNote": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "firstRetrievedAt",
+    "host",
+    "usersCount",
+    "notesCount",
+    "followingCount",
+    "followersCount",
+    "isNotResponding",
+    "isSuspended",
+    "suspensionState",
+    "isBlocked",
+    "softwareName",
+    "softwareVersion",
+    "openRegistrations",
+    "name",
+    "description",
+    "maintainerName",
+    "maintainerEmail",
+    "isSilenced",
+    "isSensitiveMedia",
+    "iconUrl",
+    "faviconUrl",
+    "themeColor",
+    "infoUpdatedAt",
+    "latestRequestReceivedAt"
+  ]
+}

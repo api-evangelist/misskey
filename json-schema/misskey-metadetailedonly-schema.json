@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/MetaDetailedOnly",
+  "title": "MetaDetailedOnly",
+  "type": "object",
+  "properties": {
+    "features": {
+      "type": "object",
+      "properties": {
+        "registration": {
+          "type": "boolean"
+        },
+        "emailRequiredForSignup": {
+          "type": "boolean"
+        },
+        "localTimeline": {
+          "type": "boolean"
+        },
+        "globalTimeline": {
+          "type": "boolean"
+        },
+        "hCaptcha": {
+          "type": "boolean"
+        },
+        "hcaptcha": {
+          "type": "boolean",
+          "description": "Alias of hCaptcha"
+        },
+        "mCaptcha": {
+          "type": "boolean"
+        },
+        "mcaptcha": {
+          "type": "boolean",
+          "description": "Alias of mCaptcha"
+        },
+        "reCaptcha": {
+          "type": "boolean"
+        },
+        "recaptcha": {
+          "type": "boolean",
+          "description": "Alias of reCaptcha"
+        },
+        "turnstile": {
+          "type": "boolean"
+        },
+        "objectStorage": {
+          "type": "boolean"
+        },
+        "serviceWorker": {
+          "type": "boolean"
+        },
+        "miauth": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "required": [
+        "registration",
+        "emailRequiredForSignup",
+        "localTimeline",
+        "globalTimeline",
+        "hCaptcha",
+        "hcaptcha",
+        "mCaptcha",
+        "mcaptcha",
+        "reCaptcha",
+        "recaptcha",
+        "turnstile",
+        "objectStorage",
+        "serviceWorker"
+      ]
+    },
+    "proxyAccountName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "requireSetup": {
+      "type": "boolean",
+      "example": false
+    },
+    "cacheRemoteFiles": {
+      "type": "boolean"
+    },
+    "cacheRemoteSensitiveFiles": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "proxyAccountName",
+    "requireSetup",
+    "cacheRemoteFiles",
+    "cacheRemoteSensitiveFiles"
+  ]
+}

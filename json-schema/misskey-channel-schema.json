@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Channel",
+  "title": "Channel",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastNotedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "userId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id"
+    },
+    "bannerUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "url"
+    },
+    "pinnedNoteIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "color": {
+      "type": "string"
+    },
+    "isArchived": {
+      "type": "boolean"
+    },
+    "usersCount": {
+      "type": "number"
+    },
+    "notesCount": {
+      "type": "number"
+    },
+    "isSensitive": {
+      "type": "boolean"
+    },
+    "allowRenoteToExternal": {
+      "type": "boolean"
+    },
+    "isFollowing": {
+      "type": "boolean"
+    },
+    "isFavorited": {
+      "type": "boolean"
+    },
+    "pinnedNotes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/components/schemas/Note"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "lastNotedAt",
+    "name",
+    "description",
+    "userId",
+    "bannerUrl",
+    "pinnedNoteIds",
+    "color",
+    "isArchived",
+    "usersCount",
+    "notesCount",
+    "isSensitive",
+    "allowRenoteToExternal"
+  ]
+}

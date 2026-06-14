@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/QueueCount",
+  "title": "QueueCount",
+  "type": "object",
+  "properties": {
+    "waiting": {
+      "type": "number"
+    },
+    "active": {
+      "type": "number"
+    },
+    "completed": {
+      "type": "number"
+    },
+    "failed": {
+      "type": "number"
+    },
+    "delayed": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "waiting",
+    "active",
+    "completed",
+    "failed",
+    "delayed"
+  ]
+}

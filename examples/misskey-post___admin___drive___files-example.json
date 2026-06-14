@@ -1,0 +1,66 @@
+{
+  "endpoint": "/admin/drive/files",
+  "method": "POST",
+  "operationId": "post___admin___drive___files",
+  "summary": "admin/drive/files",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:drive*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 10
+        },
+        "sinceId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "untilId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "userId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "misskey:id"
+        },
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-zA-Z0-9\\/\\-*]+$"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "combined",
+            "local",
+            "remote"
+          ],
+          "default": "local"
+        },
+        "hostname": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null,
+          "description": "The local host is represented with `null`."
+        }
+      }
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "endpoint": "/admin/emoji/add",
+  "method": "POST",
+  "operationId": "post___admin___emoji___add",
+  "summary": "admin/emoji/add",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:emoji*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_]+$"
+        },
+        "fileId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Use `null` to reset the category."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isSensitive": {
+          "type": "boolean"
+        },
+        "localOnly": {
+          "type": "boolean"
+        },
+        "requestedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "memo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "roleIdsThatCanBeUsedThisEmojiAsReaction": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "misskey:id"
+          }
+        },
+        "roleIdsThatCanNotBeUsedThisEmojiAsReaction": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "misskey:id"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "fileId"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/RoleCondFormulaValue",
+  "title": "RoleCondFormulaValue",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "#/components/schemas/RoleCondFormulaLogics"
+    },
+    {
+      "$ref": "#/components/schemas/RoleCondFormulaValueNot"
+    },
+    {
+      "$ref": "#/components/schemas/RoleCondFormulaValueIsLocalOrRemote"
+    },
+    {
+      "$ref": "#/components/schemas/RoleCondFormulaValueUserSettingBooleanSchema"
+    },
+    {
+      "$ref": "#/components/schemas/RoleCondFormulaValueAssignedRole"
+    },
+    {
+      "$ref": "#/components/schemas/RoleCondFormulaValueCreated"
+    },
+    {
+      "$ref": "#/components/schemas/RoleCondFormulaFollowersOrFollowingOrNotes"
+    }
+  ]
+}

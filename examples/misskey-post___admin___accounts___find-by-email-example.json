@@ -1,0 +1,27 @@
+{
+  "endpoint": "/admin/accounts/find-by-email",
+  "method": "POST",
+  "operationId": "post___admin___accounts___find-by-email",
+  "summary": "admin/accounts/find-by-email",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:account*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

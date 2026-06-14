@@ -1,0 +1,38 @@
+{
+  "endpoint": "/admin/emoji/set-category-bulk",
+  "method": "POST",
+  "operationId": "post___admin___emoji___set-category-bulk",
+  "summary": "admin/emoji/set-category-bulk",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:emoji*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "misskey:id"
+          }
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Use `null` to reset the category."
+        }
+      },
+      "required": [
+        "ids"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

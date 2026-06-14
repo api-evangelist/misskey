@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/App",
+  "title": "App",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "callbackUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "permission": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "secret": {
+      "type": "string"
+    },
+    "isAuthorized": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "callbackUrl",
+    "permission"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "endpoint": "/admin/abuse-user-reports",
+  "method": "POST",
+  "operationId": "post___admin___abuse-user-reports",
+  "summary": "admin/abuse-user-reports",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:abuse-user-reports*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 10
+        },
+        "sinceId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "untilId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "reporterOrigin": {
+          "type": "string",
+          "enum": [
+            "combined",
+            "local",
+            "remote"
+          ],
+          "default": "combined"
+        },
+        "targetUserOrigin": {
+          "type": "string",
+          "enum": [
+            "combined",
+            "local",
+            "remote"
+          ],
+          "default": "combined"
+        },
+        "forwarded": {
+          "type": "boolean",
+          "default": false
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        }
+      }
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

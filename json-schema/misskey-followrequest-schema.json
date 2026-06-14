@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/FollowRequest",
+  "title": "FollowRequest",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "follower": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    },
+    "followee": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    }
+  },
+  "required": [
+    "id",
+    "follower",
+    "followee"
+  ]
+}

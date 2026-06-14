@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/AbuseReportNotificationRecipient",
+  "title": "AbuseReportNotificationRecipient",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "email",
+        "webhook"
+      ]
+    },
+    "userId": {
+      "type": "string"
+    },
+    "user": {
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserLite"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "systemWebhookId": {
+      "type": "string"
+    },
+    "systemWebhook": {
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/SystemWebhook"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "isActive",
+    "updatedAt",
+    "name",
+    "method"
+  ]
+}

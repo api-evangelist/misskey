@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/RolePolicies",
+  "title": "RolePolicies",
+  "type": "object",
+  "properties": {
+    "gtlAvailable": {
+      "type": "boolean"
+    },
+    "ltlAvailable": {
+      "type": "boolean"
+    },
+    "canPublicNote": {
+      "type": "boolean"
+    },
+    "canScheduleNote": {
+      "type": "boolean"
+    },
+    "scheduleNoteLimit": {
+      "type": "integer"
+    },
+    "scheduleNoteMaxDays": {
+      "type": "integer"
+    },
+    "canInitiateConversation": {
+      "type": "boolean"
+    },
+    "canCreateContent": {
+      "type": "boolean"
+    },
+    "canUpdateContent": {
+      "type": "boolean"
+    },
+    "canDeleteContent": {
+      "type": "boolean"
+    },
+    "canPurgeAccount": {
+      "type": "boolean"
+    },
+    "canUpdateAvatar": {
+      "type": "boolean"
+    },
+    "canUpdateBanner": {
+      "type": "boolean"
+    },
+    "mentionLimit": {
+      "type": "integer"
+    },
+    "canInvite": {
+      "type": "boolean"
+    },
+    "inviteLimit": {
+      "type": "integer"
+    },
+    "inviteLimitCycle": {
+      "type": "integer"
+    },
+    "inviteExpirationTime": {
+      "type": "integer"
+    },
+    "canManageCustomEmojis": {
+      "type": "boolean"
+    },
+    "canManageAvatarDecorations": {
+      "type": "boolean"
+    },
+    "canSearchNotes": {
+      "type": "boolean"
+    },
+    "canUseTranslator": {
+      "type": "boolean"
+    },
+    "canUseDriveFileInSoundSettings": {
+      "type": "boolean"
+    },
+    "canUseReaction": {
+      "type": "boolean"
+    },
+    "canHideAds": {
+      "type": "boolean"
+    },
+    "driveCapacityMb": {
+      "type": "integer"
+    },
+    "maxFileSizeMb": {
+      "type": "integer"
+    },
+    "alwaysMarkNsfw": {
+      "type": "boolean"
+    },
+    "skipNsfwDetection": {
+      "type": "boolean"
+    },
+    "canUpdateBioMedia": {
+      "type": "boolean"
+    },
+    "pinLimit": {
+      "type": "integer"
+    },
+    "antennaLimit": {
+      "type": "integer"
+    },
+    "antennaNotesLimit": {
+      "type": "integer"
+    },
+    "wordMuteLimit": {
+      "type": "integer"
+    },
+    "webhookLimit": {
+      "type": "integer"
+    },
+    "clipLimit": {
+      "type": "integer"
+    },
+    "noteEachClipsLimit": {
+      "type": "integer"
+    },
+    "userListLimit": {
+      "type": "integer"
+    },
+    "userEachUserListsLimit": {
+      "type": "integer"
+    },
+    "rateLimitFactor": {
+      "type": "integer"
+    },
+    "avatarDecorationLimit": {
+      "type": "integer"
+    },
+    "canImportAntennas": {
+      "type": "boolean"
+    },
+    "canImportBlocking": {
+      "type": "boolean"
+    },
+    "canImportFollowing": {
+      "type": "boolean"
+    },
+    "canImportMuting": {
+      "type": "boolean"
+    },
+    "canImportUserLists": {
+      "type": "boolean"
+    },
+    "mutualLinkSectionLimit": {
+      "type": "integer"
+    },
+    "mutualLinkLimit": {
+      "type": "integer"
+    },
+    "chatAvailability": {
+      "type": "string",
+      "enum": [
+        "available",
+        "readonly",
+        "unavailable"
+      ]
+    }
+  },
+  "required": [
+    "gtlAvailable",
+    "ltlAvailable",
+    "canPublicNote",
+    "canScheduleNote",
+    "scheduleNoteLimit",
+    "scheduleNoteMaxDays",
+    "canInitiateConversation",
+    "canCreateContent",
+    "canUpdateContent",
+    "canDeleteContent",
+    "canPurgeAccount",
+    "canUpdateAvatar",
+    "canUpdateBanner",
+    "mentionLimit",
+    "canInvite",
+    "inviteLimit",
+    "inviteLimitCycle",
+    "inviteExpirationTime",
+    "canManageCustomEmojis",
+    "canManageAvatarDecorations",
+    "canSearchNotes",
+    "canUseTranslator",
+    "canUseDriveFileInSoundSettings",
+    "canUseReaction",
+    "canHideAds",
+    "driveCapacityMb",
+    "maxFileSizeMb",
+    "alwaysMarkNsfw",
+    "skipNsfwDetection",
+    "canUpdateBioMedia",
+    "pinLimit",
+    "antennaLimit",
+    "antennaNotesLimit",
+    "wordMuteLimit",
+    "webhookLimit",
+    "clipLimit",
+    "noteEachClipsLimit",
+    "userListLimit",
+    "userEachUserListsLimit",
+    "rateLimitFactor",
+    "avatarDecorationLimit",
+    "canImportAntennas",
+    "canImportBlocking",
+    "canImportFollowing",
+    "canImportMuting",
+    "canImportUserLists",
+    "mutualLinkSectionLimit",
+    "mutualLinkLimit",
+    "chatAvailability"
+  ]
+}

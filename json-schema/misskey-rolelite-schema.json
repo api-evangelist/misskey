@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/RoleLite",
+  "title": "RoleLite",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "name": {
+      "type": "string",
+      "example": "New Role"
+    },
+    "color": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "example": "#000000"
+    },
+    "iconUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "isModerator": {
+      "type": "boolean",
+      "example": false
+    },
+    "isAdministrator": {
+      "type": "boolean",
+      "example": false
+    },
+    "displayOrder": {
+      "type": "integer",
+      "example": 0
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "color",
+    "iconUrl",
+    "description",
+    "isModerator",
+    "isAdministrator",
+    "displayOrder"
+  ]
+}

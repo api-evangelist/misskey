@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/ModerationLog",
+  "title": "ModerationLog",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "type": {
+      "type": "string"
+    },
+    "info": {
+      "type": "object"
+    },
+    "userId": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "user": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserDetailed"
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "type",
+    "info",
+    "userId",
+    "user"
+  ]
+}

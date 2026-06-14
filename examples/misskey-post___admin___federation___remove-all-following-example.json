@@ -1,0 +1,27 @@
+{
+  "endpoint": "/admin/federation/remove-all-following",
+  "method": "POST",
+  "operationId": "post___admin___federation___remove-all-following",
+  "summary": "admin/federation/remove-all-following",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:federation*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "host"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

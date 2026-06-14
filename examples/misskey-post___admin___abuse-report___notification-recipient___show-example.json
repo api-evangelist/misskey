@@ -1,0 +1,28 @@
+{
+  "endpoint": "/admin/abuse-report/notification-recipient/show",
+  "method": "POST",
+  "operationId": "post___admin___abuse-report___notification-recipient___show",
+  "summary": "admin/abuse-report/notification-recipient/show",
+  "description": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes* / **Permission**: *read:admin:abuse-report:notification-recipient*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "misskey:id"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

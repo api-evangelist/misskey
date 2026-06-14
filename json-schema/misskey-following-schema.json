@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Following",
+  "title": "Following",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "followeeId": {
+      "type": "string",
+      "format": "id"
+    },
+    "followerId": {
+      "type": "string",
+      "format": "id"
+    },
+    "followee": {
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserDetailedNotMe"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "follower": {
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserDetailedNotMe"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "followeeId",
+    "followerId"
+  ]
+}

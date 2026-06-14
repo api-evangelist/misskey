@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/UserAccountMoveLog",
+  "title": "UserAccountMoveLog",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "movedToId": {
+      "type": "string",
+      "format": "id"
+    },
+    "movedTo": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserDetailed"
+    },
+    "movedFromId": {
+      "type": "string",
+      "format": "id"
+    },
+    "movedFrom": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserDetailed"
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "movedToId",
+    "movedTo",
+    "movedFromId",
+    "movedFrom"
+  ]
+}

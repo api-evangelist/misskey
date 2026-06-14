@@ -1,0 +1,27 @@
+{
+  "endpoint": "/admin/federation/delete-all-files",
+  "method": "POST",
+  "operationId": "post___admin___federation___delete-all-files",
+  "summary": "admin/federation/delete-all-files",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:federation*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "host"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/MetaLite",
+  "title": "MetaLite",
+  "type": "object",
+  "properties": {
+    "maintainerName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "maintainerEmail": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shortName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "uri": {
+      "type": "string",
+      "format": "url",
+      "example": "https://misskey.example.com"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "langs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dimensions": {
+      "type": "number",
+      "minimum": 1
+    },
+    "tosUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "repositoryUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": "https://github.com/misskey-dev/misskey"
+    },
+    "feedbackUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": "https://github.com/misskey-dev/misskey/issues/new"
+    },
+    "defaultDarkTheme": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "defaultLightTheme": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "disableRegistration": {
+      "type": "boolean"
+    },
+    "emailRequiredForSignup": {
+      "type": "boolean"
+    },
+    "enableHcaptcha": {
+      "type": "boolean"
+    },
+    "hcaptchaSiteKey": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "enableMcaptcha": {
+      "type": "boolean"
+    },
+    "mcaptchaSiteKey": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mcaptchaInstanceUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "enableRecaptcha": {
+      "type": "boolean"
+    },
+    "recaptchaSiteKey": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "enableTurnstile": {
+      "type": "boolean"
+    },
+    "turnstileSiteKey": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "googleAnalyticsId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "enableTestcaptcha": {
+      "type": "boolean"
+    },
+    "swPublickey": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mascotImageUrl": {
+      "type": "string",
+      "default": "/assets/ai.png"
+    },
+    "bannerUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "serverErrorImageUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "infoImageUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notFoundImageUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "iconUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "maxNoteTextLength": {
+      "type": "number"
+    },
+    "ads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "id",
+            "example": "xxxxxxxxxx"
+          },
+          "url": {
+            "type": "string",
+            "format": "url"
+          },
+          "place": {
+            "type": "string",
+            "enum": [
+              "square",
+              "horizontal",
+              "horizontal-big",
+              "vertical"
+            ]
+          },
+          "ratio": {
+            "type": "number"
+          },
+          "imageUrl": {
+            "type": "string",
+            "format": "url"
+          },
+          "imageBlurhash": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "dayOfWeek": {
+            "type": "integer"
+          },
+          "isSensitive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "url",
+          "place",
+          "ratio",
+          "imageUrl",
+          "imageBlurhash",
+          "dayOfWeek",
+          "isSensitive"
+        ]
+      }
+    },
+    "wellKnownWebsites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notesPerOneAd": {
+      "type": "number",
+      "default": 0
+    },
+    "enableEmail": {
+      "type": "boolean"
+    },
+    "enableServiceWorker": {
+      "type": "boolean"
+    },
+    "translatorAvailable": {
+      "type": "boolean"
+    },
+    "sentryForFrontend": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "options": {
+          "type": "object",
+          "properties": {
+            "dsn": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "dsn"
+          ]
+        },
+        "vueIntegration": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "browserTracingIntegration": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "replayIntegration": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "options"
+      ]
+    },
+    "mediaProxy": {
+      "type": "string"
+    },
+    "enableUrlPreview": {
+      "type": "boolean"
+    },
+    "enableSkebStatus": {
+      "type": "boolean"
+    },
+    "backgroundImageUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "impressumUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "logoImageUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "privacyPolicyUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "inquiryUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "serverRules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "themeColor": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "policies": {
+      "type": "object",
+      "$ref": "#/components/schemas/RolePolicies"
+    },
+    "noteSearchableScope": {
+      "type": "string",
+      "enum": [
+        "local",
+        "global"
+      ],
+      "default": "local"
+    },
+    "maxFileSize": {
+      "type": "number"
+    },
+    "federation": {
+      "type": "string",
+      "enum": [
+        "all",
+        "specified",
+        "none"
+      ]
+    }
+  },
+  "required": [
+    "maintainerName",
+    "maintainerEmail",
+    "version",
+    "name",
+    "shortName",
+    "uri",
+    "description",
+    "langs",
+    "dimensions",
+    "tosUrl",
+    "repositoryUrl",
+    "feedbackUrl",
+    "defaultDarkTheme",
+    "defaultLightTheme",
+    "disableRegistration",
+    "emailRequiredForSignup",
+    "enableHcaptcha",
+    "hcaptchaSiteKey",
+    "enableMcaptcha",
+    "mcaptchaSiteKey",
+    "mcaptchaInstanceUrl",
+    "enableRecaptcha",
+    "recaptchaSiteKey",
+    "enableTurnstile",
+    "turnstileSiteKey",
+    "googleAnalyticsId",
+    "enableTestcaptcha",
+    "swPublickey",
+    "mascotImageUrl",
+    "bannerUrl",
+    "serverErrorImageUrl",
+    "infoImageUrl",
+    "notFoundImageUrl",
+    "iconUrl",
+    "maxNoteTextLength",
+    "ads",
+    "wellKnownWebsites",
+    "notesPerOneAd",
+    "enableEmail",
+    "enableServiceWorker",
+    "translatorAvailable",
+    "sentryForFrontend",
+    "mediaProxy",
+    "enableUrlPreview",
+    "enableSkebStatus",
+    "backgroundImageUrl",
+    "impressumUrl",
+    "logoImageUrl",
+    "privacyPolicyUrl",
+    "inquiryUrl",
+    "serverRules",
+    "themeColor",
+    "policies",
+    "noteSearchableScope",
+    "maxFileSize",
+    "federation"
+  ]
+}

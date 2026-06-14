@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/ReversiGameDetailed",
+  "title": "ReversiGameDetailed",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "startedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "endedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "isStarted": {
+      "type": "boolean"
+    },
+    "isEnded": {
+      "type": "boolean"
+    },
+    "form1": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "form2": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "user1Ready": {
+      "type": "boolean"
+    },
+    "user2Ready": {
+      "type": "boolean"
+    },
+    "user1Id": {
+      "type": "string",
+      "format": "id"
+    },
+    "user2Id": {
+      "type": "string",
+      "format": "id"
+    },
+    "user1": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    },
+    "user2": {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    },
+    "winnerId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id"
+    },
+    "winner": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/UserLite"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "surrenderedUserId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id"
+    },
+    "timeoutUserId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "id"
+    },
+    "black": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "bw": {
+      "type": "string"
+    },
+    "noIrregularRules": {
+      "type": "boolean"
+    },
+    "isLlotheo": {
+      "type": "boolean"
+    },
+    "canPutEverywhere": {
+      "type": "boolean"
+    },
+    "loopedBoard": {
+      "type": "boolean"
+    },
+    "timeLimitForEachTurn": {
+      "type": "number"
+    },
+    "logs": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        }
+      }
+    },
+    "map": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "startedAt",
+    "endedAt",
+    "isStarted",
+    "isEnded",
+    "form1",
+    "form2",
+    "user1Ready",
+    "user2Ready",
+    "user1Id",
+    "user2Id",
+    "user1",
+    "user2",
+    "winnerId",
+    "winner",
+    "surrenderedUserId",
+    "timeoutUserId",
+    "black",
+    "bw",
+    "noIrregularRules",
+    "isLlotheo",
+    "canPutEverywhere",
+    "loopedBoard",
+    "timeLimitForEachTurn",
+    "logs",
+    "map"
+  ]
+}

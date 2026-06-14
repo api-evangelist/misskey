@@ -1,0 +1,42 @@
+{
+  "endpoint": "/admin/ad/list",
+  "method": "POST",
+  "operationId": "post___admin___ad___list",
+  "summary": "admin/ad/list",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:ad*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 10
+        },
+        "sinceId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "untilId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "publishing": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": null
+        }
+      }
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

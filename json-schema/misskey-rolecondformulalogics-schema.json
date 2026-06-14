@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/RoleCondFormulaLogics",
+  "title": "RoleCondFormulaLogics",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "and",
+        "or"
+      ]
+    },
+    "values": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RoleCondFormulaValue"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "values"
+  ]
+}

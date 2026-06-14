@@ -1,0 +1,233 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "hydra": "http://www.w3.org/ns/hydra/core#",
+    "misskey": "https://misskey.io/vocab/"
+  },
+  "@type": "WebAPI",
+  "@id": "https://misskey.io/api",
+  "name": "Misskey API",
+  "description": "Misskey federated social network API",
+  "version": "2025.4.1-io.12b-fb6fbea074",
+  "url": "https://misskey.io/api",
+  "documentation": "https://misskey-hub.net/en/docs/for-developers/api/",
+  "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+  "termsOfService": "https://misskey.io/about-misskey",
+  "provider": {
+    "@type": "Organization",
+    "name": "misskey-dev",
+    "url": "https://github.com/misskey-dev"
+  },
+  "hydra:supportedOperation": [
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-report-resolver/create",
+      "@id": "https://misskey.io/api/admin/abuse-report-resolver/create",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:abuse-report-resolvers*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-report-resolver/delete",
+      "@id": "https://misskey.io/api/admin/abuse-report-resolver/delete",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:abuse-report-resolvers*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-report-resolver/list",
+      "@id": "https://misskey.io/api/admin/abuse-report-resolver/list",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:abuse-report-resolvers*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-report-resolver/update",
+      "@id": "https://misskey.io/api/admin/abuse-report-resolver/update",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:abuse-report-resolvers*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-report/notification-recipient/create",
+      "@id": "https://misskey.io/api/admin/abuse-report/notification-recipient/create",
+      "hydra:description": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes* / **Permission**: *write:admin:abuse-report:notification-recipient*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-report/notification-recipient/delete",
+      "@id": "https://misskey.io/api/admin/abuse-report/notification-recipient/delete",
+      "hydra:description": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes* / **Permission**: *write:admin:abuse-report:notification-recipient*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-report/notification-recipient/list",
+      "@id": "https://misskey.io/api/admin/abuse-report/notification-recipient/list",
+      "hydra:description": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes* / **Permission**: *read:admin:abuse-report:notification-recipient*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-report/notification-recipient/show",
+      "@id": "https://misskey.io/api/admin/abuse-report/notification-recipient/show",
+      "hydra:description": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes* / **Permission**: *read:admin:abuse-report:notification-recipient*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-report/notification-recipient/update",
+      "@id": "https://misskey.io/api/admin/abuse-report/notification-recipient/update",
+      "hydra:description": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes* / **Permission**: *write:admin:abuse-report:notification-recipient*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/abuse-user-reports",
+      "@id": "https://misskey.io/api/admin/abuse-user-reports",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:abuse-user-reports*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/accounts/create",
+      "@id": "https://misskey.io/api/admin/accounts/create",
+      "hydra:description": "No description provided.\n\n**Credential required**: *No*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/accounts/delete",
+      "@id": "https://misskey.io/api/admin/accounts/delete",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:account*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/accounts/find-by-email",
+      "@id": "https://misskey.io/api/admin/accounts/find-by-email",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:account*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/accounts/pending/list",
+      "@id": "https://misskey.io/api/admin/accounts/pending/list",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:account*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/accounts/pending/revoke",
+      "@id": "https://misskey.io/api/admin/accounts/pending/revoke",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:account*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/ad/create",
+      "@id": "https://misskey.io/api/admin/ad/create",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:ad*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/ad/delete",
+      "@id": "https://misskey.io/api/admin/ad/delete",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:ad*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/ad/list",
+      "@id": "https://misskey.io/api/admin/ad/list",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:ad*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/ad/update",
+      "@id": "https://misskey.io/api/admin/ad/update",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:ad*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/announcements/create",
+      "@id": "https://misskey.io/api/admin/announcements/create",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:announcements*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/announcements/delete",
+      "@id": "https://misskey.io/api/admin/announcements/delete",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:announcements*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/announcements/list",
+      "@id": "https://misskey.io/api/admin/announcements/list",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:announcements*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/announcements/update",
+      "@id": "https://misskey.io/api/admin/announcements/update",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:announcements*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/avatar-decorations/create",
+      "@id": "https://misskey.io/api/admin/avatar-decorations/create",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:avatar-decorations*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/avatar-decorations/delete",
+      "@id": "https://misskey.io/api/admin/avatar-decorations/delete",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:avatar-decorations*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/avatar-decorations/list",
+      "@id": "https://misskey.io/api/admin/avatar-decorations/list",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:avatar-decorations*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/avatar-decorations/update",
+      "@id": "https://misskey.io/api/admin/avatar-decorations/update",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:avatar-decorations*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/captcha/current",
+      "@id": "https://misskey.io/api/admin/captcha/current",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:meta*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/captcha/save",
+      "@id": "https://misskey.io/api/admin/captcha/save",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:meta*"
+    },
+    {
+      "@type": "hydra:Operation",
+      "hydra:method": "POST",
+      "hydra:title": "admin/drive/clean-remote-files",
+      "@id": "https://misskey.io/api/admin/drive/clean-remote-files",
+      "hydra:description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:drive*"
+    }
+  ]
+}

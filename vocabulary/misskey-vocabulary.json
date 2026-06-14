@@ -1,0 +1,4046 @@
+{
+  "title": "Misskey API Vocabulary",
+  "description": "Terms extracted from the Misskey API OpenAPI specification",
+  "source": "https://misskey.io/api.json",
+  "terms": [
+    {
+      "term": "error",
+      "type": "object",
+      "description": "An error object.",
+      "usedIn": [
+        "Error"
+      ]
+    },
+    {
+      "term": "id",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserLite",
+        "UserList",
+        "UserListMembership",
+        "UserAccountMoveLog",
+        "Ad",
+        "Announcement",
+        "App",
+        "Note",
+        "NoteDraft",
+        "NoteReaction",
+        "NoteFavorite",
+        "DriveFile",
+        "DriveFolder",
+        "Following",
+        "FollowRequest",
+        "Muting",
+        "RenoteMuting",
+        "Blocking",
+        "InviteCode",
+        "Page",
+        "PageLike",
+        "Channel",
+        "Antenna",
+        "Clip",
+        "FederationInstance",
+        "GalleryPost",
+        "GalleryLike",
+        "EmojiDetailed",
+        "EmojiDetailedAdmin",
+        "Flash",
+        "FlashLike",
+        "Signin",
+        "RoleCondFormulaLogics",
+        "RoleCondFormulaValueNot",
+        "RoleCondFormulaValueIsLocalOrRemote",
+        "RoleCondFormulaValueUserSettingBooleanSchema",
+        "RoleCondFormulaValueAssignedRole",
+        "RoleCondFormulaValueCreated",
+        "RoleCondFormulaFollowersOrFollowingOrNotes",
+        "RoleLite",
+        "ReversiGameLite",
+        "ReversiGameDetailed",
+        "AbuseUserReport",
+        "ModerationLog",
+        "SystemWebhook",
+        "AbuseReportNotificationRecipient",
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteFor1on1",
+        "ChatMessageLiteForRoom",
+        "ChatRoom",
+        "ChatRoomInvitation",
+        "ChatRoomMembership"
+      ]
+    },
+    {
+      "term": "name",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserLite",
+        "UserList",
+        "App",
+        "DriveFile",
+        "DriveFolder",
+        "Page",
+        "Channel",
+        "Antenna",
+        "Clip",
+        "FederationInstance",
+        "EmojiSimple",
+        "EmojiDetailed",
+        "EmojiDetailedAdmin",
+        "RoleLite",
+        "MetaLite",
+        "SystemWebhook",
+        "AbuseReportNotificationRecipient",
+        "ChatRoom"
+      ]
+    },
+    {
+      "term": "username",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "host",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The local host is represented with `null`.",
+      "usedIn": [
+        "UserLite",
+        "FederationInstance",
+        "EmojiDetailed",
+        "EmojiDetailedAdmin"
+      ]
+    },
+    {
+      "term": "avatarUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "avatarBlurhash",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "avatarDecorations",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "isBot",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "isCat",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "requireSigninToViewContents",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "makeNotesFollowersOnlyBefore",
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "makeNotesHiddenBefore",
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "instance",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "emojis",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "UserLite",
+        "Note"
+      ]
+    },
+    {
+      "term": "onlineStatus",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "badgeRoles",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "UserLite"
+      ]
+    },
+    {
+      "term": "url",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Ad",
+        "Note",
+        "DriveFile",
+        "EmojiSimple",
+        "EmojiDetailed",
+        "SystemWebhook"
+      ]
+    },
+    {
+      "term": "uri",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Note",
+        "EmojiDetailedAdmin",
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "movedTo",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "UserAccountMoveLog"
+      ]
+    },
+    {
+      "term": "alsoKnownAs",
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "createdAt",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "UserList",
+        "UserListMembership",
+        "UserAccountMoveLog",
+        "Announcement",
+        "Note",
+        "NoteReaction",
+        "NoteFavorite",
+        "DriveFile",
+        "DriveFolder",
+        "Following",
+        "Muting",
+        "RenoteMuting",
+        "Blocking",
+        "InviteCode",
+        "Page",
+        "Channel",
+        "Antenna",
+        "Clip",
+        "GalleryPost",
+        "EmojiDetailed",
+        "Flash",
+        "Signin",
+        "ReversiGameLite",
+        "ReversiGameDetailed",
+        "AbuseUserReport",
+        "ModerationLog",
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteFor1on1",
+        "ChatMessageLiteForRoom",
+        "ChatRoom",
+        "ChatRoomInvitation",
+        "ChatRoomMembership"
+      ]
+    },
+    {
+      "term": "updatedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Announcement",
+        "NoteDraft",
+        "Page",
+        "GalleryPost",
+        "EmojiDetailed",
+        "EmojiDetailedAdmin",
+        "Flash",
+        "SystemWebhook",
+        "AbuseReportNotificationRecipient"
+      ]
+    },
+    {
+      "term": "lastFetchedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "bannerUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Channel",
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "bannerBlurhash",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "isLocked",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "isSilenced",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "isLimited",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "isSuspended",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "description",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Channel",
+        "Clip",
+        "FederationInstance",
+        "GalleryPost",
+        "RoleLite",
+        "MetaLite",
+        "ChatRoom"
+      ]
+    },
+    {
+      "term": "location",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "birthday",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "lang",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "fields",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "verifiedLinks",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "followersCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "followingCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "notesCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Channel",
+        "Clip",
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "pinnedNoteIds",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Channel"
+      ]
+    },
+    {
+      "term": "pinnedNotes",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Channel"
+      ]
+    },
+    {
+      "term": "pinnedPageId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "pinnedPage",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "publicReactions",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "followingVisibility",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "followersVisibility",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "chatScope",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "canChat",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "roles",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "followedMessage",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "memo",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Ad",
+        "EmojiDetailed"
+      ]
+    },
+    {
+      "term": "moderationNote",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "FederationInstance",
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "twoFactorEnabled",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "usePasswordLessLogin",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "securityKeys",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "mutualLinkSections",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "isFollowing",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Channel"
+      ]
+    },
+    {
+      "term": "isFollowed",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "hasPendingFollowRequestFromYou",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "hasPendingFollowRequestToYou",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "isBlocking",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "isBlocked",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "isMuted",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "ChatRoom"
+      ]
+    },
+    {
+      "term": "isRenoteMuted",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly"
+      ]
+    },
+    {
+      "term": "notify",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "Antenna"
+      ]
+    },
+    {
+      "term": "withReplies",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserDetailedNotMeOnly",
+        "UserListMembership",
+        "Antenna"
+      ]
+    },
+    {
+      "term": "avatarId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "bannerId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "isModerator",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly",
+        "RoleLite"
+      ]
+    },
+    {
+      "term": "isAdmin",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "injectFeaturedNote",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "receiveAnnouncementEmail",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "alwaysMarkNsfw",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly",
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "autoSensitive",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "carefulBot",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "autoAcceptFollowed",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "noCrawle",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "preventAiLearning",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "isExplorable",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "isDeleted",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "twoFactorBackupCodesStock",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "hideOnlineStatus",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "hasUnreadSpecifiedNotes",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "hasUnreadMentions",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "hasUnreadAnnouncement",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "unreadAnnouncements",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "hasUnreadAntenna",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "hasUnreadChannel",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "hasUnreadChatMessages",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "hasUnreadNotification",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "hasPendingReceivedFollowRequest",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "unreadNotificationsCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "mutedWords",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "mutedInstances",
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "postingLang",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "viewingLangs",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "showMediaInAllLanguages",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "showHashtagsInAllLanguages",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "notificationRecieveConfig",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "emailNotificationTypes",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "achievements",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "loggedInDays",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "policies",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly",
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "email",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "emailVerified",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "securityKeysList",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MeDetailedOnly"
+      ]
+    },
+    {
+      "term": "userIds",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "UserList"
+      ]
+    },
+    {
+      "term": "isPublic",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "UserList",
+        "Clip"
+      ]
+    },
+    {
+      "term": "userId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserListMembership",
+        "Note",
+        "DriveFile",
+        "Page",
+        "Channel",
+        "Clip",
+        "GalleryPost",
+        "Flash",
+        "ModerationLog",
+        "AbuseReportNotificationRecipient",
+        "ChatRoomInvitation",
+        "ChatRoomMembership"
+      ]
+    },
+    {
+      "term": "user",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "UserListMembership",
+        "Note",
+        "NoteReaction",
+        "DriveFile",
+        "Page",
+        "Clip",
+        "GalleryPost",
+        "Flash",
+        "ModerationLog",
+        "AbuseReportNotificationRecipient",
+        "ChatRoomInvitation",
+        "ChatRoomMembership"
+      ]
+    },
+    {
+      "term": "movedToId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserAccountMoveLog"
+      ]
+    },
+    {
+      "term": "movedFromId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "UserAccountMoveLog"
+      ]
+    },
+    {
+      "term": "movedFrom",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "UserAccountMoveLog"
+      ]
+    },
+    {
+      "term": "expiresAt",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Ad",
+        "Muting",
+        "InviteCode"
+      ]
+    },
+    {
+      "term": "startsAt",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Ad"
+      ]
+    },
+    {
+      "term": "place",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Ad"
+      ]
+    },
+    {
+      "term": "priority",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Ad"
+      ]
+    },
+    {
+      "term": "ratio",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Ad"
+      ]
+    },
+    {
+      "term": "imageUrl",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Ad",
+        "Announcement"
+      ]
+    },
+    {
+      "term": "imageBlurhash",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Ad"
+      ]
+    },
+    {
+      "term": "dayOfWeek",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "Ad"
+      ]
+    },
+    {
+      "term": "isSensitive",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Ad",
+        "DriveFile",
+        "Channel",
+        "GalleryPost",
+        "EmojiSimple",
+        "EmojiDetailed",
+        "EmojiDetailedAdmin"
+      ]
+    },
+    {
+      "term": "text",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Announcement",
+        "Note",
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteFor1on1",
+        "ChatMessageLiteForRoom"
+      ]
+    },
+    {
+      "term": "title",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Announcement",
+        "Page",
+        "GalleryPost",
+        "Flash"
+      ]
+    },
+    {
+      "term": "icon",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Announcement"
+      ]
+    },
+    {
+      "term": "display",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Announcement"
+      ]
+    },
+    {
+      "term": "needConfirmationToRead",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Announcement"
+      ]
+    },
+    {
+      "term": "needEnrollmentTutorialToRead",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Announcement"
+      ]
+    },
+    {
+      "term": "forYou",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Announcement"
+      ]
+    },
+    {
+      "term": "closeDuration",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Announcement"
+      ]
+    },
+    {
+      "term": "displayOrder",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Announcement",
+        "RoleLite"
+      ]
+    },
+    {
+      "term": "silence",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Announcement"
+      ]
+    },
+    {
+      "term": "isRead",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Announcement",
+        "ChatMessage"
+      ]
+    },
+    {
+      "term": "callbackUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "App"
+      ]
+    },
+    {
+      "term": "permission",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "App"
+      ]
+    },
+    {
+      "term": "secret",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "App",
+        "SystemWebhook"
+      ]
+    },
+    {
+      "term": "isAuthorized",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "App"
+      ]
+    },
+    {
+      "term": "deletedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "cw",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "replyId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "renoteId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "reply",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note",
+        "NoteDraft"
+      ]
+    },
+    {
+      "term": "renote",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note",
+        "NoteDraft"
+      ]
+    },
+    {
+      "term": "isHidden",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "visibility",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Note",
+        "Page",
+        "Flash"
+      ]
+    },
+    {
+      "term": "mentions",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "visibleUserIds",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "fileIds",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Note",
+        "GalleryPost"
+      ]
+    },
+    {
+      "term": "files",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Note",
+        "GalleryPost"
+      ]
+    },
+    {
+      "term": "tags",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Note",
+        "GalleryPost"
+      ]
+    },
+    {
+      "term": "poll",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "channelId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "channel",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note",
+        "NoteDraft"
+      ]
+    },
+    {
+      "term": "localOnly",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Note",
+        "Antenna",
+        "EmojiSimple",
+        "EmojiDetailed",
+        "EmojiDetailedAdmin"
+      ]
+    },
+    {
+      "term": "dimension",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "reactionAcceptance",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "reactionEmojis",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "reactions",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "Note",
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteFor1on1",
+        "ChatMessageLiteForRoom"
+      ]
+    },
+    {
+      "term": "reactionCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "renoteCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "repliesCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "reactionAndUserPairCache",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "clippedCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "myReaction",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Note"
+      ]
+    },
+    {
+      "term": "scheduledAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "NoteDraft"
+      ]
+    },
+    {
+      "term": "reason",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "NoteDraft"
+      ]
+    },
+    {
+      "term": "data",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "NoteDraft"
+      ]
+    },
+    {
+      "term": "type",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "NoteReaction",
+        "DriveFile",
+        "EmojiDetailedAdmin",
+        "RoleCondFormulaLogics",
+        "RoleCondFormulaValueNot",
+        "RoleCondFormulaValueIsLocalOrRemote",
+        "RoleCondFormulaValueUserSettingBooleanSchema",
+        "RoleCondFormulaValueAssignedRole",
+        "RoleCondFormulaValueCreated",
+        "RoleCondFormulaFollowersOrFollowingOrNotes",
+        "ModerationLog"
+      ]
+    },
+    {
+      "term": "note",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "NoteFavorite"
+      ]
+    },
+    {
+      "term": "noteId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "NoteFavorite"
+      ]
+    },
+    {
+      "term": "md5",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "DriveFile"
+      ]
+    },
+    {
+      "term": "size",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "DriveFile"
+      ]
+    },
+    {
+      "term": "isSensitiveByModerator",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "DriveFile"
+      ]
+    },
+    {
+      "term": "blurhash",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "DriveFile"
+      ]
+    },
+    {
+      "term": "properties",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "DriveFile"
+      ]
+    },
+    {
+      "term": "thumbnailUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "DriveFile"
+      ]
+    },
+    {
+      "term": "comment",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "DriveFile",
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "folderId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "DriveFile"
+      ]
+    },
+    {
+      "term": "folder",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "DriveFile"
+      ]
+    },
+    {
+      "term": "parentId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "DriveFolder"
+      ]
+    },
+    {
+      "term": "foldersCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "DriveFolder"
+      ]
+    },
+    {
+      "term": "filesCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "DriveFolder"
+      ]
+    },
+    {
+      "term": "parent",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "DriveFolder"
+      ]
+    },
+    {
+      "term": "followeeId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Following"
+      ]
+    },
+    {
+      "term": "followerId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Following"
+      ]
+    },
+    {
+      "term": "followee",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "Following",
+        "FollowRequest"
+      ]
+    },
+    {
+      "term": "follower",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "Following",
+        "FollowRequest"
+      ]
+    },
+    {
+      "term": "muteeId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Muting",
+        "RenoteMuting"
+      ]
+    },
+    {
+      "term": "mutee",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "Muting",
+        "RenoteMuting"
+      ]
+    },
+    {
+      "term": "blockeeId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Blocking"
+      ]
+    },
+    {
+      "term": "blockee",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "Blocking"
+      ]
+    },
+    {
+      "term": "tag",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Hashtag"
+      ]
+    },
+    {
+      "term": "mentionedUsersCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Hashtag"
+      ]
+    },
+    {
+      "term": "mentionedLocalUsersCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Hashtag"
+      ]
+    },
+    {
+      "term": "mentionedRemoteUsersCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Hashtag"
+      ]
+    },
+    {
+      "term": "attachedUsersCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Hashtag"
+      ]
+    },
+    {
+      "term": "attachedLocalUsersCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Hashtag"
+      ]
+    },
+    {
+      "term": "attachedRemoteUsersCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Hashtag"
+      ]
+    },
+    {
+      "term": "code",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "InviteCode"
+      ]
+    },
+    {
+      "term": "createdBy",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "InviteCode"
+      ]
+    },
+    {
+      "term": "usedBy",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "InviteCode"
+      ]
+    },
+    {
+      "term": "usedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "InviteCode"
+      ]
+    },
+    {
+      "term": "used",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "InviteCode"
+      ]
+    },
+    {
+      "term": "content",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Page"
+      ]
+    },
+    {
+      "term": "variables",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Page"
+      ]
+    },
+    {
+      "term": "summary",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Page",
+        "Flash"
+      ]
+    },
+    {
+      "term": "hideTitleWhenPinned",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Page"
+      ]
+    },
+    {
+      "term": "alignCenter",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Page"
+      ]
+    },
+    {
+      "term": "font",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Page"
+      ]
+    },
+    {
+      "term": "script",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Page",
+        "Flash"
+      ]
+    },
+    {
+      "term": "eyeCatchingImageId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Page"
+      ]
+    },
+    {
+      "term": "eyeCatchingImage",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Page"
+      ]
+    },
+    {
+      "term": "attachedFiles",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Page"
+      ]
+    },
+    {
+      "term": "likedCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Page",
+        "GalleryPost",
+        "Flash"
+      ]
+    },
+    {
+      "term": "isLiked",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Page",
+        "GalleryPost",
+        "Flash"
+      ]
+    },
+    {
+      "term": "page",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "PageLike"
+      ]
+    },
+    {
+      "term": "lastNotedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Channel"
+      ]
+    },
+    {
+      "term": "color",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Channel",
+        "RoleLite"
+      ]
+    },
+    {
+      "term": "isArchived",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Channel"
+      ]
+    },
+    {
+      "term": "usersCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Channel",
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "allowRenoteToExternal",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Channel"
+      ]
+    },
+    {
+      "term": "isFavorited",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Channel",
+        "Clip"
+      ]
+    },
+    {
+      "term": "waiting",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "QueueCount"
+      ]
+    },
+    {
+      "term": "active",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "QueueCount"
+      ]
+    },
+    {
+      "term": "completed",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "QueueCount"
+      ]
+    },
+    {
+      "term": "failed",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "QueueCount"
+      ]
+    },
+    {
+      "term": "delayed",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "QueueCount"
+      ]
+    },
+    {
+      "term": "keywords",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "excludeKeywords",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "src",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "userListId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "users",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "caseSensitive",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "excludeBots",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "withFile",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "isActive",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Antenna",
+        "SystemWebhook",
+        "AbuseReportNotificationRecipient"
+      ]
+    },
+    {
+      "term": "hasUnreadNote",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "excludeNotesInSensitiveChannel",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Antenna"
+      ]
+    },
+    {
+      "term": "lastClippedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "Clip"
+      ]
+    },
+    {
+      "term": "favoritedCount",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "Clip"
+      ]
+    },
+    {
+      "term": "firstRetrievedAt",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "isNotResponding",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "suspensionState",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "softwareName",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "softwareVersion",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "openRegistrations",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "maintainerName",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance",
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "maintainerEmail",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance",
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "isSensitiveMedia",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "iconUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance",
+        "RoleLite",
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "faviconUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "themeColor",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance",
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "infoUpdatedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "latestRequestReceivedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "FederationInstance"
+      ]
+    },
+    {
+      "term": "post",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "GalleryLike"
+      ]
+    },
+    {
+      "term": "aliases",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "EmojiSimple",
+        "EmojiDetailed",
+        "EmojiDetailedAdmin"
+      ]
+    },
+    {
+      "term": "category",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "EmojiSimple",
+        "EmojiDetailed",
+        "EmojiDetailedAdmin",
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "roleIdsThatCanBeUsedThisEmojiAsReaction",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "EmojiSimple",
+        "EmojiDetailed",
+        "EmojiDetailedAdmin"
+      ]
+    },
+    {
+      "term": "roleIdsThatCanNotBeUsedThisEmojiAsReaction",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "EmojiSimple",
+        "EmojiDetailed"
+      ]
+    },
+    {
+      "term": "license",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "EmojiDetailed",
+        "EmojiDetailedAdmin"
+      ]
+    },
+    {
+      "term": "requestedBy",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "EmojiDetailed"
+      ]
+    },
+    {
+      "term": "publicUrl",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "EmojiDetailedAdmin"
+      ]
+    },
+    {
+      "term": "originalUrl",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "EmojiDetailedAdmin"
+      ]
+    },
+    {
+      "term": "flash",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "FlashLike"
+      ]
+    },
+    {
+      "term": "ip",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "Signin"
+      ]
+    },
+    {
+      "term": "headers",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "Signin"
+      ]
+    },
+    {
+      "term": "success",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "Signin"
+      ]
+    },
+    {
+      "term": "values",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "RoleCondFormulaLogics"
+      ]
+    },
+    {
+      "term": "value",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "RoleCondFormulaValueNot",
+        "RoleCondFormulaFollowersOrFollowingOrNotes"
+      ]
+    },
+    {
+      "term": "roleId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "RoleCondFormulaValueAssignedRole"
+      ]
+    },
+    {
+      "term": "sec",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "RoleCondFormulaValueCreated"
+      ]
+    },
+    {
+      "term": "isAdministrator",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RoleLite"
+      ]
+    },
+    {
+      "term": "gtlAvailable",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "ltlAvailable",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canPublicNote",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canScheduleNote",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "scheduleNoteLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "scheduleNoteMaxDays",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canInitiateConversation",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canCreateContent",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canUpdateContent",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canDeleteContent",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canPurgeAccount",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canUpdateAvatar",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canUpdateBanner",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "mentionLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canInvite",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "inviteLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "inviteLimitCycle",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "inviteExpirationTime",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canManageCustomEmojis",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canManageAvatarDecorations",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canSearchNotes",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canUseTranslator",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canUseDriveFileInSoundSettings",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canUseReaction",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canHideAds",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "driveCapacityMb",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "maxFileSizeMb",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "skipNsfwDetection",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canUpdateBioMedia",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "pinLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "antennaLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "antennaNotesLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "wordMuteLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "webhookLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "clipLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "noteEachClipsLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "userListLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "userEachUserListsLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "rateLimitFactor",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "avatarDecorationLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canImportAntennas",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canImportBlocking",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canImportFollowing",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canImportMuting",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "canImportUserLists",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "mutualLinkSectionLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "mutualLinkLimit",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "chatAvailability",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "RolePolicies"
+      ]
+    },
+    {
+      "term": "startedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "endedAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "isStarted",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "isEnded",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "user1Id",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "user2Id",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "user1",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "user2",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "winnerId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "winner",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "surrenderedUserId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "timeoutUserId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "black",
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "bw",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "noIrregularRules",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "isLlotheo",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "canPutEverywhere",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "loopedBoard",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "timeLimitForEachTurn",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "ReversiGameLite",
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "form1",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "form2",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "user1Ready",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "user2Ready",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "logs",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "map",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "ReversiGameDetailed"
+      ]
+    },
+    {
+      "term": "version",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "shortName",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "langs",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "dimensions",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "tosUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "repositoryUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "feedbackUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "defaultDarkTheme",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "defaultLightTheme",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "disableRegistration",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "emailRequiredForSignup",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "enableHcaptcha",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "hcaptchaSiteKey",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "enableMcaptcha",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "mcaptchaSiteKey",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "mcaptchaInstanceUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "enableRecaptcha",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "recaptchaSiteKey",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "enableTurnstile",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "turnstileSiteKey",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "googleAnalyticsId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "enableTestcaptcha",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "swPublickey",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "mascotImageUrl",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "serverErrorImageUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "infoImageUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "notFoundImageUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "maxNoteTextLength",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "ads",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "wellKnownWebsites",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "notesPerOneAd",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "enableEmail",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "enableServiceWorker",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "translatorAvailable",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "sentryForFrontend",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "mediaProxy",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "enableUrlPreview",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "enableSkebStatus",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "backgroundImageUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "impressumUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "logoImageUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "privacyPolicyUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "inquiryUrl",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "serverRules",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "noteSearchableScope",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "maxFileSize",
+      "type": "number",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "federation",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "MetaLite"
+      ]
+    },
+    {
+      "term": "features",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "MetaDetailedOnly"
+      ]
+    },
+    {
+      "term": "proxyAccountName",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "MetaDetailedOnly"
+      ]
+    },
+    {
+      "term": "requireSetup",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaDetailedOnly"
+      ]
+    },
+    {
+      "term": "cacheRemoteFiles",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaDetailedOnly"
+      ]
+    },
+    {
+      "term": "cacheRemoteSensitiveFiles",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "MetaDetailedOnly"
+      ]
+    },
+    {
+      "term": "resolved",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "reporterId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "reporter",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "targetUserId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "targetUser",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "assigneeId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "assignee",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "forwarded",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "AbuseUserReport"
+      ]
+    },
+    {
+      "term": "info",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "ModerationLog"
+      ]
+    },
+    {
+      "term": "latestSentAt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "SystemWebhook"
+      ]
+    },
+    {
+      "term": "latestStatus",
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "SystemWebhook"
+      ]
+    },
+    {
+      "term": "on",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "SystemWebhook"
+      ]
+    },
+    {
+      "term": "method",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AbuseReportNotificationRecipient"
+      ]
+    },
+    {
+      "term": "systemWebhookId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AbuseReportNotificationRecipient"
+      ]
+    },
+    {
+      "term": "systemWebhook",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "AbuseReportNotificationRecipient"
+      ]
+    },
+    {
+      "term": "fromUserId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteFor1on1",
+        "ChatMessageLiteForRoom"
+      ]
+    },
+    {
+      "term": "fromUser",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteForRoom"
+      ]
+    },
+    {
+      "term": "toUserId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteFor1on1"
+      ]
+    },
+    {
+      "term": "toUser",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ChatMessage"
+      ]
+    },
+    {
+      "term": "toRoomId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteForRoom"
+      ]
+    },
+    {
+      "term": "toRoom",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ChatMessage"
+      ]
+    },
+    {
+      "term": "fileId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteFor1on1",
+        "ChatMessageLiteForRoom"
+      ]
+    },
+    {
+      "term": "file",
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "",
+      "usedIn": [
+        "ChatMessage",
+        "ChatMessageLite",
+        "ChatMessageLiteFor1on1",
+        "ChatMessageLiteForRoom"
+      ]
+    },
+    {
+      "term": "ownerId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ChatRoom"
+      ]
+    },
+    {
+      "term": "owner",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "ChatRoom"
+      ]
+    },
+    {
+      "term": "roomId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ChatRoomInvitation",
+        "ChatRoomMembership"
+      ]
+    },
+    {
+      "term": "room",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "ChatRoomInvitation",
+        "ChatRoomMembership"
+      ]
+    }
+  ]
+}

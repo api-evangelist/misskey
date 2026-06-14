@@ -1,0 +1,28 @@
+{
+  "endpoint": "/admin/emoji/import-zip",
+  "method": "POST",
+  "operationId": "post___admin___emoji___import-zip",
+  "summary": "admin/emoji/import-zip",
+  "description": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "type": "string",
+          "format": "misskey:id"
+        }
+      },
+      "required": [
+        "fileId"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

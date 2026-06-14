@@ -1,0 +1,33 @@
+{
+  "endpoint": "/admin/accounts/delete",
+  "method": "POST",
+  "operationId": "post___admin___accounts___delete",
+  "summary": "admin/accounts/delete",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:account*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "format": "misskey:id"
+        },
+        "soft": {
+          "type": "boolean",
+          "default": true,
+          "description": "Since deletion by an administrator is a moderation action, the default is to soft delete."
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

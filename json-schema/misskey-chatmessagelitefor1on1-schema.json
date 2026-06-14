@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/ChatMessageLiteFor1on1",
+  "title": "ChatMessageLiteFor1on1",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "fromUserId": {
+      "type": "string"
+    },
+    "toUserId": {
+      "type": "string"
+    },
+    "text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fileId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "file": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/DriveFile"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reaction": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "reaction"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "fromUserId",
+    "toUserId",
+    "reactions"
+  ]
+}

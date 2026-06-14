@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Announcement",
+  "title": "Announcement",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "text": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "icon": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "error",
+        "success"
+      ]
+    },
+    "display": {
+      "type": "string",
+      "enum": [
+        "dialog",
+        "normal",
+        "banner"
+      ]
+    },
+    "needConfirmationToRead": {
+      "type": "boolean"
+    },
+    "needEnrollmentTutorialToRead": {
+      "type": "boolean"
+    },
+    "forYou": {
+      "type": "boolean"
+    },
+    "closeDuration": {
+      "type": "number"
+    },
+    "displayOrder": {
+      "type": "number"
+    },
+    "silence": {
+      "type": "boolean"
+    },
+    "isRead": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "updatedAt",
+    "text",
+    "title",
+    "imageUrl",
+    "icon",
+    "display",
+    "needConfirmationToRead",
+    "needEnrollmentTutorialToRead",
+    "forYou",
+    "closeDuration",
+    "displayOrder",
+    "silence"
+  ]
+}

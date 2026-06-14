@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/EmojiDetailed",
+  "title": "EmojiDetailed",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "host": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The local host is represented with `null`."
+    },
+    "url": {
+      "type": "string"
+    },
+    "license": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "isSensitive": {
+      "type": "boolean"
+    },
+    "localOnly": {
+      "type": "boolean"
+    },
+    "requestedBy": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "memo": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "roleIdsThatCanBeUsedThisEmojiAsReaction": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "roleIdsThatCanNotBeUsedThisEmojiAsReaction": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "aliases",
+    "name",
+    "category",
+    "host",
+    "url",
+    "license",
+    "isSensitive",
+    "localOnly"
+  ]
+}

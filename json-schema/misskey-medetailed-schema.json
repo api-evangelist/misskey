@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/MeDetailed",
+  "title": "MeDetailed",
+  "type": "object",
+  "allOf": [
+    {
+      "type": "object",
+      "$ref": "#/components/schemas/UserLite"
+    },
+    {
+      "type": "object",
+      "$ref": "#/components/schemas/UserDetailedNotMeOnly"
+    },
+    {
+      "type": "object",
+      "$ref": "#/components/schemas/MeDetailedOnly"
+    }
+  ]
+}

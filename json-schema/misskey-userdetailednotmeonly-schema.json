@@ -1,0 +1,366 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/UserDetailedNotMeOnly",
+  "title": "UserDetailedNotMeOnly",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "url"
+    },
+    "uri": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "movedTo": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "alsoKnownAs": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "lastFetchedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "bannerUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "url"
+    },
+    "bannerBlurhash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "isLocked": {
+      "type": "boolean"
+    },
+    "isSilenced": {
+      "type": "boolean"
+    },
+    "isLimited": {
+      "type": "boolean"
+    },
+    "isSuspended": {
+      "type": "boolean",
+      "example": false
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "example": "Hi masters, I am Ai!"
+    },
+    "location": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "birthday": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "example": "2018-03-12"
+    },
+    "lang": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "example": "ja-JP"
+    },
+    "fields": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "value"
+        ]
+      }
+    },
+    "verifiedLinks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "url"
+      }
+    },
+    "followersCount": {
+      "type": "number"
+    },
+    "followingCount": {
+      "type": "number"
+    },
+    "notesCount": {
+      "type": "number"
+    },
+    "pinnedNoteIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "id"
+      }
+    },
+    "pinnedNotes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/components/schemas/Note"
+      }
+    },
+    "pinnedPageId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pinnedPage": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Page"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "publicReactions": {
+      "type": "boolean"
+    },
+    "followingVisibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "followers",
+        "private"
+      ]
+    },
+    "followersVisibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "followers",
+        "private"
+      ]
+    },
+    "chatScope": {
+      "type": "string",
+      "enum": [
+        "everyone",
+        "following",
+        "followers",
+        "mutual",
+        "none"
+      ]
+    },
+    "canChat": {
+      "type": "boolean"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/components/schemas/RoleLite"
+      }
+    },
+    "followedMessage": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "memo": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "moderationNote": {
+      "type": "string"
+    },
+    "twoFactorEnabled": {
+      "type": "boolean"
+    },
+    "usePasswordLessLogin": {
+      "type": "boolean"
+    },
+    "securityKeys": {
+      "type": "boolean"
+    },
+    "mutualLinkSections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "mutualLinks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "misskey:id"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "url"
+                },
+                "fileId": {
+                  "type": "string",
+                  "format": "misskey:id"
+                },
+                "description": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "imgSrc": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "url",
+                "fileId",
+                "description",
+                "imgSrc"
+              ]
+            }
+          }
+        },
+        "required": [
+          "name",
+          "mutualLinks"
+        ]
+      }
+    },
+    "isFollowing": {
+      "type": "boolean"
+    },
+    "isFollowed": {
+      "type": "boolean"
+    },
+    "hasPendingFollowRequestFromYou": {
+      "type": "boolean"
+    },
+    "hasPendingFollowRequestToYou": {
+      "type": "boolean"
+    },
+    "isBlocking": {
+      "type": "boolean"
+    },
+    "isBlocked": {
+      "type": "boolean"
+    },
+    "isMuted": {
+      "type": "boolean"
+    },
+    "isRenoteMuted": {
+      "type": "boolean"
+    },
+    "notify": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "none"
+      ]
+    },
+    "withReplies": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "url",
+    "uri",
+    "movedTo",
+    "alsoKnownAs",
+    "createdAt",
+    "updatedAt",
+    "lastFetchedAt",
+    "bannerUrl",
+    "bannerBlurhash",
+    "isLocked",
+    "isSilenced",
+    "isLimited",
+    "isSuspended",
+    "description",
+    "location",
+    "birthday",
+    "lang",
+    "fields",
+    "verifiedLinks",
+    "followersCount",
+    "followingCount",
+    "notesCount",
+    "pinnedNoteIds",
+    "pinnedNotes",
+    "pinnedPageId",
+    "pinnedPage",
+    "publicReactions",
+    "followingVisibility",
+    "followersVisibility",
+    "chatScope",
+    "canChat",
+    "roles",
+    "memo",
+    "mutualLinkSections"
+  ]
+}

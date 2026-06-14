@@ -1,0 +1,28 @@
+{
+  "endpoint": "/admin/drive/delete-all-files-of-a-user",
+  "method": "POST",
+  "operationId": "post___admin___drive___delete-all-files-of-a-user",
+  "summary": "admin/drive/delete-all-files-of-a-user",
+  "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:admin:drive*",
+  "requestBody": {
+    "contentType": "application/json",
+    "example": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "format": "misskey:id"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    }
+  },
+  "responseExample": {
+    "status": "400",
+    "contentType": "application/json",
+    "example": {}
+  }
+}

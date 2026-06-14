@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://misskey.io/schemas/Ad",
+  "title": "Ad",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "id",
+      "example": "xxxxxxxxxx"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "startsAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "place": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string"
+    },
+    "ratio": {
+      "type": "number"
+    },
+    "url": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "imageBlurhash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "memo": {
+      "type": "string"
+    },
+    "dayOfWeek": {
+      "type": "integer"
+    },
+    "isSensitive": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "expiresAt",
+    "startsAt",
+    "place",
+    "priority",
+    "ratio",
+    "url",
+    "imageUrl",
+    "imageBlurhash",
+    "memo",
+    "dayOfWeek",
+    "isSensitive"
+  ]
+}
