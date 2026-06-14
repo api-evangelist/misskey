@@ -1,0 +1,91 @@
+aid: misskey
+url: https://raw.githubusercontent.com/api-evangelist/misskey/refs/heads/main/apis.yml
+apis:
+  - aid: misskey:misskey
+    name: Misskey API
+    tags:
+      - Social Networks
+      - Fediverse
+      - ActivityPub
+    humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+    properties:
+      - url: https://misskey-hub.net/en/docs/for-developers/api/
+        type: Documentation
+      - url: https://misskey-hub.net/en/docs/for-developers/api/token/
+        type: Authentication
+      - url: https://github.com/misskey-dev/misskey
+        type: GitHubRepository
+      - url: https://github.com/misskey-dev/misskey.js
+        type: SDKs
+      - url: plans/misskey-plans-pricing.yml
+        type: Plans
+      - url: rate-limits/misskey-rate-limits.yml
+        type: RateLimits
+      - url: finops/misskey-finops.yml
+        type: FinOps
+    description: >-
+      Misskey provides a comprehensive HTTP and streaming API for building clients,
+      integration web services, bots, and similar applications. All HTTP API endpoints
+      use POST requests with JSON request and response bodies. The API covers notes
+      (posts), users, timelines, follows, drives, channels, notifications, federation
+      via ActivityPub, and administrative operations. Authentication uses access tokens
+      via the MiAuth flow or personal token generation, passed as the i parameter in
+      the request body or via an Authorization Bearer header.
+name: Misskey
+tags:
+  - Open-Source
+  - Social Networks
+  - Fediverse
+  - ActivityPub
+  - Decentralized
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2026-06-13'
+modified: '2026-06-13'
+position: Consumer
+description: >-
+  Misskey is a free, open-source, decentralized microblogging platform that implements
+  the ActivityPub protocol, enabling federation across independent instances and
+  interoperability with other fediverse software such as Mastodon and Pleroma. Users
+  create and share content called Notes, which can contain text, images, videos, polls,
+  and custom emoji formatted with MFM (Markup language For Misskey). All platform
+  functionality is accessible via an HTTP API and a real-time streaming API, making it
+  straightforward to build clients, bots, and integrations. The project is licensed
+  under AGPL-3.0 and maintained by the misskey-dev community.
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
+specificationVersion: '0.19'
+common:
+  - type: GitHubOrganization
+    url: https://github.com/misskey-dev
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - name: Misskey API Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+    type: Documentation
+  - name: Getting Started with the Misskey API
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+    type: GettingStarted
+  - name: Obtain an Access Token
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+    type: Authentication
+  - name: API Endpoints Reference
+    url: https://misskey-hub.net/en/docs/for-developers/api/endpoints/
+    type: Endpoints
+  - name: Misskey Hub
+    url: https://misskey-hub.net/en/
+    type: Website
+  - name: misskey-js TypeScript SDK
+    url: https://github.com/misskey-dev/misskey.js
+    type: SDKs
+  - name: Misskey GitHub Repository
+    url: https://github.com/misskey-dev/misskey
+    type: GitHubRepository
+  - name: Misskey Discord Community
+    url: https://discord.gg/Wp3gIt5bnL
+    type: Support
+  - name: Donate / Sponsor Misskey
+    url: https://misskey-hub.net/en/docs/donate/
+    type: Governance

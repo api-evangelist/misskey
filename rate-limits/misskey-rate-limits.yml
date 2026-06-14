@@ -1,0 +1,111 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Misskey
+providerId: misskey
+created: '2026-06-13'
+modified: '2026-06-13'
+tags:
+  - Open-Source
+  - Social Networks
+  - Fediverse
+  - Rate Limiting
+  - Quotas
+  - Throttling
+description: >-
+  Rate limit definitions for the Misskey API surface. Misskey is open-source software
+  where each instance administrator configures rate limiting independently. The Misskey
+  backend exposes rate limit information via standard response headers. Job queue rate
+  limits (delivery, inbox, relationship) are configurable in the instance .config/default.yml.
+  Per-endpoint endpoint-level rate limits are enforced by the backend and controlled
+  via the roles system. Default values below reflect typical instance configurations;
+  consult your specific instance's /api-doc for authoritative limits.
+headers:
+  limit: X-RateLimit-Limit
+  remaining: X-RateLimit-Remaining
+  reset: X-RateLimit-Reset
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  serviceUnavailable: 503
+limits:
+  - tier: default
+    name: Default API Rate Limit
+    scope: api-key
+    metric: requests_per_minute
+    limit: 60
+    burst: 120
+    timeFrame: minute
+    applies:
+      - Misskey API
+  - tier: default
+    name: Sign-in Rate Limit
+    scope: ip
+    metric: requests_per_minute
+    limit: 10
+    timeFrame: minute
+    applies:
+      - Misskey API
+  - tier: job-queue
+    name: ActivityPub Delivery Job Rate
+    scope: server
+    metric: jobs_per_second
+    limit: 128
+    timeFrame: second
+    applies:
+      - Misskey API
+  - tier: job-queue
+    name: ActivityPub Inbox Job Rate
+    scope: server
+    metric: jobs_per_second
+    limit: 32
+    timeFrame: second
+    applies:
+      - Misskey API
+  - tier: job-queue
+    name: Relationship Job Rate
+    scope: server
+    metric: jobs_per_second
+    limit: 64
+    timeFrame: second
+    applies:
+      - Misskey API
+  - tier: role-based
+    name: Role-Based Rate Limit
+    scope: api-key
+    metric: requests_per_minute
+    limit: -1
+    timeFrame: minute
+    description: >-
+      Instance administrators can assign roles to users that override default
+      rate limits, allowing trusted users or bots to have elevated or unrestricted
+      API access.
+    applies:
+      - Misskey API
+policies:
+  - name: Backoff Strategy
+    description: >-
+      Clients should implement exponential backoff with jitter, honoring the
+      Retry-After header when a 429 response is received.
+  - name: Burst Handling
+    description: >-
+      Short bursts above the steady-state limit are tolerated up to the documented
+      burst ceiling before throttling engages. Burst windows are sliding.
+  - name: IP-Based Limiting
+    description: >-
+      Unauthenticated and authentication endpoints apply rate limits per source IP.
+      Ensure your reverse proxy correctly forwards the client IP via X-Forwarded-For
+      and that the Misskey trustProxy configuration matches your infrastructure.
+  - name: Role Overrides
+    description: >-
+      Instance administrators may grant roles that relax or remove rate limits for
+      specific users or bots via the Misskey roles system.
+  - name: Fair Use
+    description: >-
+      Even on self-hosted or uncapped enterprise deployments, sustained usage that
+      materially impacts shared infrastructure may be subject to fair-use throttling
+      at the discretion of the instance administrator.
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com

@@ -1,0 +1,165 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+provider: Misskey
+providerId: misskey
+publisherName: Misskey
+serviceCategory: API
+created: '2026-06-13'
+modified: '2026-06-13'
+tags:
+  - Open-Source
+  - Social Networks
+  - Fediverse
+  - FinOps
+  - Cost Management
+  - FOCUS
+description: >-
+  FinOps framework definition for the Misskey API surface. Misskey is AGPL-3.0
+  open-source software with no per-request licensing cost. Cost centres for Misskey
+  deployments are infrastructure (compute, storage, bandwidth) and optionally managed
+  hosting subscription fees. This document provides a FOCUS-aligned mapping for cost
+  allocation, usage measurement, and unit-economics reporting for teams consuming
+  or operating the Misskey API.
+principles:
+  - name: Visibility
+    description: >-
+      Make infrastructure and API consumption costs visible to engineering, product,
+      and finance teams in near real-time, distinguishing software (free) from
+      hosting costs.
+  - name: Allocation
+    description: >-
+      Tag every chargeable infrastructure resource with the consuming team,
+      environment, application, and feature so cost can be allocated accurately.
+  - name: Optimization
+    description: >-
+      Continuously evaluate request patterns, caching, streaming subscriptions, and
+      instance sizing to reduce cost per useful unit of work.
+  - name: Accountability
+    description: >-
+      Establish budget owners and chargeback or showback flows for each consuming
+      team or application integrating with the Misskey API.
+domains:
+  - name: Understand Usage and Cost
+    capabilities:
+      - Data Ingestion
+      - Allocation
+      - Reporting and Analytics
+      - Anomaly Management
+  - name: Quantify Business Value
+    capabilities:
+      - Planning and Estimating
+      - Forecasting
+      - Budgeting
+      - Benchmarking
+      - Unit Economics
+  - name: Optimize Usage and Cost
+    capabilities:
+      - Architecting for Cloud
+      - Rate Optimization
+      - Workload Optimization
+      - Cloud Sustainability
+      - Licensing and SaaS
+  - name: Manage the FinOps Practice
+    capabilities:
+      - FinOps Practice Operations
+      - FinOps Education and Enablement
+      - Invoicing and Chargeback
+      - Onboarding Workloads
+      - Intersecting Disciplines
+billingModel:
+  pricingCategory: Infrastructure-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+    - Purchase
+    - Tax
+    - Credit
+    - Adjustment
+  chargeFrequency: Recurring
+  notes: >-
+    Misskey software is free (AGPL-3.0). Billing arises from hosting infrastructure
+    (VPS, object storage, CDN, email relay) or managed hosting subscriptions from
+    third-party providers such as Elestio.
+focusColumns:
+  ServiceName: Misskey
+  ServiceCategory: Developer Tools / API
+  ProviderName: Misskey
+  PublisherName: Misskey Project (misskey-dev)
+  InvoiceIssuerName: Infrastructure / Hosting Provider
+  PricingCategory: Infrastructure-Based
+  PricingUnit: request
+  BillingCurrency: USD
+  ChargeCategory: Usage
+meters:
+  - name: api_requests
+    description: Count of API requests processed by the Misskey instance
+    unit: request
+    aggregation: sum
+    dimensions:
+      - api
+      - endpoint
+      - tier
+      - region
+      - consumer
+  - name: data_egress
+    description: Bytes returned over the network in API responses and media delivery
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - api
+      - region
+      - consumer
+  - name: drive_storage
+    description: Object storage consumed by user-uploaded media files in the Misskey drive
+    unit: GB
+    aggregation: avg
+    dimensions:
+      - region
+      - consumer
+  - name: federation_deliveries
+    description: ActivityPub delivery jobs dispatched to remote instances
+    unit: job
+    aggregation: sum
+    dimensions:
+      - remote_instance
+      - region
+  - name: compute_seconds
+    description: Server-side compute consumed by API requests
+    unit: second
+    aggregation: sum
+    dimensions:
+      - api
+      - endpoint
+      - tier
+apis:
+  - name: Misskey API
+    baseURL: https://{instance-domain}/api
+    tags:
+      - Social Networks
+      - Fediverse
+      - ActivityPub
+    serviceName: Misskey API
+    serviceCategory: API
+unitEconomics:
+  - name: Cost per 1K API Requests
+    metric: infrastructure_cost / (api_requests / 1000)
+    target: TBD
+  - name: Cost per Active User
+    metric: infrastructure_cost / active_users
+    target: TBD
+  - name: Cost per GB Egress
+    metric: egress_cost / data_egress_gb
+    target: TBD
+  - name: Cost per Federation Delivery
+    metric: compute_cost / federation_deliveries
+    target: TBD
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
