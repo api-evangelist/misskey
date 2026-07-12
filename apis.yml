@@ -68,6 +68,10 @@ maintainers:
     email: info@apievangelist.com
 specificationVersion: '0.19'
 common:
+  - type: DomainSecurity
+    url: security/misskey-domain-security.yml
+  - type: Authentication
+    url: authentication/misskey-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/misskey-dev
   - type: GitHubRepository
