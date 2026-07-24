@@ -1,0 +1,1369 @@
+openapi: 3.1.0
+info:
+  version: 2025.4.1-io.12b-fb6fbea074
+  title: Misskey account antennas API
+servers:
+- url: https://misskey.io/api
+tags:
+- name: antennas
+paths:
+  /antennas/create:
+    post:
+      operationId: post___antennas___create
+      summary: antennas/create
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/antennas/create.ts
+      tags:
+      - antennas
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                src:
+                  type: string
+                  enum:
+                  - home
+                  - all
+                  - users
+                  - list
+                  - users_blacklist
+                userListId:
+                  type:
+                  - string
+                  - 'null'
+                  format: misskey:id
+                keywords:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: string
+                excludeKeywords:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: string
+                users:
+                  type: array
+                  items:
+                    type: string
+                caseSensitive:
+                  type: boolean
+                localOnly:
+                  type: boolean
+                excludeBots:
+                  type: boolean
+                withReplies:
+                  type: boolean
+                withFile:
+                  type: boolean
+                excludeNotesInSensitiveChannel:
+                  type: boolean
+              required:
+              - name
+              - src
+              - keywords
+              - excludeKeywords
+              - users
+              - caseSensitive
+              - withReplies
+              - withFile
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Antenna'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_USER_LIST:
+                  value:
+                    error:
+                      message: No such user list.
+                      code: NO_SUCH_USER_LIST
+                      id: 95063e93-a283-4b8b-9aa5-bcdb8df69a7f
+                TOO_MANY_ANTENNAS:
+                  value:
+                    error:
+                      message: You cannot create antenna any more.
+                      code: TOO_MANY_ANTENNAS
+                      id: faf47050-e8b5-438c-913c-db2b1576fde4
+                EMPTY_KEYWORD:
+                  value:
+                    error:
+                      message: Either keywords or excludeKeywords is required.
+                      code: EMPTY_KEYWORD
+                      id: 53ee222e-1ddd-4f9a-92e5-9fb82ddb463a
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /antennas/delete:
+    post:
+      operationId: post___antennas___delete
+      summary: antennas/delete
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/antennas/delete.ts
+      tags:
+      - antennas
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                antennaId:
+                  type: string
+                  format: misskey:id
+              required:
+              - antennaId
+      responses:
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_ANTENNA:
+                  value:
+                    error:
+                      message: No such antenna.
+                      code: NO_SUCH_ANTENNA
+                      id: b34dcf9d-348f-44bb-99d0-6c9314cfe2df
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /antennas/list:
+    post:
+      operationId: post___antennas___list
+      summary: antennas/list
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *read:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/antennas/list.ts
+      tags:
+      - antennas
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  $ref: '#/components/schemas/Antenna'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /antennas/notes:
+    post:
+      operationId: post___antennas___notes
+      summary: antennas/notes
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *read:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/antennas/notes.ts
+      tags:
+      - antennas
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                antennaId:
+                  type: string
+                  format: misskey:id
+                limit:
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+                  default: 10
+                sinceId:
+                  type: string
+                  format: misskey:id
+                untilId:
+                  type: string
+                  format: misskey:id
+                sinceDate:
+                  type: integer
+                untilDate:
+                  type: integer
+              required:
+              - antennaId
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  $ref: '#/components/schemas/Note'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_ANTENNA:
+                  value:
+                    error:
+                      message: No such antenna.
+                      code: NO_SUCH_ANTENNA
+                      id: 850926e0-fd3b-49b6-b69a-b28a5dbd82fe
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /antennas/show:
+    post:
+      operationId: post___antennas___show
+      summary: antennas/show
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *read:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/antennas/show.ts
+      tags:
+      - antennas
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                antennaId:
+                  type: string
+                  format: misskey:id
+              required:
+              - antennaId
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Antenna'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_ANTENNA:
+                  value:
+                    error:
+                      message: No such antenna.
+                      code: NO_SUCH_ANTENNA
+                      id: c06569fb-b025-4f23-b22d-1fcd20d2816b
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /antennas/update:
+    post:
+      operationId: post___antennas___update
+      summary: antennas/update
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/antennas/update.ts
+      tags:
+      - antennas
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                antennaId:
+                  type: string
+                  format: misskey:id
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                src:
+                  type: string
+                  enum:
+                  - home
+                  - all
+                  - users
+                  - list
+                  - users_blacklist
+                userListId:
+                  type:
+                  - string
+                  - 'null'
+                  format: misskey:id
+                keywords:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: string
+                excludeKeywords:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: string
+                users:
+                  type: array
+                  items:
+                    type: string
+                caseSensitive:
+                  type: boolean
+                localOnly:
+                  type: boolean
+                excludeBots:
+                  type: boolean
+                withReplies:
+                  type: boolean
+                withFile:
+                  type: boolean
+                excludeNotesInSensitiveChannel:
+                  type: boolean
+              required:
+              - antennaId
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Antenna'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_ANTENNA:
+                  value:
+                    error:
+                      message: No such antenna.
+                      code: NO_SUCH_ANTENNA
+                      id: 10c673ac-8852-48eb-aa1f-f5b67f069290
+                NO_SUCH_USER_LIST:
+                  value:
+                    error:
+                      message: No such user list.
+                      code: NO_SUCH_USER_LIST
+                      id: 1c6b35c9-943e-48c2-81e4-2844989407f7
+                ANTENNA_LIMIT_EXCEEDED:
+                  value:
+                    error:
+                      message: You cannot update the antenna because you have exceeded the limit of antennas.
+                      code: ANTENNA_LIMIT_EXCEEDED
+                      id: 3166a92e-09d9-4c09-afa3-1dbe34a3afcf
+                EMPTY_KEYWORD:
+                  value:
+                    error:
+                      message: Either keywords or excludeKeywords is required.
+                      code: EMPTY_KEYWORD
+                      id: 721aaff6-4e1b-4d88-8de6-877fae9f68c4
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+components:
+  schemas:
+    Note:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        deletedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        text:
+          type:
+          - string
+          - 'null'
+        cw:
+          type:
+          - string
+          - 'null'
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        replyId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        renoteId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        reply:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Note'
+          - type: 'null'
+        renote:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Note'
+          - type: 'null'
+        isHidden:
+          type: boolean
+        visibility:
+          type: string
+          enum:
+          - public
+          - home
+          - followers
+          - specified
+        mentions:
+          type: array
+          items:
+            type: string
+            format: id
+        visibleUserIds:
+          type: array
+          items:
+            type: string
+            format: id
+        fileIds:
+          type: array
+          items:
+            type: string
+            format: id
+        files:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/DriveFile'
+        tags:
+          type: array
+          items:
+            type: string
+        poll:
+          type:
+          - object
+          - 'null'
+          properties:
+            expiresAt:
+              type:
+              - string
+              - 'null'
+              format: date-time
+            multiple:
+              type: boolean
+            choices:
+              type: array
+              items:
+                type: object
+                properties:
+                  isVoted:
+                    type: boolean
+                  text:
+                    type: string
+                  votes:
+                    type: number
+                required:
+                - isVoted
+                - text
+                - votes
+          required:
+          - multiple
+          - choices
+        emojis:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: string
+        channelId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        channel:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            color:
+              type: string
+            isSensitive:
+              type: boolean
+            allowRenoteToExternal:
+              type: boolean
+            userId:
+              type:
+              - string
+              - 'null'
+          required:
+          - id
+          - name
+          - color
+          - isSensitive
+          - allowRenoteToExternal
+          - userId
+        localOnly:
+          type: boolean
+        dimension:
+          type:
+          - integer
+          - 'null'
+        reactionAcceptance:
+          type:
+          - string
+          - 'null'
+          enum:
+          - likeOnly
+          - likeOnlyForRemote
+          - nonSensitiveOnly
+          - nonSensitiveOnlyForLocalLikeOnlyForRemote
+          - null
+        reactionEmojis:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: string
+        reactions:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: number
+        reactionCount:
+          type: number
+        renoteCount:
+          type: number
+        repliesCount:
+          type: number
+        uri:
+          type: string
+        url:
+          type: string
+        reactionAndUserPairCache:
+          type: array
+          items:
+            type: string
+        clippedCount:
+          type: number
+        myReaction:
+          type:
+          - string
+          - 'null'
+      required:
+      - id
+      - createdAt
+      - text
+      - userId
+      - user
+      - visibility
+      - reactionAcceptance
+      - reactionEmojis
+      - reactions
+      - reactionCount
+      - renoteCount
+      - repliesCount
+    DriveFile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+          example: 192.jpg
+        type:
+          type: string
+          example: image/jpeg
+        md5:
+          type: string
+          format: md5
+          example: 15eca7fba0480996e2245f5185bf39f2
+        size:
+          type: number
+          example: 51469
+        isSensitive:
+          type: boolean
+        isSensitiveByModerator:
+          type:
+          - boolean
+          - 'null'
+        blurhash:
+          type:
+          - string
+          - 'null'
+        properties:
+          type: object
+          properties:
+            width:
+              type: number
+              example: 1280
+            height:
+              type: number
+              example: 720
+            orientation:
+              type: number
+              example: 8
+            avgColor:
+              type: string
+              example: rgb(40,65,87)
+        url:
+          type: string
+          format: url
+        thumbnailUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        comment:
+          type:
+          - string
+          - 'null'
+        folderId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        folder:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        user:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - type
+      - md5
+      - size
+      - isSensitive
+      - blurhash
+      - properties
+      - url
+      - thumbnailUrl
+      - comment
+      - folderId
+      - userId
+    Antenna:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+        keywords:
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+        excludeKeywords:
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+        src:
+          type: string
+          enum:
+          - home
+          - all
+          - users
+          - list
+          - users_blacklist
+        userListId:
+          type:
+          - string
+          - 'null'
+          format: id
+        users:
+          type: array
+          items:
+            type: string
+        caseSensitive:
+          type: boolean
+          default: false
+        localOnly:
+          type: boolean
+          default: false
+        excludeBots:
+          type: boolean
+          default: false
+        withReplies:
+          type: boolean
+          default: false
+        withFile:
+          type: boolean
+        isActive:
+          type: boolean
+        hasUnreadNote:
+          type: boolean
+          default: false
+        notify:
+          type: boolean
+          default: false
+        excludeNotesInSensitiveChannel:
+          type: boolean
+          default: false
+      required:
+      - id
+      - createdAt
+      - name
+      - keywords
+      - excludeKeywords
+      - src
+      - userListId
+      - users
+      - caseSensitive
+      - localOnly
+      - excludeBots
+      - withReplies
+      - withFile
+      - isActive
+      - hasUnreadNote
+      - notify
+      - excludeNotesInSensitiveChannel
+    DriveFolder:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        foldersCount:
+          type: number
+        filesCount:
+          type: number
+        parent:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - parentId
+    UserLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type:
+          - string
+          - 'null'
+          example: 藍
+        username:
+          type: string
+          example: ai
+        host:
+          type:
+          - string
+          - 'null'
+          example: misskey.example.com
+          description: The local host is represented with `null`.
+        avatarUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        avatarBlurhash:
+          type:
+          - string
+          - 'null'
+        avatarDecorations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: id
+              angle:
+                type: number
+              flipH:
+                type: boolean
+              url:
+                type: string
+                format: url
+              offsetX:
+                type: number
+              offsetY:
+                type: number
+            required:
+            - id
+            - url
+        isBot:
+          type: boolean
+        isCat:
+          type: boolean
+        requireSigninToViewContents:
+          type: boolean
+        makeNotesFollowersOnlyBefore:
+          type:
+          - number
+          - 'null'
+        makeNotesHiddenBefore:
+          type:
+          - number
+          - 'null'
+        instance:
+          type: object
+          properties:
+            name:
+              type:
+              - string
+              - 'null'
+            softwareName:
+              type:
+              - string
+              - 'null'
+            softwareVersion:
+              type:
+              - string
+              - 'null'
+            iconUrl:
+              type:
+              - string
+              - 'null'
+            faviconUrl:
+              type:
+              - string
+              - 'null'
+            themeColor:
+              type:
+              - string
+              - 'null'
+          required:
+          - name
+          - softwareName
+          - softwareVersion
+          - iconUrl
+          - faviconUrl
+          - themeColor
+        emojis:
+          type: object
+          additionalProperties:
+            type: string
+        onlineStatus:
+          type: string
+          enum:
+          - unknown
+          - online
+          - active
+          - offline
+        badgeRoles:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              iconUrl:
+                type:
+                - string
+                - 'null'
+              displayOrder:
+                type: number
+              behavior:
+                type: string
+            required:
+            - name
+            - iconUrl
+            - displayOrder
+      required:
+      - id
+      - name
+      - username
+      - host
+      - avatarUrl
+      - avatarBlurhash
+      - avatarDecorations
+      - emojis
+      - onlineStatus
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+externalDocs:
+  description: Repository
+  url: https://github.com/MisskeyIO/misskey

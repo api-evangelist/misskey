@@ -1,0 +1,816 @@
+openapi: 3.1.0
+info:
+  version: 2025.4.1-io.12b-fb6fbea074
+  title: Misskey account flash API
+servers:
+- url: https://misskey.io/api
+tags:
+- name: flash
+paths:
+  /flash/create:
+    post:
+      operationId: post___flash___create
+      summary: flash/create
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:flash*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/flash/create.ts
+      tags:
+      - flash
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                summary:
+                  type: string
+                script:
+                  type: string
+                permissions:
+                  type: array
+                  items:
+                    type: string
+                visibility:
+                  type: string
+                  enum:
+                  - public
+                  - private
+                  default: public
+              required:
+              - title
+              - summary
+              - script
+              - permissions
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Flash'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                RATE_LIMIT_EXCEEDED:
+                  value:
+                    error:
+                      message: Rate limit exceeded. Please try again later.
+                      code: RATE_LIMIT_EXCEEDED
+                      id: d5826d14-3982-4d2e-8011-b9e9f02499ef
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /flash/featured:
+    post:
+      operationId: post___flash___featured
+      summary: flash/featured
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/flash/featured.ts
+      tags:
+      - flash
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  minimum: 0
+                  default: 0
+                limit:
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+                  default: 10
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  $ref: '#/components/schemas/Flash'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /flash/like:
+    post:
+      operationId: post___flash___like
+      summary: flash/like
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:flash-likes*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/flash/like.ts
+      tags:
+      - flash
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                flashId:
+                  type: string
+                  format: misskey:id
+              required:
+              - flashId
+      responses:
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_FLASH:
+                  value:
+                    error:
+                      message: No such flash.
+                      code: NO_SUCH_FLASH
+                      id: c07c1491-9161-4c5c-9d75-01906f911f73
+                YOUR_FLASH:
+                  value:
+                    error:
+                      message: You cannot like your flash.
+                      code: YOUR_FLASH
+                      id: 3fd8a0e7-5955-4ba9-85bb-bf3e0c30e13b
+                ALREADY_LIKED:
+                  value:
+                    error:
+                      message: The flash has already been liked.
+                      code: ALREADY_LIKED
+                      id: 010065cf-ad43-40df-8067-abff9f4686e3
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /flash/unlike:
+    post:
+      operationId: post___flash___unlike
+      summary: flash/unlike
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:flash-likes*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/flash/unlike.ts
+      tags:
+      - flash
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                flashId:
+                  type: string
+                  format: misskey:id
+              required:
+              - flashId
+      responses:
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_FLASH:
+                  value:
+                    error:
+                      message: No such flash.
+                      code: NO_SUCH_FLASH
+                      id: afe8424a-a69e-432d-a5f2-2f0740c62410
+                NOT_LIKED:
+                  value:
+                    error:
+                      message: You have not liked that flash.
+                      code: NOT_LIKED
+                      id: 755f25a7-9871-4f65-9f34-51eaad9ae0ac
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /flash/update:
+    post:
+      operationId: post___flash___update
+      summary: flash/update
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:flash*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/flash/update.ts
+      tags:
+      - flash
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                flashId:
+                  type: string
+                  format: misskey:id
+                title:
+                  type: string
+                summary:
+                  type: string
+                script:
+                  type: string
+                permissions:
+                  type: array
+                  items:
+                    type: string
+                visibility:
+                  type: string
+                  enum:
+                  - public
+                  - private
+              required:
+              - flashId
+      responses:
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_FLASH:
+                  value:
+                    error:
+                      message: No such flash.
+                      code: NO_SUCH_FLASH
+                      id: 611e13d2-309e-419a-a5e4-e0422da39b02
+                ACCESS_DENIED:
+                  value:
+                    error:
+                      message: Access denied.
+                      code: ACCESS_DENIED
+                      id: 08e60c88-5948-478e-a132-02ec701d67b2
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                RATE_LIMIT_EXCEEDED:
+                  value:
+                    error:
+                      message: Rate limit exceeded. Please try again later.
+                      code: RATE_LIMIT_EXCEEDED
+                      id: d5826d14-3982-4d2e-8011-b9e9f02499ef
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+components:
+  schemas:
+    Flash:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        title:
+          type: string
+        summary:
+          type: string
+        script:
+          type: string
+        visibility:
+          type: string
+          enum:
+          - private
+          - public
+        likedCount:
+          type:
+          - number
+          - 'null'
+        isLiked:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - updatedAt
+      - userId
+      - user
+      - title
+      - summary
+      - script
+      - visibility
+      - likedCount
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
+    UserLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type:
+          - string
+          - 'null'
+          example: 藍
+        username:
+          type: string
+          example: ai
+        host:
+          type:
+          - string
+          - 'null'
+          example: misskey.example.com
+          description: The local host is represented with `null`.
+        avatarUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        avatarBlurhash:
+          type:
+          - string
+          - 'null'
+        avatarDecorations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: id
+              angle:
+                type: number
+              flipH:
+                type: boolean
+              url:
+                type: string
+                format: url
+              offsetX:
+                type: number
+              offsetY:
+                type: number
+            required:
+            - id
+            - url
+        isBot:
+          type: boolean
+        isCat:
+          type: boolean
+        requireSigninToViewContents:
+          type: boolean
+        makeNotesFollowersOnlyBefore:
+          type:
+          - number
+          - 'null'
+        makeNotesHiddenBefore:
+          type:
+          - number
+          - 'null'
+        instance:
+          type: object
+          properties:
+            name:
+              type:
+              - string
+              - 'null'
+            softwareName:
+              type:
+              - string
+              - 'null'
+            softwareVersion:
+              type:
+              - string
+              - 'null'
+            iconUrl:
+              type:
+              - string
+              - 'null'
+            faviconUrl:
+              type:
+              - string
+              - 'null'
+            themeColor:
+              type:
+              - string
+              - 'null'
+          required:
+          - name
+          - softwareName
+          - softwareVersion
+          - iconUrl
+          - faviconUrl
+          - themeColor
+        emojis:
+          type: object
+          additionalProperties:
+            type: string
+        onlineStatus:
+          type: string
+          enum:
+          - unknown
+          - online
+          - active
+          - offline
+        badgeRoles:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              iconUrl:
+                type:
+                - string
+                - 'null'
+              displayOrder:
+                type: number
+              behavior:
+                type: string
+            required:
+            - name
+            - iconUrl
+            - displayOrder
+      required:
+      - id
+      - name
+      - username
+      - host
+      - avatarUrl
+      - avatarBlurhash
+      - avatarDecorations
+      - emojis
+      - onlineStatus
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+externalDocs:
+  description: Repository
+  url: https://github.com/MisskeyIO/misskey

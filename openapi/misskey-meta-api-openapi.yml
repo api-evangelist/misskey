@@ -1,0 +1,4052 @@
+openapi: 3.1.0
+info:
+  version: 2025.4.1-io.12b-fb6fbea074
+  title: Misskey account meta API
+servers:
+- url: https://misskey.io/api
+tags:
+- name: meta
+paths:
+  /admin/meta:
+    post:
+      operationId: post___admin___meta
+      summary: admin/meta
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *read:admin:meta*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/admin/meta.ts
+      tags:
+      - meta
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cacheRemoteFiles:
+                    type: boolean
+                  cacheRemoteSensitiveFiles:
+                    type: boolean
+                  emailRequiredForSignup:
+                    type: boolean
+                  enableHcaptcha:
+                    type: boolean
+                  hcaptchaSiteKey:
+                    type:
+                    - string
+                    - 'null'
+                  enableMcaptcha:
+                    type: boolean
+                  mcaptchaSiteKey:
+                    type:
+                    - string
+                    - 'null'
+                  mcaptchaInstanceUrl:
+                    type:
+                    - string
+                    - 'null'
+                  enableRecaptcha:
+                    type: boolean
+                  recaptchaSiteKey:
+                    type:
+                    - string
+                    - 'null'
+                  enableTurnstile:
+                    type: boolean
+                  turnstileSiteKey:
+                    type:
+                    - string
+                    - 'null'
+                  googleAnalyticsId:
+                    type:
+                    - string
+                    - 'null'
+                  swPublickey:
+                    type:
+                    - string
+                    - 'null'
+                  mascotImageUrl:
+                    type:
+                    - string
+                    - 'null'
+                    default: /assets/ai.png
+                  bannerUrl:
+                    type:
+                    - string
+                    - 'null'
+                  serverErrorImageUrl:
+                    type:
+                    - string
+                    - 'null'
+                  infoImageUrl:
+                    type:
+                    - string
+                    - 'null'
+                  notFoundImageUrl:
+                    type:
+                    - string
+                    - 'null'
+                  iconUrl:
+                    type:
+                    - string
+                    - 'null'
+                  app192IconUrl:
+                    type:
+                    - string
+                    - 'null'
+                  app512IconUrl:
+                    type:
+                    - string
+                    - 'null'
+                  enableEmail:
+                    type: boolean
+                  enableServiceWorker:
+                    type: boolean
+                  translatorAvailable:
+                    type: boolean
+                  silencedHosts:
+                    type: array
+                    items:
+                      type: string
+                  sensitiveMediaHosts:
+                    type: array
+                    items:
+                      type: string
+                  pinnedUsers:
+                    type: array
+                    items:
+                      type: string
+                  hiddenTags:
+                    type: array
+                    items:
+                      type: string
+                  blockedHosts:
+                    type: array
+                    items:
+                      type: string
+                  blockedRemoteCustomEmojis:
+                    type: array
+                    items:
+                      type: string
+                  sensitiveWords:
+                    type: array
+                    items:
+                      type: string
+                  prohibitedWords:
+                    type: array
+                    items:
+                      type: string
+                  bannedEmailDomains:
+                    type: array
+                    items:
+                      type: string
+                  preservedUsernames:
+                    type: array
+                    items:
+                      type: string
+                  hcaptchaSecretKey:
+                    type:
+                    - string
+                    - 'null'
+                  mcaptchaSecretKey:
+                    type:
+                    - string
+                    - 'null'
+                  recaptchaSecretKey:
+                    type:
+                    - string
+                    - 'null'
+                  turnstileSecretKey:
+                    type:
+                    - string
+                    - 'null'
+                  sensitiveMediaDetection:
+                    type: string
+                  sensitiveMediaDetectionSensitivity:
+                    type: string
+                  setSensitiveFlagAutomatically:
+                    type: boolean
+                  enableSensitiveMediaDetectionForVideos:
+                    type: boolean
+                  proxyAccountId:
+                    type: string
+                    format: id
+                  email:
+                    type:
+                    - string
+                    - 'null'
+                  smtpSecure:
+                    type: boolean
+                  smtpHost:
+                    type:
+                    - string
+                    - 'null'
+                  smtpPort:
+                    type:
+                    - number
+                    - 'null'
+                  smtpUser:
+                    type:
+                    - string
+                    - 'null'
+                  smtpPass:
+                    type:
+                    - string
+                    - 'null'
+                  swPrivateKey:
+                    type:
+                    - string
+                    - 'null'
+                  useObjectStorage:
+                    type: boolean
+                  objectStorageBaseUrl:
+                    type:
+                    - string
+                    - 'null'
+                  objectStorageBucket:
+                    type:
+                    - string
+                    - 'null'
+                  objectStoragePrefix:
+                    type:
+                    - string
+                    - 'null'
+                  objectStorageEndpoint:
+                    type:
+                    - string
+                    - 'null'
+                  objectStorageRegion:
+                    type:
+                    - string
+                    - 'null'
+                  objectStoragePort:
+                    type:
+                    - number
+                    - 'null'
+                  objectStorageAccessKey:
+                    type:
+                    - string
+                    - 'null'
+                  objectStorageSecretKey:
+                    type:
+                    - string
+                    - 'null'
+                  objectStorageUseSSL:
+                    type: boolean
+                  objectStorageUseProxy:
+                    type: boolean
+                  objectStorageSetPublicRead:
+                    type: boolean
+                  enableIpLogging:
+                    type: boolean
+                  enableActiveEmailValidation:
+                    type: boolean
+                  enableVerifymailApi:
+                    type: boolean
+                  verifymailAuthKey:
+                    type:
+                    - string
+                    - 'null'
+                  enableTruemailApi:
+                    type: boolean
+                  truemailInstance:
+                    type:
+                    - string
+                    - 'null'
+                  truemailAuthKey:
+                    type:
+                    - string
+                    - 'null'
+                  enableChartsForRemoteUser:
+                    type: boolean
+                  enableChartsForFederatedInstances:
+                    type: boolean
+                  enableServerMachineStats:
+                    type: boolean
+                  enableIdenticonGeneration:
+                    type: boolean
+                  manifestJsonOverride:
+                    type: string
+                  policies:
+                    type: object
+                  enableFanoutTimeline:
+                    type: boolean
+                  enableFanoutTimelineDbFallback:
+                    type: boolean
+                  perLocalUserUserTimelineCacheMax:
+                    type: number
+                  perRemoteUserUserTimelineCacheMax:
+                    type: number
+                  perUserHomeTimelineCacheMax:
+                    type: number
+                  perUserListTimelineCacheMax:
+                    type: number
+                  notesPerOneAd:
+                    type: number
+                  wellKnownWebsites:
+                    type: array
+                    items:
+                      type: string
+                  urlPreviewDenyList:
+                    type: array
+                    items:
+                      type: string
+                  featuredGameChannels:
+                    type: array
+                    items:
+                      type: string
+                  backgroundImageUrl:
+                    type:
+                    - string
+                    - 'null'
+                  deeplAuthKey:
+                    type:
+                    - string
+                    - 'null'
+                  deeplIsPro:
+                    type: boolean
+                  defaultDarkTheme:
+                    type:
+                    - string
+                    - 'null'
+                  defaultLightTheme:
+                    type:
+                    - string
+                    - 'null'
+                  description:
+                    type:
+                    - string
+                    - 'null'
+                  dimensions:
+                    type: number
+                    minimum: 1
+                  disableRegistration:
+                    type: boolean
+                  impressumUrl:
+                    type:
+                    - string
+                    - 'null'
+                  maintainerEmail:
+                    type:
+                    - string
+                    - 'null'
+                  maintainerName:
+                    type:
+                    - string
+                    - 'null'
+                  name:
+                    type:
+                    - string
+                    - 'null'
+                  shortName:
+                    type:
+                    - string
+                    - 'null'
+                  objectStorageS3ForcePathStyle:
+                    type: boolean
+                  privacyPolicyUrl:
+                    type:
+                    - string
+                    - 'null'
+                  repositoryUrl:
+                    type:
+                    - string
+                    - 'null'
+                  summalyProxy:
+                    type:
+                    - string
+                    - 'null'
+                    deprecated: true
+                    description: '[Deprecated] Use "urlPreviewSummaryProxyUrl" instead.'
+                  themeColor:
+                    type:
+                    - string
+                    - 'null'
+                  tosUrl:
+                    type:
+                    - string
+                    - 'null'
+                  uri:
+                    type: string
+                  version:
+                    type: string
+                  urlPreviewEnabled:
+                    type: boolean
+                  urlPreviewTimeout:
+                    type: number
+                  urlPreviewMaximumContentLength:
+                    type: number
+                  urlPreviewRequireContentLength:
+                    type: boolean
+                  urlPreviewUserAgent:
+                    type:
+                    - string
+                    - 'null'
+                  urlPreviewSummaryProxyUrl:
+                    type:
+                    - string
+                    - 'null'
+                  federation:
+                    type: string
+                    enum:
+                    - all
+                    - specified
+                    - none
+                  federationHosts:
+                    type: array
+                    items:
+                      type: string
+                  prohibitedWordsForNameOfUser:
+                    type: array
+                    items:
+                      type: string
+                  inquiryUrl:
+                    type:
+                    - string
+                    - 'null'
+                required:
+                - cacheRemoteFiles
+                - cacheRemoteSensitiveFiles
+                - emailRequiredForSignup
+                - enableHcaptcha
+                - hcaptchaSiteKey
+                - enableMcaptcha
+                - mcaptchaSiteKey
+                - mcaptchaInstanceUrl
+                - enableRecaptcha
+                - recaptchaSiteKey
+                - enableTurnstile
+                - turnstileSiteKey
+                - googleAnalyticsId
+                - swPublickey
+                - mascotImageUrl
+                - bannerUrl
+                - serverErrorImageUrl
+                - infoImageUrl
+                - notFoundImageUrl
+                - iconUrl
+                - app192IconUrl
+                - app512IconUrl
+                - enableEmail
+                - enableServiceWorker
+                - translatorAvailable
+                - pinnedUsers
+                - hiddenTags
+                - blockedHosts
+                - blockedRemoteCustomEmojis
+                - sensitiveWords
+                - prohibitedWords
+                - preservedUsernames
+                - hcaptchaSecretKey
+                - mcaptchaSecretKey
+                - recaptchaSecretKey
+                - turnstileSecretKey
+                - sensitiveMediaDetection
+                - sensitiveMediaDetectionSensitivity
+                - setSensitiveFlagAutomatically
+                - enableSensitiveMediaDetectionForVideos
+                - proxyAccountId
+                - email
+                - smtpSecure
+                - smtpHost
+                - smtpPort
+                - smtpUser
+                - smtpPass
+                - swPrivateKey
+                - useObjectStorage
+                - objectStorageBaseUrl
+                - objectStorageBucket
+                - objectStoragePrefix
+                - objectStorageEndpoint
+                - objectStorageRegion
+                - objectStoragePort
+                - objectStorageAccessKey
+                - objectStorageSecretKey
+                - objectStorageUseSSL
+                - objectStorageUseProxy
+                - objectStorageSetPublicRead
+                - enableIpLogging
+                - enableActiveEmailValidation
+                - enableVerifymailApi
+                - verifymailAuthKey
+                - enableTruemailApi
+                - truemailInstance
+                - truemailAuthKey
+                - enableChartsForRemoteUser
+                - enableChartsForFederatedInstances
+                - enableServerMachineStats
+                - enableIdenticonGeneration
+                - manifestJsonOverride
+                - policies
+                - enableFanoutTimeline
+                - enableFanoutTimelineDbFallback
+                - perLocalUserUserTimelineCacheMax
+                - perRemoteUserUserTimelineCacheMax
+                - perUserHomeTimelineCacheMax
+                - perUserListTimelineCacheMax
+                - notesPerOneAd
+                - wellKnownWebsites
+                - urlPreviewDenyList
+                - featuredGameChannels
+                - backgroundImageUrl
+                - deeplAuthKey
+                - deeplIsPro
+                - defaultDarkTheme
+                - defaultLightTheme
+                - description
+                - dimensions
+                - disableRegistration
+                - impressumUrl
+                - maintainerEmail
+                - maintainerName
+                - name
+                - shortName
+                - objectStorageS3ForcePathStyle
+                - privacyPolicyUrl
+                - repositoryUrl
+                - summalyProxy
+                - themeColor
+                - tosUrl
+                - uri
+                - version
+                - urlPreviewEnabled
+                - urlPreviewTimeout
+                - urlPreviewMaximumContentLength
+                - urlPreviewRequireContentLength
+                - urlPreviewUserAgent
+                - urlPreviewSummaryProxyUrl
+                - federation
+                - federationHosts
+                - prohibitedWordsForNameOfUser
+                - inquiryUrl
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /announcement:
+    post:
+      operationId: post___announcement
+      summary: announcement
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/announcement.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                announcementId:
+                  type: string
+                  format: misskey:id
+              required:
+              - announcementId
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Announcement'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_ANNOUNCEMENT:
+                  value:
+                    error:
+                      message: No such announcement.
+                      code: NO_SUCH_ANNOUNCEMENT
+                      id: b57b5e1d-4f49-404a-9edb-46b00268f121
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /announcements:
+    post:
+      operationId: post___announcements
+      summary: announcements
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/announcements.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                limit:
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+                  default: 10
+                sinceId:
+                  type: string
+                  format: misskey:id
+                untilId:
+                  type: string
+                  format: misskey:id
+                offset:
+                  type: integer
+                  default: 0
+                isActive:
+                  type: boolean
+                  default: true
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  $ref: '#/components/schemas/Announcement'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /announcements/show:
+    post:
+      operationId: post___announcements___show
+      summary: announcements/show
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/announcements/show.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                announcementId:
+                  type: string
+                  format: misskey:id
+              required:
+              - announcementId
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Announcement'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_ANNOUNCEMENT:
+                  value:
+                    error:
+                      message: No such announcement.
+                      code: NO_SUCH_ANNOUNCEMENT
+                      id: b57b5e1d-4f49-404a-9edb-46b00268f121
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /emoji:
+    get:
+      operationId: get___emoji
+      summary: emoji
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/emoji.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/EmojiDetailed'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+    post:
+      operationId: post___emoji
+      summary: emoji
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/emoji.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/EmojiDetailed'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /emojis:
+    get:
+      operationId: get___emojis
+      summary: emojis
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/emojis.ts
+      tags:
+      - meta
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  emojis:
+                    type: array
+                    items:
+                      type: object
+                      $ref: '#/components/schemas/EmojiSimple'
+                required:
+                - emojis
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+    post:
+      operationId: post___emojis
+      summary: emojis
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/emojis.ts
+      tags:
+      - meta
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  emojis:
+                    type: array
+                    items:
+                      type: object
+                      $ref: '#/components/schemas/EmojiSimple'
+                required:
+                - emojis
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /endpoint:
+    post:
+      operationId: post___endpoint
+      summary: endpoint
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/endpoint.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+              required:
+              - endpoint
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type:
+                - object
+                - 'null'
+                properties:
+                  params:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        type:
+                          type: string
+                      required:
+                      - name
+                      - type
+                required:
+                - params
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /endpoints:
+    post:
+      operationId: post___endpoints
+      summary: endpoints
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/endpoints.ts
+      tags:
+      - meta
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                - admin/abuse-user-reports
+                - admin/accounts/create
+                - admin/announcements/create
+                - '...'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /fetch-external-resources:
+    post:
+      operationId: post___fetch-external-resources
+      summary: fetch-external-resources
+      description: 'No description provided.
+
+
+        **Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.
+
+        **Credential required**: *Yes*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/fetch-external-resources.ts
+      tags:
+      - meta
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                hash:
+                  type: string
+              required:
+              - url
+              - hash
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type:
+                    type: string
+                  data:
+                    type: string
+                required:
+                - type
+                - data
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                EXT_RESOURCE_RETURNED_INVALID_SCHEMA:
+                  value:
+                    error:
+                      message: External resource returned invalid schema.
+                      code: EXT_RESOURCE_RETURNED_INVALID_SCHEMA
+                      id: bb774091-7a15-4a70-9dc5-6ac8cf125856
+                EXT_RESOURCE_HASH_DIDNT_MATCH:
+                  value:
+                    error:
+                      message: Hash did not match.
+                      code: EXT_RESOURCE_HASH_DIDNT_MATCH
+                      id: 693ba8ba-b486-40df-a174-72f8279b56a4
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                RATE_LIMIT_EXCEEDED:
+                  value:
+                    error:
+                      message: Rate limit exceeded. Please try again later.
+                      code: RATE_LIMIT_EXCEEDED
+                      id: d5826d14-3982-4d2e-8011-b9e9f02499ef
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /fetch-rss:
+    get:
+      operationId: get___fetch-rss
+      summary: fetch-rss
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/fetch-rss.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+              required:
+              - url
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  image:
+                    type: object
+                    properties:
+                      link:
+                        type: string
+                      url:
+                        type: string
+                      title:
+                        type: string
+                    required:
+                    - url
+                  paginationLinks:
+                    type: object
+                    properties:
+                      self:
+                        type: string
+                      first:
+                        type: string
+                      next:
+                        type: string
+                      last:
+                        type: string
+                      prev:
+                        type: string
+                  link:
+                    type: string
+                  title:
+                    type: string
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        link:
+                          type: string
+                        guid:
+                          type: string
+                        title:
+                          type: string
+                        pubDate:
+                          type: string
+                        creator:
+                          type: string
+                        summary:
+                          type: string
+                        content:
+                          type: string
+                        isoDate:
+                          type: string
+                        categories:
+                          type: array
+                          items:
+                            type: string
+                        contentSnippet:
+                          type: string
+                        enclosure:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                            length:
+                              type: number
+                            type:
+                              type: string
+                          required:
+                          - url
+                  feedUrl:
+                    type: string
+                  description:
+                    type: string
+                  itunes:
+                    type: object
+                    additionalProperties: true
+                    properties:
+                      image:
+                        type: string
+                      owner:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          email:
+                            type: string
+                      author:
+                        type: string
+                      summary:
+                        type: string
+                      explicit:
+                        type: string
+                      categories:
+                        type: array
+                        items:
+                          type: string
+                      keywords:
+                        type: array
+                        items:
+                          type: string
+                required:
+                - items
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+    post:
+      operationId: post___fetch-rss
+      summary: fetch-rss
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/fetch-rss.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+              required:
+              - url
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  image:
+                    type: object
+                    properties:
+                      link:
+                        type: string
+                      url:
+                        type: string
+                      title:
+                        type: string
+                    required:
+                    - url
+                  paginationLinks:
+                    type: object
+                    properties:
+                      self:
+                        type: string
+                      first:
+                        type: string
+                      next:
+                        type: string
+                      last:
+                        type: string
+                      prev:
+                        type: string
+                  link:
+                    type: string
+                  title:
+                    type: string
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        link:
+                          type: string
+                        guid:
+                          type: string
+                        title:
+                          type: string
+                        pubDate:
+                          type: string
+                        creator:
+                          type: string
+                        summary:
+                          type: string
+                        content:
+                          type: string
+                        isoDate:
+                          type: string
+                        categories:
+                          type: array
+                          items:
+                            type: string
+                        contentSnippet:
+                          type: string
+                        enclosure:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                            length:
+                              type: number
+                            type:
+                              type: string
+                          required:
+                          - url
+                  feedUrl:
+                    type: string
+                  description:
+                    type: string
+                  itunes:
+                    type: object
+                    additionalProperties: true
+                    properties:
+                      image:
+                        type: string
+                      owner:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          email:
+                            type: string
+                      author:
+                        type: string
+                      summary:
+                        type: string
+                      explicit:
+                        type: string
+                      categories:
+                        type: array
+                        items:
+                          type: string
+                      keywords:
+                        type: array
+                        items:
+                          type: string
+                required:
+                - items
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /get-online-users-count:
+    get:
+      operationId: get___get-online-users-count
+      summary: get-online-users-count
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/get-online-users-count.ts
+      tags:
+      - meta
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: number
+                required:
+                - count
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+    post:
+      operationId: post___get-online-users-count
+      summary: get-online-users-count
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/get-online-users-count.ts
+      tags:
+      - meta
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: number
+                required:
+                - count
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /invite/create:
+    post:
+      operationId: post___invite___create
+      summary: invite/create
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:invite-codes*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/invite/create.ts
+      tags:
+      - meta
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/InviteCode'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                EXCEEDED_LIMIT_OF_CREATE_INVITE_CODE:
+                  value:
+                    error:
+                      message: You have exceeded the limit for creating an invitation code.
+                      code: EXCEEDED_LIMIT_OF_CREATE_INVITE_CODE
+                      id: 8b165dd3-6f37-4557-8db1-73175d63c641
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /invite/delete:
+    post:
+      operationId: post___invite___delete
+      summary: invite/delete
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:invite-codes*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/invite/delete.ts
+      tags:
+      - meta
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                inviteId:
+                  type: string
+                  format: misskey:id
+              required:
+              - inviteId
+      responses:
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_INVITE_CODE:
+                  value:
+                    error:
+                      message: No such invite code.
+                      code: NO_SUCH_INVITE_CODE
+                      id: cd4f9ae4-7854-4e3e-8df9-c296f051e634
+                CAN_NOT_DELETE_INVITE_CODE:
+                  value:
+                    error:
+                      message: You can't delete this invite code.
+                      code: CAN_NOT_DELETE_INVITE_CODE
+                      id: ff17af39-000c-4d4e-abdf-848fa30fc1ce
+                ACCESS_DENIED:
+                  value:
+                    error:
+                      message: Access denied.
+                      code: ACCESS_DENIED
+                      id: 5eb8d909-2540-4970-90b8-dd6f86088121
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /invite/limit:
+    post:
+      operationId: post___invite___limit
+      summary: invite/limit
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *read:invite-codes*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/invite/limit.ts
+      tags:
+      - meta
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  remaining:
+                    type:
+                    - integer
+                    - 'null'
+                required:
+                - remaining
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /invite/list:
+    post:
+      operationId: post___invite___list
+      summary: invite/list
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *read:invite-codes*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/invite/list.ts
+      tags:
+      - meta
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                limit:
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+                  default: 30
+                sinceId:
+                  type: string
+                  format: misskey:id
+                untilId:
+                  type: string
+                  format: misskey:id
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  $ref: '#/components/schemas/InviteCode'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /meta:
+    get:
+      operationId: get___meta
+      summary: meta
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/meta.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                detail:
+                  type: boolean
+                  default: true
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                oneOf:
+                - type: object
+                  $ref: '#/components/schemas/MetaLite'
+                - type: object
+                  $ref: '#/components/schemas/MetaDetailed'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+    post:
+      operationId: post___meta
+      summary: meta
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/meta.ts
+      tags:
+      - meta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                detail:
+                  type: boolean
+                  default: true
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                oneOf:
+                - type: object
+                  $ref: '#/components/schemas/MetaLite'
+                - type: object
+                  $ref: '#/components/schemas/MetaDetailed'
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /ping:
+    post:
+      operationId: post___ping
+      summary: ping
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/ping.ts
+      tags:
+      - meta
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pong:
+                    type: number
+                required:
+                - pong
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /stats:
+    get:
+      operationId: get___stats
+      summary: stats
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/stats.ts
+      tags:
+      - meta
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  notesCount:
+                    type: number
+                  originalNotesCount:
+                    type: number
+                  usersCount:
+                    type: number
+                  originalUsersCount:
+                    type: number
+                  instances:
+                    type: number
+                  driveUsageLocal:
+                    type: number
+                  driveUsageRemote:
+                    type: number
+                required:
+                - notesCount
+                - originalNotesCount
+                - usersCount
+                - originalUsersCount
+                - instances
+                - driveUsageLocal
+                - driveUsageRemote
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+    post:
+      operationId: post___stats
+      summary: stats
+      description: 'No description provided.
+
+
+        **Credential required**: *No*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/stats.ts
+      tags:
+      - meta
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  notesCount:
+                    type: number
+                  originalNotesCount:
+                    type: number
+                  usersCount:
+                    type: number
+                  originalUsersCount:
+                    type: number
+                  instances:
+                    type: number
+                  driveUsageLocal:
+                    type: number
+                  driveUsageRemote:
+                    type: number
+                required:
+                - notesCount
+                - originalNotesCount
+                - usersCount
+                - originalUsersCount
+                - instances
+                - driveUsageLocal
+                - driveUsageRemote
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+components:
+  schemas:
+    MetaDetailed:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/MetaLite'
+      - type: object
+        $ref: '#/components/schemas/MetaDetailedOnly'
+    EmojiDetailed:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        name:
+          type: string
+        category:
+          type:
+          - string
+          - 'null'
+        host:
+          type:
+          - string
+          - 'null'
+          description: The local host is represented with `null`.
+        url:
+          type: string
+        license:
+          type:
+          - string
+          - 'null'
+        isSensitive:
+          type: boolean
+        localOnly:
+          type: boolean
+        requestedBy:
+          type:
+          - string
+          - 'null'
+        memo:
+          type:
+          - string
+          - 'null'
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+      required:
+      - id
+      - aliases
+      - name
+      - category
+      - host
+      - url
+      - license
+      - isSensitive
+      - localOnly
+    MetaLite:
+      type: object
+      properties:
+        maintainerName:
+          type:
+          - string
+          - 'null'
+        maintainerEmail:
+          type:
+          - string
+          - 'null'
+        version:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
+        shortName:
+          type:
+          - string
+          - 'null'
+        uri:
+          type: string
+          format: url
+          example: https://misskey.example.com
+        description:
+          type:
+          - string
+          - 'null'
+        langs:
+          type: array
+          items:
+            type: string
+        dimensions:
+          type: number
+          minimum: 1
+        tosUrl:
+          type:
+          - string
+          - 'null'
+        repositoryUrl:
+          type:
+          - string
+          - 'null'
+          default: https://github.com/misskey-dev/misskey
+        feedbackUrl:
+          type:
+          - string
+          - 'null'
+          default: https://github.com/misskey-dev/misskey/issues/new
+        defaultDarkTheme:
+          type:
+          - string
+          - 'null'
+        defaultLightTheme:
+          type:
+          - string
+          - 'null'
+        disableRegistration:
+          type: boolean
+        emailRequiredForSignup:
+          type: boolean
+        enableHcaptcha:
+          type: boolean
+        hcaptchaSiteKey:
+          type:
+          - string
+          - 'null'
+        enableMcaptcha:
+          type: boolean
+        mcaptchaSiteKey:
+          type:
+          - string
+          - 'null'
+        mcaptchaInstanceUrl:
+          type:
+          - string
+          - 'null'
+        enableRecaptcha:
+          type: boolean
+        recaptchaSiteKey:
+          type:
+          - string
+          - 'null'
+        enableTurnstile:
+          type: boolean
+        turnstileSiteKey:
+          type:
+          - string
+          - 'null'
+        googleAnalyticsId:
+          type:
+          - string
+          - 'null'
+        enableTestcaptcha:
+          type: boolean
+        swPublickey:
+          type:
+          - string
+          - 'null'
+        mascotImageUrl:
+          type: string
+          default: /assets/ai.png
+        bannerUrl:
+          type:
+          - string
+          - 'null'
+        serverErrorImageUrl:
+          type:
+          - string
+          - 'null'
+        infoImageUrl:
+          type:
+          - string
+          - 'null'
+        notFoundImageUrl:
+          type:
+          - string
+          - 'null'
+        iconUrl:
+          type:
+          - string
+          - 'null'
+        maxNoteTextLength:
+          type: number
+        ads:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: id
+                example: xxxxxxxxxx
+              url:
+                type: string
+                format: url
+              place:
+                type: string
+                enum:
+                - square
+                - horizontal
+                - horizontal-big
+                - vertical
+              ratio:
+                type: number
+              imageUrl:
+                type: string
+                format: url
+              imageBlurhash:
+                type:
+                - string
+                - 'null'
+              dayOfWeek:
+                type: integer
+              isSensitive:
+                type: boolean
+            required:
+            - id
+            - url
+            - place
+            - ratio
+            - imageUrl
+            - imageBlurhash
+            - dayOfWeek
+            - isSensitive
+        wellKnownWebsites:
+          type: array
+          items:
+            type: string
+        notesPerOneAd:
+          type: number
+          default: 0
+        enableEmail:
+          type: boolean
+        enableServiceWorker:
+          type: boolean
+        translatorAvailable:
+          type: boolean
+        sentryForFrontend:
+          type:
+          - object
+          - 'null'
+          properties:
+            options:
+              type: object
+              properties:
+                dsn:
+                  type: string
+              additionalProperties: true
+              required:
+              - dsn
+            vueIntegration:
+              type:
+              - object
+              - 'null'
+              additionalProperties: true
+            browserTracingIntegration:
+              type:
+              - object
+              - 'null'
+              additionalProperties: true
+            replayIntegration:
+              type:
+              - object
+              - 'null'
+              additionalProperties: true
+          required:
+          - options
+        mediaProxy:
+          type: string
+        enableUrlPreview:
+          type: boolean
+        enableSkebStatus:
+          type: boolean
+        backgroundImageUrl:
+          type:
+          - string
+          - 'null'
+        impressumUrl:
+          type:
+          - string
+          - 'null'
+        logoImageUrl:
+          type:
+          - string
+          - 'null'
+        privacyPolicyUrl:
+          type:
+          - string
+          - 'null'
+        inquiryUrl:
+          type:
+          - string
+          - 'null'
+        serverRules:
+          type: array
+          items:
+            type: string
+        themeColor:
+          type:
+          - string
+          - 'null'
+        policies:
+          type: object
+          $ref: '#/components/schemas/RolePolicies'
+        noteSearchableScope:
+          type: string
+          enum:
+          - local
+          - global
+          default: local
+        maxFileSize:
+          type: number
+        federation:
+          type: string
+          enum:
+          - all
+          - specified
+          - none
+      required:
+      - maintainerName
+      - maintainerEmail
+      - version
+      - name
+      - shortName
+      - uri
+      - description
+      - langs
+      - dimensions
+      - tosUrl
+      - repositoryUrl
+      - feedbackUrl
+      - defaultDarkTheme
+      - defaultLightTheme
+      - disableRegistration
+      - emailRequiredForSignup
+      - enableHcaptcha
+      - hcaptchaSiteKey
+      - enableMcaptcha
+      - mcaptchaSiteKey
+      - mcaptchaInstanceUrl
+      - enableRecaptcha
+      - recaptchaSiteKey
+      - enableTurnstile
+      - turnstileSiteKey
+      - googleAnalyticsId
+      - enableTestcaptcha
+      - swPublickey
+      - mascotImageUrl
+      - bannerUrl
+      - serverErrorImageUrl
+      - infoImageUrl
+      - notFoundImageUrl
+      - iconUrl
+      - maxNoteTextLength
+      - ads
+      - wellKnownWebsites
+      - notesPerOneAd
+      - enableEmail
+      - enableServiceWorker
+      - translatorAvailable
+      - sentryForFrontend
+      - mediaProxy
+      - enableUrlPreview
+      - enableSkebStatus
+      - backgroundImageUrl
+      - impressumUrl
+      - logoImageUrl
+      - privacyPolicyUrl
+      - inquiryUrl
+      - serverRules
+      - themeColor
+      - policies
+      - noteSearchableScope
+      - maxFileSize
+      - federation
+    RolePolicies:
+      type: object
+      properties:
+        gtlAvailable:
+          type: boolean
+        ltlAvailable:
+          type: boolean
+        canPublicNote:
+          type: boolean
+        canScheduleNote:
+          type: boolean
+        scheduleNoteLimit:
+          type: integer
+        scheduleNoteMaxDays:
+          type: integer
+        canInitiateConversation:
+          type: boolean
+        canCreateContent:
+          type: boolean
+        canUpdateContent:
+          type: boolean
+        canDeleteContent:
+          type: boolean
+        canPurgeAccount:
+          type: boolean
+        canUpdateAvatar:
+          type: boolean
+        canUpdateBanner:
+          type: boolean
+        mentionLimit:
+          type: integer
+        canInvite:
+          type: boolean
+        inviteLimit:
+          type: integer
+        inviteLimitCycle:
+          type: integer
+        inviteExpirationTime:
+          type: integer
+        canManageCustomEmojis:
+          type: boolean
+        canManageAvatarDecorations:
+          type: boolean
+        canSearchNotes:
+          type: boolean
+        canUseTranslator:
+          type: boolean
+        canUseDriveFileInSoundSettings:
+          type: boolean
+        canUseReaction:
+          type: boolean
+        canHideAds:
+          type: boolean
+        driveCapacityMb:
+          type: integer
+        maxFileSizeMb:
+          type: integer
+        alwaysMarkNsfw:
+          type: boolean
+        skipNsfwDetection:
+          type: boolean
+        canUpdateBioMedia:
+          type: boolean
+        pinLimit:
+          type: integer
+        antennaLimit:
+          type: integer
+        antennaNotesLimit:
+          type: integer
+        wordMuteLimit:
+          type: integer
+        webhookLimit:
+          type: integer
+        clipLimit:
+          type: integer
+        noteEachClipsLimit:
+          type: integer
+        userListLimit:
+          type: integer
+        userEachUserListsLimit:
+          type: integer
+        rateLimitFactor:
+          type: integer
+        avatarDecorationLimit:
+          type: integer
+        canImportAntennas:
+          type: boolean
+        canImportBlocking:
+          type: boolean
+        canImportFollowing:
+          type: boolean
+        canImportMuting:
+          type: boolean
+        canImportUserLists:
+          type: boolean
+        mutualLinkSectionLimit:
+          type: integer
+        mutualLinkLimit:
+          type: integer
+        chatAvailability:
+          type: string
+          enum:
+          - available
+          - readonly
+          - unavailable
+      required:
+      - gtlAvailable
+      - ltlAvailable
+      - canPublicNote
+      - canScheduleNote
+      - scheduleNoteLimit
+      - scheduleNoteMaxDays
+      - canInitiateConversation
+      - canCreateContent
+      - canUpdateContent
+      - canDeleteContent
+      - canPurgeAccount
+      - canUpdateAvatar
+      - canUpdateBanner
+      - mentionLimit
+      - canInvite
+      - inviteLimit
+      - inviteLimitCycle
+      - inviteExpirationTime
+      - canManageCustomEmojis
+      - canManageAvatarDecorations
+      - canSearchNotes
+      - canUseTranslator
+      - canUseDriveFileInSoundSettings
+      - canUseReaction
+      - canHideAds
+      - driveCapacityMb
+      - maxFileSizeMb
+      - alwaysMarkNsfw
+      - skipNsfwDetection
+      - canUpdateBioMedia
+      - pinLimit
+      - antennaLimit
+      - antennaNotesLimit
+      - wordMuteLimit
+      - webhookLimit
+      - clipLimit
+      - noteEachClipsLimit
+      - userListLimit
+      - userEachUserListsLimit
+      - rateLimitFactor
+      - avatarDecorationLimit
+      - canImportAntennas
+      - canImportBlocking
+      - canImportFollowing
+      - canImportMuting
+      - canImportUserLists
+      - mutualLinkSectionLimit
+      - mutualLinkLimit
+      - chatAvailability
+    EmojiSimple:
+      type: object
+      properties:
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        name:
+          type: string
+        category:
+          type:
+          - string
+          - 'null'
+        url:
+          type: string
+        localOnly:
+          type: boolean
+        isSensitive:
+          type: boolean
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+      required:
+      - aliases
+      - name
+      - category
+      - url
+    InviteCode:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        code:
+          type: string
+          example: GR6S02ERUA5VR
+        expiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        usedBy:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        usedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        used:
+          type: boolean
+      required:
+      - id
+      - code
+      - expiresAt
+      - createdAt
+      - createdBy
+      - usedBy
+      - usedAt
+      - used
+    MetaDetailedOnly:
+      type: object
+      properties:
+        features:
+          type: object
+          properties:
+            registration:
+              type: boolean
+            emailRequiredForSignup:
+              type: boolean
+            localTimeline:
+              type: boolean
+            globalTimeline:
+              type: boolean
+            hCaptcha:
+              type: boolean
+            hcaptcha:
+              type: boolean
+              description: Alias of hCaptcha
+            mCaptcha:
+              type: boolean
+            mcaptcha:
+              type: boolean
+              description: Alias of mCaptcha
+            reCaptcha:
+              type: boolean
+            recaptcha:
+              type: boolean
+              description: Alias of reCaptcha
+            turnstile:
+              type: boolean
+            objectStorage:
+              type: boolean
+            serviceWorker:
+              type: boolean
+            miauth:
+              type: boolean
+              default: true
+          required:
+          - registration
+          - emailRequiredForSignup
+          - localTimeline
+          - globalTimeline
+          - hCaptcha
+          - hcaptcha
+          - mCaptcha
+          - mcaptcha
+          - reCaptcha
+          - recaptcha
+          - turnstile
+          - objectStorage
+          - serviceWorker
+        proxyAccountName:
+          type:
+          - string
+          - 'null'
+        requireSetup:
+          type: boolean
+          example: false
+        cacheRemoteFiles:
+          type: boolean
+        cacheRemoteSensitiveFiles:
+          type: boolean
+      required:
+      - proxyAccountName
+      - requireSetup
+      - cacheRemoteFiles
+      - cacheRemoteSensitiveFiles
+    Announcement:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        text:
+          type: string
+        title:
+          type: string
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        icon:
+          type: string
+          enum:
+          - info
+          - warning
+          - error
+          - success
+        display:
+          type: string
+          enum:
+          - dialog
+          - normal
+          - banner
+        needConfirmationToRead:
+          type: boolean
+        needEnrollmentTutorialToRead:
+          type: boolean
+        forYou:
+          type: boolean
+        closeDuration:
+          type: number
+        displayOrder:
+          type: number
+        silence:
+          type: boolean
+        isRead:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - updatedAt
+      - text
+      - title
+      - imageUrl
+      - icon
+      - display
+      - needConfirmationToRead
+      - needEnrollmentTutorialToRead
+      - forYou
+      - closeDuration
+      - displayOrder
+      - silence
+    UserLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type:
+          - string
+          - 'null'
+          example: 藍
+        username:
+          type: string
+          example: ai
+        host:
+          type:
+          - string
+          - 'null'
+          example: misskey.example.com
+          description: The local host is represented with `null`.
+        avatarUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        avatarBlurhash:
+          type:
+          - string
+          - 'null'
+        avatarDecorations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: id
+              angle:
+                type: number
+              flipH:
+                type: boolean
+              url:
+                type: string
+                format: url
+              offsetX:
+                type: number
+              offsetY:
+                type: number
+            required:
+            - id
+            - url
+        isBot:
+          type: boolean
+        isCat:
+          type: boolean
+        requireSigninToViewContents:
+          type: boolean
+        makeNotesFollowersOnlyBefore:
+          type:
+          - number
+          - 'null'
+        makeNotesHiddenBefore:
+          type:
+          - number
+          - 'null'
+        instance:
+          type: object
+          properties:
+            name:
+              type:
+              - string
+              - 'null'
+            softwareName:
+              type:
+              - string
+              - 'null'
+            softwareVersion:
+              type:
+              - string
+              - 'null'
+            iconUrl:
+              type:
+              - string
+              - 'null'
+            faviconUrl:
+              type:
+              - string
+              - 'null'
+            themeColor:
+              type:
+              - string
+              - 'null'
+          required:
+          - name
+          - softwareName
+          - softwareVersion
+          - iconUrl
+          - faviconUrl
+          - themeColor
+        emojis:
+          type: object
+          additionalProperties:
+            type: string
+        onlineStatus:
+          type: string
+          enum:
+          - unknown
+          - online
+          - active
+          - offline
+        badgeRoles:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              iconUrl:
+                type:
+                - string
+                - 'null'
+              displayOrder:
+                type: number
+              behavior:
+                type: string
+            required:
+            - name
+            - iconUrl
+            - displayOrder
+      required:
+      - id
+      - name
+      - username
+      - host
+      - avatarUrl
+      - avatarBlurhash
+      - avatarDecorations
+      - emojis
+      - onlineStatus
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+externalDocs:
+  description: Repository
+  url: https://github.com/MisskeyIO/misskey

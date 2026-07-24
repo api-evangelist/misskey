@@ -1,0 +1,1039 @@
+openapi: 3.1.0
+info:
+  version: 2025.4.1-io.12b-fb6fbea074
+  title: Misskey account webhooks API
+servers:
+- url: https://misskey.io/api
+tags:
+- name: webhooks
+paths:
+  /admin/system-webhook/test:
+    post:
+      operationId: post___admin___system-webhook___test
+      summary: admin/system-webhook/test
+      description: 'No description provided.
+
+
+        **Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.
+
+        **Credential required**: *Yes* / **Permission**: *read:admin:system-webhook*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/admin/system-webhook/test.ts
+      tags:
+      - webhooks
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webhookId:
+                  type: string
+                  format: misskey:id
+                type:
+                  type: string
+                  enum:
+                  - abuseReport
+                  - abuseReportResolved
+                  - userCreated
+                  - inactiveModeratorsWarning
+                  - inactiveModeratorsInvitationOnlyChanged
+                  - reportAutoResolved
+                override:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                    secret:
+                      type: string
+              required:
+              - webhookId
+              - type
+      responses:
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_WEBHOOK:
+                  value:
+                    error:
+                      message: No such webhook.
+                      code: NO_SUCH_WEBHOOK
+                      id: 0c52149c-e913-18f8-5dc7-74870bfe0cf9
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                RATE_LIMIT_EXCEEDED:
+                  value:
+                    error:
+                      message: Rate limit exceeded. Please try again later.
+                      code: RATE_LIMIT_EXCEEDED
+                      id: d5826d14-3982-4d2e-8011-b9e9f02499ef
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /i/webhooks/create:
+    post:
+      operationId: post___i___webhooks___create
+      summary: i/webhooks/create
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/create.ts
+      tags:
+      - webhooks
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                url:
+                  type: string
+                  minLength: 1
+                  maxLength: 1024
+                secret:
+                  type: string
+                  maxLength: 1024
+                  default: ''
+                'on':
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                    - mention
+                    - unfollow
+                    - follow
+                    - followed
+                    - note
+                    - reply
+                    - renote
+                    - reaction
+                    - reportCreated
+                    - reportResolved
+                    - reportAutoResolved
+              required:
+              - name
+              - url
+              - 'on'
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: misskey:id
+                  userId:
+                    type: string
+                    format: misskey:id
+                  name:
+                    type: string
+                  'on':
+                    type: array
+                    items:
+                      type: string
+                      enum:
+                      - mention
+                      - unfollow
+                      - follow
+                      - followed
+                      - note
+                      - reply
+                      - renote
+                      - reaction
+                      - reportCreated
+                      - reportResolved
+                      - reportAutoResolved
+                  url:
+                    type: string
+                  secret:
+                    type: string
+                  active:
+                    type: boolean
+                  latestSentAt:
+                    type:
+                    - string
+                    - 'null'
+                    format: date-time
+                  latestStatus:
+                    type:
+                    - integer
+                    - 'null'
+                required:
+                - id
+                - userId
+                - name
+                - 'on'
+                - url
+                - secret
+                - active
+                - latestSentAt
+                - latestStatus
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                TOO_MANY_WEBHOOKS:
+                  value:
+                    error:
+                      message: You cannot create webhook any more.
+                      code: TOO_MANY_WEBHOOKS
+                      id: 87a9bb19-111e-4e37-81d3-a3e7426453b0
+                YOU_ARE_NOT_ADMIN:
+                  value:
+                    error:
+                      message: You are not an administrator.
+                      code: YOU_ARE_NOT_ADMIN
+                      id: 26601bea-079b-4782-8dac-071febe2acf9
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /i/webhooks/delete:
+    post:
+      operationId: post___i___webhooks___delete
+      summary: i/webhooks/delete
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/delete.ts
+      tags:
+      - webhooks
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webhookId:
+                  type: string
+                  format: misskey:id
+              required:
+              - webhookId
+      responses:
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_WEBHOOK:
+                  value:
+                    error:
+                      message: No such webhook.
+                      code: NO_SUCH_WEBHOOK
+                      id: bae73e5a-5522-4965-ae19-3a8688e71d82
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /i/webhooks/list:
+    post:
+      operationId: post___i___webhooks___list
+      summary: i/webhooks/list
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *read:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/list.ts
+      tags:
+      - webhooks
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      format: misskey:id
+                    userId:
+                      type: string
+                      format: misskey:id
+                    name:
+                      type: string
+                    'on':
+                      type: array
+                      items:
+                        type: string
+                        enum:
+                        - mention
+                        - unfollow
+                        - follow
+                        - followed
+                        - note
+                        - reply
+                        - renote
+                        - reaction
+                        - reportCreated
+                        - reportResolved
+                        - reportAutoResolved
+                    url:
+                      type: string
+                    secret:
+                      type: string
+                    active:
+                      type: boolean
+                    latestSentAt:
+                      type:
+                      - string
+                      - 'null'
+                      format: date-time
+                    latestStatus:
+                      type:
+                      - integer
+                      - 'null'
+                  required:
+                  - id
+                  - userId
+                  - name
+                  - 'on'
+                  - url
+                  - secret
+                  - active
+                  - latestSentAt
+                  - latestStatus
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /i/webhooks/show:
+    post:
+      operationId: post___i___webhooks___show
+      summary: i/webhooks/show
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *read:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/show.ts
+      tags:
+      - webhooks
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webhookId:
+                  type: string
+                  format: misskey:id
+              required:
+              - webhookId
+      responses:
+        '200':
+          description: OK (with results)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: misskey:id
+                  userId:
+                    type: string
+                    format: misskey:id
+                  name:
+                    type: string
+                  'on':
+                    type: array
+                    items:
+                      type: string
+                      enum:
+                      - mention
+                      - unfollow
+                      - follow
+                      - followed
+                      - note
+                      - reply
+                      - renote
+                      - reaction
+                      - reportCreated
+                      - reportResolved
+                      - reportAutoResolved
+                  url:
+                    type: string
+                  secret:
+                    type: string
+                  active:
+                    type: boolean
+                  latestSentAt:
+                    type:
+                    - string
+                    - 'null'
+                    format: date-time
+                  latestStatus:
+                    type:
+                    - integer
+                    - 'null'
+                required:
+                - id
+                - userId
+                - name
+                - 'on'
+                - url
+                - secret
+                - active
+                - latestSentAt
+                - latestStatus
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_WEBHOOK:
+                  value:
+                    error:
+                      message: No such webhook.
+                      code: NO_SUCH_WEBHOOK
+                      id: 50f614d9-3047-4f7e-90d8-ad6b2d5fb098
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /i/webhooks/test:
+    post:
+      operationId: post___i___webhooks___test
+      summary: i/webhooks/test
+      description: 'No description provided.
+
+
+        **Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.
+
+        **Credential required**: *Yes* / **Permission**: *read:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/test.ts
+      tags:
+      - webhooks
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webhookId:
+                  type: string
+                  format: misskey:id
+                type:
+                  type: string
+                  enum:
+                  - mention
+                  - unfollow
+                  - follow
+                  - followed
+                  - note
+                  - reply
+                  - renote
+                  - reaction
+                  - reportCreated
+                  - reportResolved
+                  - reportAutoResolved
+                override:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                    secret:
+                      type: string
+              required:
+              - webhookId
+              - type
+      responses:
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_WEBHOOK:
+                  value:
+                    error:
+                      message: No such webhook.
+                      code: NO_SUCH_WEBHOOK
+                      id: 0c52149c-e913-18f8-5dc7-74870bfe0cf9
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                RATE_LIMIT_EXCEEDED:
+                  value:
+                    error:
+                      message: Rate limit exceeded. Please try again later.
+                      code: RATE_LIMIT_EXCEEDED
+                      id: d5826d14-3982-4d2e-8011-b9e9f02499ef
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+  /i/webhooks/update:
+    post:
+      operationId: post___i___webhooks___update
+      summary: i/webhooks/update
+      description: 'No description provided.
+
+
+        **Credential required**: *Yes* / **Permission**: *write:account*'
+      externalDocs:
+        description: Source code
+        url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/update.ts
+      tags:
+      - webhooks
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webhookId:
+                  type: string
+                  format: misskey:id
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                url:
+                  type: string
+                  minLength: 1
+                  maxLength: 1024
+                secret:
+                  type:
+                  - string
+                  - 'null'
+                  maxLength: 1024
+                'on':
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                    - mention
+                    - unfollow
+                    - follow
+                    - followed
+                    - note
+                    - reply
+                    - renote
+                    - reaction
+                    - reportCreated
+                    - reportResolved
+                    - reportAutoResolved
+                active:
+                  type: boolean
+              required:
+              - webhookId
+      responses:
+        '204':
+          description: OK (without any results)
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                NO_SUCH_WEBHOOK:
+                  value:
+                    error:
+                      message: No such webhook.
+                      code: NO_SUCH_WEBHOOK
+                      id: fb0fea69-da18-45b1-828d-bd4fd1612518
+                YOU_ARE_NOT_ADMIN:
+                  value:
+                    error:
+                      message: You are not an administrator.
+                      code: YOU_ARE_NOT_ADMIN
+                      id: a70c7643-1db5-4ebf-becd-ff4b4223cf23
+                WEBHOOK_LIMIT_EXCEEDED:
+                  value:
+                    error:
+                      message: You cannot update the webhook because you have exceeded the limit of webhooks.
+                      code: WEBHOOK_LIMIT_EXCEEDED
+                      id: a261cb2d-867d-47a8-a743-8bbd2c1438b1
+                INVALID_PARAM:
+                  value:
+                    error:
+                      message: Invalid param.
+                      code: INVALID_PARAM
+                      id: 3d81ceae-475f-4600-b2a8-2bc116157532
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                CREDENTIAL_REQUIRED:
+                  value:
+                    error:
+                      message: Credential required.
+                      code: CREDENTIAL_REQUIRED
+                      id: 1384574d-a912-4b81-8601-c7b1c4085df1
+        '403':
+          description: Forbidden error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AUTHENTICATION_FAILED:
+                  value:
+                    error:
+                      message: Authentication failed. Please ensure your token is correct.
+                      code: AUTHENTICATION_FAILED
+                      id: b0a7f5f8-dc2f-4171-b91f-de88ad238e14
+        '418':
+          description: I'm Ai
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                I_AM_AI:
+                  value:
+                    error:
+                      message: You sent a request to Ai-chan, Misskey's showgirl, instead of the server.
+                      code: I_AM_AI
+                      id: 60c46cd1-f23a-46b1-bebe-5d2b73951a84
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                INTERNAL_ERROR:
+                  value:
+                    error:
+                      message: Internal error occurred. Please contact us if the error persists.
+                      code: INTERNAL_ERROR
+                      id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+externalDocs:
+  description: Repository
+  url: https://github.com/MisskeyIO/misskey
