@@ -1,46 +1,998 @@
 aid: misskey
 url: https://raw.githubusercontent.com/api-evangelist/misskey/refs/heads/main/apis.yml
 apis:
-  - aid: misskey:misskey
-    name: Misskey API
-    tags:
-      - Social Networks
-      - Fediverse
-      - ActivityPub
-    humanURL: https://misskey-hub.net/en/docs/for-developers/api/
-    properties:
-      - url: https://misskey-hub.net/en/docs/for-developers/api/
-        type: Documentation
-      - url: https://misskey-hub.net/en/docs/for-developers/api/token/
-        type: Authentication
-      - url: https://github.com/misskey-dev/misskey
-        type: GitHubRepository
-      - url: https://github.com/misskey-dev/misskey.js
-        type: SDKs
-      - url: plans/misskey-plans-pricing.yml
-        type: Plans
-      - url: rate-limits/misskey-rate-limits.yml
-        type: RateLimits
-      - url: finops/misskey-finops.yml
-        type: FinOps
-      - url: openapi/misskey-openapi.json
-        type: OpenAPI
-      - url: json-ld/misskey-context.jsonld
-        type: JSONLDContext
-      - url: json-ld/misskey-api.jsonld
-        type: JSONLDDescription
-      - url: vocabulary/misskey-vocabulary.json
-        type: Vocabulary
-      - url: vocabulary/misskey-tags.json
-        type: Tags
-    description: >-
-      Misskey provides a comprehensive HTTP and streaming API for building clients,
-      integration web services, bots, and similar applications. All HTTP API endpoints
-      use POST requests with JSON request and response bodies. The API covers notes
-      (posts), users, timelines, follows, drives, channels, notifications, federation
-      via ActivityPub, and administrative operations. Authentication uses access tokens
-      via the MiAuth flow or personal token generation, passed as the i parameter in
-      the request body or via an Authorization Bearer header.
+- aid: misskey:misskey-account-api
+  name: Misskey account API
+  description: The account API from Misskey — 34 operation(s) for account.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - account
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-account-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-admin-api
+  name: Misskey Admin API
+  description: The Admin API from Misskey — 108 operation(s) for admin.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-admin-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-antennas-api
+  name: Misskey antennas API
+  description: The antennas API from Misskey — 6 operation(s) for antennas.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - antennas
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-antennas-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-app-api
+  name: Misskey app API
+  description: The app API from Misskey — 2 operation(s) for app.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - app
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-app-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-auth-api
+  name: Misskey auth API
+  description: The auth API from Misskey — 5 operation(s) for auth.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - auth
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-auth-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-bubble-game-api
+  name: Misskey Bubble Game API
+  description: The Bubble Game API from Misskey — 2 operation(s) for bubble game.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - Bubble Game
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-bubble-game-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-channels-api
+  name: Misskey channels API
+  description: The channels API from Misskey — 13 operation(s) for channels.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - channels
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-channels-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-charts-api
+  name: Misskey charts API
+  description: The charts API from Misskey — 12 operation(s) for charts.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - charts
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-charts-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-clip-api
+  name: Misskey clip API
+  description: The clip API from Misskey — 2 operation(s) for clip.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - clip
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-clip-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-clips-api
+  name: Misskey clips API
+  description: The clips API from Misskey — 6 operation(s) for clips.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - clips
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-clips-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-drive-api
+  name: Misskey drive API
+  description: The drive API from Misskey — 18 operation(s) for drive.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - drive
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-drive-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-export-custom-emojis-api
+  name: Misskey Export Custom Emojis API
+  description: The Export Custom Emojis API from Misskey — 1 operation(s) for export custom emojis.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - Export Custom Emojis
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-export-custom-emojis-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-federation-api
+  name: Misskey federation API
+  description: The federation API from Misskey — 9 operation(s) for federation.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - federation
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-federation-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-flash-api
+  name: Misskey flash API
+  description: The flash API from Misskey — 5 operation(s) for flash.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - flash
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-flash-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-flashs-api
+  name: Misskey flashs API
+  description: The flashs API from Misskey — 2 operation(s) for flashs.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - flashs
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-flashs-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-following-api
+  name: Misskey following API
+  description: The following API from Misskey — 10 operation(s) for following.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - following
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-following-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-gallery-api
+  name: Misskey gallery API
+  description: The gallery API from Misskey — 9 operation(s) for gallery.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - gallery
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-gallery-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-hashtags-api
+  name: Misskey hashtags API
+  description: The hashtags API from Misskey — 5 operation(s) for hashtags.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - hashtags
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-hashtags-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-i-api
+  name: Misskey I API
+  description: The I API from Misskey — 38 operation(s) for i.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - I
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-i-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-lists-api
+  name: Misskey lists API
+  description: The lists API from Misskey — 9 operation(s) for lists.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - lists
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-lists-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-meta-api
+  name: Misskey meta API
+  description: The meta API from Misskey — 18 operation(s) for meta.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - meta
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-meta-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-non-productive-api
+  name: Misskey non-productive API
+  description: The non-productive API from Misskey — 2 operation(s) for non-productive.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - non-productive
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-non-productive-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-notes-api
+  name: Misskey notes API
+  description: The notes API from Misskey — 32 operation(s) for notes.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - notes
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-notes-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-notifications-api
+  name: Misskey notifications API
+  description: The notifications API from Misskey — 4 operation(s) for notifications.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-notifications-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-page-push-api
+  name: Misskey Page Push API
+  description: The Page Push API from Misskey — 1 operation(s) for page push.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - Page Push
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-page-push-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-pages-api
+  name: Misskey pages API
+  description: The pages API from Misskey — 7 operation(s) for pages.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - pages
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-pages-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-reactions-api
+  name: Misskey reactions API
+  description: The reactions API from Misskey — 2 operation(s) for reactions.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - reactions
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-reactions-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-reset-password-api
+  name: Misskey reset password API
+  description: The reset password API from Misskey — 2 operation(s) for reset password.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - reset password
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-reset-password-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-reversi-api
+  name: Misskey Reversi API
+  description: The Reversi API from Misskey — 7 operation(s) for reversi.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - Reversi
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-reversi-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-role-api
+  name: Misskey role API
+  description: The role API from Misskey — 4 operation(s) for role.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - role
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-role-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-users-api
+  name: Misskey Users API
+  description: The Users API from Misskey — 30 operation(s) for users.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-users-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
+- aid: misskey:misskey-webhooks-api
+  name: Misskey webhooks API
+  description: The webhooks API from Misskey — 7 operation(s) for webhooks.
+  humanURL: https://misskey-hub.net/en/docs/for-developers/api/
+  tags:
+  - webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/misskey-webhooks-api-openapi.yml
+  - type: Documentation
+    url: https://misskey-hub.net/en/docs/for-developers/api/
+  - type: Authentication
+    url: https://misskey-hub.net/en/docs/for-developers/api/token/
+  - type: GitHubRepository
+    url: https://github.com/misskey-dev/misskey
+  - type: SDKs
+    url: https://github.com/misskey-dev/misskey.js
+  - type: Plans
+    url: plans/misskey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/misskey-rate-limits.yml
+  - type: FinOps
+    url: finops/misskey-finops.yml
+  - type: JSONLDContext
+    url: json-ld/misskey-context.jsonld
+  - type: JSONLDDescription
+    url: json-ld/misskey-api.jsonld
+  - type: Vocabulary
+    url: vocabulary/misskey-vocabulary.json
+  - type: Tags
+    url: vocabulary/misskey-tags.json
 name: Misskey
 tags:
   - Open-Source
@@ -49,7 +1001,20 @@ tags:
   - ActivityPub
   - Decentralized
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/misskey.png
 access: 3rd-Party
 created: '2026-06-13'
 modified: '2026-06-13'
