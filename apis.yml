@@ -1033,6 +1033,19 @@ maintainers:
     email: info@apievangelist.com
 specificationVersion: '0.19'
 common:
+  - type: IssueTracker
+    url: https://github.com/misskey-dev/misskey/issues
+  - type: Releases
+    url: https://github.com/misskey-dev/misskey/releases
+  - type: SecurityPolicy
+    url: https://github.com/misskey-dev/misskey/blob/develop/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/misskey-dev/misskey/blob/develop/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/misskey-dev/misskey/blob/develop/CONTRIBUTING.md
+  - type: License
+    name: AGPL-3.0
+    url: https://github.com/misskey-dev/misskey/blob/develop/LICENSE
   - type: AgenticAccess
     url: agentic-access/misskey-agentic-access.yml
   - type: DomainSecurity
