@@ -1,0 +1,2693 @@
+{
+  "item": [
+    {
+      "id": "dd0ec7fd-dd69-4d25-a772-37bfbdfa0154",
+      "name": "webhooks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d29b3e1e-af26-4beb-9d0f-8a8db264c607",
+          "name": "admin/system-webhook/test",
+          "request": {
+            "name": "admin/system-webhook/test",
+            "description": {
+              "content": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes* / **Permission**: *read:admin:system-webhook*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "system-webhook",
+                "test"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "61444655-4811-4aec-81f2-e4bdb70ddf0c",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "system-webhook",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "efc1ea35-b7f2-4295-a41d-fd42efa15b13",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "system-webhook",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such webhook.\",\n    \"code\": \"NO_SUCH_WEBHOOK\",\n    \"id\": \"0c52149c-e913-18f8-5dc7-74870bfe0cf9\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9b8ac24-057e-40a9-a27d-6826dab05156",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "system-webhook",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0dc78836-c71f-41d9-842b-74b889ffb446",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "system-webhook",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "667cc4b2-2104-449f-b884-b2bf221f5926",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "system-webhook",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f4a88bd-f81f-444c-b7bc-3578783e99f5",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "system-webhook",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Rate limit exceeded. Please try again later.\",\n    \"code\": \"RATE_LIMIT_EXCEEDED\",\n    \"id\": \"d5826d14-3982-4d2e-8011-b9e9f02499ef\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0fe4886b-d277-4715-9db2-4ebd11c1ce34",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "system-webhook",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e2711a3-2c40-4990-ab57-63d1e0dfba63",
+          "name": "i/webhooks/create",
+          "request": {
+            "name": "i/webhooks/create",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "i",
+                "webhooks",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"secret\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1215c53f-4dfb-43f3-8968-866d2aa287ec",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"secret\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"name\": \"string\",\n  \"on\": [\n    \"renote\",\n    \"reportAutoResolved\"\n  ],\n  \"url\": \"string\",\n  \"secret\": \"string\",\n  \"active\": false,\n  \"latestSentAt\": \"2021-03-07T11:20:32.538Z\",\n  \"latestStatus\": 9141\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f894130b-4939-4878-be68-66ec19c0e2c7",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"secret\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You cannot create webhook any more.\",\n    \"code\": \"TOO_MANY_WEBHOOKS\",\n    \"id\": \"87a9bb19-111e-4e37-81d3-a3e7426453b0\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89d7bd10-6112-4028-aa44-7a03411a34a6",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"secret\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a007fd67-08cf-4a48-bd91-f533f3caa70c",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"secret\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eb20b5b3-4961-4682-8fe8-21096e72e2b6",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"secret\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2dbcf57-5f3f-4d93-9ad0-baffbade97bc",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"secret\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1675b4f-e2d4-401a-b65d-ca7b79a1eb5c",
+          "name": "i/webhooks/delete",
+          "request": {
+            "name": "i/webhooks/delete",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "i",
+                "webhooks",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a5ca404-0566-4f4c-aa5c-444597027ffd",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "08e8cb2a-7d0e-4b73-9edc-8770dafe3579",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such webhook.\",\n    \"code\": \"NO_SUCH_WEBHOOK\",\n    \"id\": \"bae73e5a-5522-4965-ae19-3a8688e71d82\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7accf372-0d99-4b48-97e4-6678057ffdac",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f59b973-7102-4abe-a7c1-ea075dac8763",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0a7589f-4e60-44a7-a98b-bd3ad2f05d43",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a049ae7-9189-4042-91a0-4249203b8cfd",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29e5047d-fb5c-4745-ad22-ea421e954327",
+          "name": "i/webhooks/list",
+          "request": {
+            "name": "i/webhooks/list",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "i",
+                "webhooks",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c24c0628-5473-47fe-9295-99084fbb6252",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"userId\": \"string\",\n    \"name\": \"string\",\n    \"on\": [\n      \"reaction\",\n      \"follow\"\n    ],\n    \"url\": \"string\",\n    \"secret\": \"string\",\n    \"active\": true,\n    \"latestSentAt\": \"2017-04-21T05:00:40.087Z\",\n    \"latestStatus\": 6897\n  },\n  {\n    \"id\": \"string\",\n    \"userId\": \"string\",\n    \"name\": \"string\",\n    \"on\": [\n      \"reportCreated\",\n      \"note\"\n    ],\n    \"url\": \"string\",\n    \"secret\": \"string\",\n    \"active\": false,\n    \"latestSentAt\": \"1974-12-30T15:38:26.654Z\",\n    \"latestStatus\": 2369\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bac530da-408f-4998-80c1-91044c337259",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "219ec6af-2150-4b4e-a891-b15f4d59ad86",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08b1b11b-0916-4e6b-94e8-362cefc94569",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cdfd35cd-3208-444d-9a86-072d5bacbbcf",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f43b77bc-e9cb-4ecb-9611-b0d148b4dc71",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42a7e19a-a8e6-4763-bbb3-3f1925e726c5",
+          "name": "i/webhooks/show",
+          "request": {
+            "name": "i/webhooks/show",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "i",
+                "webhooks",
+                "show"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2132ac8b-c3bf-4504-bf73-66d23dab5365",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"name\": \"string\",\n  \"on\": [\n    \"renote\",\n    \"reportAutoResolved\"\n  ],\n  \"url\": \"string\",\n  \"secret\": \"string\",\n  \"active\": false,\n  \"latestSentAt\": \"2021-03-07T11:20:32.538Z\",\n  \"latestStatus\": 9141\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72dc51ba-f523-4668-88c5-b052e7c6c20c",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such webhook.\",\n    \"code\": \"NO_SUCH_WEBHOOK\",\n    \"id\": \"50f614d9-3047-4f7e-90d8-ad6b2d5fb098\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8dab1cc-0ac3-4f56-abe2-ebbd3ebcbf17",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "984e4fdb-7c42-4f3b-8897-d6fcc968a578",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32736288-7155-416c-826d-e7ea02720467",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16d589d5-4142-44d1-b6bd-30b388e75d5d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94674a04-5fff-45ba-bd8d-34886415fc4b",
+          "name": "i/webhooks/test",
+          "request": {
+            "name": "i/webhooks/test",
+            "description": {
+              "content": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "i",
+                "webhooks",
+                "test"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "92e6f68f-958e-4ce8-a560-d4831ea32027",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c295789e-0f28-40dc-b8bc-4c881f94a99b",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such webhook.\",\n    \"code\": \"NO_SUCH_WEBHOOK\",\n    \"id\": \"0c52149c-e913-18f8-5dc7-74870bfe0cf9\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13077724-f955-45d0-90e6-0ff8cc07d418",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ededf58-0814-4fb8-ad27-150432c1b2cd",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb8a4541-eaa0-4c40-b90b-eed5278a35d5",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e07e2552-4dc5-448f-bd60-878f80470ed5",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Rate limit exceeded. Please try again later.\",\n    \"code\": \"RATE_LIMIT_EXCEEDED\",\n    \"id\": \"d5826d14-3982-4d2e-8011-b9e9f02499ef\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3dcc032-0448-4c2d-b313-1560d7230b6c",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"type\": \"<string>\",\n  \"override\": {\n    \"url\": \"<string>\",\n    \"secret\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a5ee159-5286-41f5-a35b-26c557892568",
+          "name": "i/webhooks/update",
+          "request": {
+            "name": "i/webhooks/update",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "i",
+                "webhooks",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string,null>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "239db3b8-7ac7-45b0-a8ba-ca1cad05ae83",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string,null>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6b5577d-9410-4b75-8793-fc953780e9e6",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string,null>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such webhook.\",\n    \"code\": \"NO_SUCH_WEBHOOK\",\n    \"id\": \"fb0fea69-da18-45b1-828d-bd4fd1612518\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ff795d2-793e-4c7c-84d1-59ee31b38b29",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string,null>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d027d75-1748-48c1-8192-5dd18c04adc8",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string,null>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8352fa7c-570d-414f-bdc7-a071d68b0c0d",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string,null>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91ee0a8b-d560-4eb4-9e1b-22483eb37f25",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "i",
+                    "webhooks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhookId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string,null>\",\n  \"on\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://misskey.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e339d9bb-9baa-4447-9bce-06e9f6f281a2",
+    "name": "Misskey account webhooks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

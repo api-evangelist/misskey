@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Misskey account Export Custom Emojis API",
+    "version": "2025.4.1-io.12b-fb6fbea074"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Export Custom Emojis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "export-custom-emojis",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/export-custom-emojis",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes*"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

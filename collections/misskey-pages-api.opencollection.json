@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Misskey account pages API",
+    "version": "2025.4.1-io.12b-fb6fbea074"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "pages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "pages/create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/pages/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:pages*"
+        },
+        {
+          "info": {
+            "name": "pages/delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/pages/delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:pages*"
+        },
+        {
+          "info": {
+            "name": "pages/featured",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/pages/featured"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "pages/like",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/pages/like",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:page-likes*"
+        },
+        {
+          "info": {
+            "name": "pages/show",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/pages/show",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "pages/unlike",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/pages/unlike",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:page-likes*"
+        },
+        {
+          "info": {
+            "name": "pages/update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/pages/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:pages*"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

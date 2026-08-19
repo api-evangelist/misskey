@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Misskey account role API",
+    "version": "2025.4.1-io.12b-fb6fbea074"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "role",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "roles/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/roles/list",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*"
+        },
+        {
+          "info": {
+            "name": "roles/notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/roles/notes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*"
+        },
+        {
+          "info": {
+            "name": "roles/show",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/roles/show",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "roles/users",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/roles/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

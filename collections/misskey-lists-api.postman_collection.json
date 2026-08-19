@@ -1,0 +1,3285 @@
+{
+  "item": [
+    {
+      "id": "ed9e3ad9-dd92-437e-851a-fd32f467812d",
+      "name": "lists",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e109abaf-0537-438c-9472-61cc52e11d87",
+          "name": "users/lists/create",
+          "request": {
+            "name": "users/lists/create",
+            "description": {
+              "content": "Create a new list of users.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "lists",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "336d3f0e-e631-4051-8fb9-7ca9d22b3c97",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"2013-04-13T21:27:22.100Z\",\n  \"name\": \"string\",\n  \"isPublic\": false,\n  \"userIds\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1243a8d6-11cd-4724-a549-52e63abc7d20",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You cannot create user list any more.\",\n    \"code\": \"TOO_MANY_USERLISTS\",\n    \"id\": \"0cf21a28-7715-4f39-a20d-777bfdb8d138\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3e00dba-9e18-450a-aec5-725dcb21c311",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a41546bc-414a-4401-817e-76cea62ac0c6",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6232b36c-e562-4ce2-b354-2892e50bdc7d",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4402a053-ded1-40bb-85b8-fcf25982fe3d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d60a7b62-6a23-4477-82d1-ffea7d2f4a30",
+          "name": "users/lists/delete",
+          "request": {
+            "name": "users/lists/delete",
+            "description": {
+              "content": "Delete an existing list of users.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "lists",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"listId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c5f2bc0e-647c-4aec-bcdb-bbafb9a9ab62",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76c4f85f-8e4d-4c69-9f4e-30cc72103bef",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such list.\",\n    \"code\": \"NO_SUCH_LIST\",\n    \"id\": \"78436795-db79-42f5-b1e2-55ea2cf19166\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e230fb87-d9bf-4613-9604-c3bb19ddb52b",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3b6597f-4fd7-42ff-b18f-e68e731a9db9",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "021e257a-9302-4dc2-9593-857debc35af7",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1dfee5a0-bb7b-4eaf-a7f2-34f47c1cba50",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e351af3-55d4-4e90-901f-c78283a7001b",
+          "name": "users/lists/get-memberships",
+          "request": {
+            "name": "users/lists/get-memberships",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "lists",
+                "get-memberships"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false,\n  \"limit\": 30,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cd05f539-e361-453a-a616-729a4bf85bc6",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "get-memberships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false,\n  \"limit\": 30,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"createdAt\": \"1959-01-25T19:43:40.745Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9864.278685043844,\n          \"flipH\": false,\n          \"offsetX\": 1011.8757292745972,\n          \"offsetY\": 4960.497444022604\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5146.374999109949,\n          \"flipH\": false,\n          \"offsetX\": 3054.265680248441,\n          \"offsetY\": 2954.7562298449225\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"unknown\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 280.98266643204914,\n      \"makeNotesHiddenBefore\": 2640.1659943118216,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4789.252110300742,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 5245.703612168883,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"withReplies\": true\n  },\n  {\n    \"id\": \"string\",\n    \"createdAt\": \"1956-06-06T15:30:00.286Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 3166.400051513105,\n          \"flipH\": true,\n          \"offsetX\": 2011.4753790809013,\n          \"offsetY\": 9928.095637667033\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 8072.98853501659,\n          \"flipH\": false,\n          \"offsetX\": 5284.171571420242,\n          \"offsetY\": 6078.677859880669\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"online\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 2226.9075332001576,\n      \"makeNotesHiddenBefore\": 1884.6784533262805,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 5547.690969392633,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4299.339501423861,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"withReplies\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e43abd13-a68c-41b5-962e-e0c84455d12e",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "get-memberships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false,\n  \"limit\": 30,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such list.\",\n    \"code\": \"NO_SUCH_LIST\",\n    \"id\": \"7bc05c21-1d7a-41ae-88f1-66820f4dc686\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b98eb676-5f2e-4f64-8c16-c2a306f5b3df",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "get-memberships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false,\n  \"limit\": 30,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f92e0657-6343-47ef-8430-7f7e5e24d363",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "get-memberships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false,\n  \"limit\": 30,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de2d7f0a-ae29-4281-a8ca-29944d4a9905",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "get-memberships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false,\n  \"limit\": 30,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af8267d3-5bf6-41dd-b121-2f02a32edf1c",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "get-memberships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false,\n  \"limit\": 30,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a8339c42-0fa6-4b58-91cf-936707b0f8f1",
+          "name": "users/lists/list",
+          "request": {
+            "name": "users/lists/list",
+            "description": {
+              "content": "Show all lists that the authenticated user has created.\n\n**Credential required**: *No* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "lists",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7a8b5b99-2c03-45de-9b96-3fc3953fb5ce",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1964-10-29T11:10:48.050Z\",\n    \"name\": \"string\",\n    \"isPublic\": true,\n    \"userIds\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1989-12-25T22:52:13.711Z\",\n    \"name\": \"string\",\n    \"isPublic\": false,\n    \"userIds\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "14a4ed62-1472-4b98-92a9-456bf2fed04b",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such user.\",\n    \"code\": \"NO_SUCH_USER\",\n    \"id\": \"a8af4a82-0980-4cc4-a6af-8b0ffd54465e\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02f257da-d0ef-447c-99c0-53308347c50c",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5048be62-a69b-44f8-a441-79b946d646db",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "feb7ddde-c21d-4058-9315-4f35fd998e96",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f8b25c3-628e-46fe-85bc-94c543cb879a",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "afbbbc80-957a-4eba-8b7f-5c1599e4d361",
+          "name": "users/lists/pull",
+          "request": {
+            "name": "users/lists/pull",
+            "description": {
+              "content": "Remove a user from a list.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "lists",
+                "pull"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d8443c43-4fee-4d14-8d51-686bf9a661f4",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "pull"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e5dbf8cd-f741-4a79-bf6f-cd56b2c07a47",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "pull"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such list.\",\n    \"code\": \"NO_SUCH_LIST\",\n    \"id\": \"7f44670e-ab16-43b8-b4c1-ccd2ee89cc02\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dcadc372-17e2-49ec-898b-1d8928662fca",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "pull"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6aa8129-c983-4595-9b20-272ea23c0723",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "pull"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac8cd869-0415-468c-8419-50c1146087a9",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "pull"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4de99d00-b369-480a-b6c3-8b9303cf4b31",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "pull"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "91a5f532-f61f-45b5-be08-5d58e88de579",
+          "name": "users/lists/push",
+          "request": {
+            "name": "users/lists/push",
+            "description": {
+              "content": "Add a user to an existing list.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "lists",
+                "push"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6172394c-94a1-434d-9a06-2e8be1728810",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ab65ba37-9131-47ea-8d54-b52f5be58add",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such list.\",\n    \"code\": \"NO_SUCH_LIST\",\n    \"id\": \"2214501d-ac96-4049-b717-91e42272a711\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b48900e9-aa57-4022-b905-965b5002db3c",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9684bf8-a350-44a4-8d44-0d4ee16fc873",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc009677-697c-4265-bbcf-1adc0594d276",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0668cc8c-6d41-4feb-b035-f2050313673a",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Rate limit exceeded. Please try again later.\",\n    \"code\": \"RATE_LIMIT_EXCEEDED\",\n    \"id\": \"d5826d14-3982-4d2e-8011-b9e9f02499ef\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "80942e4f-6004-4a85-b19a-0a92f014a315",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "755b7288-f214-4538-a53a-1b3ccd8da70f",
+          "name": "users/lists/show",
+          "request": {
+            "name": "users/lists/show",
+            "description": {
+              "content": "Show the properties of a list.\n\n**Credential required**: *No* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "lists",
+                "show"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f03a7a79-afc2-4853-9bac-87697a94acce",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"2013-04-13T21:27:22.100Z\",\n  \"name\": \"string\",\n  \"isPublic\": false,\n  \"userIds\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "124c184c-36f3-4705-a186-627fc3fd1ec2",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such list.\",\n    \"code\": \"NO_SUCH_LIST\",\n    \"id\": \"7bc05c21-1d7a-41ae-88f1-66820f4dc686\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11020246-13f4-479b-a05a-82c03a8d35be",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "57c63c6e-daa8-4967-bcb8-073c277795d7",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48e9e52e-466f-4edf-b1e3-f327faa7385f",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4840eb00-e17b-4936-9c8b-5ec9e6909dc1",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"forPublic\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8af10605-1909-4654-8fd1-9f898316ead1",
+          "name": "users/lists/update",
+          "request": {
+            "name": "users/lists/update",
+            "description": {
+              "content": "Update the properties of a list.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "lists",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a18c782a-dc5b-4e45-85df-8bad323f4468",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"2013-04-13T21:27:22.100Z\",\n  \"name\": \"string\",\n  \"isPublic\": false,\n  \"userIds\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c99a0746-79e0-401b-a812-bfe8450c4630",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such list.\",\n    \"code\": \"NO_SUCH_LIST\",\n    \"id\": \"796666fe-3dff-4d39-becb-8a5932c1d5b7\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc6e77b9-c2e1-4802-baed-cf758ee40a43",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d92a800a-8f12-4e7a-92bd-4242268e99b2",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e052de40-32dd-4d95-90d8-a8d48e8395dd",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "738896dd-6229-412e-b03a-560ab37f1d05",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b55a4cc-3873-4320-9060-f8f92b4cdbf9",
+          "name": "users/lists/update-membership",
+          "request": {
+            "name": "users/lists/update-membership",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "lists",
+                "update-membership"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\",\n  \"withReplies\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0fb5afb6-1e2c-48b6-aa6d-2ae4452e14c3",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update-membership"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\",\n  \"withReplies\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ed6398b9-74fc-40f3-b5c1-1b75d1065f3b",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update-membership"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\",\n  \"withReplies\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such list.\",\n    \"code\": \"NO_SUCH_LIST\",\n    \"id\": \"7f44670e-ab16-43b8-b4c1-ccd2ee89cc02\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "128cd999-0661-4418-afc6-986d6bd93d30",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update-membership"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\",\n  \"withReplies\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "51ec2fd4-946d-4042-b740-b66d86533a24",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update-membership"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\",\n  \"withReplies\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68cdbb35-6fbb-48df-ad44-17ca28468ff3",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update-membership"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\",\n  \"withReplies\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fefbc167-9e3c-4bc6-896e-b9f7e70b03b7",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "lists",
+                    "update-membership"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"listId\": \"<misskey:id>\",\n  \"userId\": \"<misskey:id>\",\n  \"withReplies\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://misskey.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f931f8f0-80c7-459e-b323-f806f2c20291",
+    "name": "Misskey account lists API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

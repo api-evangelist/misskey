@@ -1,0 +1,3204 @@
+{
+  "item": [
+    {
+      "id": "cf2f55bd-8e8c-4a44-b1a3-b34042dbe830",
+      "name": "gallery",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "87b56364-3646-41aa-8622-7e97a0d38e55",
+          "name": "gallery/featured",
+          "request": {
+            "name": "gallery/featured",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "featured"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": 10,\n  \"untilId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "52ee412c-12f8-4770-ae2e-7478630076ea",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1950-08-14T08:04:28.329Z\",\n    \"updatedAt\": \"1998-09-10T08:45:36.242Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5089.387217796012,\n          \"flipH\": true,\n          \"offsetX\": 1900.8482382791058,\n          \"offsetY\": 9625.698719180196\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9355.151468317801,\n          \"flipH\": false,\n          \"offsetX\": 3807.829737204359,\n          \"offsetY\": 4253.08727073601\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"unknown\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 1895.0211550447161,\n      \"makeNotesHiddenBefore\": 8953.01004112602,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 3449.6321906915027,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8276.062413976582,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"isSensitive\": true,\n    \"likedCount\": 7355.936361475873,\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1953-03-04T08:12:51.984Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1996-04-04T07:46:25.619Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 1860.594999472226,\n          \"filesCount\": 7756.10127404151,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"online\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 1013.9164683393809,\n          \"makeNotesHiddenBefore\": 9838.572668336243,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2013-08-25T14:40:00.883Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": false,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"2002-02-04T00:55:59.091Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 4662.156357187395,\n          \"filesCount\": 6973.368330823717,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"online\",\n          \"isBot\": true,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 1449.279488316615,\n          \"makeNotesHiddenBefore\": 4928.854376414292,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isLiked\": false\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"2022-12-12T00:15:46.536Z\",\n    \"updatedAt\": \"1994-02-17T02:56:37.939Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9714.3337503172,\n          \"flipH\": true,\n          \"offsetX\": 2258.549879351944,\n          \"offsetY\": 8946.502947314173\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 8168.728725468446,\n          \"flipH\": false,\n          \"offsetX\": 1016.6528350835491,\n          \"offsetY\": 3443.958868507435\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"offline\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 8592.682257512943,\n      \"makeNotesHiddenBefore\": 9777.51402960027,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4510.911847512806,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 864.3662218300485,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"isSensitive\": false,\n    \"likedCount\": 604.5781765070079,\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1989-03-26T11:04:19.424Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1961-07-19T07:11:26.969Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 686.3472828253547,\n          \"filesCount\": 2980.071941409256,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 867.5790703659347,\n          \"makeNotesHiddenBefore\": 5515.822349378598,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1979-12-14T14:17:16.088Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1958-08-12T18:48:08.091Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 3568.4117147231964,\n          \"filesCount\": 6458.5260396603435,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_3\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": false,\n          \"isCat\": false,\n          \"requireSigninToViewContents\": true,\n          \"makeNotesFollowersOnlyBefore\": 3790.623607269581,\n          \"makeNotesHiddenBefore\": 6866.629269340373,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isLiked\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae4786d2-7046-4395-b312-d22cc3fd28a2",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e97ade2-4bee-4f29-975d-ccf1e2f3d7c7",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "971a4505-8b7f-46b0-856f-1dd6da8e11a4",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa8369bb-08c4-4bba-96bd-cbf01faba6fe",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc383f7e-573c-4b5b-b819-afe2a6968eba",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2df8d2ce-a3e8-4608-8827-ae93070c3fc8",
+          "name": "gallery/popular",
+          "request": {
+            "name": "gallery/popular",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "popular"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f44a09da-41e2-4c6e-add0-8bcce6bf0fec",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "popular"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1950-08-14T08:04:28.329Z\",\n    \"updatedAt\": \"1998-09-10T08:45:36.242Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5089.387217796012,\n          \"flipH\": true,\n          \"offsetX\": 1900.8482382791058,\n          \"offsetY\": 9625.698719180196\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9355.151468317801,\n          \"flipH\": false,\n          \"offsetX\": 3807.829737204359,\n          \"offsetY\": 4253.08727073601\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"unknown\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 1895.0211550447161,\n      \"makeNotesHiddenBefore\": 8953.01004112602,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 3449.6321906915027,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8276.062413976582,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"isSensitive\": true,\n    \"likedCount\": 7355.936361475873,\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1953-03-04T08:12:51.984Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1996-04-04T07:46:25.619Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 1860.594999472226,\n          \"filesCount\": 7756.10127404151,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"online\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 1013.9164683393809,\n          \"makeNotesHiddenBefore\": 9838.572668336243,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2013-08-25T14:40:00.883Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": false,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"2002-02-04T00:55:59.091Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 4662.156357187395,\n          \"filesCount\": 6973.368330823717,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"online\",\n          \"isBot\": true,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 1449.279488316615,\n          \"makeNotesHiddenBefore\": 4928.854376414292,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isLiked\": false\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"2022-12-12T00:15:46.536Z\",\n    \"updatedAt\": \"1994-02-17T02:56:37.939Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9714.3337503172,\n          \"flipH\": true,\n          \"offsetX\": 2258.549879351944,\n          \"offsetY\": 8946.502947314173\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 8168.728725468446,\n          \"flipH\": false,\n          \"offsetX\": 1016.6528350835491,\n          \"offsetY\": 3443.958868507435\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"offline\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 8592.682257512943,\n      \"makeNotesHiddenBefore\": 9777.51402960027,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4510.911847512806,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 864.3662218300485,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"isSensitive\": false,\n    \"likedCount\": 604.5781765070079,\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1989-03-26T11:04:19.424Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1961-07-19T07:11:26.969Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 686.3472828253547,\n          \"filesCount\": 2980.071941409256,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 867.5790703659347,\n          \"makeNotesHiddenBefore\": 5515.822349378598,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1979-12-14T14:17:16.088Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1958-08-12T18:48:08.091Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 3568.4117147231964,\n          \"filesCount\": 6458.5260396603435,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_3\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": false,\n          \"isCat\": false,\n          \"requireSigninToViewContents\": true,\n          \"makeNotesFollowersOnlyBefore\": 3790.623607269581,\n          \"makeNotesHiddenBefore\": 6866.629269340373,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isLiked\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16761641-95a2-4cf6-9edd-70cec20f323d",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "popular"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "42da957d-6f3b-4295-8ce8-c5f3dcbdfa3b",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "popular"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a98cef3e-6683-4b39-aec8-f5a9205c517e",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "popular"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "80231b85-ca8e-45f7-b081-265da7f66b1b",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "popular"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65539a74-4581-430d-b08c-99bd13d25a88",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "popular"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b5dce5f7-085c-4674-8572-f0b1ba8ba6ba",
+          "name": "gallery/posts",
+          "request": {
+            "name": "gallery/posts",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "posts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bb1a87c8-84a1-41fa-bd48-aecb2e3de17a",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1950-08-14T08:04:28.329Z\",\n    \"updatedAt\": \"1998-09-10T08:45:36.242Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5089.387217796012,\n          \"flipH\": true,\n          \"offsetX\": 1900.8482382791058,\n          \"offsetY\": 9625.698719180196\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9355.151468317801,\n          \"flipH\": false,\n          \"offsetX\": 3807.829737204359,\n          \"offsetY\": 4253.08727073601\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"unknown\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 1895.0211550447161,\n      \"makeNotesHiddenBefore\": 8953.01004112602,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 3449.6321906915027,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8276.062413976582,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"isSensitive\": true,\n    \"likedCount\": 7355.936361475873,\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1953-03-04T08:12:51.984Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1996-04-04T07:46:25.619Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 1860.594999472226,\n          \"filesCount\": 7756.10127404151,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"online\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 1013.9164683393809,\n          \"makeNotesHiddenBefore\": 9838.572668336243,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2013-08-25T14:40:00.883Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": false,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"2002-02-04T00:55:59.091Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 4662.156357187395,\n          \"filesCount\": 6973.368330823717,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"online\",\n          \"isBot\": true,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 1449.279488316615,\n          \"makeNotesHiddenBefore\": 4928.854376414292,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isLiked\": false\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"2022-12-12T00:15:46.536Z\",\n    \"updatedAt\": \"1994-02-17T02:56:37.939Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9714.3337503172,\n          \"flipH\": true,\n          \"offsetX\": 2258.549879351944,\n          \"offsetY\": 8946.502947314173\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 8168.728725468446,\n          \"flipH\": false,\n          \"offsetX\": 1016.6528350835491,\n          \"offsetY\": 3443.958868507435\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"offline\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 8592.682257512943,\n      \"makeNotesHiddenBefore\": 9777.51402960027,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4510.911847512806,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 864.3662218300485,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"isSensitive\": false,\n    \"likedCount\": 604.5781765070079,\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1989-03-26T11:04:19.424Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1961-07-19T07:11:26.969Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 686.3472828253547,\n          \"filesCount\": 2980.071941409256,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 867.5790703659347,\n          \"makeNotesHiddenBefore\": 5515.822349378598,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1979-12-14T14:17:16.088Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1958-08-12T18:48:08.091Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 3568.4117147231964,\n          \"filesCount\": 6458.5260396603435,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_3\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": false,\n          \"isCat\": false,\n          \"requireSigninToViewContents\": true,\n          \"makeNotesFollowersOnlyBefore\": 3790.623607269581,\n          \"makeNotesHiddenBefore\": 6866.629269340373,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isLiked\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65ebeb9a-8ee2-4461-9032-9bd3761ea5a5",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cadbb387-88b0-419d-979a-f418885fa257",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0286296-ae53-4740-837a-6810a6ac927c",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4afb6d35-a3d4-4aaa-ac9b-3e2ae488f38f",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f4edf8d-7b20-4415-8d06-0440d345dfaf",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "10bcbd74-22a3-4688-9f9b-ed020d11b016",
+          "name": "gallery/posts/create",
+          "request": {
+            "name": "gallery/posts/create",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:gallery*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "posts",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"<string>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"description\": \"<string,null>\",\n  \"isSensitive\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "143e8255-f87a-4c52-b88a-6db43076020c",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"description\": \"<string,null>\",\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"2005-01-09T18:54:09.793Z\",\n  \"updatedAt\": \"1947-05-31T03:21:53.604Z\",\n  \"userId\": \"string\",\n  \"user\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 1714.464529870966,\n        \"flipH\": true,\n        \"offsetX\": 8847.945599408384,\n        \"offsetY\": 7740.967029477355\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 4044.487648944901,\n        \"flipH\": true,\n        \"offsetX\": 1473.586964017145,\n        \"offsetY\": 552.7156775533393\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"online\",\n    \"isBot\": false,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": true,\n    \"makeNotesFollowersOnlyBefore\": 5199.295232238023,\n    \"makeNotesHiddenBefore\": 1062.6858149063767,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 9817.022245460073,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 2700.480327316791,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"isSensitive\": false,\n  \"likedCount\": 5507.179529571457,\n  \"fileIds\": [\n    \"string\",\n    \"string\"\n  ],\n  \"files\": [\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"2008-07-09T23:01:21.955Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": false,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1984-06-06T20:21:31.071Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 4799.171426069751,\n        \"filesCount\": 4680.521206470747,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 538.5302798396164,\n            \"flipH\": false,\n            \"offsetX\": 3146.8992440628017,\n            \"offsetY\": 5711.132209317311\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 2711.257684375571,\n            \"flipH\": false,\n            \"offsetX\": 3064.273184530486,\n            \"offsetY\": 9037.402993896476\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\"\n        },\n        \"onlineStatus\": \"online\",\n        \"isBot\": true,\n        \"isCat\": true,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 6521.343472838334,\n        \"makeNotesHiddenBefore\": 6778.304125727514,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 5609.743559690287,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 9568.934218591196,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"2020-03-20T12:27:32.986Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": true,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2019-11-01T13:36:26.358Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 1523.7643038646054,\n        \"filesCount\": 4412.0519156925375,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 2993.4910328457486,\n            \"flipH\": false,\n            \"offsetX\": 1756.5639250234278,\n            \"offsetY\": 9893.03447398354\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 3565.033187094033,\n            \"flipH\": false,\n            \"offsetX\": 1782.6870030305963,\n            \"offsetY\": 7549.058485016075\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"onlineStatus\": \"active\",\n        \"isBot\": true,\n        \"isCat\": false,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 6035.846808405957,\n        \"makeNotesHiddenBefore\": 8123.589666579396,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 2291.5898202016538,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 5511.379705855761,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    }\n  ],\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"isLiked\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "46e3af3b-9903-458c-b17f-18c05a113c0e",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"description\": \"<string,null>\",\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bb018743-5a05-4cd6-a481-8cf2a46150d8",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"description\": \"<string,null>\",\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "273d1bf2-0f20-4fde-ae03-a4f456a47db7",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"description\": \"<string,null>\",\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bcfe47ce-fd98-47ff-b296-fe927721ee47",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"description\": \"<string,null>\",\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68163050-d3ed-40d9-b484-1c90ce7217cb",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"description\": \"<string,null>\",\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Rate limit exceeded. Please try again later.\",\n    \"code\": \"RATE_LIMIT_EXCEEDED\",\n    \"id\": \"d5826d14-3982-4d2e-8011-b9e9f02499ef\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dbd600da-d8df-4d45-83ce-fbeef9bcb2cc",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"description\": \"<string,null>\",\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "20b87e48-56ee-4d6e-8fb7-50434ba72a14",
+          "name": "gallery/posts/delete",
+          "request": {
+            "name": "gallery/posts/delete",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:gallery*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "posts",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "76c984d8-a74d-4952-8fbd-a08771a47ba5",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e2968916-b9b7-4115-98ce-5bcc57879a8c",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such post.\",\n    \"code\": \"NO_SUCH_POST\",\n    \"id\": \"ae52f367-4bd7-4ecd-afc6-5672fff427f5\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72b99c8b-fa8a-46d9-a661-ebaf47199e05",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd545366-dd64-4fa1-ab43-c595d29eed60",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3558aab2-736e-4f8b-a7a1-5ff7a39b0f20",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02bf9703-a5b1-46ad-a544-ab3b59eaf3ca",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6becc51c-d0d9-4870-9d2f-d74327497ef4",
+          "name": "gallery/posts/like",
+          "request": {
+            "name": "gallery/posts/like",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:gallery-likes*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "posts",
+                "like"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4cbc1605-ab4d-4469-93d0-e364b5a5c4fa",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3406ee9-979f-4c3b-9485-26012e1eede4",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such post.\",\n    \"code\": \"NO_SUCH_POST\",\n    \"id\": \"56c06af3-1287-442f-9701-c93f7c4a62ff\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8188741c-c2fa-423b-bb6b-ef540fb1a8e0",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bcfb6b5a-6240-4315-8f44-32d168d7036f",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5e6c93d-743c-4c91-8da0-94b219ce5a1c",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a33ae0b6-d8ee-4d3e-a68f-45e042331554",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2afee40c-12a1-40a2-ab91-d78e72b485cc",
+          "name": "gallery/posts/show",
+          "request": {
+            "name": "gallery/posts/show",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "posts",
+                "show"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "709d73a7-7808-4bbf-b77e-22216de29b5c",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"2005-01-09T18:54:09.793Z\",\n  \"updatedAt\": \"1947-05-31T03:21:53.604Z\",\n  \"userId\": \"string\",\n  \"user\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 1714.464529870966,\n        \"flipH\": true,\n        \"offsetX\": 8847.945599408384,\n        \"offsetY\": 7740.967029477355\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 4044.487648944901,\n        \"flipH\": true,\n        \"offsetX\": 1473.586964017145,\n        \"offsetY\": 552.7156775533393\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"online\",\n    \"isBot\": false,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": true,\n    \"makeNotesFollowersOnlyBefore\": 5199.295232238023,\n    \"makeNotesHiddenBefore\": 1062.6858149063767,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 9817.022245460073,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 2700.480327316791,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"isSensitive\": false,\n  \"likedCount\": 5507.179529571457,\n  \"fileIds\": [\n    \"string\",\n    \"string\"\n  ],\n  \"files\": [\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"2008-07-09T23:01:21.955Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": false,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1984-06-06T20:21:31.071Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 4799.171426069751,\n        \"filesCount\": 4680.521206470747,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 538.5302798396164,\n            \"flipH\": false,\n            \"offsetX\": 3146.8992440628017,\n            \"offsetY\": 5711.132209317311\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 2711.257684375571,\n            \"flipH\": false,\n            \"offsetX\": 3064.273184530486,\n            \"offsetY\": 9037.402993896476\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\"\n        },\n        \"onlineStatus\": \"online\",\n        \"isBot\": true,\n        \"isCat\": true,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 6521.343472838334,\n        \"makeNotesHiddenBefore\": 6778.304125727514,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 5609.743559690287,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 9568.934218591196,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"2020-03-20T12:27:32.986Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": true,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2019-11-01T13:36:26.358Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 1523.7643038646054,\n        \"filesCount\": 4412.0519156925375,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 2993.4910328457486,\n            \"flipH\": false,\n            \"offsetX\": 1756.5639250234278,\n            \"offsetY\": 9893.03447398354\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 3565.033187094033,\n            \"flipH\": false,\n            \"offsetX\": 1782.6870030305963,\n            \"offsetY\": 7549.058485016075\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"onlineStatus\": \"active\",\n        \"isBot\": true,\n        \"isCat\": false,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 6035.846808405957,\n        \"makeNotesHiddenBefore\": 8123.589666579396,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 2291.5898202016538,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 5511.379705855761,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    }\n  ],\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"isLiked\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a44d558-150f-4ac9-b7cc-4978ac9b5995",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such post.\",\n    \"code\": \"NO_SUCH_POST\",\n    \"id\": \"1137bf14-c5b0-4604-85bb-5b5371b1cd45\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67b2e931-8b6c-4ad8-ac9b-6fef3e05a391",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d0f64fe-0a3d-4469-84b8-fce352404543",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0557bfd9-ec69-41eb-8d30-499da05427a9",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a824971b-cf60-49cc-ad2b-879509cd6516",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "802a4c0c-94b1-445e-a57c-6ee0d1066f1b",
+          "name": "gallery/posts/unlike",
+          "request": {
+            "name": "gallery/posts/unlike",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:gallery-likes*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "posts",
+                "unlike"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3960a018-5c8f-4224-93b0-e97527e29cb7",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6a1ee1e2-300b-4e79-acf5-ca631cca2eed",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such post.\",\n    \"code\": \"NO_SUCH_POST\",\n    \"id\": \"c32e6dd0-b555-4413-925e-b3757d19ed84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bff91e30-1ade-49d1-83e5-325b48feb5c8",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa63453a-b063-4367-8b2e-37b84eb3b830",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5cf830ee-985a-4248-a593-9b69b4558043",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10ffe730-5494-4b5f-85de-ff7dca29a38f",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d937325-cf5a-418b-bbd8-80796e395117",
+          "name": "gallery/posts/update",
+          "request": {
+            "name": "gallery/posts/update",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:gallery*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "posts",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"postId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string,null>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"isSensitive\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "df00e53a-befc-48ea-8735-7a81c3c26a9a",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string,null>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"2005-01-09T18:54:09.793Z\",\n  \"updatedAt\": \"1947-05-31T03:21:53.604Z\",\n  \"userId\": \"string\",\n  \"user\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 1714.464529870966,\n        \"flipH\": true,\n        \"offsetX\": 8847.945599408384,\n        \"offsetY\": 7740.967029477355\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 4044.487648944901,\n        \"flipH\": true,\n        \"offsetX\": 1473.586964017145,\n        \"offsetY\": 552.7156775533393\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"online\",\n    \"isBot\": false,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": true,\n    \"makeNotesFollowersOnlyBefore\": 5199.295232238023,\n    \"makeNotesHiddenBefore\": 1062.6858149063767,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 9817.022245460073,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 2700.480327316791,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"isSensitive\": false,\n  \"likedCount\": 5507.179529571457,\n  \"fileIds\": [\n    \"string\",\n    \"string\"\n  ],\n  \"files\": [\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"2008-07-09T23:01:21.955Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": false,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1984-06-06T20:21:31.071Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 4799.171426069751,\n        \"filesCount\": 4680.521206470747,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 538.5302798396164,\n            \"flipH\": false,\n            \"offsetX\": 3146.8992440628017,\n            \"offsetY\": 5711.132209317311\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 2711.257684375571,\n            \"flipH\": false,\n            \"offsetX\": 3064.273184530486,\n            \"offsetY\": 9037.402993896476\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\"\n        },\n        \"onlineStatus\": \"online\",\n        \"isBot\": true,\n        \"isCat\": true,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 6521.343472838334,\n        \"makeNotesHiddenBefore\": 6778.304125727514,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 5609.743559690287,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 9568.934218591196,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"2020-03-20T12:27:32.986Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": true,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2019-11-01T13:36:26.358Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 1523.7643038646054,\n        \"filesCount\": 4412.0519156925375,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 2993.4910328457486,\n            \"flipH\": false,\n            \"offsetX\": 1756.5639250234278,\n            \"offsetY\": 9893.03447398354\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 3565.033187094033,\n            \"flipH\": false,\n            \"offsetX\": 1782.6870030305963,\n            \"offsetY\": 7549.058485016075\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"onlineStatus\": \"active\",\n        \"isBot\": true,\n        \"isCat\": false,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 6035.846808405957,\n        \"makeNotesHiddenBefore\": 8123.589666579396,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 2291.5898202016538,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 5511.379705855761,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    }\n  ],\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"isLiked\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bcf48f7d-328a-4b48-a8a7-4d5b015cf301",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string,null>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "38501e39-78a4-4985-b59d-813dcf40b9cf",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string,null>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a90afa68-0e0e-4575-b31f-0bd687358de3",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string,null>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea078e41-ff9d-4db0-b084-599f18865420",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string,null>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40b2e255-5c8f-426a-b52a-4756e6536e17",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string,null>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Rate limit exceeded. Please try again later.\",\n    \"code\": \"RATE_LIMIT_EXCEEDED\",\n    \"id\": \"d5826d14-3982-4d2e-8011-b9e9f02499ef\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca239ab3-d977-4c3b-8399-662eb79a7156",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gallery",
+                    "posts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"postId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string,null>\",\n  \"fileIds\": [\n    \"<misskey:id>\"\n  ],\n  \"isSensitive\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://misskey.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "66db60b0-af03-4e20-960f-795246df6e3d",
+    "name": "Misskey account gallery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

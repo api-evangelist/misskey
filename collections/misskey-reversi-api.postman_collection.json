@@ -1,0 +1,2426 @@
+{
+  "item": [
+    {
+      "id": "5a35490d-2ce0-41d4-bdee-f203a3df33ae",
+      "name": "Reversi",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cefce55b-eb96-4103-b0d4-2a7b60fed4bc",
+          "name": "reversi/cancel-match",
+          "request": {
+            "name": "reversi/cancel-match",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reversi",
+                "cancel-match"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"<string,null-misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "81304bdc-2db6-4cbb-a433-84bb4413786d",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "cancel-match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5e57d800-c349-42ed-9085-a8752bcf99f0",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "cancel-match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "717f2a96-41b8-4fa8-99ea-2e140653ca01",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "cancel-match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5a0bde9-7903-4b8e-8cf3-16fb95e1a826",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "cancel-match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bbdbef40-3002-4d81-aa36-12b7c9dbdab8",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "cancel-match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea5fc3f7-b3df-4d7a-a47b-8ebbf6f2ac52",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "cancel-match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7fea9e6c-1b44-4e0e-934e-0b7b22a778af",
+          "name": "reversi/games",
+          "request": {
+            "name": "reversi/games",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reversi",
+                "games"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"my\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8ca1f86e-856a-4e61-8437-c877edaa9a93",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"my\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"createdAt\": \"1964-07-15T12:26:28.521Z\",\n    \"startedAt\": \"2020-02-21T10:04:18.939Z\",\n    \"endedAt\": \"1968-06-10T16:20:39.072Z\",\n    \"isStarted\": true,\n    \"isEnded\": false,\n    \"user1Id\": \"string\",\n    \"user2Id\": \"string\",\n    \"user1\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6571.571496968096,\n          \"flipH\": true,\n          \"offsetX\": 6383.2839522420645,\n          \"offsetY\": 9947.311185292405\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 4976.986848708288,\n          \"flipH\": true,\n          \"offsetX\": 5648.043563158878,\n          \"offsetY\": 9284.644800428754\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"offline\",\n      \"isBot\": true,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 1703.8846364409255,\n      \"makeNotesHiddenBefore\": 2043.2898614762496,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 6022.753720035631,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 6944.449780994979,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"user2\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9880.361193796612,\n          \"flipH\": false,\n          \"offsetX\": 2033.636583844044,\n          \"offsetY\": 2254.0328867629246\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9396.660923901965,\n          \"flipH\": false,\n          \"offsetX\": 5540.371490779402,\n          \"offsetY\": 1637.4512314089918\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"online\",\n      \"isBot\": true,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 1128.8680226981073,\n      \"makeNotesHiddenBefore\": 139.1721864877704,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 3478.662814512038,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 3860.1838478024865,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"winnerId\": \"string\",\n    \"winner\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 4971.236438381633,\n          \"flipH\": false,\n          \"offsetX\": 7383.457200636723,\n          \"offsetY\": 7800.24707386811\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 194.98111153772757,\n          \"flipH\": false,\n          \"offsetX\": 4332.319472388963,\n          \"offsetY\": 1195.8719130767138\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 5603.216991722327,\n      \"makeNotesHiddenBefore\": 5009.874618737148,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 9147.46297284587,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 1417.7064006670869,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"surrenderedUserId\": \"string\",\n    \"timeoutUserId\": \"string\",\n    \"black\": 8329.239794881109,\n    \"bw\": \"string\",\n    \"noIrregularRules\": false,\n    \"isLlotheo\": false,\n    \"canPutEverywhere\": false,\n    \"loopedBoard\": true,\n    \"timeLimitForEachTurn\": 1444.6603271850388\n  },\n  {\n    \"id\": \"string\",\n    \"createdAt\": \"2015-11-10T09:47:14.081Z\",\n    \"startedAt\": \"1969-01-04T19:22:33.410Z\",\n    \"endedAt\": \"1985-09-26T10:15:47.494Z\",\n    \"isStarted\": false,\n    \"isEnded\": true,\n    \"user1Id\": \"string\",\n    \"user2Id\": \"string\",\n    \"user1\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 2952.912118279926,\n          \"flipH\": false,\n          \"offsetX\": 7385.598261444238,\n          \"offsetY\": 6516.692625543053\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 2249.1532334138287,\n          \"flipH\": true,\n          \"offsetX\": 75.89193873582923,\n          \"offsetY\": 5006.3931697922835\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 1109.5020063374927,\n      \"makeNotesHiddenBefore\": 8420.492053561607,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 9456.054732306413,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 125.40345808430442,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"user2\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 498.71584100432574,\n          \"flipH\": true,\n          \"offsetX\": 6397.899654105693,\n          \"offsetY\": 7817.507125481999\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 1464.5497026652565,\n          \"flipH\": false,\n          \"offsetX\": 8353.216344107908,\n          \"offsetY\": 8729.873656339723\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 7757.105246173729,\n      \"makeNotesHiddenBefore\": 3088.680012150964,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8728.01268750701,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8826.086940109722,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"winnerId\": \"string\",\n    \"winner\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5788.376010765391,\n          \"flipH\": true,\n          \"offsetX\": 5217.332393361128,\n          \"offsetY\": 5730.44089875426\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6581.256552232707,\n          \"flipH\": true,\n          \"offsetX\": 5249.262447023405,\n          \"offsetY\": 3564.2390663842625\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"offline\",\n      \"isBot\": true,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 240.3881976775879,\n      \"makeNotesHiddenBefore\": 7434.387709480119,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 5366.009516529795,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 9634.244533574432,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"surrenderedUserId\": \"string\",\n    \"timeoutUserId\": \"string\",\n    \"black\": 7587.950088003734,\n    \"bw\": \"string\",\n    \"noIrregularRules\": false,\n    \"isLlotheo\": false,\n    \"canPutEverywhere\": true,\n    \"loopedBoard\": true,\n    \"timeLimitForEachTurn\": 2362.0151175009773\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad5a3a45-7671-463a-8187-7aa6d219c432",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"my\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5017b86c-143b-44d8-a9e6-ec922f0b13b3",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"my\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04f27e48-cc17-4399-b25a-58d70e758dce",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"my\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4b4e2c4e-f467-4b7b-921f-050fe1b30b72",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"my\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f7ee1222-b4ee-4028-af76-4cec6961d77d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"my\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0efe95d3-ce6d-47d2-ad41-68284dfa0d1f",
+          "name": "reversi/invitations",
+          "request": {
+            "name": "reversi/invitations",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reversi",
+                "invitations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "269eacff-50a4-4055-903f-6113a22c77c8",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 8158.009685040547,\n        \"flipH\": false,\n        \"offsetX\": 1359.3306148440677,\n        \"offsetY\": 2377.0585636815576\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 5441.533834238475,\n        \"flipH\": false,\n        \"offsetX\": 173.45257448169394,\n        \"offsetY\": 1433.7610803280609\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"onlineStatus\": \"online\",\n    \"isBot\": false,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": true,\n    \"makeNotesFollowersOnlyBefore\": 1062.1810958752642,\n    \"makeNotesHiddenBefore\": 7947.888806640122,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 268.6917957580637,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 318.40813704036907,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 2229.4580109922067,\n        \"flipH\": true,\n        \"offsetX\": 2905.8033310875185,\n        \"offsetY\": 9393.105985254895\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 4313.3980569617115,\n        \"flipH\": true,\n        \"offsetX\": 1912.7038178934486,\n        \"offsetY\": 2620.6245238230686\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"online\",\n    \"isBot\": true,\n    \"isCat\": false,\n    \"requireSigninToViewContents\": true,\n    \"makeNotesFollowersOnlyBefore\": 9192.312146669841,\n    \"makeNotesHiddenBefore\": 1734.5156465711175,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 786.9699092257954,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 1203.7517421823684,\n        \"behavior\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "770ba490-b761-43d4-98ac-5ebc631e93b4",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "883ffc13-885e-48bd-b167-d59d8918d0e1",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2fba2334-8d60-4cc4-8944-71fffbd344b4",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "64fbcd5c-3b67-4a42-bddc-107269958d51",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc11c510-da09-410a-92e5-07a87f07e37d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "invitations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e9877aa-6b68-4a4e-ae98-a77563053ef5",
+          "name": "reversi/match",
+          "request": {
+            "name": "reversi/match",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reversi",
+                "match"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"<string,null-misskey:id>\",\n  \"noIrregularRules\": false,\n  \"multiple\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cac0f2ed-9469-48d8-99ea-4b1ee6e1420c",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\",\n  \"noIrregularRules\": false,\n  \"multiple\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"createdAt\": \"1981-02-28T22:00:40.700Z\",\n  \"startedAt\": \"1998-08-24T23:55:58.823Z\",\n  \"endedAt\": \"1959-05-10T23:28:16.516Z\",\n  \"isStarted\": true,\n  \"isEnded\": false,\n  \"form1\": {},\n  \"form2\": {},\n  \"user1Ready\": false,\n  \"user2Ready\": false,\n  \"user1Id\": \"string\",\n  \"user2Id\": \"string\",\n  \"user1\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 3852.9918589631416,\n        \"flipH\": false,\n        \"offsetX\": 3253.6481071565404,\n        \"offsetY\": 7574.220833414123\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 4805.051312235201,\n        \"flipH\": true,\n        \"offsetX\": 2621.0811738075345,\n        \"offsetY\": 5093.38746799009\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"active\",\n    \"isBot\": true,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": false,\n    \"makeNotesFollowersOnlyBefore\": 8444.748046518089,\n    \"makeNotesHiddenBefore\": 2981.5474320722733,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 9021.25861286591,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 9535.890081698595,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"user2\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 9590.522335290792,\n        \"flipH\": false,\n        \"offsetX\": 9121.990647847,\n        \"offsetY\": 6487.010574101902\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 3765.5233969372825,\n        \"flipH\": false,\n        \"offsetX\": 7960.10174234044,\n        \"offsetY\": 5171.219234885697\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"unknown\",\n    \"isBot\": false,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": true,\n    \"makeNotesFollowersOnlyBefore\": 6578.618247921702,\n    \"makeNotesHiddenBefore\": 1545.475843733205,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 9192.66066035596,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 7796.06327822476,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"winnerId\": \"string\",\n  \"winner\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 1952.4885259811797,\n        \"flipH\": true,\n        \"offsetX\": 1956.3369390968066,\n        \"offsetY\": 1156.0436589254475\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 4454.322813095576,\n        \"flipH\": false,\n        \"offsetX\": 2233.2836053825554,\n        \"offsetY\": 4533.8327988251085\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"online\",\n    \"isBot\": false,\n    \"isCat\": false,\n    \"requireSigninToViewContents\": false,\n    \"makeNotesFollowersOnlyBefore\": 9117.091326636079,\n    \"makeNotesHiddenBefore\": 9354.112319426766,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 2013.4661843125834,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 1041.3559395763027,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"surrenderedUserId\": \"string\",\n  \"timeoutUserId\": \"string\",\n  \"black\": 1968.3938321257333,\n  \"bw\": \"string\",\n  \"noIrregularRules\": true,\n  \"isLlotheo\": true,\n  \"canPutEverywhere\": false,\n  \"loopedBoard\": false,\n  \"timeLimitForEachTurn\": 5380.025374731954,\n  \"logs\": [\n    [\n      6296.885790550474,\n      6219.379079081554\n    ],\n    [\n      1472.1422701963572,\n      2209.46268121615\n    ]\n  ],\n  \"map\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2f5ed566-e6c7-4678-823d-b41f198b166c",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\",\n  \"noIrregularRules\": false,\n  \"multiple\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3ec41cfd-c1a2-4c2e-adfa-02049dc9034c",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\",\n  \"noIrregularRules\": false,\n  \"multiple\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such user.\",\n    \"code\": \"NO_SUCH_USER\",\n    \"id\": \"0b4f0559-b484-4e31-9581-3f73cee89b28\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af610807-f8d1-4e22-b59d-73af751cb92e",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\",\n  \"noIrregularRules\": false,\n  \"multiple\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b58266f3-791e-4702-bf27-9480d98edeba",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\",\n  \"noIrregularRules\": false,\n  \"multiple\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cbc79dd3-4b0f-4fc2-be23-5a7ede16933d",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\",\n  \"noIrregularRules\": false,\n  \"multiple\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82734855-43f7-4439-aea7-3afe9189704c",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-misskey:id>\",\n  \"noIrregularRules\": false,\n  \"multiple\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5361f164-6d46-4bbd-aa13-90793d16364a",
+          "name": "reversi/show-game",
+          "request": {
+            "name": "reversi/show-game",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reversi",
+                "show-game"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "24fa985b-77ce-485d-8209-36f0fe5e0fce",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "show-game"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"createdAt\": \"1981-02-28T22:00:40.700Z\",\n  \"startedAt\": \"1998-08-24T23:55:58.823Z\",\n  \"endedAt\": \"1959-05-10T23:28:16.516Z\",\n  \"isStarted\": true,\n  \"isEnded\": false,\n  \"form1\": {},\n  \"form2\": {},\n  \"user1Ready\": false,\n  \"user2Ready\": false,\n  \"user1Id\": \"string\",\n  \"user2Id\": \"string\",\n  \"user1\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 3852.9918589631416,\n        \"flipH\": false,\n        \"offsetX\": 3253.6481071565404,\n        \"offsetY\": 7574.220833414123\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 4805.051312235201,\n        \"flipH\": true,\n        \"offsetX\": 2621.0811738075345,\n        \"offsetY\": 5093.38746799009\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"active\",\n    \"isBot\": true,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": false,\n    \"makeNotesFollowersOnlyBefore\": 8444.748046518089,\n    \"makeNotesHiddenBefore\": 2981.5474320722733,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 9021.25861286591,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 9535.890081698595,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"user2\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 9590.522335290792,\n        \"flipH\": false,\n        \"offsetX\": 9121.990647847,\n        \"offsetY\": 6487.010574101902\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 3765.5233969372825,\n        \"flipH\": false,\n        \"offsetX\": 7960.10174234044,\n        \"offsetY\": 5171.219234885697\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"unknown\",\n    \"isBot\": false,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": true,\n    \"makeNotesFollowersOnlyBefore\": 6578.618247921702,\n    \"makeNotesHiddenBefore\": 1545.475843733205,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 9192.66066035596,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 7796.06327822476,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"winnerId\": \"string\",\n  \"winner\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 1952.4885259811797,\n        \"flipH\": true,\n        \"offsetX\": 1956.3369390968066,\n        \"offsetY\": 1156.0436589254475\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 4454.322813095576,\n        \"flipH\": false,\n        \"offsetX\": 2233.2836053825554,\n        \"offsetY\": 4533.8327988251085\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"onlineStatus\": \"online\",\n    \"isBot\": false,\n    \"isCat\": false,\n    \"requireSigninToViewContents\": false,\n    \"makeNotesFollowersOnlyBefore\": 9117.091326636079,\n    \"makeNotesHiddenBefore\": 9354.112319426766,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 2013.4661843125834,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 1041.3559395763027,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"surrenderedUserId\": \"string\",\n  \"timeoutUserId\": \"string\",\n  \"black\": 1968.3938321257333,\n  \"bw\": \"string\",\n  \"noIrregularRules\": true,\n  \"isLlotheo\": true,\n  \"canPutEverywhere\": false,\n  \"loopedBoard\": false,\n  \"timeLimitForEachTurn\": 5380.025374731954,\n  \"logs\": [\n    [\n      6296.885790550474,\n      6219.379079081554\n    ],\n    [\n      1472.1422701963572,\n      2209.46268121615\n    ]\n  ],\n  \"map\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e1f7b21-b873-403d-b1e1-84e457d829a2",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "show-game"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such game.\",\n    \"code\": \"NO_SUCH_GAME\",\n    \"id\": \"f13a03db-fae1-46c9-87f3-43c8165419e1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d1cf1f8-994e-4d8b-97b6-dde9bc0daf49",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "show-game"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "151d8bc0-a139-4b42-848d-bedc59fa371b",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "show-game"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ed7df312-4c6a-4347-abd4-fc9859e4d508",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "show-game"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d259b7db-a7c5-44a2-836e-a3df550c3e7a",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "show-game"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc990311-895a-4068-a57b-c4ddac362bf0",
+          "name": "reversi/surrender",
+          "request": {
+            "name": "reversi/surrender",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reversi",
+                "surrender"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "49e0f076-3e54-4e5a-9671-94de0ebb6527",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "surrender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b430385b-f052-4286-8b7b-fc7cbb0b55a4",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "surrender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such game.\",\n    \"code\": \"NO_SUCH_GAME\",\n    \"id\": \"ace0b11f-e0a6-4076-a30d-e8284c81b2df\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "685583e1-4510-4c10-92a1-13a47f3370ec",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "surrender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d0e58dd-5fd1-4470-a167-981b77dbf11c",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "surrender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a5bbb0f-ecba-4dd0-af20-12acb525a838",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "surrender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "059a62e5-6964-4271-8cf2-1b570ea0b28f",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "surrender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ed86542-4e2e-4845-8aad-ba2478a05f2d",
+          "name": "reversi/verify",
+          "request": {
+            "name": "reversi/verify",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reversi",
+                "verify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"gameId\": \"<misskey:id>\",\n  \"crc32\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2c2ea559-b8d5-4d44-aa29-3186f6f01c71",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\",\n  \"crc32\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"desynced\": false,\n  \"game\": {\n    \"id\": \"string\",\n    \"createdAt\": \"2025-04-22T14:37:51.291Z\",\n    \"startedAt\": \"1950-03-12T03:42:03.797Z\",\n    \"endedAt\": \"1948-08-01T13:58:59.984Z\",\n    \"isStarted\": true,\n    \"isEnded\": true,\n    \"form1\": {},\n    \"form2\": {},\n    \"user1Ready\": false,\n    \"user2Ready\": false,\n    \"user1Id\": \"string\",\n    \"user2Id\": \"string\",\n    \"user1\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5875.657250107473,\n          \"flipH\": true,\n          \"offsetX\": 7537.882612922695,\n          \"offsetY\": 2837.9539768215145\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 7100.853443480927,\n          \"flipH\": false,\n          \"offsetX\": 4699.39928653611,\n          \"offsetY\": 8947.152883041612\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\",\n        \"key_4\": \"string\"\n      },\n      \"onlineStatus\": \"online\",\n      \"isBot\": true,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 5329.99393692684,\n      \"makeNotesHiddenBefore\": 5449.027728506258,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 20.69811873248173,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4333.750250676965,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"user2\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6251.4782993826175,\n          \"flipH\": false,\n          \"offsetX\": 7763.823841863915,\n          \"offsetY\": 675.1402620041636\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 2424.4660695524567,\n          \"flipH\": false,\n          \"offsetX\": 7270.049402872349,\n          \"offsetY\": 192.28627395751263\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": false,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 6016.192476065824,\n      \"makeNotesHiddenBefore\": 9774.484559814045,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 6427.495984319642,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 1948.3943437859907,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"winnerId\": \"string\",\n    \"winner\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 2727.039926392131,\n          \"flipH\": true,\n          \"offsetX\": 4594.392140565939,\n          \"offsetY\": 8867.58284452929\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6096.445578384741,\n          \"flipH\": true,\n          \"offsetX\": 9527.68191677704,\n          \"offsetY\": 8865.648392270754\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"online\",\n      \"isBot\": false,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 7396.741186642261,\n      \"makeNotesHiddenBefore\": 5701.9352116227155,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 3140.1668045118945,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 3104.136567939616,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"surrenderedUserId\": \"string\",\n    \"timeoutUserId\": \"string\",\n    \"black\": 4797.3209152642885,\n    \"bw\": \"string\",\n    \"noIrregularRules\": false,\n    \"isLlotheo\": false,\n    \"canPutEverywhere\": false,\n    \"loopedBoard\": true,\n    \"timeLimitForEachTurn\": 6158.7562465269475,\n    \"logs\": [\n      [\n        6276.589587842268,\n        3379.5407904945982\n      ],\n      [\n        7482.615674638513,\n        3113.5563510579314\n      ]\n    ],\n    \"map\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc0e6f82-122a-4a4a-a0a3-3621997add65",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\",\n  \"crc32\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such game.\",\n    \"code\": \"NO_SUCH_GAME\",\n    \"id\": \"8fb05624-b525-43dd-90f7-511852bdfeee\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc4441ae-7225-4529-9c2b-1eee83c53f57",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\",\n  \"crc32\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9054409a-202a-4706-a749-3f5d7625cd8d",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\",\n  \"crc32\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f9fb77a-e3f8-4570-b1e0-3524d775f22e",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\",\n  \"crc32\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "021072e1-f04f-4661-b459-1eed0d0a6709",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reversi",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameId\": \"<misskey:id>\",\n  \"crc32\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://misskey.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d71d6653-79ef-4ed9-9353-274b66fbbe7f",
+    "name": "Misskey account Reversi API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

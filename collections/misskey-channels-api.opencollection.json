@@ -1,0 +1,237 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Misskey account channels API",
+    "version": "2025.4.1-io.12b-fb6fbea074"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "channels",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "channels/create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:channels*"
+        },
+        {
+          "info": {
+            "name": "channels/favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/favorite",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:channels*"
+        },
+        {
+          "info": {
+            "name": "channels/featured",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/featured"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "channels/featured-games",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/featured-games"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "channels/follow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/follow",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:channels*"
+        },
+        {
+          "info": {
+            "name": "channels/followed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/followed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:channels*"
+        },
+        {
+          "info": {
+            "name": "channels/my-favorites",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/my-favorites",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:channels*"
+        },
+        {
+          "info": {
+            "name": "channels/owned",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/owned",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:channels*"
+        },
+        {
+          "info": {
+            "name": "channels/search",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "channels/show",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/show",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "channels/unfavorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/unfavorite",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:channels*"
+        },
+        {
+          "info": {
+            "name": "channels/unfollow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/unfollow",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:channels*"
+        },
+        {
+          "info": {
+            "name": "channels/update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/channels/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:channels*"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

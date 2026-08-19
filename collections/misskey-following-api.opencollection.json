@@ -1,0 +1,208 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Misskey account following API",
+    "version": "2025.4.1-io.12b-fb6fbea074"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "following",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "following/create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:following*"
+        },
+        {
+          "info": {
+            "name": "following/delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:following*"
+        },
+        {
+          "info": {
+            "name": "following/invalidate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/invalidate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:following*"
+        },
+        {
+          "info": {
+            "name": "following/requests/accept",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/requests/accept",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:following*"
+        },
+        {
+          "info": {
+            "name": "following/requests/cancel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/requests/cancel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:following*"
+        },
+        {
+          "info": {
+            "name": "following/requests/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/requests/list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:following*"
+        },
+        {
+          "info": {
+            "name": "following/requests/reject",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/requests/reject",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:following*"
+        },
+        {
+          "info": {
+            "name": "following/requests/sent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/requests/sent",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:following*"
+        },
+        {
+          "info": {
+            "name": "following/update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:following*"
+        },
+        {
+          "info": {
+            "name": "following/update-all",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/following/update-all",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:following*"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

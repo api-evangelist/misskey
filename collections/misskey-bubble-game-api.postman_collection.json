@@ -1,0 +1,1075 @@
+{
+  "item": [
+    {
+      "id": "266bdf5b-1745-4da7-87d0-f8a756e86b00",
+      "name": "Bubble Game",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "690bb1ea-917f-4792-8ae1-e03ccafc001d",
+          "name": "bubble-game/ranking",
+          "request": {
+            "name": "bubble-game/ranking",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bubble-game",
+                "ranking"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a40283f1-b37f-496a-829c-652e3ca3f2b7",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"score\": 7472,\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 1827.8905631246878,\n          \"flipH\": true,\n          \"offsetX\": 9837.935241027993,\n          \"offsetY\": 9616.498431431955\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 7017.879915739081,\n          \"flipH\": true,\n          \"offsetX\": 1145.6629996078282,\n          \"offsetY\": 5086.280291830178\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"online\",\n      \"isBot\": true,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 5903.200215979506,\n      \"makeNotesHiddenBefore\": 7762.993928488448,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 656.596132110362,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 2096.6759631089994,\n          \"behavior\": \"string\"\n        }\n      ]\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"score\": 7737,\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5950.4868416087675,\n          \"flipH\": false,\n          \"offsetX\": 5699.823598350413,\n          \"offsetY\": 5829.726705367392\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 8291.34328914954,\n          \"flipH\": false,\n          \"offsetX\": 2004.7404753039154,\n          \"offsetY\": 7346.601430205485\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 2450.027106824677,\n      \"makeNotesHiddenBefore\": 9659.854605671086,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 5880.684733884549,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 1434.7037996866352,\n          \"behavior\": \"string\"\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdb872ef-dc1f-4567-b0d7-8ae0820d051e",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b5d309f-8a17-4d81-b666-5db032c70504",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fed9c168-efff-4eab-aaa6-ff749d1c2cfd",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12ed3d96-2858-4766-b613-e63960085c43",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5a8db694-9f0c-4724-a638-0cf6e29f2826",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c114148-2dbc-4a8a-b529-b9a5506a3f87",
+          "name": "bubble-game/ranking",
+          "request": {
+            "name": "bubble-game/ranking",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bubble-game",
+                "ranking"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "eb47f1e3-b414-4584-9865-8f7fbce1d17d",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"score\": 7472,\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 1827.8905631246878,\n          \"flipH\": true,\n          \"offsetX\": 9837.935241027993,\n          \"offsetY\": 9616.498431431955\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 7017.879915739081,\n          \"flipH\": true,\n          \"offsetX\": 1145.6629996078282,\n          \"offsetY\": 5086.280291830178\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"online\",\n      \"isBot\": true,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 5903.200215979506,\n      \"makeNotesHiddenBefore\": 7762.993928488448,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 656.596132110362,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 2096.6759631089994,\n          \"behavior\": \"string\"\n        }\n      ]\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"score\": 7737,\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5950.4868416087675,\n          \"flipH\": false,\n          \"offsetX\": 5699.823598350413,\n          \"offsetY\": 5829.726705367392\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 8291.34328914954,\n          \"flipH\": false,\n          \"offsetX\": 2004.7404753039154,\n          \"offsetY\": 7346.601430205485\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 2450.027106824677,\n      \"makeNotesHiddenBefore\": 9659.854605671086,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 5880.684733884549,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 1434.7037996866352,\n          \"behavior\": \"string\"\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "569fcb00-45ae-4000-b79e-da1a46f1dc6d",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09fd8651-de7b-4df0-b2f6-dadf7775cfe7",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "453aee50-882d-46aa-9140-221d9730e288",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fefdd4e5-cdd4-48e1-ba82-d9655cb6870a",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c0e13b6f-0583-453d-9c60-30a44280882a",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "ranking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gameMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae176da7-8d11-4c20-9092-1a4b77adcefa",
+          "name": "bubble-game/register",
+          "request": {
+            "name": "bubble-game/register",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bubble-game",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"score\": \"<integer>\",\n  \"seed\": \"<string>\",\n  \"logs\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"gameMode\": \"<string>\",\n  \"gameVersion\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "004168fc-a221-469d-8162-158b0b9787a4",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"score\": \"<integer>\",\n  \"seed\": \"<string>\",\n  \"logs\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"gameMode\": \"<string>\",\n  \"gameVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "451006a1-e9dc-42f0-a2e3-21a1cd2b8abc",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"score\": \"<integer>\",\n  \"seed\": \"<string>\",\n  \"logs\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"gameMode\": \"<string>\",\n  \"gameVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Provided seed is invalid.\",\n    \"code\": \"INVALID_SEED\",\n    \"id\": \"eb627bc7-574b-4a52-a860-3c3eae772b88\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "36e4a18c-0fb2-4678-ac42-ad258328f50f",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"score\": \"<integer>\",\n  \"seed\": \"<string>\",\n  \"logs\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"gameMode\": \"<string>\",\n  \"gameVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7aaf6298-322c-452a-ae0a-9a8837f8054b",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"score\": \"<integer>\",\n  \"seed\": \"<string>\",\n  \"logs\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"gameMode\": \"<string>\",\n  \"gameVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eaedf787-6983-4241-9e14-91c200cccdfd",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"score\": \"<integer>\",\n  \"seed\": \"<string>\",\n  \"logs\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"gameMode\": \"<string>\",\n  \"gameVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4b88231e-69b4-434b-8a6c-00fab5b972c0",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"score\": \"<integer>\",\n  \"seed\": \"<string>\",\n  \"logs\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"gameMode\": \"<string>\",\n  \"gameVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Rate limit exceeded. Please try again later.\",\n    \"code\": \"RATE_LIMIT_EXCEEDED\",\n    \"id\": \"d5826d14-3982-4d2e-8011-b9e9f02499ef\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da1e5f9c-6ef2-421e-8718-6dbee2385b13",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bubble-game",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"score\": \"<integer>\",\n  \"seed\": \"<string>\",\n  \"logs\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"gameMode\": \"<string>\",\n  \"gameVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://misskey.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f3318c36-4be8-4982-82e8-3da65e0e26d0",
+    "name": "Misskey account Bubble Game API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

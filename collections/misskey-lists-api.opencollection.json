@@ -1,0 +1,177 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Misskey account lists API",
+    "version": "2025.4.1-io.12b-fb6fbea074"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "lists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "users/lists/create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/users/lists/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a new list of users.\n\n**Credential required**: *Yes* / **Permission**: *write:account*"
+        },
+        {
+          "info": {
+            "name": "users/lists/delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/users/lists/delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete an existing list of users.\n\n**Credential required**: *Yes* / **Permission**: *write:account*"
+        },
+        {
+          "info": {
+            "name": "users/lists/get-memberships",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/users/lists/get-memberships",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No* / **Permission**: *read:account*"
+        },
+        {
+          "info": {
+            "name": "users/lists/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/users/lists/list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Show all lists that the authenticated user has created.\n\n**Credential required**: *No* / **Permission**: *read:account*"
+        },
+        {
+          "info": {
+            "name": "users/lists/pull",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/users/lists/pull",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Remove a user from a list.\n\n**Credential required**: *Yes* / **Permission**: *write:account*"
+        },
+        {
+          "info": {
+            "name": "users/lists/push",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/users/lists/push",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Add a user to an existing list.\n\n**Credential required**: *Yes* / **Permission**: *write:account*"
+        },
+        {
+          "info": {
+            "name": "users/lists/show",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/users/lists/show",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Show the properties of a list.\n\n**Credential required**: *No* / **Permission**: *read:account*"
+        },
+        {
+          "info": {
+            "name": "users/lists/update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/users/lists/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update the properties of a list.\n\n**Credential required**: *Yes* / **Permission**: *write:account*"
+        },
+        {
+          "info": {
+            "name": "users/lists/update-membership",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/users/lists/update-membership",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

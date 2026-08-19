@@ -1,0 +1,2069 @@
+{
+  "item": [
+    {
+      "id": "ad1d716b-44ce-471e-9772-60b7c73460e5",
+      "name": "clips",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "48d17251-7694-43a5-a186-318a1751c9ac",
+          "name": "clips/create",
+          "request": {
+            "name": "clips/create",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "clips",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"isPublic\": false,\n  \"description\": \"<string,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4c9baa16-2a68-4496-b8bb-68847ee701ca",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"isPublic\": false,\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"1969-08-26T20:17:18.814Z\",\n  \"lastClippedAt\": \"2006-05-27T13:01:24.747Z\",\n  \"userId\": \"string\",\n  \"user\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 7933.372261890124,\n        \"flipH\": false,\n        \"offsetX\": 9971.922319995596,\n        \"offsetY\": 8829.038774553661\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 6613.2582921423855,\n        \"flipH\": true,\n        \"offsetX\": 2372.7835428201683,\n        \"offsetY\": 7212.051122596747\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"onlineStatus\": \"unknown\",\n    \"isBot\": false,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": false,\n    \"makeNotesFollowersOnlyBefore\": 4081.46068646544,\n    \"makeNotesHiddenBefore\": 6085.713929560693,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 158.86791887695261,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 3160.524139846792,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"isPublic\": false,\n  \"favoritedCount\": 7626.183785235436,\n  \"isFavorited\": true,\n  \"notesCount\": 3643\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "69fd8fb5-d8ff-4b65-8a54-a99c90547adc",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"isPublic\": false,\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You cannot create clip any more.\",\n    \"code\": \"TOO_MANY_CLIPS\",\n    \"id\": \"920f7c2d-6208-4b76-8082-e632020f5883\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cdb7a91b-fca9-491a-968a-c2a37e7f70f3",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"isPublic\": false,\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "76e13ff2-1d98-47e4-99af-64e164e366a0",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"isPublic\": false,\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "975401c2-6508-49a8-9c56-ba8be5da7b3e",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"isPublic\": false,\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f32a556d-e7fe-4fbc-bfd5-dfb27a965731",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"isPublic\": false,\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffab7ff2-765a-48f5-adf7-d6cebe5823f0",
+          "name": "clips/delete",
+          "request": {
+            "name": "clips/delete",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "clips",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4876627f-f162-45f7-bb11-4d4bc085008c",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d0d57f1b-3539-4218-a9af-3b091a715d3f",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such clip.\",\n    \"code\": \"NO_SUCH_CLIP\",\n    \"id\": \"70ca08ba-6865-4630-b6fb-8494759aa754\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da4f0c9c-10e6-4afb-bcb0-b11c3b10e88d",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91ea2e77-a9a0-445c-a125-e4a9c38d6ac4",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0fb0b531-96a7-4e93-986d-bfe569ffbfab",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "787eafe7-9eca-44f3-9871-901d094121fc",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6f4a2fce-c47c-4eeb-866d-d6c150e86b96",
+          "name": "clips/list",
+          "request": {
+            "name": "clips/list",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "clips",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a2ee6907-c277-4bbf-bf12-9180448421ba",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1948-09-13T04:23:36.676Z\",\n    \"lastClippedAt\": \"1981-06-26T03:17:22.157Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5079.247149777075,\n          \"flipH\": false,\n          \"offsetX\": 4319.0881673407375,\n          \"offsetY\": 1324.8018584381027\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 4338.173287140889,\n          \"flipH\": false,\n          \"offsetX\": 8215.205483730451,\n          \"offsetY\": 1297.3688048851961\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"unknown\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 7376.041463483604,\n      \"makeNotesHiddenBefore\": 8318.587863879082,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 1629.410004509374,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 982.7669051911181,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"isPublic\": true,\n    \"favoritedCount\": 247.12860114757706,\n    \"isFavorited\": true,\n    \"notesCount\": 6727\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1952-12-31T19:35:07.734Z\",\n    \"lastClippedAt\": \"1991-08-14T21:40:04.226Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5399.2735309138225,\n          \"flipH\": false,\n          \"offsetX\": 7820.364758338763,\n          \"offsetY\": 2737.0615826434064\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 1007.6613929144496,\n          \"flipH\": false,\n          \"offsetX\": 8688.765079691362,\n          \"offsetY\": 4217.35185649974\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": false,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 3583.8292568712527,\n      \"makeNotesHiddenBefore\": 4969.544754794583,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 2633.3037508646717,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 944.1978465744505,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"isPublic\": true,\n    \"favoritedCount\": 4177.896606974726,\n    \"isFavorited\": false,\n    \"notesCount\": 4061\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79b3e0fa-4425-4ba3-8206-fc1d28ad51ad",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "93493857-35ce-4d68-a282-b48db4423a5a",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c7db73d-12d3-42e6-9c84-1ac3aa456930",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d891813d-ffd8-45a2-a370-c9c44d9f6dac",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc76f406-97c1-4494-a886-2629bd8dbcf9",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2a9bf12-9d37-4b1e-bbf9-142064c57ee3",
+          "name": "clips/show",
+          "request": {
+            "name": "clips/show",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "clips",
+                "show"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a16bf50a-c378-44de-b919-8efe46f43b41",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"1969-08-26T20:17:18.814Z\",\n  \"lastClippedAt\": \"2006-05-27T13:01:24.747Z\",\n  \"userId\": \"string\",\n  \"user\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 7933.372261890124,\n        \"flipH\": false,\n        \"offsetX\": 9971.922319995596,\n        \"offsetY\": 8829.038774553661\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 6613.2582921423855,\n        \"flipH\": true,\n        \"offsetX\": 2372.7835428201683,\n        \"offsetY\": 7212.051122596747\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"onlineStatus\": \"unknown\",\n    \"isBot\": false,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": false,\n    \"makeNotesFollowersOnlyBefore\": 4081.46068646544,\n    \"makeNotesHiddenBefore\": 6085.713929560693,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 158.86791887695261,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 3160.524139846792,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"isPublic\": false,\n  \"favoritedCount\": 7626.183785235436,\n  \"isFavorited\": true,\n  \"notesCount\": 3643\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5dc2ee8-5773-4939-a0a6-104490ad3f4c",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such clip.\",\n    \"code\": \"NO_SUCH_CLIP\",\n    \"id\": \"c3c5fe33-d62c-44d2-9ea5-d997703f5c20\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5acae5d8-b596-4e03-9988-1dfd010831c7",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b41fc2b-5cb1-4a21-afa8-c51f45f02a6b",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d69c86b-e5ae-412a-9926-df1cbf9de824",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "27631169-29dc-40ed-b1af-8938fb8f6eaa",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f48e11c2-7472-421e-9db9-8e2b980ce9cd",
+          "name": "clips/update",
+          "request": {
+            "name": "clips/update",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "clips",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clipId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\",\n  \"description\": \"<string,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "464a5de3-aada-4dbe-a227-acb0b59c32ac",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\",\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"1969-08-26T20:17:18.814Z\",\n  \"lastClippedAt\": \"2006-05-27T13:01:24.747Z\",\n  \"userId\": \"string\",\n  \"user\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 7933.372261890124,\n        \"flipH\": false,\n        \"offsetX\": 9971.922319995596,\n        \"offsetY\": 8829.038774553661\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 6613.2582921423855,\n        \"flipH\": true,\n        \"offsetX\": 2372.7835428201683,\n        \"offsetY\": 7212.051122596747\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"onlineStatus\": \"unknown\",\n    \"isBot\": false,\n    \"isCat\": true,\n    \"requireSigninToViewContents\": false,\n    \"makeNotesFollowersOnlyBefore\": 4081.46068646544,\n    \"makeNotesHiddenBefore\": 6085.713929560693,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 158.86791887695261,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 3160.524139846792,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"isPublic\": false,\n  \"favoritedCount\": 7626.183785235436,\n  \"isFavorited\": true,\n  \"notesCount\": 3643\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5edda907-1bda-4a87-acf5-22240e29f551",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\",\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such clip.\",\n    \"code\": \"NO_SUCH_CLIP\",\n    \"id\": \"b4d92d70-b216-46fa-9a3f-a8c811699257\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "98101fee-aac0-40b9-ad95-cd274cca96b4",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\",\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9684f2d-1f78-4b86-83c7-280425cdf342",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\",\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6795f1dc-ec1f-4bc4-b7d2-53ed71c3e3f2",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\",\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa8ff4bf-8dd5-4d2a-afa8-5727e804288c",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clips",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clipId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"isPublic\": \"<boolean>\",\n  \"description\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f182ae8f-8528-42cf-8252-7858f5190b64",
+          "name": "notes/clips",
+          "request": {
+            "name": "notes/clips",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "notes",
+                "clips"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"noteId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "38d69060-7388-4825-80af-5c52ba6acd4b",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes",
+                    "clips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"noteId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1948-09-13T04:23:36.676Z\",\n    \"lastClippedAt\": \"1981-06-26T03:17:22.157Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5079.247149777075,\n          \"flipH\": false,\n          \"offsetX\": 4319.0881673407375,\n          \"offsetY\": 1324.8018584381027\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 4338.173287140889,\n          \"flipH\": false,\n          \"offsetX\": 8215.205483730451,\n          \"offsetY\": 1297.3688048851961\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"unknown\",\n      \"isBot\": false,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 7376.041463483604,\n      \"makeNotesHiddenBefore\": 8318.587863879082,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 1629.410004509374,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 982.7669051911181,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"isPublic\": true,\n    \"favoritedCount\": 247.12860114757706,\n    \"isFavorited\": true,\n    \"notesCount\": 6727\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1952-12-31T19:35:07.734Z\",\n    \"lastClippedAt\": \"1991-08-14T21:40:04.226Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 5399.2735309138225,\n          \"flipH\": false,\n          \"offsetX\": 7820.364758338763,\n          \"offsetY\": 2737.0615826434064\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 1007.6613929144496,\n          \"flipH\": false,\n          \"offsetX\": 8688.765079691362,\n          \"offsetY\": 4217.35185649974\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": false,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 3583.8292568712527,\n      \"makeNotesHiddenBefore\": 4969.544754794583,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 2633.3037508646717,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 944.1978465744505,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"isPublic\": true,\n    \"favoritedCount\": 4177.896606974726,\n    \"isFavorited\": false,\n    \"notesCount\": 4061\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5b1f714-045f-44c4-a29a-ae5d35145d63",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes",
+                    "clips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"noteId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such note.\",\n    \"code\": \"NO_SUCH_NOTE\",\n    \"id\": \"47db1a1c-b0af-458d-8fb4-986e4efafe1e\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0103958c-3a63-4bd8-ab8e-0a798849ab28",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes",
+                    "clips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"noteId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d771eb7d-d6a3-45f8-b52c-44d1f01aaca6",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes",
+                    "clips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"noteId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "17fdf781-112b-4d66-b6f1-010f305e79c5",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes",
+                    "clips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"noteId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ace7cc6-8f03-4252-adc1-3db75ff4ca5d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes",
+                    "clips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"noteId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://misskey.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4bb0e171-6d0d-4ce6-beb2-2a547dd4d81c",
+    "name": "Misskey account clips API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

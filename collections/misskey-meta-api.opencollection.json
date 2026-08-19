@@ -1,0 +1,358 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Misskey account meta API",
+    "version": "2025.4.1-io.12b-fb6fbea074"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "meta",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "admin/meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/admin/meta",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:admin:meta*"
+        },
+        {
+          "info": {
+            "name": "announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/announcement",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "announcements",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/announcements",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "announcements/show",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/announcements/show",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "emoji",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://misskey.io/api/emoji",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "emoji",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/emoji",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "emojis",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://misskey.io/api/emojis"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "emojis",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/emojis"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/endpoint",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "endpoints",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/endpoints"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "fetch-external-resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/fetch-external-resources",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Internal Endpoint**: This endpoint is an API for the misskey mainframe and is not intended for use by third parties.\n**Credential required**: *Yes*"
+        },
+        {
+          "info": {
+            "name": "fetch-rss",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://misskey.io/api/fetch-rss",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "fetch-rss",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/fetch-rss",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "get-online-users-count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://misskey.io/api/get-online-users-count"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "get-online-users-count",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/get-online-users-count"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "invite/create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/invite/create",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:invite-codes*"
+        },
+        {
+          "info": {
+            "name": "invite/delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/invite/delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:invite-codes*"
+        },
+        {
+          "info": {
+            "name": "invite/limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/invite/limit",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:invite-codes*"
+        },
+        {
+          "info": {
+            "name": "invite/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/invite/list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:invite-codes*"
+        },
+        {
+          "info": {
+            "name": "meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://misskey.io/api/meta",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "meta",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/meta",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "ping",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/ping"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://misskey.io/api/stats"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/stats"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

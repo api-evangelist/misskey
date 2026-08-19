@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Misskey account hashtags API",
+    "version": "2025.4.1-io.12b-fb6fbea074"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "hashtags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "hashtags/list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/hashtags/list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "hashtags/search",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/hashtags/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "hashtags/show",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/hashtags/show",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "hashtags/trend",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://misskey.io/api/hashtags/trend"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "hashtags/trend",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/hashtags/trend"
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "hashtags/users",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/hashtags/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "No description provided.\n\n**Credential required**: *No*"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

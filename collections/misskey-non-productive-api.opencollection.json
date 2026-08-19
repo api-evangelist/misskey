@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Misskey account non-productive API",
+    "version": "2025.4.1-io.12b-fb6fbea074"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "non-productive",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "reset-db",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/reset-db"
+          },
+          "docs": "Only available when running with <code>NODE_ENV=testing</code>. Reset the database and flush Redis.\n\n**Credential required**: *No*"
+        },
+        {
+          "info": {
+            "name": "test",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://misskey.io/api/test",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Endpoint for testing input validation.\n\n**Credential required**: *No*"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

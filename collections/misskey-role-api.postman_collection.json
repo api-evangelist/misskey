@@ -1,0 +1,1335 @@
+{
+  "item": [
+    {
+      "id": "8fc951f4-3cd0-48f4-83b1-6615c4898455",
+      "name": "role",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "88470ee4-dbc0-41db-9b12-61892154ea44",
+          "name": "roles/list",
+          "request": {
+            "name": "roles/list",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "roles",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "637df4dd-3503-40f6-937c-9bf4ec0f5893",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"asBadge\": false,\n    \"badgeBehavior\": \"string\",\n    \"canEditMembersByModerator\": false,\n    \"color\": \"#000000\",\n    \"condFormula\": {\n      \"id\": \"string\",\n      \"type\": \"and\",\n      \"values\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/RoleCondFormulaValue detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/RoleCondFormulaValue detected>\"\n        }\n      ]\n    },\n    \"createdAt\": \"1977-03-16T03:55:53.353Z\",\n    \"description\": \"string\",\n    \"displayOrder\": 0,\n    \"iconUrl\": \"string\",\n    \"id\": \"xxxxxxxxxx\",\n    \"isAdministrator\": false,\n    \"isExplorable\": false,\n    \"isModerator\": false,\n    \"isPublic\": false,\n    \"name\": \"New Role\",\n    \"policies\": {\n      \"key_0\": {\n        \"value\": 8381,\n        \"priority\": 6927,\n        \"useDefault\": true\n      }\n    },\n    \"preserveAssignmentOnMoveAccount\": false,\n    \"target\": \"conditional\",\n    \"updatedAt\": \"2011-06-29T00:51:06.217Z\",\n    \"usersCount\": 9117\n  },\n  {\n    \"asBadge\": false,\n    \"badgeBehavior\": \"string\",\n    \"canEditMembersByModerator\": false,\n    \"color\": \"#000000\",\n    \"condFormula\": {\n      \"id\": \"string\",\n      \"type\": \"or\",\n      \"values\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/RoleCondFormulaValue detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/RoleCondFormulaValue detected>\"\n        }\n      ]\n    },\n    \"createdAt\": \"1952-05-29T21:54:37.304Z\",\n    \"description\": \"string\",\n    \"displayOrder\": 0,\n    \"iconUrl\": \"string\",\n    \"id\": \"xxxxxxxxxx\",\n    \"isAdministrator\": false,\n    \"isExplorable\": false,\n    \"isModerator\": false,\n    \"isPublic\": false,\n    \"name\": \"New Role\",\n    \"policies\": {\n      \"key_0\": {\n        \"value\": 2826,\n        \"priority\": 2003,\n        \"useDefault\": true\n      },\n      \"key_1\": {\n        \"value\": 7971,\n        \"priority\": 3354,\n        \"useDefault\": true\n      }\n    },\n    \"preserveAssignmentOnMoveAccount\": false,\n    \"target\": \"conditional\",\n    \"updatedAt\": \"1982-07-26T17:02:32.879Z\",\n    \"usersCount\": 4219\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b9c1c32-6582-4318-a2b5-147c83bba6d1",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "61bea500-4d36-4b6e-b237-df1ac58a7a65",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9055e778-d0eb-4568-b091-301859bd202b",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "763d84bd-e26e-4f93-9b17-d7fb356ef094",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bc97df45-21ed-4bac-8486-9116b1fb8a22",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f6b96825-4530-4ca1-ae60-ab9a3835835b",
+          "name": "roles/notes",
+          "request": {
+            "name": "roles/notes",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "roles",
+                "notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\",\n  \"dimension\": \"<integer,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "96724717-8b57-4ec0-ab58-7029487a72f4",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\",\n  \"dimension\": \"<integer,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1960-09-22T08:31:46.917Z\",\n    \"text\": \"string\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6236.99650084912,\n          \"flipH\": true,\n          \"offsetX\": 1987.0253533490222,\n          \"offsetY\": 7751.51848764241\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9849.856766489103,\n          \"flipH\": false,\n          \"offsetX\": 7681.822986664809,\n          \"offsetY\": 5848.602827832026\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"online\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 7885.6589905390665,\n      \"makeNotesHiddenBefore\": 3567.128577976777,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 5436.19398838611,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4099.114009184036,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"visibility\": \"followers\",\n    \"reactionAcceptance\": \"nonSensitiveOnlyForLocalLikeOnlyForRemote\",\n    \"reactionEmojis\": {\n      \"key_0\": \"string\"\n    },\n    \"reactions\": {\n      \"key_0\": 9756.79215383272,\n      \"key_1\": 5720.3992868261275,\n      \"key_2\": 608.8451406115857,\n      \"key_3\": 5633.622366642438\n    },\n    \"reactionCount\": 8658.286658334953,\n    \"renoteCount\": 4747.149811088394,\n    \"repliesCount\": 7138.683576971035,\n    \"deletedAt\": \"1947-02-14T13:23:31.811Z\",\n    \"cw\": \"string\",\n    \"replyId\": \"xxxxxxxxxx\",\n    \"renoteId\": \"xxxxxxxxxx\",\n    \"reply\": {\n      \"value\": \"<Circular reference to #/components/schemas/Note detected>\"\n    },\n    \"renote\": {\n      \"value\": \"<Circular reference to #/components/schemas/Note detected>\"\n    },\n    \"isHidden\": false,\n    \"mentions\": [\n      \"string\",\n      \"string\"\n    ],\n    \"visibleUserIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1948-09-15T01:10:19.618Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1998-08-19T07:38:16.936Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 7625.342725775003,\n          \"filesCount\": 5639.345407570671,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"offline\",\n          \"isBot\": true,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": true,\n          \"makeNotesFollowersOnlyBefore\": 4065.542331556443,\n          \"makeNotesHiddenBefore\": 7447.549750259166,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2011-07-16T04:13:28.143Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1957-06-18T15:31:05.707Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 4267.673152991599,\n          \"filesCount\": 7342.903740074489,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"offline\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 6259.972287523431,\n          \"makeNotesHiddenBefore\": 2513.6901834942105,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"poll\": {\n      \"multiple\": false,\n      \"choices\": [\n        {\n          \"isVoted\": true,\n          \"text\": \"string\",\n          \"votes\": 2203.6060076274575\n        },\n        {\n          \"isVoted\": false,\n          \"text\": \"string\",\n          \"votes\": 4936.099091062018\n        }\n      ],\n      \"expiresAt\": \"1995-02-21T05:34:10.220Z\"\n    },\n    \"emojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"channelId\": \"xxxxxxxxxx\",\n    \"channel\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"isSensitive\": false,\n      \"allowRenoteToExternal\": false,\n      \"userId\": \"string\"\n    },\n    \"localOnly\": true,\n    \"dimension\": 9329,\n    \"uri\": \"string\",\n    \"url\": \"string\",\n    \"reactionAndUserPairCache\": [\n      \"string\",\n      \"string\"\n    ],\n    \"clippedCount\": 5610.457731381113,\n    \"myReaction\": \"string\"\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"2018-03-05T18:31:15.624Z\",\n    \"text\": \"string\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 1746.0639187856198,\n          \"flipH\": false,\n          \"offsetX\": 2603.627243995508,\n          \"offsetY\": 7700.989938566473\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6311.307375385204,\n          \"flipH\": true,\n          \"offsetX\": 8141.552836420527,\n          \"offsetY\": 2993.7834846128208\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"offline\",\n      \"isBot\": true,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 2574.1169752719684,\n      \"makeNotesHiddenBefore\": 3767.7078925628093,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 1317.3808545403788,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 9838.730151760143,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"visibility\": \"specified\",\n    \"reactionAcceptance\": \"null\",\n    \"reactionEmojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"reactions\": {\n      \"key_0\": 8454.945729291874\n    },\n    \"reactionCount\": 4460.1704484926695,\n    \"renoteCount\": 7122.475881486522,\n    \"repliesCount\": 978.1971743283314,\n    \"deletedAt\": \"2021-11-29T01:42:19.228Z\",\n    \"cw\": \"string\",\n    \"replyId\": \"xxxxxxxxxx\",\n    \"renoteId\": \"xxxxxxxxxx\",\n    \"reply\": {\n      \"value\": \"<Circular reference to #/components/schemas/Note detected>\"\n    },\n    \"renote\": {\n      \"value\": \"<Circular reference to #/components/schemas/Note detected>\"\n    },\n    \"isHidden\": false,\n    \"mentions\": [\n      \"string\",\n      \"string\"\n    ],\n    \"visibleUserIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2003-07-01T16:51:36.196Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": false,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"2014-12-30T08:16:11.695Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 1570.9549348110463,\n          \"filesCount\": 6120.897964910579,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": false,\n          \"isCat\": false,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 8731.564569231321,\n          \"makeNotesHiddenBefore\": 9636.575634479846,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1957-12-27T01:11:12.253Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": false,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1988-12-01T02:36:40.053Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 7207.413306872826,\n          \"filesCount\": 428.59729433008755,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_3\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"online\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": true,\n          \"makeNotesFollowersOnlyBefore\": 6154.893200822809,\n          \"makeNotesHiddenBefore\": 6079.397117002544,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"poll\": {\n      \"multiple\": true,\n      \"choices\": [\n        {\n          \"isVoted\": true,\n          \"text\": \"string\",\n          \"votes\": 7652.410343235652\n        },\n        {\n          \"isVoted\": true,\n          \"text\": \"string\",\n          \"votes\": 9965.539216445477\n        }\n      ],\n      \"expiresAt\": \"2002-04-22T04:53:57.691Z\"\n    },\n    \"emojis\": {\n      \"key_0\": \"string\"\n    },\n    \"channelId\": \"xxxxxxxxxx\",\n    \"channel\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"isSensitive\": false,\n      \"allowRenoteToExternal\": true,\n      \"userId\": \"string\"\n    },\n    \"localOnly\": true,\n    \"dimension\": 9754,\n    \"uri\": \"string\",\n    \"url\": \"string\",\n    \"reactionAndUserPairCache\": [\n      \"string\",\n      \"string\"\n    ],\n    \"clippedCount\": 2174.32341007312,\n    \"myReaction\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8c0f5c1d-bd5a-419f-928d-31b2dccd577e",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\",\n  \"dimension\": \"<integer,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such role.\",\n    \"code\": \"NO_SUCH_ROLE\",\n    \"id\": \"eb70323a-df61-4dd4-ad90-89c83c7cf26e\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c85e4b6c-f919-403f-abc0-9787ba71fdbc",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\",\n  \"dimension\": \"<integer,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e76b96f6-d429-415a-a37a-0aa6922c141a",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\",\n  \"dimension\": \"<integer,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "46a6197d-e42a-40ad-8408-14b87c4aee43",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\",\n  \"dimension\": \"<integer,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "77e4276e-ee7e-46ea-8e84-7d62b55e39a3",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\",\n  \"dimension\": \"<integer,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c287aec2-80b1-445d-8961-7765f8154e6e",
+          "name": "roles/show",
+          "request": {
+            "name": "roles/show",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "roles",
+                "show"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"roleId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d501f297-0fc0-4a80-a3d6-5972e05f4200",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"asBadge\": false,\n  \"badgeBehavior\": \"string\",\n  \"canEditMembersByModerator\": false,\n  \"color\": \"#000000\",\n  \"condFormula\": {\n    \"id\": \"string\",\n    \"type\": \"or\",\n    \"values\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/RoleCondFormulaValue detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/RoleCondFormulaValue detected>\"\n      }\n    ]\n  },\n  \"createdAt\": \"2020-01-30T19:35:48.924Z\",\n  \"description\": \"string\",\n  \"displayOrder\": 0,\n  \"iconUrl\": \"string\",\n  \"id\": \"xxxxxxxxxx\",\n  \"isAdministrator\": false,\n  \"isExplorable\": false,\n  \"isModerator\": false,\n  \"isPublic\": false,\n  \"name\": \"New Role\",\n  \"policies\": {\n    \"key_0\": {\n      \"value\": 5821,\n      \"priority\": 4611,\n      \"useDefault\": false\n    },\n    \"key_1\": {\n      \"value\": 1452,\n      \"priority\": 7111,\n      \"useDefault\": false\n    },\n    \"key_2\": {\n      \"value\": 8789,\n      \"priority\": 4891,\n      \"useDefault\": false\n    }\n  },\n  \"preserveAssignmentOnMoveAccount\": false,\n  \"target\": \"manual\",\n  \"updatedAt\": \"1978-08-05T21:11:49.505Z\",\n  \"usersCount\": 4843\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07e1169b-a3b1-40a3-ae99-33d6770d82ac",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such role.\",\n    \"code\": \"NO_SUCH_ROLE\",\n    \"id\": \"de5502bf-009a-4639-86c1-fec349e46dcb\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "22f535e0-f4df-45ec-8749-011b852018b4",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "667372b9-fa87-44aa-8da3-10df213b6850",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e13587b-a40d-4d03-a10e-7e73f07a6199",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "81d60720-ae73-44ae-ae6e-2f991dffeaa5",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9bf892b0-29cd-41a5-b737-31cf05a6521a",
+          "name": "roles/users",
+          "request": {
+            "name": "roles/users",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "roles",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"limit\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8de6c8b5-1e39-4897-8293-daa6a8ced811",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"limit\": 10\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"user\": {\n      \"alsoKnownAs\": [\n        \"string\",\n        \"string\"\n      ],\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"url\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"angle\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"flipH\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"offsetX\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"offsetY\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"url\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"angle\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"flipH\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"offsetX\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"offsetY\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"avatarUrl\": \"string\",\n      \"bannerBlurhash\": \"string\",\n      \"bannerUrl\": \"string\",\n      \"birthday\": \"2018-03-12\",\n      \"canChat\": true,\n      \"chatScope\": \"followers\",\n      \"createdAt\": \"2008-01-06T16:02:22.930Z\",\n      \"description\": \"Hi masters, I am Ai!\",\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"followersCount\": 4565.396245013735,\n      \"followersVisibility\": \"private\",\n      \"followingCount\": 1754.490767584297,\n      \"followingVisibility\": \"private\",\n      \"host\": \"misskey.example.com\",\n      \"id\": \"xxxxxxxxxx\",\n      \"isLimited\": true,\n      \"isLocked\": true,\n      \"isSilenced\": true,\n      \"isSuspended\": false,\n      \"lang\": \"ja-JP\",\n      \"lastFetchedAt\": \"1996-07-07T14:45:31.646Z\",\n      \"location\": \"string\",\n      \"memo\": \"string\",\n      \"movedTo\": \"http://msYmOhClXBHBkRsdAUjoKtcxRec.vvmFvzDI1WX5yZy84nY\",\n      \"mutualLinkSections\": [\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"mutualLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"mutualLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"name\": \"藍\",\n      \"notesCount\": 8106.910468502731,\n      \"onlineStatus\": \"offline\",\n      \"pinnedNoteIds\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pinnedNotes\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"pinnedPage\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"pinnedPageId\": \"string\",\n      \"publicReactions\": true,\n      \"roles\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"updatedAt\": \"2026-03-21T23:42:41.975Z\",\n      \"uri\": \"https://lfG.ihpppTDweHqzekLUIiHisx7FGI5gwHT8dMdk.VvHfqxbGGQjfbuWcORyLNw49\",\n      \"url\": \"string\",\n      \"username\": \"ai\",\n      \"verifiedLinks\": [\n        \"string\",\n        \"string\"\n      ],\n      \"isBot\": true,\n      \"isCat\": true,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 2034.9558860687,\n      \"makeNotesHiddenBefore\": 1341.1135648328209,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iconUrl\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"displayOrder\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"behavior\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iconUrl\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"displayOrder\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"behavior\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"followedMessage\": \"string\",\n      \"moderationNote\": \"string\",\n      \"twoFactorEnabled\": true,\n      \"usePasswordLessLogin\": true,\n      \"securityKeys\": false,\n      \"isFollowing\": true,\n      \"isFollowed\": false,\n      \"hasPendingFollowRequestFromYou\": true,\n      \"hasPendingFollowRequestToYou\": true,\n      \"isBlocking\": false,\n      \"isBlocked\": false,\n      \"isMuted\": true,\n      \"isRenoteMuted\": false,\n      \"notify\": \"none\",\n      \"withReplies\": false\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"user\": {\n      \"alsoKnownAs\": [\n        \"string\",\n        \"string\"\n      ],\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"url\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"angle\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"flipH\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"offsetX\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"offsetY\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"url\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"angle\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"flipH\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"offsetX\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"offsetY\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"avatarUrl\": \"string\",\n      \"bannerBlurhash\": \"string\",\n      \"bannerUrl\": \"string\",\n      \"birthday\": \"2018-03-12\",\n      \"canChat\": true,\n      \"chatScope\": \"everyone\",\n      \"createdAt\": \"1954-01-14T12:28:08.564Z\",\n      \"description\": \"Hi masters, I am Ai!\",\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"fields\": [\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"followersCount\": 9813.913104130554,\n      \"followersVisibility\": \"followers\",\n      \"followingCount\": 9351.88467466045,\n      \"followingVisibility\": \"followers\",\n      \"host\": \"misskey.example.com\",\n      \"id\": \"xxxxxxxxxx\",\n      \"isLimited\": false,\n      \"isLocked\": false,\n      \"isSilenced\": false,\n      \"isSuspended\": false,\n      \"lang\": \"ja-JP\",\n      \"lastFetchedAt\": \"1961-06-03T00:33:54.046Z\",\n      \"location\": \"string\",\n      \"memo\": \"string\",\n      \"movedTo\": \"http://ZAObfjUNRlKnX.yygljWW2kJ2qIOjzkNGkS8eO4jprZyDVc\",\n      \"mutualLinkSections\": [\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"mutualLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"mutualLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"name\": \"藍\",\n      \"notesCount\": 5482.03947412248,\n      \"onlineStatus\": \"online\",\n      \"pinnedNoteIds\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pinnedNotes\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"pinnedPage\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"pinnedPageId\": \"string\",\n      \"publicReactions\": false,\n      \"roles\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"updatedAt\": \"1949-07-10T22:34:10.251Z\",\n      \"uri\": \"https://ebwYsVAHBYDwyLsTrWqHtwbqDcCxP.otjmNoTpELf4FbdCrXhX\",\n      \"url\": \"string\",\n      \"username\": \"ai\",\n      \"verifiedLinks\": [\n        \"string\",\n        \"string\"\n      ],\n      \"isBot\": false,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 9239.617480658513,\n      \"makeNotesHiddenBefore\": 2716.3624930153605,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iconUrl\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"displayOrder\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"behavior\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iconUrl\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"displayOrder\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"behavior\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"followedMessage\": \"string\",\n      \"moderationNote\": \"string\",\n      \"twoFactorEnabled\": true,\n      \"usePasswordLessLogin\": false,\n      \"securityKeys\": true,\n      \"isFollowing\": false,\n      \"isFollowed\": true,\n      \"hasPendingFollowRequestFromYou\": true,\n      \"hasPendingFollowRequestToYou\": false,\n      \"isBlocking\": false,\n      \"isBlocked\": true,\n      \"isMuted\": true,\n      \"isRenoteMuted\": true,\n      \"notify\": \"normal\",\n      \"withReplies\": false\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "525c1c0d-8945-4529-89a8-58abfa17d77a",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"limit\": 10\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such role.\",\n    \"code\": \"NO_SUCH_ROLE\",\n    \"id\": \"30aaaee3-4792-48dc-ab0d-cf501a575ac5\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a6309af8-5c35-413e-bbbc-132956d0d8d9",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"limit\": 10\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7e77ea8a-c4d0-4b0f-82ec-946255b817d9",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"limit\": 10\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea716345-3baa-442d-bd69-58991dc7482c",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"limit\": 10\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d4f9f2a-350e-4cfd-9260-7a2f2093e8e5",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<misskey:id>\",\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"limit\": 10\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://misskey.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "94fcd105-a29d-4345-94b3-167fb5112074",
+    "name": "Misskey account role API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

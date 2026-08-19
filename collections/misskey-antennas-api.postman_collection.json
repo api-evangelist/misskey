@@ -1,0 +1,2181 @@
+{
+  "item": [
+    {
+      "id": "b315ca0c-d2b6-4868-941a-c0a69b0cd1be",
+      "name": "antennas",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "44a859d4-2c62-4e34-a5fe-27876d9231f5",
+          "name": "antennas/create",
+          "request": {
+            "name": "antennas/create",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "antennas",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "50da7ce3-6b19-40c5-bb9a-ab3d3ca909ed",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"createdAt\": \"1973-08-29T14:01:07.619Z\",\n  \"name\": \"string\",\n  \"keywords\": [\n    [\n      \"string\",\n      \"string\"\n    ],\n    [\n      \"string\",\n      \"string\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"string\",\n      \"string\"\n    ],\n    [\n      \"string\",\n      \"string\"\n    ]\n  ],\n  \"src\": \"users\",\n  \"userListId\": \"string\",\n  \"users\": [\n    \"string\",\n    \"string\"\n  ],\n  \"caseSensitive\": false,\n  \"localOnly\": false,\n  \"excludeBots\": false,\n  \"withReplies\": false,\n  \"withFile\": false,\n  \"isActive\": true,\n  \"hasUnreadNote\": false,\n  \"notify\": false,\n  \"excludeNotesInSensitiveChannel\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "debc5189-7a97-4283-b529-8f527480dc5f",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such user list.\",\n    \"code\": \"NO_SUCH_USER_LIST\",\n    \"id\": \"95063e93-a283-4b8b-9aa5-bcdb8df69a7f\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82ed8e1d-4a34-461e-8f49-a0e2f2958c4b",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc6d7123-13de-49cf-850b-1010d0fc6e15",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f1378da-ca39-430f-99ba-2bba7c63b943",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0f1c804-a567-4c22-8f61-63a4ff0c6f34",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "639e1a85-769c-42fd-927f-651a4079f469",
+          "name": "antennas/delete",
+          "request": {
+            "name": "antennas/delete",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "antennas",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9b7e5b38-2bec-4022-b3af-1ef1708bf7c8",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "96bece4e-e8ac-47af-ae9f-527af5849fd7",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such antenna.\",\n    \"code\": \"NO_SUCH_ANTENNA\",\n    \"id\": \"b34dcf9d-348f-44bb-99d0-6c9314cfe2df\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4afc7e7a-1dc0-4693-a49d-6f854fb018d5",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13cd0ba6-8969-41af-b9c3-f9e2017bc11c",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "afd37194-7174-4a36-bf37-03ab1a635795",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0dadf31-6168-4226-8f32-f5a1ab3ccd6c",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa62b77f-78b6-4320-a220-3fd968d5fa70",
+          "name": "antennas/list",
+          "request": {
+            "name": "antennas/list",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "antennas",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "52241736-4c13-44db-a212-d82ca5f971a1",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"createdAt\": \"2007-01-05T00:49:10.892Z\",\n    \"name\": \"string\",\n    \"keywords\": [\n      [\n        \"string\",\n        \"string\"\n      ],\n      [\n        \"string\",\n        \"string\"\n      ]\n    ],\n    \"excludeKeywords\": [\n      [\n        \"string\",\n        \"string\"\n      ],\n      [\n        \"string\",\n        \"string\"\n      ]\n    ],\n    \"src\": \"users_blacklist\",\n    \"userListId\": \"string\",\n    \"users\": [\n      \"string\",\n      \"string\"\n    ],\n    \"caseSensitive\": false,\n    \"localOnly\": false,\n    \"excludeBots\": false,\n    \"withReplies\": false,\n    \"withFile\": false,\n    \"isActive\": true,\n    \"hasUnreadNote\": false,\n    \"notify\": false,\n    \"excludeNotesInSensitiveChannel\": false\n  },\n  {\n    \"id\": \"string\",\n    \"createdAt\": \"1993-09-27T06:54:34.784Z\",\n    \"name\": \"string\",\n    \"keywords\": [\n      [\n        \"string\",\n        \"string\"\n      ],\n      [\n        \"string\",\n        \"string\"\n      ]\n    ],\n    \"excludeKeywords\": [\n      [\n        \"string\",\n        \"string\"\n      ],\n      [\n        \"string\",\n        \"string\"\n      ]\n    ],\n    \"src\": \"home\",\n    \"userListId\": \"string\",\n    \"users\": [\n      \"string\",\n      \"string\"\n    ],\n    \"caseSensitive\": false,\n    \"localOnly\": false,\n    \"excludeBots\": false,\n    \"withReplies\": false,\n    \"withFile\": false,\n    \"isActive\": true,\n    \"hasUnreadNote\": false,\n    \"notify\": false,\n    \"excludeNotesInSensitiveChannel\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0950e647-f62a-464a-804e-e634b1595a16",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe352c03-5519-4790-861b-19c6db3eb7d3",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f39da48b-6e80-4734-a08e-f22ab629b4ea",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8fca4afc-c165-40a6-b752-ad895ac7ae94",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "69356b0c-aa9b-445e-8034-5837b6406d13",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e141f30-d366-42b4-a199-b2e1181bec29",
+          "name": "antennas/notes",
+          "request": {
+            "name": "antennas/notes",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "antennas",
+                "notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c7c3e8c7-1409-4b7d-96e9-e4f55f581682",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1949-04-04T19:21:30.844Z\",\n    \"text\": \"string\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 4999.681427238567,\n          \"flipH\": false,\n          \"offsetX\": 1606.4710957115858,\n          \"offsetY\": 1089.3986474061956\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 9333.239985907905,\n          \"flipH\": false,\n          \"offsetX\": 4609.84460355075,\n          \"offsetY\": 1574.4358134512327\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 3208.5857193118595,\n      \"makeNotesHiddenBefore\": 8884.303830445573,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8504.211563218772,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 7238.751504801093,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"visibility\": \"home\",\n    \"reactionAcceptance\": \"null\",\n    \"reactionEmojis\": {\n      \"key_0\": \"string\"\n    },\n    \"reactions\": {\n      \"key_0\": 7124.704936095135\n    },\n    \"reactionCount\": 8329.002141916671,\n    \"renoteCount\": 7504.439097719668,\n    \"repliesCount\": 5795.073293622851,\n    \"deletedAt\": \"2017-10-21T20:11:22.881Z\",\n    \"cw\": \"string\",\n    \"replyId\": \"xxxxxxxxxx\",\n    \"renoteId\": \"xxxxxxxxxx\",\n    \"reply\": {\n      \"value\": \"<Circular reference to #/components/schemas/Note detected>\"\n    },\n    \"renote\": {\n      \"value\": \"<Circular reference to #/components/schemas/Note detected>\"\n    },\n    \"isHidden\": true,\n    \"mentions\": [\n      \"string\",\n      \"string\"\n    ],\n    \"visibleUserIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1977-10-16T21:02:12.477Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": false,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"2009-07-30T14:09:59.834Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 7528.540715678974,\n          \"filesCount\": 4837.54776000351,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"active\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 9761.03549991935,\n          \"makeNotesHiddenBefore\": 3418.660035286397,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2015-06-06T06:02:41.743Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1991-04-11T06:19:42.627Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 7336.255594906441,\n          \"filesCount\": 5759.441141207734,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"active\",\n          \"isBot\": true,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 8005.999798595605,\n          \"makeNotesHiddenBefore\": 9549.91784881083,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"poll\": {\n      \"multiple\": false,\n      \"choices\": [\n        {\n          \"isVoted\": true,\n          \"text\": \"string\",\n          \"votes\": 7450.8904604284235\n        },\n        {\n          \"isVoted\": true,\n          \"text\": \"string\",\n          \"votes\": 8306.256185483326\n        }\n      ],\n      \"expiresAt\": \"1988-06-28T16:19:55.511Z\"\n    },\n    \"emojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"channelId\": \"xxxxxxxxxx\",\n    \"channel\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"isSensitive\": false,\n      \"allowRenoteToExternal\": false,\n      \"userId\": \"string\"\n    },\n    \"localOnly\": true,\n    \"dimension\": 9324,\n    \"uri\": \"string\",\n    \"url\": \"string\",\n    \"reactionAndUserPairCache\": [\n      \"string\",\n      \"string\"\n    ],\n    \"clippedCount\": 7146.476940256468,\n    \"myReaction\": \"string\"\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"2015-11-24T22:15:00.169Z\",\n    \"text\": \"string\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6765.972644120002,\n          \"flipH\": true,\n          \"offsetX\": 3027.502341521011,\n          \"offsetY\": 790.2934659932625\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6969.4076651460655,\n          \"flipH\": true,\n          \"offsetX\": 8189.9702251207755,\n          \"offsetY\": 9770.835279751947\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"offline\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 3152.1184827353986,\n      \"makeNotesHiddenBefore\": 7176.439345614507,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4558.427231893203,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4132.633311331213,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"visibility\": \"home\",\n    \"reactionAcceptance\": \"likeOnly\",\n    \"reactionEmojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"reactions\": {\n      \"key_0\": 5586.952549048857\n    },\n    \"reactionCount\": 8631.88718897137,\n    \"renoteCount\": 9721.477126962345,\n    \"repliesCount\": 2479.3489507764766,\n    \"deletedAt\": \"1964-11-23T03:51:19.175Z\",\n    \"cw\": \"string\",\n    \"replyId\": \"xxxxxxxxxx\",\n    \"renoteId\": \"xxxxxxxxxx\",\n    \"reply\": {\n      \"value\": \"<Circular reference to #/components/schemas/Note detected>\"\n    },\n    \"renote\": {\n      \"value\": \"<Circular reference to #/components/schemas/Note detected>\"\n    },\n    \"isHidden\": false,\n    \"mentions\": [\n      \"string\",\n      \"string\"\n    ],\n    \"visibleUserIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"fileIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"files\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2006-04-21T22:48:17.279Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1996-12-05T05:19:27.333Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 4486.9397319759455,\n          \"filesCount\": 2767.026561169684,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": true,\n          \"isCat\": false,\n          \"requireSigninToViewContents\": true,\n          \"makeNotesFollowersOnlyBefore\": 2717.16617564378,\n          \"makeNotesHiddenBefore\": 5635.399851617479,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1998-02-24T04:56:31.134Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": false,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1972-02-28T10:39:13.837Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 8326.419825335997,\n          \"filesCount\": 96.05461731535425,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"active\",\n          \"isBot\": true,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": true,\n          \"makeNotesFollowersOnlyBefore\": 2031.9829346828067,\n          \"makeNotesHiddenBefore\": 7760.280911594148,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"poll\": {\n      \"multiple\": false,\n      \"choices\": [\n        {\n          \"isVoted\": true,\n          \"text\": \"string\",\n          \"votes\": 2772.1241649924445\n        },\n        {\n          \"isVoted\": false,\n          \"text\": \"string\",\n          \"votes\": 1352.726279994816\n        }\n      ],\n      \"expiresAt\": \"1986-03-16T04:16:37.394Z\"\n    },\n    \"emojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"channelId\": \"xxxxxxxxxx\",\n    \"channel\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"isSensitive\": true,\n      \"allowRenoteToExternal\": true,\n      \"userId\": \"string\"\n    },\n    \"localOnly\": false,\n    \"dimension\": 3802,\n    \"uri\": \"string\",\n    \"url\": \"string\",\n    \"reactionAndUserPairCache\": [\n      \"string\",\n      \"string\"\n    ],\n    \"clippedCount\": 4437.133052793766,\n    \"myReaction\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2bfc3647-ad58-485f-b33f-18e3bfdfed13",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such antenna.\",\n    \"code\": \"NO_SUCH_ANTENNA\",\n    \"id\": \"850926e0-fd3b-49b6-b69a-b28a5dbd82fe\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d4873639-c892-4437-a0f6-4cdbde2e579d",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3ad287f-56ba-4284-ac28-9ccb1fb75c2c",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bf5bc8ec-0d8a-42e7-ad1d-479c000c41a0",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a632c037-95e1-411a-a51a-13845fe225c3",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"limit\": 10,\n  \"sinceId\": \"<misskey:id>\",\n  \"untilId\": \"<misskey:id>\",\n  \"sinceDate\": \"<integer>\",\n  \"untilDate\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a26d90b-58e4-415e-a7a2-638e8d526252",
+          "name": "antennas/show",
+          "request": {
+            "name": "antennas/show",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "antennas",
+                "show"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4ea9fc2a-f56b-4130-94ef-053a1cc2db46",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"createdAt\": \"1973-08-29T14:01:07.619Z\",\n  \"name\": \"string\",\n  \"keywords\": [\n    [\n      \"string\",\n      \"string\"\n    ],\n    [\n      \"string\",\n      \"string\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"string\",\n      \"string\"\n    ],\n    [\n      \"string\",\n      \"string\"\n    ]\n  ],\n  \"src\": \"users\",\n  \"userListId\": \"string\",\n  \"users\": [\n    \"string\",\n    \"string\"\n  ],\n  \"caseSensitive\": false,\n  \"localOnly\": false,\n  \"excludeBots\": false,\n  \"withReplies\": false,\n  \"withFile\": false,\n  \"isActive\": true,\n  \"hasUnreadNote\": false,\n  \"notify\": false,\n  \"excludeNotesInSensitiveChannel\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e260b821-7fd6-4f17-89a7-eb1f7d7a20d2",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such antenna.\",\n    \"code\": \"NO_SUCH_ANTENNA\",\n    \"id\": \"c06569fb-b025-4f23-b22d-1fcd20d2816b\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43dcfb91-db48-4f51-9716-b81c0de5ee3a",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c415dcc-c708-4fe7-83e5-29280d3d9d54",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ac3aade-c7ee-48a2-8f23-ed800429d588",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65dcecdd-5a28-4fbf-a792-f6112b7d8603",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01bc5828-0e12-446f-9683-464c69f1a7ac",
+          "name": "antennas/update",
+          "request": {
+            "name": "antennas/update",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:account*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "antennas",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3621bde2-5592-4312-b7d7-8f608f2dc5ac",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"createdAt\": \"1973-08-29T14:01:07.619Z\",\n  \"name\": \"string\",\n  \"keywords\": [\n    [\n      \"string\",\n      \"string\"\n    ],\n    [\n      \"string\",\n      \"string\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"string\",\n      \"string\"\n    ],\n    [\n      \"string\",\n      \"string\"\n    ]\n  ],\n  \"src\": \"users\",\n  \"userListId\": \"string\",\n  \"users\": [\n    \"string\",\n    \"string\"\n  ],\n  \"caseSensitive\": false,\n  \"localOnly\": false,\n  \"excludeBots\": false,\n  \"withReplies\": false,\n  \"withFile\": false,\n  \"isActive\": true,\n  \"hasUnreadNote\": false,\n  \"notify\": false,\n  \"excludeNotesInSensitiveChannel\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3be321c-7670-43e6-8f7b-19354aa8c180",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such antenna.\",\n    \"code\": \"NO_SUCH_ANTENNA\",\n    \"id\": \"10c673ac-8852-48eb-aa1f-f5b67f069290\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ef01c48-2b83-4f3d-9cbf-c3e6324133f5",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7271dff-0680-4d3f-887b-73710a374b97",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "178067c5-5cc1-445e-819b-d9d6a3ac1e25",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e50b10f-3ed4-4800-9478-25714d7b3049",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "antennas",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"antennaId\": \"<misskey:id>\",\n  \"name\": \"<string>\",\n  \"src\": \"<string>\",\n  \"userListId\": \"<string,null-misskey:id>\",\n  \"keywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"excludeKeywords\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"caseSensitive\": \"<boolean>\",\n  \"localOnly\": \"<boolean>\",\n  \"excludeBots\": \"<boolean>\",\n  \"withReplies\": \"<boolean>\",\n  \"withFile\": \"<boolean>\",\n  \"excludeNotesInSensitiveChannel\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://misskey.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d6ca5d21-af86-4ca8-80e5-ee3d7181344f",
+    "name": "Misskey account antennas API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

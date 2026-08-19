@@ -1,0 +1,2530 @@
+{
+  "item": [
+    {
+      "id": "5c8a2d32-6653-46cd-aa69-1d97f0abac33",
+      "name": "pages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ac35327d-9fc0-4a73-8973-012d86358509",
+          "name": "pages/create",
+          "request": {
+            "name": "pages/create",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:pages*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"content\": [\n    {\n      \"key_0\": 6526.606725671291,\n      \"key_1\": 5390.046925623658,\n      \"key_2\": 2666,\n      \"key_3\": \"string\",\n      \"key_4\": 4334\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": true,\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  ],\n  \"script\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"sans-serif\",\n  \"alignCenter\": false,\n  \"hideTitleWhenPinned\": false,\n  \"visibility\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bb908048-4526-44dc-a7cd-d85a539b9a22",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"content\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 6677.792751964887\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": 3253.8540691813455,\n      \"key_1\": 2335.6620113794656\n    },\n    {\n      \"key_0\": 4593,\n      \"key_1\": false,\n      \"key_2\": true,\n      \"key_3\": 6428\n    }\n  ],\n  \"script\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"sans-serif\",\n  \"alignCenter\": false,\n  \"hideTitleWhenPinned\": false,\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"1968-12-23T02:38:18.995Z\",\n  \"updatedAt\": \"1969-08-17T04:04:08.764Z\",\n  \"userId\": \"string\",\n  \"user\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 2568.279965554452,\n        \"flipH\": true,\n        \"offsetX\": 8207.184674597263,\n        \"offsetY\": 1948.661550423063\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 8865.19925580355,\n        \"flipH\": false,\n        \"offsetX\": 9675.448201705867,\n        \"offsetY\": 6013.492763783491\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"onlineStatus\": \"active\",\n    \"isBot\": false,\n    \"isCat\": false,\n    \"requireSigninToViewContents\": false,\n    \"makeNotesFollowersOnlyBefore\": 5902.986701592632,\n    \"makeNotesHiddenBefore\": 7408.168251757243,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 5841.094908690573,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 8961.191479036124,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"content\": [\n    {\n      \"id\": \"string\",\n      \"type\": \"text\",\n      \"text\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"type\": \"text\",\n      \"text\": \"string\"\n    }\n  ],\n  \"variables\": [],\n  \"title\": \"string\",\n  \"name\": \"string\",\n  \"summary\": \"string\",\n  \"hideTitleWhenPinned\": false,\n  \"alignCenter\": false,\n  \"font\": \"string\",\n  \"script\": \"string\",\n  \"eyeCatchingImageId\": \"string\",\n  \"eyeCatchingImage\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1955-04-25T19:19:04.066Z\",\n    \"name\": \"192.jpg\",\n    \"type\": \"image/jpeg\",\n    \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n    \"size\": 51469,\n    \"isSensitive\": false,\n    \"blurhash\": \"string\",\n    \"properties\": {\n      \"width\": 1280,\n      \"height\": 720,\n      \"orientation\": 8,\n      \"avgColor\": \"rgb(40,65,87)\"\n    },\n    \"url\": \"string\",\n    \"thumbnailUrl\": \"string\",\n    \"comment\": \"string\",\n    \"folderId\": \"xxxxxxxxxx\",\n    \"userId\": \"xxxxxxxxxx\",\n    \"isSensitiveByModerator\": false,\n    \"folder\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"2024-10-29T23:07:03.044Z\",\n      \"name\": \"string\",\n      \"parentId\": \"xxxxxxxxxx\",\n      \"foldersCount\": 3179.481793488781,\n      \"filesCount\": 8441.248562697716,\n      \"parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n      }\n    },\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 4663.605880414414,\n          \"flipH\": true,\n          \"offsetX\": 6484.8882636881,\n          \"offsetY\": 9995.039600588787\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6571.840394186684,\n          \"flipH\": true,\n          \"offsetX\": 9967.559921351198,\n          \"offsetY\": 208.32373715111484\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"onlineStatus\": \"unknown\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 9031.70234458603,\n      \"makeNotesHiddenBefore\": 2655.713203436668,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8826.576849898398,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 9993.01445139479,\n          \"behavior\": \"string\"\n        }\n      ]\n    }\n  },\n  \"attachedFiles\": [\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"1990-02-22T00:26:09.013Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": true,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": false,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2002-01-05T13:17:41.530Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 4947.307189115459,\n        \"filesCount\": 8814.613922599856,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 8989.14272204096,\n            \"flipH\": true,\n            \"offsetX\": 7109.394451192983,\n            \"offsetY\": 5614.957264287973\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 1343.5517698671395,\n            \"flipH\": false,\n            \"offsetX\": 3994.149274627936,\n            \"offsetY\": 746.5981781839803\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"onlineStatus\": \"online\",\n        \"isBot\": false,\n        \"isCat\": true,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 3203.9451211506353,\n        \"makeNotesHiddenBefore\": 3683.645591497763,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 109.14926941479774,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 2003.661514571712,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"1947-03-22T14:45:18.246Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": true,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2011-04-15T10:24:39.696Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 6980.941782629088,\n        \"filesCount\": 7197.029443518127,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 8072.127426861933,\n            \"flipH\": false,\n            \"offsetX\": 9388.516132359046,\n            \"offsetY\": 9971.339619417868\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 3709.36236724971,\n            \"flipH\": true,\n            \"offsetX\": 2178.4448468441174,\n            \"offsetY\": 7883.139295942817\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\"\n        },\n        \"onlineStatus\": \"online\",\n        \"isBot\": false,\n        \"isCat\": true,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 9694.624880993095,\n        \"makeNotesHiddenBefore\": 8589.654070863373,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 2124.2838650751596,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 6783.318565893295,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    }\n  ],\n  \"likedCount\": 7368.520589053318,\n  \"visibility\": \"private\",\n  \"isLiked\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f5b907c5-cf44-4ec1-a024-89b37125eca6",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"content\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 6677.792751964887\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": 3253.8540691813455,\n      \"key_1\": 2335.6620113794656\n    },\n    {\n      \"key_0\": 4593,\n      \"key_1\": false,\n      \"key_2\": true,\n      \"key_3\": 6428\n    }\n  ],\n  \"script\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"sans-serif\",\n  \"alignCenter\": false,\n  \"hideTitleWhenPinned\": false,\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such file.\",\n    \"code\": \"NO_SUCH_FILE\",\n    \"id\": \"b7b97489-0f66-4b12-a5ff-b21bd63f6e1c\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04a8a35c-5ab3-43d4-b717-46ef7aee29da",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"content\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 6677.792751964887\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": 3253.8540691813455,\n      \"key_1\": 2335.6620113794656\n    },\n    {\n      \"key_0\": 4593,\n      \"key_1\": false,\n      \"key_2\": true,\n      \"key_3\": 6428\n    }\n  ],\n  \"script\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"sans-serif\",\n  \"alignCenter\": false,\n  \"hideTitleWhenPinned\": false,\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "18f4e42d-1874-4fca-b856-447e8a18a60a",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"content\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 6677.792751964887\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": 3253.8540691813455,\n      \"key_1\": 2335.6620113794656\n    },\n    {\n      \"key_0\": 4593,\n      \"key_1\": false,\n      \"key_2\": true,\n      \"key_3\": 6428\n    }\n  ],\n  \"script\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"sans-serif\",\n  \"alignCenter\": false,\n  \"hideTitleWhenPinned\": false,\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92feb498-8871-4ff4-8a0f-68b462770fcb",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"content\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 6677.792751964887\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": 3253.8540691813455,\n      \"key_1\": 2335.6620113794656\n    },\n    {\n      \"key_0\": 4593,\n      \"key_1\": false,\n      \"key_2\": true,\n      \"key_3\": 6428\n    }\n  ],\n  \"script\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"sans-serif\",\n  \"alignCenter\": false,\n  \"hideTitleWhenPinned\": false,\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dcf09fe7-ed5f-4a28-bac9-c24e8e174c1b",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"content\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 6677.792751964887\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": 3253.8540691813455,\n      \"key_1\": 2335.6620113794656\n    },\n    {\n      \"key_0\": 4593,\n      \"key_1\": false,\n      \"key_2\": true,\n      \"key_3\": 6428\n    }\n  ],\n  \"script\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"sans-serif\",\n  \"alignCenter\": false,\n  \"hideTitleWhenPinned\": false,\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Rate limit exceeded. Please try again later.\",\n    \"code\": \"RATE_LIMIT_EXCEEDED\",\n    \"id\": \"d5826d14-3982-4d2e-8011-b9e9f02499ef\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "64288485-1cab-4b98-99dc-7d7485fa3ec0",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"content\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 6677.792751964887\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": 3253.8540691813455,\n      \"key_1\": 2335.6620113794656\n    },\n    {\n      \"key_0\": 4593,\n      \"key_1\": false,\n      \"key_2\": true,\n      \"key_3\": 6428\n    }\n  ],\n  \"script\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"sans-serif\",\n  \"alignCenter\": false,\n  \"hideTitleWhenPinned\": false,\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2587bdd-ecd7-4c57-9a08-2e6699cff1bc",
+          "name": "pages/delete",
+          "request": {
+            "name": "pages/delete",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:pages*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "65d1943e-d2cd-4d08-b115-ff7bc369c1da",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7114d95d-232d-4c6d-a95f-c5372190c3c7",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such page.\",\n    \"code\": \"NO_SUCH_PAGE\",\n    \"id\": \"eb0c6e1d-d519-4764-9486-52a7e1c6392a\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8393d06-f188-4e9c-9d9a-7aea6604a854",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "22607fa4-6b21-4540-ae1c-557410c68472",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cd34e584-a742-4046-9980-769c2ba4cb7a",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1f104628-c8a8-4cbd-b659-58bc2dc3f9fc",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83c70398-80a9-43cb-8baa-255c20a2fdc5",
+          "name": "pages/featured",
+          "request": {
+            "name": "pages/featured",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                "featured"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9924fae-e344-4e7a-b498-050bd594c708",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1994-10-04T04:39:47.683Z\",\n    \"updatedAt\": \"2011-05-27T08:29:00.837Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 503.3314370392128,\n          \"flipH\": false,\n          \"offsetX\": 1312.0835875828795,\n          \"offsetY\": 1649.5232768548728\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 2549.8216037858224,\n          \"flipH\": true,\n          \"offsetX\": 7783.311773446649,\n          \"offsetY\": 5785.500731334952\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\"\n      },\n      \"onlineStatus\": \"online\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": true,\n      \"makeNotesFollowersOnlyBefore\": 4549.637775168924,\n      \"makeNotesHiddenBefore\": 1391.5203634841478,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8745.683400864782,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 6287.501874637753,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"content\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"text\",\n        \"text\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"text\",\n        \"text\": \"string\"\n      }\n    ],\n    \"variables\": [],\n    \"title\": \"string\",\n    \"name\": \"string\",\n    \"summary\": \"string\",\n    \"hideTitleWhenPinned\": true,\n    \"alignCenter\": false,\n    \"font\": \"string\",\n    \"script\": \"string\",\n    \"eyeCatchingImageId\": \"string\",\n    \"eyeCatchingImage\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"2013-03-11T19:30:15.901Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": true,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1990-11-24T02:52:47.324Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 2219.892535461443,\n        \"filesCount\": 2957.933570423433,\n        \"parent\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"onlineStatus\": \"online\",\n        \"isBot\": false,\n        \"isCat\": true,\n        \"requireSigninToViewContents\": false,\n        \"makeNotesFollowersOnlyBefore\": 3313.7666528902887,\n        \"makeNotesHiddenBefore\": 5594.034158313591,\n        \"instance\": {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"softwareName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"softwareVersion\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iconUrl\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"faviconUrl\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"themeColor\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"badgeRoles\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"attachedFiles\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2020-04-03T16:16:41.961Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": false,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1959-11-28T10:56:00.893Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 915.8137634809905,\n          \"filesCount\": 8366.990289844716,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": true,\n          \"isCat\": false,\n          \"requireSigninToViewContents\": true,\n          \"makeNotesFollowersOnlyBefore\": 5229.006264601309,\n          \"makeNotesHiddenBefore\": 1791.114877422454,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2016-08-12T11:31:47.682Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"2013-01-04T17:11:33.542Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 9043.9193062969,\n          \"filesCount\": 1993.462460278451,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_3\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 5198.585789074488,\n          \"makeNotesHiddenBefore\": 2067.6913722816325,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"likedCount\": 8755.549716488133,\n    \"visibility\": \"public\",\n    \"isLiked\": false\n  },\n  {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1954-01-18T17:46:07.921Z\",\n    \"updatedAt\": \"2002-06-10T01:25:24.074Z\",\n    \"userId\": \"string\",\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 633.2520602604575,\n          \"flipH\": false,\n          \"offsetX\": 4788.2206522666675,\n          \"offsetY\": 699.432962161699\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 7730.50921914477,\n          \"flipH\": true,\n          \"offsetX\": 2432.664033120517,\n          \"offsetY\": 1745.8096915225408\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"onlineStatus\": \"active\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 367.2318453016954,\n      \"makeNotesHiddenBefore\": 7130.812976462947,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8446.160480688273,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 4108.428009194166,\n          \"behavior\": \"string\"\n        }\n      ]\n    },\n    \"content\": [\n      {\n        \"id\": \"string\",\n        \"type\": \"text\",\n        \"text\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"type\": \"text\",\n        \"text\": \"string\"\n      }\n    ],\n    \"variables\": [],\n    \"title\": \"string\",\n    \"name\": \"string\",\n    \"summary\": \"string\",\n    \"hideTitleWhenPinned\": false,\n    \"alignCenter\": true,\n    \"font\": \"string\",\n    \"script\": \"string\",\n    \"eyeCatchingImageId\": \"string\",\n    \"eyeCatchingImage\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"1980-04-06T06:58:51.695Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": false,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2002-01-21T12:58:48.767Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 8639.62429274076,\n        \"filesCount\": 1885.682302559284,\n        \"parent\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"onlineStatus\": \"online\",\n        \"isBot\": false,\n        \"isCat\": true,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 7789.269320530121,\n        \"makeNotesHiddenBefore\": 8867.122931556485,\n        \"instance\": {\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"softwareName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"softwareVersion\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iconUrl\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"faviconUrl\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"themeColor\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"badgeRoles\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"attachedFiles\": [\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"1984-05-19T06:42:16.594Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": false,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1953-03-29T08:44:58.878Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 8228.616473037655,\n          \"filesCount\": 9195.742460039512,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"unknown\",\n          \"isBot\": false,\n          \"isCat\": true,\n          \"requireSigninToViewContents\": true,\n          \"makeNotesFollowersOnlyBefore\": 5742.809475095363,\n          \"makeNotesHiddenBefore\": 6615.492683188293,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2024-01-03T00:57:35.190Z\",\n        \"name\": \"192.jpg\",\n        \"type\": \"image/jpeg\",\n        \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n        \"size\": 51469,\n        \"isSensitive\": true,\n        \"blurhash\": \"string\",\n        \"properties\": {\n          \"width\": 1280,\n          \"height\": 720,\n          \"orientation\": 8,\n          \"avgColor\": \"rgb(40,65,87)\"\n        },\n        \"url\": \"string\",\n        \"thumbnailUrl\": \"string\",\n        \"comment\": \"string\",\n        \"folderId\": \"xxxxxxxxxx\",\n        \"userId\": \"xxxxxxxxxx\",\n        \"isSensitiveByModerator\": true,\n        \"folder\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"createdAt\": \"1953-01-06T05:04:56.353Z\",\n          \"name\": \"string\",\n          \"parentId\": \"xxxxxxxxxx\",\n          \"foldersCount\": 553.5193488944124,\n          \"filesCount\": 4569.99591589803,\n          \"parent\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"user\": {\n          \"id\": \"xxxxxxxxxx\",\n          \"name\": \"藍\",\n          \"username\": \"ai\",\n          \"host\": \"misskey.example.com\",\n          \"avatarUrl\": \"string\",\n          \"avatarBlurhash\": \"string\",\n          \"avatarDecorations\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"emojis\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"onlineStatus\": \"active\",\n          \"isBot\": false,\n          \"isCat\": false,\n          \"requireSigninToViewContents\": false,\n          \"makeNotesFollowersOnlyBefore\": 1807.189998029305,\n          \"makeNotesHiddenBefore\": 597.3551650485642,\n          \"instance\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"softwareVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"iconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"faviconUrl\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"themeColor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"badgeRoles\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"likedCount\": 4372.214999187394,\n    \"visibility\": \"private\",\n    \"isLiked\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5508709b-a69b-46ed-a2c0-b034b7f7d90c",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Invalid param.\",\n    \"code\": \"INVALID_PARAM\",\n    \"id\": \"3d81ceae-475f-4600-b2a8-2bc116157532\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f1d5795-52f2-4f91-8e03-2f7f6e4ca6a7",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c926e8c1-81ec-4a27-8de5-6f9797dbe77f",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7e37276-4b9e-4637-82b9-60dcc6adf2f2",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "309a1a64-3f99-4f3b-a669-3b6cd6f4ecc8",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbcb7a00-44a7-4854-ab69-39c513c7ea90",
+          "name": "pages/like",
+          "request": {
+            "name": "pages/like",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:page-likes*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                "like"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ad8b10ca-a8e5-4d5c-9c59-84f691b80a06",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76ee97c8-ce04-4dbd-957b-2d284f1e064e",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such page.\",\n    \"code\": \"NO_SUCH_PAGE\",\n    \"id\": \"cc98a8a2-0dc3-4123-b198-62c71df18ed3\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34f8accb-9ca6-4d5c-a62f-c98ccfbb5aa4",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37a1a486-a443-4a09-947b-0d37a0ba1940",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "14e74e4f-b24f-4e1d-8ce5-c7b7d45d35ee",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "822f4370-a1e7-4ca1-b845-a263398c8132",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "like"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b6867a9-bdde-4084-9489-310976b14e48",
+          "name": "pages/show",
+          "request": {
+            "name": "pages/show",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *No*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                "show"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e7f294b7-6b38-4d32-ab6e-0560c54ede54",
+              "name": "OK (with results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"xxxxxxxxxx\",\n  \"createdAt\": \"1968-12-23T02:38:18.995Z\",\n  \"updatedAt\": \"1969-08-17T04:04:08.764Z\",\n  \"userId\": \"string\",\n  \"user\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"name\": \"藍\",\n    \"username\": \"ai\",\n    \"host\": \"misskey.example.com\",\n    \"avatarUrl\": \"string\",\n    \"avatarBlurhash\": \"string\",\n    \"avatarDecorations\": [\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 2568.279965554452,\n        \"flipH\": true,\n        \"offsetX\": 8207.184674597263,\n        \"offsetY\": 1948.661550423063\n      },\n      {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"angle\": 8865.19925580355,\n        \"flipH\": false,\n        \"offsetX\": 9675.448201705867,\n        \"offsetY\": 6013.492763783491\n      }\n    ],\n    \"emojis\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"onlineStatus\": \"active\",\n    \"isBot\": false,\n    \"isCat\": false,\n    \"requireSigninToViewContents\": false,\n    \"makeNotesFollowersOnlyBefore\": 5902.986701592632,\n    \"makeNotesHiddenBefore\": 7408.168251757243,\n    \"instance\": {\n      \"name\": \"string\",\n      \"softwareName\": \"string\",\n      \"softwareVersion\": \"string\",\n      \"iconUrl\": \"string\",\n      \"faviconUrl\": \"string\",\n      \"themeColor\": \"string\"\n    },\n    \"badgeRoles\": [\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 5841.094908690573,\n        \"behavior\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"iconUrl\": \"string\",\n        \"displayOrder\": 8961.191479036124,\n        \"behavior\": \"string\"\n      }\n    ]\n  },\n  \"content\": [\n    {\n      \"id\": \"string\",\n      \"type\": \"text\",\n      \"text\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"type\": \"text\",\n      \"text\": \"string\"\n    }\n  ],\n  \"variables\": [],\n  \"title\": \"string\",\n  \"name\": \"string\",\n  \"summary\": \"string\",\n  \"hideTitleWhenPinned\": false,\n  \"alignCenter\": false,\n  \"font\": \"string\",\n  \"script\": \"string\",\n  \"eyeCatchingImageId\": \"string\",\n  \"eyeCatchingImage\": {\n    \"id\": \"xxxxxxxxxx\",\n    \"createdAt\": \"1955-04-25T19:19:04.066Z\",\n    \"name\": \"192.jpg\",\n    \"type\": \"image/jpeg\",\n    \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n    \"size\": 51469,\n    \"isSensitive\": false,\n    \"blurhash\": \"string\",\n    \"properties\": {\n      \"width\": 1280,\n      \"height\": 720,\n      \"orientation\": 8,\n      \"avgColor\": \"rgb(40,65,87)\"\n    },\n    \"url\": \"string\",\n    \"thumbnailUrl\": \"string\",\n    \"comment\": \"string\",\n    \"folderId\": \"xxxxxxxxxx\",\n    \"userId\": \"xxxxxxxxxx\",\n    \"isSensitiveByModerator\": false,\n    \"folder\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"2024-10-29T23:07:03.044Z\",\n      \"name\": \"string\",\n      \"parentId\": \"xxxxxxxxxx\",\n      \"foldersCount\": 3179.481793488781,\n      \"filesCount\": 8441.248562697716,\n      \"parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n      }\n    },\n    \"user\": {\n      \"id\": \"xxxxxxxxxx\",\n      \"name\": \"藍\",\n      \"username\": \"ai\",\n      \"host\": \"misskey.example.com\",\n      \"avatarUrl\": \"string\",\n      \"avatarBlurhash\": \"string\",\n      \"avatarDecorations\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 4663.605880414414,\n          \"flipH\": true,\n          \"offsetX\": 6484.8882636881,\n          \"offsetY\": 9995.039600588787\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"angle\": 6571.840394186684,\n          \"flipH\": true,\n          \"offsetX\": 9967.559921351198,\n          \"offsetY\": 208.32373715111484\n        }\n      ],\n      \"emojis\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"onlineStatus\": \"unknown\",\n      \"isBot\": true,\n      \"isCat\": false,\n      \"requireSigninToViewContents\": false,\n      \"makeNotesFollowersOnlyBefore\": 9031.70234458603,\n      \"makeNotesHiddenBefore\": 2655.713203436668,\n      \"instance\": {\n        \"name\": \"string\",\n        \"softwareName\": \"string\",\n        \"softwareVersion\": \"string\",\n        \"iconUrl\": \"string\",\n        \"faviconUrl\": \"string\",\n        \"themeColor\": \"string\"\n      },\n      \"badgeRoles\": [\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 8826.576849898398,\n          \"behavior\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"iconUrl\": \"string\",\n          \"displayOrder\": 9993.01445139479,\n          \"behavior\": \"string\"\n        }\n      ]\n    }\n  },\n  \"attachedFiles\": [\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"1990-02-22T00:26:09.013Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": true,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": false,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2002-01-05T13:17:41.530Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 4947.307189115459,\n        \"filesCount\": 8814.613922599856,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 8989.14272204096,\n            \"flipH\": true,\n            \"offsetX\": 7109.394451192983,\n            \"offsetY\": 5614.957264287973\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 1343.5517698671395,\n            \"flipH\": false,\n            \"offsetX\": 3994.149274627936,\n            \"offsetY\": 746.5981781839803\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"onlineStatus\": \"online\",\n        \"isBot\": false,\n        \"isCat\": true,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 3203.9451211506353,\n        \"makeNotesHiddenBefore\": 3683.645591497763,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 109.14926941479774,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 2003.661514571712,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"xxxxxxxxxx\",\n      \"createdAt\": \"1947-03-22T14:45:18.246Z\",\n      \"name\": \"192.jpg\",\n      \"type\": \"image/jpeg\",\n      \"md5\": \"15eca7fba0480996e2245f5185bf39f2\",\n      \"size\": 51469,\n      \"isSensitive\": true,\n      \"blurhash\": \"string\",\n      \"properties\": {\n        \"width\": 1280,\n        \"height\": 720,\n        \"orientation\": 8,\n        \"avgColor\": \"rgb(40,65,87)\"\n      },\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"comment\": \"string\",\n      \"folderId\": \"xxxxxxxxxx\",\n      \"userId\": \"xxxxxxxxxx\",\n      \"isSensitiveByModerator\": true,\n      \"folder\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"createdAt\": \"2011-04-15T10:24:39.696Z\",\n        \"name\": \"string\",\n        \"parentId\": \"xxxxxxxxxx\",\n        \"foldersCount\": 6980.941782629088,\n        \"filesCount\": 7197.029443518127,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/DriveFolder detected>\"\n        }\n      },\n      \"user\": {\n        \"id\": \"xxxxxxxxxx\",\n        \"name\": \"藍\",\n        \"username\": \"ai\",\n        \"host\": \"misskey.example.com\",\n        \"avatarUrl\": \"string\",\n        \"avatarBlurhash\": \"string\",\n        \"avatarDecorations\": [\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 8072.127426861933,\n            \"flipH\": false,\n            \"offsetX\": 9388.516132359046,\n            \"offsetY\": 9971.339619417868\n          },\n          {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"angle\": 3709.36236724971,\n            \"flipH\": true,\n            \"offsetX\": 2178.4448468441174,\n            \"offsetY\": 7883.139295942817\n          }\n        ],\n        \"emojis\": {\n          \"key_0\": \"string\"\n        },\n        \"onlineStatus\": \"online\",\n        \"isBot\": false,\n        \"isCat\": true,\n        \"requireSigninToViewContents\": true,\n        \"makeNotesFollowersOnlyBefore\": 9694.624880993095,\n        \"makeNotesHiddenBefore\": 8589.654070863373,\n        \"instance\": {\n          \"name\": \"string\",\n          \"softwareName\": \"string\",\n          \"softwareVersion\": \"string\",\n          \"iconUrl\": \"string\",\n          \"faviconUrl\": \"string\",\n          \"themeColor\": \"string\"\n        },\n        \"badgeRoles\": [\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 2124.2838650751596,\n            \"behavior\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"iconUrl\": \"string\",\n            \"displayOrder\": 6783.318565893295,\n            \"behavior\": \"string\"\n          }\n        ]\n      }\n    }\n  ],\n  \"likedCount\": 7368.520589053318,\n  \"visibility\": \"private\",\n  \"isLiked\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8480ab59-1328-42ae-be15-fcea5ca1dfde",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such page.\",\n    \"code\": \"NO_SUCH_PAGE\",\n    \"id\": \"222120c0-3ead-4528-811b-b96f233388d7\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c314fe1-b634-4ac1-b98d-a962601afe80",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae992c1f-77c9-4756-b5e2-2ef1165bf1f4",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e3bf7ae-3539-4100-aec4-3de563d296a9",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8d77d827-09e4-4e45-8911-365f9a7cc3b4",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "show"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03886515-d37e-4f37-9efc-189b18950809",
+          "name": "pages/unlike",
+          "request": {
+            "name": "pages/unlike",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:page-likes*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                "unlike"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b002314d-a64d-48de-97ab-5d870a39d398",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c447d059-b812-499a-88a4-41bdc88b70a3",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such page.\",\n    \"code\": \"NO_SUCH_PAGE\",\n    \"id\": \"a0d41e20-1993-40bd-890e-f6e560ae648e\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b3401aa-bf22-4a1c-84f5-e49c8618348b",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2389c5a-818c-4740-a6b1-e2822ae1e726",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3254231f-e69a-4959-94f0-29035575f1e3",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4452744d-54d2-48c2-8a5b-8e79d79062f7",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "unlike"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f1d17bc-be84-4f67-983f-5a6acd500bb9",
+          "name": "pages/update",
+          "request": {
+            "name": "pages/update",
+            "description": {
+              "content": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:pages*",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pageId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"content\": [\n    {\n      \"key_0\": 1855,\n      \"key_1\": true,\n      \"key_2\": 2133,\n      \"key_3\": \"string\"\n    },\n    {\n      \"key_0\": 4651,\n      \"key_1\": 5099\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": 804.3117604269934,\n      \"key_1\": 1702\n    },\n    {\n      \"key_0\": false\n    }\n  ],\n  \"script\": \"<string>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"<string>\",\n  \"alignCenter\": \"<boolean>\",\n  \"hideTitleWhenPinned\": \"<boolean>\",\n  \"visibility\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cd1ad9cd-fdd8-46ae-b5a1-cca8143a97f3",
+              "name": "OK (without any results)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"content\": [\n    {\n      \"key_0\": 5455\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true,\n      \"key_2\": 7162.946615053198,\n      \"key_3\": \"string\"\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": 2846.927539103802,\n      \"key_2\": \"string\",\n      \"key_3\": false,\n      \"key_4\": 5832\n    }\n  ],\n  \"script\": \"<string>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"<string>\",\n  \"alignCenter\": \"<boolean>\",\n  \"hideTitleWhenPinned\": \"<boolean>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fdf1da1d-4d07-4e00-8aef-f614ca50f8db",
+              "name": "Client error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"content\": [\n    {\n      \"key_0\": 5455\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true,\n      \"key_2\": 7162.946615053198,\n      \"key_3\": \"string\"\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": 2846.927539103802,\n      \"key_2\": \"string\",\n      \"key_3\": false,\n      \"key_4\": 5832\n    }\n  ],\n  \"script\": \"<string>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"<string>\",\n  \"alignCenter\": \"<boolean>\",\n  \"hideTitleWhenPinned\": \"<boolean>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"No such page.\",\n    \"code\": \"NO_SUCH_PAGE\",\n    \"id\": \"21149b9e-3616-4778-9592-c4ce89f5a864\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65edcb96-f1d2-4b7a-b8a9-e1d8968da6b7",
+              "name": "Authentication error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"content\": [\n    {\n      \"key_0\": 5455\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true,\n      \"key_2\": 7162.946615053198,\n      \"key_3\": \"string\"\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": 2846.927539103802,\n      \"key_2\": \"string\",\n      \"key_3\": false,\n      \"key_4\": 5832\n    }\n  ],\n  \"script\": \"<string>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"<string>\",\n  \"alignCenter\": \"<boolean>\",\n  \"hideTitleWhenPinned\": \"<boolean>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Credential required.\",\n    \"code\": \"CREDENTIAL_REQUIRED\",\n    \"id\": \"1384574d-a912-4b81-8601-c7b1c4085df1\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f9fb475-447c-448d-a8ef-61c26e2a6a93",
+              "name": "Forbidden error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"content\": [\n    {\n      \"key_0\": 5455\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true,\n      \"key_2\": 7162.946615053198,\n      \"key_3\": \"string\"\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": 2846.927539103802,\n      \"key_2\": \"string\",\n      \"key_3\": false,\n      \"key_4\": 5832\n    }\n  ],\n  \"script\": \"<string>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"<string>\",\n  \"alignCenter\": \"<boolean>\",\n  \"hideTitleWhenPinned\": \"<boolean>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Authentication failed. Please ensure your token is correct.\",\n    \"code\": \"AUTHENTICATION_FAILED\",\n    \"id\": \"b0a7f5f8-dc2f-4171-b91f-de88ad238e14\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32c8cd95-2fea-4b43-8787-290b5c26a073",
+              "name": "I'm Ai",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"content\": [\n    {\n      \"key_0\": 5455\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true,\n      \"key_2\": 7162.946615053198,\n      \"key_3\": \"string\"\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": 2846.927539103802,\n      \"key_2\": \"string\",\n      \"key_3\": false,\n      \"key_4\": 5832\n    }\n  ],\n  \"script\": \"<string>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"<string>\",\n  \"alignCenter\": \"<boolean>\",\n  \"hideTitleWhenPinned\": \"<boolean>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "I'm a teapot (RFC 2324)",
+              "code": 418,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"You sent a request to Ai-chan, Misskey's showgirl, instead of the server.\",\n    \"code\": \"I_AM_AI\",\n    \"id\": \"60c46cd1-f23a-46b1-bebe-5d2b73951a84\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a4511328-3cb0-4aad-8b78-38810a6852d4",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"content\": [\n    {\n      \"key_0\": 5455\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true,\n      \"key_2\": 7162.946615053198,\n      \"key_3\": \"string\"\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": 2846.927539103802,\n      \"key_2\": \"string\",\n      \"key_3\": false,\n      \"key_4\": 5832\n    }\n  ],\n  \"script\": \"<string>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"<string>\",\n  \"alignCenter\": \"<boolean>\",\n  \"hideTitleWhenPinned\": \"<boolean>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Rate limit exceeded. Please try again later.\",\n    \"code\": \"RATE_LIMIT_EXCEEDED\",\n    \"id\": \"d5826d14-3982-4d2e-8011-b9e9f02499ef\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d2c60994-a0fc-4ed2-a48d-84a62d3f3c9f",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageId\": \"<misskey:id>\",\n  \"title\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string,null>\",\n  \"content\": [\n    {\n      \"key_0\": 5455\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"variables\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true,\n      \"key_2\": 7162.946615053198,\n      \"key_3\": \"string\"\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": 2846.927539103802,\n      \"key_2\": \"string\",\n      \"key_3\": false,\n      \"key_4\": 5832\n    }\n  ],\n  \"script\": \"<string>\",\n  \"eyeCatchingImageId\": \"<string,null-misskey:id>\",\n  \"font\": \"<string>\",\n  \"alignCenter\": \"<boolean>\",\n  \"hideTitleWhenPinned\": \"<boolean>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"Internal error occurred. Please contact us if the error persists.\",\n    \"code\": \"INTERNAL_ERROR\",\n    \"id\": \"5d37dbcb-891e-41ca-a3d6-e690c97775ac\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://misskey.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "52e9befe-5ab2-4f90-9d2b-76946d467546",
+    "name": "Misskey account pages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
