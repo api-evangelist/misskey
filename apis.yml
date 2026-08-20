@@ -6,6 +6,8 @@ apis:
   description: The account API from Misskey — 34 operation(s) for account.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Account
+  tags_raw:
   - account
   properties:
   - type: OpenAPI
@@ -68,6 +70,8 @@ apis:
   description: The antennas API from Misskey — 6 operation(s) for antennas.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Antennas
+  tags_raw:
   - antennas
   properties:
   - type: OpenAPI
@@ -99,6 +103,8 @@ apis:
   description: The app API from Misskey — 2 operation(s) for app.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - App
+  tags_raw:
   - app
   properties:
   - type: OpenAPI
@@ -130,6 +136,8 @@ apis:
   description: The auth API from Misskey — 5 operation(s) for auth.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Authentication
+  tags_raw:
   - auth
   properties:
   - type: OpenAPI
@@ -192,6 +200,8 @@ apis:
   description: The channels API from Misskey — 13 operation(s) for channels.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Channels
+  tags_raw:
   - channels
   properties:
   - type: OpenAPI
@@ -223,6 +233,8 @@ apis:
   description: The charts API from Misskey — 12 operation(s) for charts.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Charts
+  tags_raw:
   - charts
   properties:
   - type: OpenAPI
@@ -254,6 +266,8 @@ apis:
   description: The clip API from Misskey — 2 operation(s) for clip.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Clip
+  tags_raw:
   - clip
   properties:
   - type: OpenAPI
@@ -285,6 +299,8 @@ apis:
   description: The clips API from Misskey — 6 operation(s) for clips.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Clips
+  tags_raw:
   - clips
   properties:
   - type: OpenAPI
@@ -316,6 +332,8 @@ apis:
   description: The drive API from Misskey — 18 operation(s) for drive.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Drives
+  tags_raw:
   - drive
   properties:
   - type: OpenAPI
@@ -378,6 +396,8 @@ apis:
   description: The federation API from Misskey — 9 operation(s) for federation.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Federation
+  tags_raw:
   - federation
   properties:
   - type: OpenAPI
@@ -471,6 +491,8 @@ apis:
   description: The following API from Misskey — 10 operation(s) for following.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Following
+  tags_raw:
   - following
   properties:
   - type: OpenAPI
@@ -502,6 +524,8 @@ apis:
   description: The gallery API from Misskey — 9 operation(s) for gallery.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Gallery
+  tags_raw:
   - gallery
   properties:
   - type: OpenAPI
@@ -533,6 +557,8 @@ apis:
   description: The hashtags API from Misskey — 5 operation(s) for hashtags.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Hashtags
+  tags_raw:
   - hashtags
   properties:
   - type: OpenAPI
@@ -595,6 +621,8 @@ apis:
   description: The lists API from Misskey — 9 operation(s) for lists.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - List
+  tags_raw:
   - lists
   properties:
   - type: OpenAPI
@@ -626,6 +654,8 @@ apis:
   description: The meta API from Misskey — 18 operation(s) for meta.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Meta
+  tags_raw:
   - meta
   properties:
   - type: OpenAPI
@@ -688,6 +718,8 @@ apis:
   description: The notes API from Misskey — 32 operation(s) for notes.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Notes
+  tags_raw:
   - notes
   properties:
   - type: OpenAPI
@@ -719,6 +751,8 @@ apis:
   description: The notifications API from Misskey — 4 operation(s) for notifications.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Notification
+  tags_raw:
   - notifications
   properties:
   - type: OpenAPI
@@ -781,6 +815,8 @@ apis:
   description: The pages API from Misskey — 7 operation(s) for pages.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Pages
+  tags_raw:
   - pages
   properties:
   - type: OpenAPI
@@ -812,6 +848,8 @@ apis:
   description: The reactions API from Misskey — 2 operation(s) for reactions.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Reactions
+  tags_raw:
   - reactions
   properties:
   - type: OpenAPI
@@ -843,6 +881,8 @@ apis:
   description: The reset password API from Misskey — 2 operation(s) for reset password.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Reset Password
+  tags_raw:
   - reset password
   properties:
   - type: OpenAPI
@@ -905,6 +945,8 @@ apis:
   description: The role API from Misskey — 4 operation(s) for role.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Role
+  tags_raw:
   - role
   properties:
   - type: OpenAPI
@@ -936,6 +978,8 @@ apis:
   description: The Users API from Misskey — 30 operation(s) for users.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
@@ -967,6 +1011,8 @@ apis:
   description: The webhooks API from Misskey — 7 operation(s) for webhooks.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
+  - Webhook
+  tags_raw:
   - webhooks
   properties:
   - type: OpenAPI
