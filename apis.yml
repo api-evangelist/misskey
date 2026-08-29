@@ -1047,6 +1047,20 @@ tags:
   - ActivityPub
   - Decentralized
 type: Index
+deliveryModel:
+  model: open-core
+  license: AGPL-3.0
+  open_source: true
+  commercial: true
+  callable_host: true
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -1079,6 +1093,9 @@ maintainers:
     email: info@apievangelist.com
 specificationVersion: '0.23'
 common:
+  - type: CapabilityMap
+    url: capabilities/misskey-capability-edges.yml
+    name: Misskey Business Capability Map
   - type: IssueTracker
     url: https://github.com/misskey-dev/misskey/issues
   - type: Releases
