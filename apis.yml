@@ -70,7 +70,7 @@ apis:
   description: The antennas API from Misskey — 6 operation(s) for antennas.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
-  - antennas
+  - Antennas
   tags_raw:
   - antennas
   properties:
@@ -266,7 +266,7 @@ apis:
   description: The clip API from Misskey — 2 operation(s) for clip.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
-  - clip
+  - Clip
   tags_raw:
   - clip
   properties:
@@ -299,7 +299,7 @@ apis:
   description: The clips API from Misskey — 6 operation(s) for clips.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
-  - clips
+  - Clips
   tags_raw:
   - clips
   properties:
@@ -332,7 +332,7 @@ apis:
   description: The drive API from Misskey — 18 operation(s) for drive.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
-  - drive
+  - Drives
   tags_raw:
   - drive
   properties:
@@ -396,7 +396,7 @@ apis:
   description: The federation API from Misskey — 9 operation(s) for federation.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
-  - federation
+  - Federation
   tags_raw:
   - federation
   properties:
@@ -557,7 +557,7 @@ apis:
   description: The hashtags API from Misskey — 5 operation(s) for hashtags.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
-  - hashtags
+  - Hashtags
   tags_raw:
   - hashtags
   properties:
@@ -848,7 +848,7 @@ apis:
   description: The reactions API from Misskey — 2 operation(s) for reactions.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
-  - reactions
+  - Reactions
   tags_raw:
   - reactions
   properties:
@@ -881,7 +881,7 @@ apis:
   description: The reset password API from Misskey — 2 operation(s) for reset password.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
-  - reset password
+  - Reset Password
   tags_raw:
   - reset password
   properties:
