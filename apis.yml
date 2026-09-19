@@ -1042,6 +1042,12 @@ apis:
 name: Misskey
 tags:
   - Open-Source
+  - Social Network
+  - Fediverse
+  - ActivityPub
+  - Decentralized
+tags_raw:
+  - Open-Source
   - Social Networks
   - Fediverse
   - ActivityPub
