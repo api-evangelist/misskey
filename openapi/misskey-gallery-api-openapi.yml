@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account gallery API
+  title: Misskey Gallery API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: gallery
+- name: Gallery
 paths:
   /gallery/featured:
     post:
@@ -19,7 +19,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/gallery/featured.ts
       tags:
-      - gallery
+      - Gallery
       requestBody:
         required: true
         content:
@@ -122,7 +122,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/gallery/popular.ts
       tags:
-      - gallery
+      - Gallery
       responses:
         '200':
           description: OK (with results)
@@ -210,7 +210,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/gallery/posts.ts
       tags:
-      - gallery
+      - Gallery
       requestBody:
         required: true
         content:
@@ -316,7 +316,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/gallery/posts/create.ts
       tags:
-      - gallery
+      - Gallery
       security:
       - bearerAuth: []
       requestBody:
@@ -445,7 +445,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/gallery/posts/delete.ts
       tags:
-      - gallery
+      - Gallery
       security:
       - bearerAuth: []
       requestBody:
@@ -552,7 +552,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/gallery/posts/like.ts
       tags:
-      - gallery
+      - Gallery
       security:
       - bearerAuth: []
       requestBody:
@@ -665,7 +665,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/gallery/posts/show.ts
       tags:
-      - gallery
+      - Gallery
       requestBody:
         required: true
         content:
@@ -769,7 +769,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/gallery/posts/unlike.ts
       tags:
-      - gallery
+      - Gallery
       security:
       - bearerAuth: []
       requestBody:
@@ -876,7 +876,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/gallery/posts/update.ts
       tags:
-      - gallery
+      - Gallery
       security:
       - bearerAuth: []
       requestBody:
@@ -997,107 +997,29 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    DriveFile:
+    Error:
       type: object
       properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-          example: 192.jpg
-        type:
-          type: string
-          example: image/jpeg
-        md5:
-          type: string
-          format: md5
-          example: 15eca7fba0480996e2245f5185bf39f2
-        size:
-          type: number
-          example: 51469
-        isSensitive:
-          type: boolean
-        isSensitiveByModerator:
-          type:
-          - boolean
-          - 'null'
-        blurhash:
-          type:
-          - string
-          - 'null'
-        properties:
+        error:
           type: object
+          description: An error object.
           properties:
-            width:
-              type: number
-              example: 1280
-            height:
-              type: number
-              example: 720
-            orientation:
-              type: number
-              example: 8
-            avgColor:
+            code:
               type: string
-              example: rgb(40,65,87)
-        url:
-          type: string
-          format: url
-        thumbnailUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        comment:
-          type:
-          - string
-          - 'null'
-        folderId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        folder:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-        userId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        user:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
       required:
-      - id
-      - createdAt
-      - name
-      - type
-      - md5
-      - size
-      - isSensitive
-      - blurhash
-      - properties
-      - url
-      - thumbnailUrl
-      - comment
-      - folderId
-      - userId
+      - error
     DriveFolder:
       type: object
       properties:
@@ -1272,29 +1194,6 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
     GalleryPost:
       type: object
       properties:
@@ -1350,6 +1249,107 @@ components:
       - description
       - isSensitive
       - likedCount
+    DriveFile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+          example: 192.jpg
+        type:
+          type: string
+          example: image/jpeg
+        md5:
+          type: string
+          format: md5
+          example: 15eca7fba0480996e2245f5185bf39f2
+        size:
+          type: number
+          example: 51469
+        isSensitive:
+          type: boolean
+        isSensitiveByModerator:
+          type:
+          - boolean
+          - 'null'
+        blurhash:
+          type:
+          - string
+          - 'null'
+        properties:
+          type: object
+          properties:
+            width:
+              type: number
+              example: 1280
+            height:
+              type: number
+              example: 720
+            orientation:
+              type: number
+              example: 8
+            avgColor:
+              type: string
+              example: rgb(40,65,87)
+        url:
+          type: string
+          format: url
+        thumbnailUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        comment:
+          type:
+          - string
+          - 'null'
+        folderId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        folder:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        user:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - type
+      - md5
+      - size
+      - isSensitive
+      - blurhash
+      - properties
+      - url
+      - thumbnailUrl
+      - comment
+      - folderId
+      - userId
   securitySchemes:
     bearerAuth:
       type: http

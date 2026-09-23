@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account lists API
+  title: Misskey Lists API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: lists
+- name: Lists
 paths:
   /users/lists/create:
     post:
@@ -19,7 +19,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/users/lists/create.ts
       tags:
-      - lists
+      - Lists
       security:
       - bearerAuth: []
       requestBody:
@@ -132,7 +132,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/users/lists/delete.ts
       tags:
-      - lists
+      - Lists
       security:
       - bearerAuth: []
       requestBody:
@@ -233,7 +233,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/users/lists/get-memberships.ts
       tags:
-      - lists
+      - Lists
       requestBody:
         required: true
         content:
@@ -373,7 +373,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/users/lists/list.ts
       tags:
-      - lists
+      - Lists
       requestBody:
         required: true
         content:
@@ -483,7 +483,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/users/lists/pull.ts
       tags:
-      - lists
+      - Lists
       security:
       - bearerAuth: []
       requestBody:
@@ -594,7 +594,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/users/lists/push.ts
       tags:
-      - lists
+      - Lists
       security:
       - bearerAuth: []
       requestBody:
@@ -748,7 +748,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/users/lists/show.ts
       tags:
-      - lists
+      - Lists
       requestBody:
         required: true
         content:
@@ -855,7 +855,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/users/lists/update.ts
       tags:
-      - lists
+      - Lists
       security:
       - bearerAuth: []
       requestBody:
@@ -979,7 +979,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/users/lists/update-membership.ts
       tags:
-      - lists
+      - Lists
       security:
       - bearerAuth: []
       requestBody:
@@ -1094,6 +1094,29 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
     UserLite:
       type: object
       properties:
@@ -1234,29 +1257,6 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
     UserList:
       type: object
       properties:

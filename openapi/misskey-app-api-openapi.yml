@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account app API
+  title: Misskey App API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: app
+- name: App
 paths:
   /app/create:
     post:
@@ -19,7 +19,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/app/create.ts
       tags:
-      - app
+      - App
       requestBody:
         required: true
         content:
@@ -129,7 +129,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/app/show.ts
       tags:
-      - app
+      - App
       requestBody:
         required: true
         content:

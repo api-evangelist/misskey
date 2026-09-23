@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account charts API
+  title: Misskey Charts API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: charts
+- name: Charts
 paths:
   /charts/active-users:
     get:
@@ -19,7 +19,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/active-users.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -174,7 +174,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/active-users.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -330,7 +330,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/ap-request.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -455,7 +455,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/ap-request.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -581,7 +581,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/drive.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -741,7 +741,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/drive.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -902,7 +902,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/federation.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -1052,7 +1052,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/federation.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -1203,7 +1203,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/instance.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -1471,7 +1471,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/instance.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -1740,7 +1740,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/notes.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -1940,7 +1940,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/notes.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -2141,7 +2141,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/drive.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -2285,7 +2285,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/drive.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -2430,7 +2430,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/following.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -2634,7 +2634,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/following.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -2839,7 +2839,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/notes.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -2993,7 +2993,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/notes.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -3148,7 +3148,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/pv.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -3292,7 +3292,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/pv.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -3437,7 +3437,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/reactions.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -3571,7 +3571,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/user/reactions.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -3706,7 +3706,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/users.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:
@@ -3856,7 +3856,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/charts/users.ts
       tags:
-      - charts
+      - Charts
       requestBody:
         required: true
         content:

@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account clips API
+  title: Misskey Clips API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: clips
+- name: Clips
 paths:
   /clips/create:
     post:
@@ -19,7 +19,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/clips/create.ts
       tags:
-      - clips
+      - Clips
       security:
       - bearerAuth: []
       requestBody:
@@ -140,7 +140,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/clips/delete.ts
       tags:
-      - clips
+      - Clips
       security:
       - bearerAuth: []
       requestBody:
@@ -241,7 +241,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/clips/list.ts
       tags:
-      - clips
+      - Clips
       security:
       - bearerAuth: []
       responses:
@@ -331,7 +331,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/clips/show.ts
       tags:
-      - clips
+      - Clips
       requestBody:
         required: true
         content:
@@ -435,7 +435,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/clips/update.ts
       tags:
-      - clips
+      - Clips
       security:
       - bearerAuth: []
       requestBody:
@@ -564,7 +564,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/notes/clips.ts
       tags:
-      - clips
+      - Clips
       requestBody:
         required: true
         content:

@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account meta API
+  title: Misskey Meta API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: meta
+- name: Meta
 paths:
   /admin/meta:
     post:
@@ -19,7 +19,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/admin/meta.ts
       tags:
-      - meta
+      - Meta
       security:
       - bearerAuth: []
       responses:
@@ -603,7 +603,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/announcement.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -707,7 +707,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/announcements.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -819,7 +819,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/announcements/show.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -923,7 +923,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/emoji.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -1019,7 +1019,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/emoji.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -1116,7 +1116,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/emojis.ts
       tags:
-      - meta
+      - Meta
       responses:
         '200':
           description: OK (with results)
@@ -1208,7 +1208,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/emojis.ts
       tags:
-      - meta
+      - Meta
       responses:
         '200':
           description: OK (with results)
@@ -1301,7 +1301,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/endpoint.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -1416,7 +1416,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/endpoints.ts
       tags:
-      - meta
+      - Meta
       responses:
         '200':
           description: OK (with results)
@@ -1510,7 +1510,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/fetch-external-resources.ts
       tags:
-      - meta
+      - Meta
       security:
       - bearerAuth: []
       requestBody:
@@ -1644,7 +1644,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/fetch-rss.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -1839,7 +1839,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/fetch-rss.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -2035,7 +2035,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/get-online-users-count.ts
       tags:
-      - meta
+      - Meta
       responses:
         '200':
           description: OK (with results)
@@ -2124,7 +2124,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/get-online-users-count.ts
       tags:
-      - meta
+      - Meta
       responses:
         '200':
           description: OK (with results)
@@ -2214,7 +2214,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/invite/create.ts
       tags:
-      - meta
+      - Meta
       security:
       - bearerAuth: []
       responses:
@@ -2308,7 +2308,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/invite/delete.ts
       tags:
-      - meta
+      - Meta
       security:
       - bearerAuth: []
       requestBody:
@@ -2421,7 +2421,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/invite/limit.ts
       tags:
-      - meta
+      - Meta
       security:
       - bearerAuth: []
       responses:
@@ -2515,7 +2515,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/invite/list.ts
       tags:
-      - meta
+      - Meta
       security:
       - bearerAuth: []
       requestBody:
@@ -2623,7 +2623,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/meta.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -2722,7 +2722,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/meta.ts
       tags:
-      - meta
+      - Meta
       requestBody:
         required: true
         content:
@@ -2822,7 +2822,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/ping.ts
       tags:
-      - meta
+      - Meta
       responses:
         '200':
           description: OK (with results)
@@ -2912,7 +2912,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/stats.ts
       tags:
-      - meta
+      - Meta
       responses:
         '200':
           description: OK (with results)
@@ -3019,7 +3019,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/stats.ts
       tags:
-      - meta
+      - Meta
       responses:
         '200':
           description: OK (with results)
@@ -3117,13 +3117,180 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    MetaDetailed:
+    MetaDetailedOnly:
       type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/MetaLite'
-      - type: object
-        $ref: '#/components/schemas/MetaDetailedOnly'
+      properties:
+        features:
+          type: object
+          properties:
+            registration:
+              type: boolean
+            emailRequiredForSignup:
+              type: boolean
+            localTimeline:
+              type: boolean
+            globalTimeline:
+              type: boolean
+            hCaptcha:
+              type: boolean
+            hcaptcha:
+              type: boolean
+              description: Alias of hCaptcha
+            mCaptcha:
+              type: boolean
+            mcaptcha:
+              type: boolean
+              description: Alias of mCaptcha
+            reCaptcha:
+              type: boolean
+            recaptcha:
+              type: boolean
+              description: Alias of reCaptcha
+            turnstile:
+              type: boolean
+            objectStorage:
+              type: boolean
+            serviceWorker:
+              type: boolean
+            miauth:
+              type: boolean
+              default: true
+          required:
+          - registration
+          - emailRequiredForSignup
+          - localTimeline
+          - globalTimeline
+          - hCaptcha
+          - hcaptcha
+          - mCaptcha
+          - mcaptcha
+          - reCaptcha
+          - recaptcha
+          - turnstile
+          - objectStorage
+          - serviceWorker
+        proxyAccountName:
+          type:
+          - string
+          - 'null'
+        requireSetup:
+          type: boolean
+          example: false
+        cacheRemoteFiles:
+          type: boolean
+        cacheRemoteSensitiveFiles:
+          type: boolean
+      required:
+      - proxyAccountName
+      - requireSetup
+      - cacheRemoteFiles
+      - cacheRemoteSensitiveFiles
+    InviteCode:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        code:
+          type: string
+          example: GR6S02ERUA5VR
+        expiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        usedBy:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        usedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        used:
+          type: boolean
+      required:
+      - id
+      - code
+      - expiresAt
+      - createdAt
+      - createdBy
+      - usedBy
+      - usedAt
+      - used
+    EmojiSimple:
+      type: object
+      properties:
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        name:
+          type: string
+        category:
+          type:
+          - string
+          - 'null'
+        url:
+          type: string
+        localOnly:
+          type: boolean
+        isSensitive:
+          type: boolean
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+      required:
+      - aliases
+      - name
+      - category
+      - url
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
     EmojiDetailed:
       type: object
       properties:
@@ -3192,6 +3359,153 @@ components:
       - license
       - isSensitive
       - localOnly
+    UserLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type:
+          - string
+          - 'null'
+          example: 藍
+        username:
+          type: string
+          example: ai
+        host:
+          type:
+          - string
+          - 'null'
+          example: misskey.example.com
+          description: The local host is represented with `null`.
+        avatarUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        avatarBlurhash:
+          type:
+          - string
+          - 'null'
+        avatarDecorations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: id
+              angle:
+                type: number
+              flipH:
+                type: boolean
+              url:
+                type: string
+                format: url
+              offsetX:
+                type: number
+              offsetY:
+                type: number
+            required:
+            - id
+            - url
+        isBot:
+          type: boolean
+        isCat:
+          type: boolean
+        requireSigninToViewContents:
+          type: boolean
+        makeNotesFollowersOnlyBefore:
+          type:
+          - number
+          - 'null'
+        makeNotesHiddenBefore:
+          type:
+          - number
+          - 'null'
+        instance:
+          type: object
+          properties:
+            name:
+              type:
+              - string
+              - 'null'
+            softwareName:
+              type:
+              - string
+              - 'null'
+            softwareVersion:
+              type:
+              - string
+              - 'null'
+            iconUrl:
+              type:
+              - string
+              - 'null'
+            faviconUrl:
+              type:
+              - string
+              - 'null'
+            themeColor:
+              type:
+              - string
+              - 'null'
+          required:
+          - name
+          - softwareName
+          - softwareVersion
+          - iconUrl
+          - faviconUrl
+          - themeColor
+        emojis:
+          type: object
+          additionalProperties:
+            type: string
+        onlineStatus:
+          type: string
+          enum:
+          - unknown
+          - online
+          - active
+          - offline
+        badgeRoles:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              iconUrl:
+                type:
+                - string
+                - 'null'
+              displayOrder:
+                type: number
+              behavior:
+                type: string
+            required:
+            - name
+            - iconUrl
+            - displayOrder
+      required:
+      - id
+      - name
+      - username
+      - host
+      - avatarUrl
+      - avatarBlurhash
+      - avatarDecorations
+      - emojis
+      - onlineStatus
+    MetaDetailed:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/MetaLite'
+      - type: object
+        $ref: '#/components/schemas/MetaDetailedOnly'
     MetaLite:
       type: object
       properties:
@@ -3509,6 +3823,71 @@ components:
       - noteSearchableScope
       - maxFileSize
       - federation
+    Announcement:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        text:
+          type: string
+        title:
+          type: string
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        icon:
+          type: string
+          enum:
+          - info
+          - warning
+          - error
+          - success
+        display:
+          type: string
+          enum:
+          - dialog
+          - normal
+          - banner
+        needConfirmationToRead:
+          type: boolean
+        needEnrollmentTutorialToRead:
+          type: boolean
+        forYou:
+          type: boolean
+        closeDuration:
+          type: number
+        displayOrder:
+          type: number
+        silence:
+          type: boolean
+        isRead:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - updatedAt
+      - text
+      - title
+      - imageUrl
+      - icon
+      - display
+      - needConfirmationToRead
+      - needEnrollmentTutorialToRead
+      - forYou
+      - closeDuration
+      - displayOrder
+      - silence
     RolePolicies:
       type: object
       properties:
@@ -3664,385 +4043,6 @@ components:
       - mutualLinkSectionLimit
       - mutualLinkLimit
       - chatAvailability
-    EmojiSimple:
-      type: object
-      properties:
-        aliases:
-          type: array
-          items:
-            type: string
-            format: id
-        name:
-          type: string
-        category:
-          type:
-          - string
-          - 'null'
-        url:
-          type: string
-        localOnly:
-          type: boolean
-        isSensitive:
-          type: boolean
-        roleIdsThatCanBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-      required:
-      - aliases
-      - name
-      - category
-      - url
-    InviteCode:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        code:
-          type: string
-          example: GR6S02ERUA5VR
-        expiresAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdAt:
-          type: string
-          format: date-time
-        createdBy:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        usedBy:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        usedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        used:
-          type: boolean
-      required:
-      - id
-      - code
-      - expiresAt
-      - createdAt
-      - createdBy
-      - usedBy
-      - usedAt
-      - used
-    MetaDetailedOnly:
-      type: object
-      properties:
-        features:
-          type: object
-          properties:
-            registration:
-              type: boolean
-            emailRequiredForSignup:
-              type: boolean
-            localTimeline:
-              type: boolean
-            globalTimeline:
-              type: boolean
-            hCaptcha:
-              type: boolean
-            hcaptcha:
-              type: boolean
-              description: Alias of hCaptcha
-            mCaptcha:
-              type: boolean
-            mcaptcha:
-              type: boolean
-              description: Alias of mCaptcha
-            reCaptcha:
-              type: boolean
-            recaptcha:
-              type: boolean
-              description: Alias of reCaptcha
-            turnstile:
-              type: boolean
-            objectStorage:
-              type: boolean
-            serviceWorker:
-              type: boolean
-            miauth:
-              type: boolean
-              default: true
-          required:
-          - registration
-          - emailRequiredForSignup
-          - localTimeline
-          - globalTimeline
-          - hCaptcha
-          - hcaptcha
-          - mCaptcha
-          - mcaptcha
-          - reCaptcha
-          - recaptcha
-          - turnstile
-          - objectStorage
-          - serviceWorker
-        proxyAccountName:
-          type:
-          - string
-          - 'null'
-        requireSetup:
-          type: boolean
-          example: false
-        cacheRemoteFiles:
-          type: boolean
-        cacheRemoteSensitiveFiles:
-          type: boolean
-      required:
-      - proxyAccountName
-      - requireSetup
-      - cacheRemoteFiles
-      - cacheRemoteSensitiveFiles
-    Announcement:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        text:
-          type: string
-        title:
-          type: string
-        imageUrl:
-          type:
-          - string
-          - 'null'
-        icon:
-          type: string
-          enum:
-          - info
-          - warning
-          - error
-          - success
-        display:
-          type: string
-          enum:
-          - dialog
-          - normal
-          - banner
-        needConfirmationToRead:
-          type: boolean
-        needEnrollmentTutorialToRead:
-          type: boolean
-        forYou:
-          type: boolean
-        closeDuration:
-          type: number
-        displayOrder:
-          type: number
-        silence:
-          type: boolean
-        isRead:
-          type: boolean
-      required:
-      - id
-      - createdAt
-      - updatedAt
-      - text
-      - title
-      - imageUrl
-      - icon
-      - display
-      - needConfirmationToRead
-      - needEnrollmentTutorialToRead
-      - forYou
-      - closeDuration
-      - displayOrder
-      - silence
-    UserLite:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        name:
-          type:
-          - string
-          - 'null'
-          example: 藍
-        username:
-          type: string
-          example: ai
-        host:
-          type:
-          - string
-          - 'null'
-          example: misskey.example.com
-          description: The local host is represented with `null`.
-        avatarUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        avatarBlurhash:
-          type:
-          - string
-          - 'null'
-        avatarDecorations:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                format: id
-              angle:
-                type: number
-              flipH:
-                type: boolean
-              url:
-                type: string
-                format: url
-              offsetX:
-                type: number
-              offsetY:
-                type: number
-            required:
-            - id
-            - url
-        isBot:
-          type: boolean
-        isCat:
-          type: boolean
-        requireSigninToViewContents:
-          type: boolean
-        makeNotesFollowersOnlyBefore:
-          type:
-          - number
-          - 'null'
-        makeNotesHiddenBefore:
-          type:
-          - number
-          - 'null'
-        instance:
-          type: object
-          properties:
-            name:
-              type:
-              - string
-              - 'null'
-            softwareName:
-              type:
-              - string
-              - 'null'
-            softwareVersion:
-              type:
-              - string
-              - 'null'
-            iconUrl:
-              type:
-              - string
-              - 'null'
-            faviconUrl:
-              type:
-              - string
-              - 'null'
-            themeColor:
-              type:
-              - string
-              - 'null'
-          required:
-          - name
-          - softwareName
-          - softwareVersion
-          - iconUrl
-          - faviconUrl
-          - themeColor
-        emojis:
-          type: object
-          additionalProperties:
-            type: string
-        onlineStatus:
-          type: string
-          enum:
-          - unknown
-          - online
-          - active
-          - offline
-        badgeRoles:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              iconUrl:
-                type:
-                - string
-                - 'null'
-              displayOrder:
-                type: number
-              behavior:
-                type: string
-            required:
-            - name
-            - iconUrl
-            - displayOrder
-      required:
-      - id
-      - name
-      - username
-      - host
-      - avatarUrl
-      - avatarBlurhash
-      - avatarDecorations
-      - emojis
-      - onlineStatus
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
   securitySchemes:
     bearerAuth:
       type: http

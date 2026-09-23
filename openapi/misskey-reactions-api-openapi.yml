@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account reactions API
+  title: Misskey Reactions API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: reactions
+- name: Reactions
 paths:
   /notes/reactions/create:
     post:
@@ -19,7 +19,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/notes/reactions/create.ts
       tags:
-      - reactions
+      - Reactions
       security:
       - bearerAuth: []
       requestBody:
@@ -141,7 +141,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/notes/reactions/delete.ts
       tags:
-      - reactions
+      - Reactions
       security:
       - bearerAuth: []
       requestBody:

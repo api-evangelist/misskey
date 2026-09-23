@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account clip API
+  title: Misskey Clip API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: clip
+- name: Clip
 paths:
   /clips/favorite:
     post:
@@ -19,7 +19,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/clips/favorite.ts
       tags:
-      - clip
+      - Clip
       security:
       - bearerAuth: []
       requestBody:
@@ -126,7 +126,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/clips/unfavorite.ts
       tags:
-      - clip
+      - Clip
       security:
       - bearerAuth: []
       requestBody:

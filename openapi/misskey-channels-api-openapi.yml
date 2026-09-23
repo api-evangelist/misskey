@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account channels API
+  title: Misskey Channels API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: channels
+- name: Channels
 paths:
   /channels/create:
     post:
@@ -19,7 +19,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/create.ts
       tags:
-      - channels
+      - Channels
       security:
       - bearerAuth: []
       requestBody:
@@ -162,7 +162,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/favorite.ts
       tags:
-      - channels
+      - Channels
       security:
       - bearerAuth: []
       requestBody:
@@ -263,7 +263,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/featured.ts
       tags:
-      - channels
+      - Channels
       responses:
         '200':
           description: OK (with results)
@@ -351,7 +351,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/featured-games.ts
       tags:
-      - channels
+      - Channels
       responses:
         '200':
           description: OK (with results)
@@ -439,7 +439,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/follow.ts
       tags:
-      - channels
+      - Channels
       security:
       - bearerAuth: []
       requestBody:
@@ -540,7 +540,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/followed.ts
       tags:
-      - channels
+      - Channels
       security:
       - bearerAuth: []
       requestBody:
@@ -648,7 +648,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/my-favorites.ts
       tags:
-      - channels
+      - Channels
       security:
       - bearerAuth: []
       responses:
@@ -738,7 +738,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/owned.ts
       tags:
-      - channels
+      - Channels
       security:
       - bearerAuth: []
       requestBody:
@@ -846,7 +846,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/search.ts
       tags:
-      - channels
+      - Channels
       requestBody:
         required: true
         content:
@@ -962,7 +962,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/show.ts
       tags:
-      - channels
+      - Channels
       requestBody:
         required: true
         content:
@@ -1066,7 +1066,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/unfavorite.ts
       tags:
-      - channels
+      - Channels
       security:
       - bearerAuth: []
       requestBody:
@@ -1167,7 +1167,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/unfollow.ts
       tags:
-      - channels
+      - Channels
       security:
       - bearerAuth: []
       requestBody:
@@ -1268,7 +1268,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/channels/update.ts
       tags:
-      - channels
+      - Channels
       security:
       - bearerAuth: []
       requestBody:
@@ -1626,107 +1626,6 @@ components:
       - reactionCount
       - renoteCount
       - repliesCount
-    DriveFile:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-          example: 192.jpg
-        type:
-          type: string
-          example: image/jpeg
-        md5:
-          type: string
-          format: md5
-          example: 15eca7fba0480996e2245f5185bf39f2
-        size:
-          type: number
-          example: 51469
-        isSensitive:
-          type: boolean
-        isSensitiveByModerator:
-          type:
-          - boolean
-          - 'null'
-        blurhash:
-          type:
-          - string
-          - 'null'
-        properties:
-          type: object
-          properties:
-            width:
-              type: number
-              example: 1280
-            height:
-              type: number
-              example: 720
-            orientation:
-              type: number
-              example: 8
-            avgColor:
-              type: string
-              example: rgb(40,65,87)
-        url:
-          type: string
-          format: url
-        thumbnailUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        comment:
-          type:
-          - string
-          - 'null'
-        folderId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        folder:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-        userId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        user:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - type
-      - md5
-      - size
-      - isSensitive
-      - blurhash
-      - properties
-      - url
-      - thumbnailUrl
-      - comment
-      - folderId
-      - userId
     Channel:
       type: object
       properties:
@@ -1833,6 +1732,29 @@ components:
       - createdAt
       - name
       - parentId
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
     UserLite:
       type: object
       properties:
@@ -1973,29 +1895,107 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
-    Error:
+    DriveFile:
       type: object
       properties:
-        error:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+          example: 192.jpg
+        type:
+          type: string
+          example: image/jpeg
+        md5:
+          type: string
+          format: md5
+          example: 15eca7fba0480996e2245f5185bf39f2
+        size:
+          type: number
+          example: 51469
+        isSensitive:
+          type: boolean
+        isSensitiveByModerator:
+          type:
+          - boolean
+          - 'null'
+        blurhash:
+          type:
+          - string
+          - 'null'
+        properties:
           type: object
-          description: An error object.
           properties:
-            code:
+            width:
+              type: number
+              example: 1280
+            height:
+              type: number
+              example: 720
+            orientation:
+              type: number
+              example: 8
+            avgColor:
               type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
+              example: rgb(40,65,87)
+        url:
+          type: string
+          format: url
+        thumbnailUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        comment:
+          type:
+          - string
+          - 'null'
+        folderId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        folder:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        user:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
       required:
-      - error
+      - id
+      - createdAt
+      - name
+      - type
+      - md5
+      - size
+      - isSensitive
+      - blurhash
+      - properties
+      - url
+      - thumbnailUrl
+      - comment
+      - folderId
+      - userId
   securitySchemes:
     bearerAuth:
       type: http

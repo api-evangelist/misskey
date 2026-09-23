@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: 2025.4.1-io.12b-fb6fbea074
-  title: Misskey account webhooks API
+  title: Misskey Webhooks API
 servers:
 - url: https://misskey.io/api
 tags:
-- name: webhooks
+- name: Webhooks
 paths:
   /admin/system-webhook/test:
     post:
@@ -21,7 +21,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/admin/system-webhook/test.ts
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
       requestBody:
@@ -152,7 +152,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/create.ts
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
       requestBody:
@@ -340,7 +340,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/delete.ts
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
       requestBody:
@@ -441,7 +441,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/list.ts
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
       responses:
@@ -580,7 +580,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/show.ts
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
       requestBody:
@@ -737,7 +737,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/test.ts
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
       requestBody:
@@ -873,7 +873,7 @@ paths:
         description: Source code
         url: https://github.com/MisskeyIO/misskey/blob/io/packages/backend/src/server/api/endpoints/i/webhooks/update.ts
       tags:
-      - webhooks
+      - Webhooks
       security:
       - bearerAuth: []
       requestBody:
