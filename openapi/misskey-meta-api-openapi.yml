@@ -3117,74 +3117,71 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    MetaDetailedOnly:
+    Announcement:
       type: object
       properties:
-        features:
-          type: object
-          properties:
-            registration:
-              type: boolean
-            emailRequiredForSignup:
-              type: boolean
-            localTimeline:
-              type: boolean
-            globalTimeline:
-              type: boolean
-            hCaptcha:
-              type: boolean
-            hcaptcha:
-              type: boolean
-              description: Alias of hCaptcha
-            mCaptcha:
-              type: boolean
-            mcaptcha:
-              type: boolean
-              description: Alias of mCaptcha
-            reCaptcha:
-              type: boolean
-            recaptcha:
-              type: boolean
-              description: Alias of reCaptcha
-            turnstile:
-              type: boolean
-            objectStorage:
-              type: boolean
-            serviceWorker:
-              type: boolean
-            miauth:
-              type: boolean
-              default: true
-          required:
-          - registration
-          - emailRequiredForSignup
-          - localTimeline
-          - globalTimeline
-          - hCaptcha
-          - hcaptcha
-          - mCaptcha
-          - mcaptcha
-          - reCaptcha
-          - recaptcha
-          - turnstile
-          - objectStorage
-          - serviceWorker
-        proxyAccountName:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
           type:
           - string
           - 'null'
-        requireSetup:
+          format: date-time
+        text:
+          type: string
+        title:
+          type: string
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        icon:
+          type: string
+          enum:
+          - info
+          - warning
+          - error
+          - success
+        display:
+          type: string
+          enum:
+          - dialog
+          - normal
+          - banner
+        needConfirmationToRead:
           type: boolean
-          example: false
-        cacheRemoteFiles:
+        needEnrollmentTutorialToRead:
           type: boolean
-        cacheRemoteSensitiveFiles:
+        forYou:
+          type: boolean
+        closeDuration:
+          type: number
+        displayOrder:
+          type: number
+        silence:
+          type: boolean
+        isRead:
           type: boolean
       required:
-      - proxyAccountName
-      - requireSetup
-      - cacheRemoteFiles
-      - cacheRemoteSensitiveFiles
+      - id
+      - createdAt
+      - updatedAt
+      - text
+      - title
+      - imageUrl
+      - icon
+      - display
+      - needConfirmationToRead
+      - needEnrollmentTutorialToRead
+      - forYou
+      - closeDuration
+      - displayOrder
+      - silence
     InviteCode:
       type: object
       properties:
@@ -3233,41 +3230,6 @@ components:
       - usedBy
       - usedAt
       - used
-    EmojiSimple:
-      type: object
-      properties:
-        aliases:
-          type: array
-          items:
-            type: string
-            format: id
-        name:
-          type: string
-        category:
-          type:
-          - string
-          - 'null'
-        url:
-          type: string
-        localOnly:
-          type: boolean
-        isSensitive:
-          type: boolean
-        roleIdsThatCanBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-      required:
-      - aliases
-      - name
-      - category
-      - url
     Error:
       type: object
       properties:
@@ -3291,221 +3253,6 @@ components:
           - message
       required:
       - error
-    EmojiDetailed:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        aliases:
-          type: array
-          items:
-            type: string
-            format: id
-        name:
-          type: string
-        category:
-          type:
-          - string
-          - 'null'
-        host:
-          type:
-          - string
-          - 'null'
-          description: The local host is represented with `null`.
-        url:
-          type: string
-        license:
-          type:
-          - string
-          - 'null'
-        isSensitive:
-          type: boolean
-        localOnly:
-          type: boolean
-        requestedBy:
-          type:
-          - string
-          - 'null'
-        memo:
-          type:
-          - string
-          - 'null'
-        roleIdsThatCanBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-      required:
-      - id
-      - aliases
-      - name
-      - category
-      - host
-      - url
-      - license
-      - isSensitive
-      - localOnly
-    UserLite:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        name:
-          type:
-          - string
-          - 'null'
-          example: 藍
-        username:
-          type: string
-          example: ai
-        host:
-          type:
-          - string
-          - 'null'
-          example: misskey.example.com
-          description: The local host is represented with `null`.
-        avatarUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        avatarBlurhash:
-          type:
-          - string
-          - 'null'
-        avatarDecorations:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                format: id
-              angle:
-                type: number
-              flipH:
-                type: boolean
-              url:
-                type: string
-                format: url
-              offsetX:
-                type: number
-              offsetY:
-                type: number
-            required:
-            - id
-            - url
-        isBot:
-          type: boolean
-        isCat:
-          type: boolean
-        requireSigninToViewContents:
-          type: boolean
-        makeNotesFollowersOnlyBefore:
-          type:
-          - number
-          - 'null'
-        makeNotesHiddenBefore:
-          type:
-          - number
-          - 'null'
-        instance:
-          type: object
-          properties:
-            name:
-              type:
-              - string
-              - 'null'
-            softwareName:
-              type:
-              - string
-              - 'null'
-            softwareVersion:
-              type:
-              - string
-              - 'null'
-            iconUrl:
-              type:
-              - string
-              - 'null'
-            faviconUrl:
-              type:
-              - string
-              - 'null'
-            themeColor:
-              type:
-              - string
-              - 'null'
-          required:
-          - name
-          - softwareName
-          - softwareVersion
-          - iconUrl
-          - faviconUrl
-          - themeColor
-        emojis:
-          type: object
-          additionalProperties:
-            type: string
-        onlineStatus:
-          type: string
-          enum:
-          - unknown
-          - online
-          - active
-          - offline
-        badgeRoles:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              iconUrl:
-                type:
-                - string
-                - 'null'
-              displayOrder:
-                type: number
-              behavior:
-                type: string
-            required:
-            - name
-            - iconUrl
-            - displayOrder
-      required:
-      - id
-      - name
-      - username
-      - host
-      - avatarUrl
-      - avatarBlurhash
-      - avatarDecorations
-      - emojis
-      - onlineStatus
-    MetaDetailed:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/MetaLite'
-      - type: object
-        $ref: '#/components/schemas/MetaDetailedOnly'
     MetaLite:
       type: object
       properties:
@@ -3823,13 +3570,54 @@ components:
       - noteSearchableScope
       - maxFileSize
       - federation
-    Announcement:
+    MetaDetailed:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/MetaLite'
+      - type: object
+        $ref: '#/components/schemas/MetaDetailedOnly'
+    EmojiSimple:
+      type: object
+      properties:
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        name:
+          type: string
+        category:
+          type:
+          - string
+          - 'null'
+        url:
+          type: string
+        localOnly:
+          type: boolean
+        isSensitive:
+          type: boolean
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+      required:
+      - aliases
+      - name
+      - category
+      - url
+    EmojiDetailed:
       type: object
       properties:
         id:
           type: string
           format: id
-          example: xxxxxxxxxx
         createdAt:
           type: string
           format: date-time
@@ -3838,56 +3626,60 @@ components:
           - string
           - 'null'
           format: date-time
-        text:
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        name:
           type: string
-        title:
-          type: string
-        imageUrl:
+        category:
           type:
           - string
           - 'null'
-        icon:
+        host:
+          type:
+          - string
+          - 'null'
+          description: The local host is represented with `null`.
+        url:
           type: string
-          enum:
-          - info
-          - warning
-          - error
-          - success
-        display:
-          type: string
-          enum:
-          - dialog
-          - normal
-          - banner
-        needConfirmationToRead:
+        license:
+          type:
+          - string
+          - 'null'
+        isSensitive:
           type: boolean
-        needEnrollmentTutorialToRead:
+        localOnly:
           type: boolean
-        forYou:
-          type: boolean
-        closeDuration:
-          type: number
-        displayOrder:
-          type: number
-        silence:
-          type: boolean
-        isRead:
-          type: boolean
+        requestedBy:
+          type:
+          - string
+          - 'null'
+        memo:
+          type:
+          - string
+          - 'null'
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
       required:
       - id
-      - createdAt
-      - updatedAt
-      - text
-      - title
-      - imageUrl
-      - icon
-      - display
-      - needConfirmationToRead
-      - needEnrollmentTutorialToRead
-      - forYou
-      - closeDuration
-      - displayOrder
-      - silence
+      - aliases
+      - name
+      - category
+      - host
+      - url
+      - license
+      - isSensitive
+      - localOnly
     RolePolicies:
       type: object
       properties:
@@ -4043,6 +3835,214 @@ components:
       - mutualLinkSectionLimit
       - mutualLinkLimit
       - chatAvailability
+    MetaDetailedOnly:
+      type: object
+      properties:
+        features:
+          type: object
+          properties:
+            registration:
+              type: boolean
+            emailRequiredForSignup:
+              type: boolean
+            localTimeline:
+              type: boolean
+            globalTimeline:
+              type: boolean
+            hCaptcha:
+              type: boolean
+            hcaptcha:
+              type: boolean
+              description: Alias of hCaptcha
+            mCaptcha:
+              type: boolean
+            mcaptcha:
+              type: boolean
+              description: Alias of mCaptcha
+            reCaptcha:
+              type: boolean
+            recaptcha:
+              type: boolean
+              description: Alias of reCaptcha
+            turnstile:
+              type: boolean
+            objectStorage:
+              type: boolean
+            serviceWorker:
+              type: boolean
+            miauth:
+              type: boolean
+              default: true
+          required:
+          - registration
+          - emailRequiredForSignup
+          - localTimeline
+          - globalTimeline
+          - hCaptcha
+          - hcaptcha
+          - mCaptcha
+          - mcaptcha
+          - reCaptcha
+          - recaptcha
+          - turnstile
+          - objectStorage
+          - serviceWorker
+        proxyAccountName:
+          type:
+          - string
+          - 'null'
+        requireSetup:
+          type: boolean
+          example: false
+        cacheRemoteFiles:
+          type: boolean
+        cacheRemoteSensitiveFiles:
+          type: boolean
+      required:
+      - proxyAccountName
+      - requireSetup
+      - cacheRemoteFiles
+      - cacheRemoteSensitiveFiles
+    UserLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type:
+          - string
+          - 'null'
+          example: 藍
+        username:
+          type: string
+          example: ai
+        host:
+          type:
+          - string
+          - 'null'
+          example: misskey.example.com
+          description: The local host is represented with `null`.
+        avatarUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        avatarBlurhash:
+          type:
+          - string
+          - 'null'
+        avatarDecorations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: id
+              angle:
+                type: number
+              flipH:
+                type: boolean
+              url:
+                type: string
+                format: url
+              offsetX:
+                type: number
+              offsetY:
+                type: number
+            required:
+            - id
+            - url
+        isBot:
+          type: boolean
+        isCat:
+          type: boolean
+        requireSigninToViewContents:
+          type: boolean
+        makeNotesFollowersOnlyBefore:
+          type:
+          - number
+          - 'null'
+        makeNotesHiddenBefore:
+          type:
+          - number
+          - 'null'
+        instance:
+          type: object
+          properties:
+            name:
+              type:
+              - string
+              - 'null'
+            softwareName:
+              type:
+              - string
+              - 'null'
+            softwareVersion:
+              type:
+              - string
+              - 'null'
+            iconUrl:
+              type:
+              - string
+              - 'null'
+            faviconUrl:
+              type:
+              - string
+              - 'null'
+            themeColor:
+              type:
+              - string
+              - 'null'
+          required:
+          - name
+          - softwareName
+          - softwareVersion
+          - iconUrl
+          - faviconUrl
+          - themeColor
+        emojis:
+          type: object
+          additionalProperties:
+            type: string
+        onlineStatus:
+          type: string
+          enum:
+          - unknown
+          - online
+          - active
+          - offline
+        badgeRoles:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              iconUrl:
+                type:
+                - string
+                - 'null'
+              displayOrder:
+                type: number
+              behavior:
+                type: string
+            required:
+            - name
+            - iconUrl
+            - displayOrder
+      required:
+      - id
+      - name
+      - username
+      - host
+      - avatarUrl
+      - avatarBlurhash
+      - avatarDecorations
+      - emojis
+      - onlineStatus
   securitySchemes:
     bearerAuth:
       type: http

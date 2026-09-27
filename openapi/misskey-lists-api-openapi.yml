@@ -1117,6 +1117,30 @@ components:
           - message
       required:
       - error
+    UserList:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+        userIds:
+          type: array
+          items:
+            type: string
+            format: id
+        isPublic:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - name
+      - isPublic
     UserLite:
       type: object
       properties:
@@ -1257,30 +1281,6 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
-    UserList:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-        userIds:
-          type: array
-          items:
-            type: string
-            format: id
-        isPublic:
-          type: boolean
-      required:
-      - id
-      - createdAt
-      - name
-      - isPublic
   securitySchemes:
     bearerAuth:
       type: http

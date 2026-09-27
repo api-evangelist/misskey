@@ -2,7 +2,7 @@ aid: misskey
 url: https://raw.githubusercontent.com/api-evangelist/misskey/refs/heads/main/apis.yml
 apis:
 - aid: misskey:misskey-account-api
-  name: Misskey account API
+  name: Misskey Account API
   description: The account API from Misskey — 34 operation(s) for account.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -66,7 +66,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-antennas-api
-  name: Misskey antennas API
+  name: Misskey Antennas API
   description: The antennas API from Misskey — 6 operation(s) for antennas.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -99,7 +99,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-app-api
-  name: Misskey app API
+  name: Misskey App API
   description: The app API from Misskey — 2 operation(s) for app.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -132,7 +132,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-auth-api
-  name: Misskey auth API
+  name: Misskey Auth API
   description: The auth API from Misskey — 5 operation(s) for auth.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -196,7 +196,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-channels-api
-  name: Misskey channels API
+  name: Misskey Channels API
   description: The channels API from Misskey — 13 operation(s) for channels.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -229,7 +229,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-charts-api
-  name: Misskey charts API
+  name: Misskey Charts API
   description: The charts API from Misskey — 12 operation(s) for charts.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -262,7 +262,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-clip-api
-  name: Misskey clip API
+  name: Misskey Clip API
   description: The clip API from Misskey — 2 operation(s) for clip.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -295,7 +295,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-clips-api
-  name: Misskey clips API
+  name: Misskey Clips API
   description: The clips API from Misskey — 6 operation(s) for clips.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -328,7 +328,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-drive-api
-  name: Misskey drive API
+  name: Misskey Drive API
   description: The drive API from Misskey — 18 operation(s) for drive.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -392,7 +392,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-federation-api
-  name: Misskey federation API
+  name: Misskey Federation API
   description: The federation API from Misskey — 9 operation(s) for federation.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -425,7 +425,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-flash-api
-  name: Misskey flash API
+  name: Misskey Flash API
   description: The flash API from Misskey — 5 operation(s) for flash.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -456,7 +456,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-flashs-api
-  name: Misskey flashs API
+  name: Misskey Flashs API
   description: The flashs API from Misskey — 2 operation(s) for flashs.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -487,7 +487,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-following-api
-  name: Misskey following API
+  name: Misskey Following API
   description: The following API from Misskey — 10 operation(s) for following.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -520,7 +520,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-gallery-api
-  name: Misskey gallery API
+  name: Misskey Gallery API
   description: The gallery API from Misskey — 9 operation(s) for gallery.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -553,7 +553,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-hashtags-api
-  name: Misskey hashtags API
+  name: Misskey Hashtags API
   description: The hashtags API from Misskey — 5 operation(s) for hashtags.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -617,7 +617,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-lists-api
-  name: Misskey lists API
+  name: Misskey Lists API
   description: The lists API from Misskey — 9 operation(s) for lists.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -650,7 +650,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-meta-api
-  name: Misskey meta API
+  name: Misskey Meta API
   description: The meta API from Misskey — 18 operation(s) for meta.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -683,7 +683,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-non-productive-api
-  name: Misskey non-productive API
+  name: Misskey Non Productive API
   description: The non-productive API from Misskey — 2 operation(s) for non-productive.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -714,7 +714,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-notes-api
-  name: Misskey notes API
+  name: Misskey Notes API
   description: The notes API from Misskey — 32 operation(s) for notes.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -747,7 +747,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-notifications-api
-  name: Misskey notifications API
+  name: Misskey Notifications API
   description: The notifications API from Misskey — 4 operation(s) for notifications.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -811,7 +811,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-pages-api
-  name: Misskey pages API
+  name: Misskey Pages API
   description: The pages API from Misskey — 7 operation(s) for pages.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -844,7 +844,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-reactions-api
-  name: Misskey reactions API
+  name: Misskey Reactions API
   description: The reactions API from Misskey — 2 operation(s) for reactions.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -941,7 +941,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-role-api
-  name: Misskey role API
+  name: Misskey Role API
   description: The role API from Misskey — 4 operation(s) for role.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -1007,7 +1007,7 @@ apis:
   - type: Tags
     url: vocabulary/misskey-tags.json
 - aid: misskey:misskey-webhooks-api
-  name: Misskey webhooks API
+  name: Misskey Webhooks API
   description: The webhooks API from Misskey — 7 operation(s) for webhooks.
   humanURL: https://misskey-hub.net/en/docs/for-developers/api/
   tags:
@@ -1041,7 +1041,7 @@ apis:
     url: vocabulary/misskey-tags.json
 name: Misskey
 tags:
-  - Open-Source
+  - Open Source
   - Social Network
   - Fediverse
   - ActivityPub
