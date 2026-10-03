@@ -14012,22 +14012,40 @@ components:
           - message
       required:
       - error
-    RoleCondFormulaValueUserSettingBooleanSchema:
+    DriveFolder:
       type: object
       properties:
         id:
           type: string
-        type:
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
           type: string
-          enum:
-          - isSuspended
-          - isLocked
-          - isBot
-          - isCat
-          - isExplorable
+          format: date-time
+        name:
+          type: string
+        parentId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        foldersCount:
+          type: number
+        filesCount:
+          type: number
+        parent:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
       required:
       - id
-      - type
+      - createdAt
+      - name
+      - parentId
     Announcement:
       type: object
       properties:
@@ -14093,615 +14111,6 @@ components:
       - closeDuration
       - displayOrder
       - silence
-    Page:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        content:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/PageBlock'
-        variables:
-          type: array
-          items:
-            type: object
-        title:
-          type: string
-        name:
-          type: string
-        summary:
-          type:
-          - string
-          - 'null'
-        hideTitleWhenPinned:
-          type: boolean
-        alignCenter:
-          type: boolean
-        font:
-          type: string
-        script:
-          type: string
-        eyeCatchingImageId:
-          type:
-          - string
-          - 'null'
-        eyeCatchingImage:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFile'
-          - type: 'null'
-        attachedFiles:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/DriveFile'
-        likedCount:
-          type: number
-        isLiked:
-          type: boolean
-        visibility:
-          type: string
-          enum:
-          - public
-          - private
-      required:
-      - id
-      - createdAt
-      - updatedAt
-      - userId
-      - user
-      - content
-      - variables
-      - title
-      - name
-      - summary
-      - hideTitleWhenPinned
-      - alignCenter
-      - font
-      - script
-      - eyeCatchingImageId
-      - eyeCatchingImage
-      - attachedFiles
-      - likedCount
-      - visibility
-    RoleCondFormulaFollowersOrFollowingOrNotes:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - followersLessThanOrEq
-          - followersMoreThanOrEq
-          - followingLessThanOrEq
-          - followingMoreThanOrEq
-          - notesLessThanOrEq
-          - notesMoreThanOrEq
-        value:
-          type: number
-      required:
-      - id
-      - type
-      - value
-    Signin:
-      type: object
-      properties:
-        id:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        ip:
-          type: string
-        headers:
-          type: object
-        success:
-          type: boolean
-      required:
-      - id
-      - createdAt
-      - ip
-      - headers
-      - success
-    MeDetailed:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-      - type: object
-        $ref: '#/components/schemas/MeDetailedOnly'
-    RoleCondFormulaLogics:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - and
-          - or
-        values:
-          type: array
-          items:
-            $ref: '#/components/schemas/RoleCondFormulaValue'
-      required:
-      - id
-      - type
-      - values
-    EmojiDetailedAdmin:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-        updatedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        name:
-          type: string
-        host:
-          type:
-          - string
-          - 'null'
-          description: The local host is represented with `null`.
-        publicUrl:
-          type: string
-        originalUrl:
-          type: string
-        uri:
-          type:
-          - string
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-        aliases:
-          type: array
-          items:
-            type: string
-            format: id
-        category:
-          type:
-          - string
-          - 'null'
-        license:
-          type:
-          - string
-          - 'null'
-        localOnly:
-          type: boolean
-        isSensitive:
-          type: boolean
-        roleIdsThatCanBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                format: misskey:id
-              name:
-                type: string
-            required:
-            - id
-            - name
-      required:
-      - id
-      - updatedAt
-      - name
-      - host
-      - publicUrl
-      - originalUrl
-      - uri
-      - type
-      - aliases
-      - category
-      - license
-      - localOnly
-      - isSensitive
-      - roleIdsThatCanBeUsedThisEmojiAsReaction
-    QueueCount:
-      type: object
-      properties:
-        waiting:
-          type: number
-        active:
-          type: number
-        completed:
-          type: number
-        failed:
-          type: number
-        delayed:
-          type: number
-      required:
-      - waiting
-      - active
-      - completed
-      - failed
-      - delayed
-    RoleCondFormulaValueIsLocalOrRemote:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - isLocal
-          - isRemote
-      required:
-      - id
-      - type
-    InviteCode:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        code:
-          type: string
-          example: GR6S02ERUA5VR
-        expiresAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdAt:
-          type: string
-          format: date-time
-        createdBy:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        usedBy:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        usedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        used:
-          type: boolean
-      required:
-      - id
-      - code
-      - expiresAt
-      - createdAt
-      - createdBy
-      - usedBy
-      - usedAt
-      - used
-    AbuseReportNotificationRecipient:
-      type: object
-      properties:
-        id:
-          type: string
-        isActive:
-          type: boolean
-        updatedAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-        method:
-          type: string
-          enum:
-          - email
-          - webhook
-        userId:
-          type: string
-        user:
-          type: object
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        systemWebhookId:
-          type: string
-        systemWebhook:
-          type: object
-          anyOf:
-          - $ref: '#/components/schemas/SystemWebhook'
-          - type: 'null'
-      required:
-      - id
-      - isActive
-      - updatedAt
-      - name
-      - method
-    Ad:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        expiresAt:
-          type: string
-          format: date-time
-        startsAt:
-          type: string
-          format: date-time
-        place:
-          type: string
-        priority:
-          type: string
-        ratio:
-          type: number
-        url:
-          type: string
-        imageUrl:
-          type: string
-        imageBlurhash:
-          type:
-          - string
-          - 'null'
-        memo:
-          type: string
-        dayOfWeek:
-          type: integer
-        isSensitive:
-          type: boolean
-      required:
-      - id
-      - expiresAt
-      - startsAt
-      - place
-      - priority
-      - ratio
-      - url
-      - imageUrl
-      - imageBlurhash
-      - memo
-      - dayOfWeek
-      - isSensitive
-    UserDetailedNotMe:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-    UserLite:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        name:
-          type:
-          - string
-          - 'null'
-          example: 藍
-        username:
-          type: string
-          example: ai
-        host:
-          type:
-          - string
-          - 'null'
-          example: misskey.example.com
-          description: The local host is represented with `null`.
-        avatarUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        avatarBlurhash:
-          type:
-          - string
-          - 'null'
-        avatarDecorations:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                format: id
-              angle:
-                type: number
-              flipH:
-                type: boolean
-              url:
-                type: string
-                format: url
-              offsetX:
-                type: number
-              offsetY:
-                type: number
-            required:
-            - id
-            - url
-        isBot:
-          type: boolean
-        isCat:
-          type: boolean
-        requireSigninToViewContents:
-          type: boolean
-        makeNotesFollowersOnlyBefore:
-          type:
-          - number
-          - 'null'
-        makeNotesHiddenBefore:
-          type:
-          - number
-          - 'null'
-        instance:
-          type: object
-          properties:
-            name:
-              type:
-              - string
-              - 'null'
-            softwareName:
-              type:
-              - string
-              - 'null'
-            softwareVersion:
-              type:
-              - string
-              - 'null'
-            iconUrl:
-              type:
-              - string
-              - 'null'
-            faviconUrl:
-              type:
-              - string
-              - 'null'
-            themeColor:
-              type:
-              - string
-              - 'null'
-          required:
-          - name
-          - softwareName
-          - softwareVersion
-          - iconUrl
-          - faviconUrl
-          - themeColor
-        emojis:
-          type: object
-          additionalProperties:
-            type: string
-        onlineStatus:
-          type: string
-          enum:
-          - unknown
-          - online
-          - active
-          - offline
-        badgeRoles:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              iconUrl:
-                type:
-                - string
-                - 'null'
-              displayOrder:
-                type: number
-              behavior:
-                type: string
-            required:
-            - name
-            - iconUrl
-            - displayOrder
-      required:
-      - id
-      - name
-      - username
-      - host
-      - avatarUrl
-      - avatarBlurhash
-      - avatarDecorations
-      - emojis
-      - onlineStatus
-    EmojiDetailed:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        aliases:
-          type: array
-          items:
-            type: string
-            format: id
-        name:
-          type: string
-        category:
-          type:
-          - string
-          - 'null'
-        host:
-          type:
-          - string
-          - 'null'
-          description: The local host is represented with `null`.
-        url:
-          type: string
-        license:
-          type:
-          - string
-          - 'null'
-        isSensitive:
-          type: boolean
-        localOnly:
-          type: boolean
-        requestedBy:
-          type:
-          - string
-          - 'null'
-        memo:
-          type:
-          - string
-          - 'null'
-        roleIdsThatCanBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-      required:
-      - id
-      - aliases
-      - name
-      - category
-      - host
-      - url
-      - license
-      - isSensitive
-      - localOnly
     PageBlock:
       type: object
       oneOf:
@@ -14773,6 +14182,356 @@ components:
         - type
         - detailed
         - note
+    QueueCount:
+      type: object
+      properties:
+        waiting:
+          type: number
+        active:
+          type: number
+        completed:
+          type: number
+        failed:
+          type: number
+        delayed:
+          type: number
+      required:
+      - waiting
+      - active
+      - completed
+      - failed
+      - delayed
+    RolePolicies:
+      type: object
+      properties:
+        gtlAvailable:
+          type: boolean
+        ltlAvailable:
+          type: boolean
+        canPublicNote:
+          type: boolean
+        canScheduleNote:
+          type: boolean
+        scheduleNoteLimit:
+          type: integer
+        scheduleNoteMaxDays:
+          type: integer
+        canInitiateConversation:
+          type: boolean
+        canCreateContent:
+          type: boolean
+        canUpdateContent:
+          type: boolean
+        canDeleteContent:
+          type: boolean
+        canPurgeAccount:
+          type: boolean
+        canUpdateAvatar:
+          type: boolean
+        canUpdateBanner:
+          type: boolean
+        mentionLimit:
+          type: integer
+        canInvite:
+          type: boolean
+        inviteLimit:
+          type: integer
+        inviteLimitCycle:
+          type: integer
+        inviteExpirationTime:
+          type: integer
+        canManageCustomEmojis:
+          type: boolean
+        canManageAvatarDecorations:
+          type: boolean
+        canSearchNotes:
+          type: boolean
+        canUseTranslator:
+          type: boolean
+        canUseDriveFileInSoundSettings:
+          type: boolean
+        canUseReaction:
+          type: boolean
+        canHideAds:
+          type: boolean
+        driveCapacityMb:
+          type: integer
+        maxFileSizeMb:
+          type: integer
+        alwaysMarkNsfw:
+          type: boolean
+        skipNsfwDetection:
+          type: boolean
+        canUpdateBioMedia:
+          type: boolean
+        pinLimit:
+          type: integer
+        antennaLimit:
+          type: integer
+        antennaNotesLimit:
+          type: integer
+        wordMuteLimit:
+          type: integer
+        webhookLimit:
+          type: integer
+        clipLimit:
+          type: integer
+        noteEachClipsLimit:
+          type: integer
+        userListLimit:
+          type: integer
+        userEachUserListsLimit:
+          type: integer
+        rateLimitFactor:
+          type: integer
+        avatarDecorationLimit:
+          type: integer
+        canImportAntennas:
+          type: boolean
+        canImportBlocking:
+          type: boolean
+        canImportFollowing:
+          type: boolean
+        canImportMuting:
+          type: boolean
+        canImportUserLists:
+          type: boolean
+        mutualLinkSectionLimit:
+          type: integer
+        mutualLinkLimit:
+          type: integer
+        chatAvailability:
+          type: string
+          enum:
+          - available
+          - readonly
+          - unavailable
+      required:
+      - gtlAvailable
+      - ltlAvailable
+      - canPublicNote
+      - canScheduleNote
+      - scheduleNoteLimit
+      - scheduleNoteMaxDays
+      - canInitiateConversation
+      - canCreateContent
+      - canUpdateContent
+      - canDeleteContent
+      - canPurgeAccount
+      - canUpdateAvatar
+      - canUpdateBanner
+      - mentionLimit
+      - canInvite
+      - inviteLimit
+      - inviteLimitCycle
+      - inviteExpirationTime
+      - canManageCustomEmojis
+      - canManageAvatarDecorations
+      - canSearchNotes
+      - canUseTranslator
+      - canUseDriveFileInSoundSettings
+      - canUseReaction
+      - canHideAds
+      - driveCapacityMb
+      - maxFileSizeMb
+      - alwaysMarkNsfw
+      - skipNsfwDetection
+      - canUpdateBioMedia
+      - pinLimit
+      - antennaLimit
+      - antennaNotesLimit
+      - wordMuteLimit
+      - webhookLimit
+      - clipLimit
+      - noteEachClipsLimit
+      - userListLimit
+      - userEachUserListsLimit
+      - rateLimitFactor
+      - avatarDecorationLimit
+      - canImportAntennas
+      - canImportBlocking
+      - canImportFollowing
+      - canImportMuting
+      - canImportUserLists
+      - mutualLinkSectionLimit
+      - mutualLinkLimit
+      - chatAvailability
+    RoleLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type: string
+          example: New Role
+        color:
+          type:
+          - string
+          - 'null'
+          example: '#000000'
+        iconUrl:
+          type:
+          - string
+          - 'null'
+        description:
+          type: string
+        isModerator:
+          type: boolean
+          example: false
+        isAdministrator:
+          type: boolean
+          example: false
+        displayOrder:
+          type: integer
+          example: 0
+      required:
+      - id
+      - name
+      - color
+      - iconUrl
+      - description
+      - isModerator
+      - isAdministrator
+      - displayOrder
+    Ad:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        expiresAt:
+          type: string
+          format: date-time
+        startsAt:
+          type: string
+          format: date-time
+        place:
+          type: string
+        priority:
+          type: string
+        ratio:
+          type: number
+        url:
+          type: string
+        imageUrl:
+          type: string
+        imageBlurhash:
+          type:
+          - string
+          - 'null'
+        memo:
+          type: string
+        dayOfWeek:
+          type: integer
+        isSensitive:
+          type: boolean
+      required:
+      - id
+      - expiresAt
+      - startsAt
+      - place
+      - priority
+      - ratio
+      - url
+      - imageUrl
+      - imageBlurhash
+      - memo
+      - dayOfWeek
+      - isSensitive
+    RoleCondFormulaValue:
+      type: object
+      oneOf:
+      - $ref: '#/components/schemas/RoleCondFormulaLogics'
+      - $ref: '#/components/schemas/RoleCondFormulaValueNot'
+      - $ref: '#/components/schemas/RoleCondFormulaValueIsLocalOrRemote'
+      - $ref: '#/components/schemas/RoleCondFormulaValueUserSettingBooleanSchema'
+      - $ref: '#/components/schemas/RoleCondFormulaValueAssignedRole'
+      - $ref: '#/components/schemas/RoleCondFormulaValueCreated'
+      - $ref: '#/components/schemas/RoleCondFormulaFollowersOrFollowingOrNotes'
+    RoleCondFormulaFollowersOrFollowingOrNotes:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - followersLessThanOrEq
+          - followersMoreThanOrEq
+          - followingLessThanOrEq
+          - followingMoreThanOrEq
+          - notesLessThanOrEq
+          - notesMoreThanOrEq
+        value:
+          type: number
+      required:
+      - id
+      - type
+      - value
+    InviteCode:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        code:
+          type: string
+          example: GR6S02ERUA5VR
+        expiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        usedBy:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        usedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        used:
+          type: boolean
+      required:
+      - id
+      - code
+      - expiresAt
+      - createdAt
+      - createdBy
+      - usedBy
+      - usedAt
+      - used
+    RoleCondFormulaValueIsLocalOrRemote:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - isLocal
+          - isRemote
+      required:
+      - id
+      - type
     RoleCondFormulaValueNot:
       type: object
       properties:
@@ -14789,152 +14548,7 @@ components:
       - id
       - type
       - value
-    DriveFile:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-          example: 192.jpg
-        type:
-          type: string
-          example: image/jpeg
-        md5:
-          type: string
-          format: md5
-          example: 15eca7fba0480996e2245f5185bf39f2
-        size:
-          type: number
-          example: 51469
-        isSensitive:
-          type: boolean
-        isSensitiveByModerator:
-          type:
-          - boolean
-          - 'null'
-        blurhash:
-          type:
-          - string
-          - 'null'
-        properties:
-          type: object
-          properties:
-            width:
-              type: number
-              example: 1280
-            height:
-              type: number
-              example: 720
-            orientation:
-              type: number
-              example: 8
-            avgColor:
-              type: string
-              example: rgb(40,65,87)
-        url:
-          type: string
-          format: url
-        thumbnailUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        comment:
-          type:
-          - string
-          - 'null'
-        folderId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        folder:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-        userId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        user:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - type
-      - md5
-      - size
-      - isSensitive
-      - blurhash
-      - properties
-      - url
-      - thumbnailUrl
-      - comment
-      - folderId
-      - userId
-    RoleCondFormulaValue:
-      type: object
-      oneOf:
-      - $ref: '#/components/schemas/RoleCondFormulaLogics'
-      - $ref: '#/components/schemas/RoleCondFormulaValueNot'
-      - $ref: '#/components/schemas/RoleCondFormulaValueIsLocalOrRemote'
-      - $ref: '#/components/schemas/RoleCondFormulaValueUserSettingBooleanSchema'
-      - $ref: '#/components/schemas/RoleCondFormulaValueAssignedRole'
-      - $ref: '#/components/schemas/RoleCondFormulaValueCreated'
-      - $ref: '#/components/schemas/RoleCondFormulaFollowersOrFollowingOrNotes'
-    DriveFolder:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-        parentId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        foldersCount:
-          type: number
-        filesCount:
-          type: number
-        parent:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - parentId
-    RoleCondFormulaValueAssignedRole:
+    RoleCondFormulaLogics:
       type: object
       properties:
         id:
@@ -14942,15 +14556,16 @@ components:
         type:
           type: string
           enum:
-          - roleAssignedTo
-        roleId:
-          type: string
-          format: id
-          example: xxxxxxxxxx
+          - and
+          - or
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleCondFormulaValue'
       required:
       - id
       - type
-      - roleId
+      - values
     UserDetailedNotMeOnly:
       type: object
       properties:
@@ -15212,231 +14827,67 @@ components:
       - roles
       - memo
       - mutualLinkSections
-    RolePolicies:
+    Signin:
       type: object
       properties:
-        gtlAvailable:
-          type: boolean
-        ltlAvailable:
-          type: boolean
-        canPublicNote:
-          type: boolean
-        canScheduleNote:
-          type: boolean
-        scheduleNoteLimit:
-          type: integer
-        scheduleNoteMaxDays:
-          type: integer
-        canInitiateConversation:
-          type: boolean
-        canCreateContent:
-          type: boolean
-        canUpdateContent:
-          type: boolean
-        canDeleteContent:
-          type: boolean
-        canPurgeAccount:
-          type: boolean
-        canUpdateAvatar:
-          type: boolean
-        canUpdateBanner:
-          type: boolean
-        mentionLimit:
-          type: integer
-        canInvite:
-          type: boolean
-        inviteLimit:
-          type: integer
-        inviteLimitCycle:
-          type: integer
-        inviteExpirationTime:
-          type: integer
-        canManageCustomEmojis:
-          type: boolean
-        canManageAvatarDecorations:
-          type: boolean
-        canSearchNotes:
-          type: boolean
-        canUseTranslator:
-          type: boolean
-        canUseDriveFileInSoundSettings:
-          type: boolean
-        canUseReaction:
-          type: boolean
-        canHideAds:
-          type: boolean
-        driveCapacityMb:
-          type: integer
-        maxFileSizeMb:
-          type: integer
-        alwaysMarkNsfw:
-          type: boolean
-        skipNsfwDetection:
-          type: boolean
-        canUpdateBioMedia:
-          type: boolean
-        pinLimit:
-          type: integer
-        antennaLimit:
-          type: integer
-        antennaNotesLimit:
-          type: integer
-        wordMuteLimit:
-          type: integer
-        webhookLimit:
-          type: integer
-        clipLimit:
-          type: integer
-        noteEachClipsLimit:
-          type: integer
-        userListLimit:
-          type: integer
-        userEachUserListsLimit:
-          type: integer
-        rateLimitFactor:
-          type: integer
-        avatarDecorationLimit:
-          type: integer
-        canImportAntennas:
-          type: boolean
-        canImportBlocking:
-          type: boolean
-        canImportFollowing:
-          type: boolean
-        canImportMuting:
-          type: boolean
-        canImportUserLists:
-          type: boolean
-        mutualLinkSectionLimit:
-          type: integer
-        mutualLinkLimit:
-          type: integer
-        chatAvailability:
+        id:
           type: string
-          enum:
-          - available
-          - readonly
-          - unavailable
+        createdAt:
+          type: string
+          format: date-time
+        ip:
+          type: string
+        headers:
+          type: object
+        success:
+          type: boolean
       required:
-      - gtlAvailable
-      - ltlAvailable
-      - canPublicNote
-      - canScheduleNote
-      - scheduleNoteLimit
-      - scheduleNoteMaxDays
-      - canInitiateConversation
-      - canCreateContent
-      - canUpdateContent
-      - canDeleteContent
-      - canPurgeAccount
-      - canUpdateAvatar
-      - canUpdateBanner
-      - mentionLimit
-      - canInvite
-      - inviteLimit
-      - inviteLimitCycle
-      - inviteExpirationTime
-      - canManageCustomEmojis
-      - canManageAvatarDecorations
-      - canSearchNotes
-      - canUseTranslator
-      - canUseDriveFileInSoundSettings
-      - canUseReaction
-      - canHideAds
-      - driveCapacityMb
-      - maxFileSizeMb
-      - alwaysMarkNsfw
-      - skipNsfwDetection
-      - canUpdateBioMedia
-      - pinLimit
-      - antennaLimit
-      - antennaNotesLimit
-      - wordMuteLimit
-      - webhookLimit
-      - clipLimit
-      - noteEachClipsLimit
-      - userListLimit
-      - userEachUserListsLimit
-      - rateLimitFactor
-      - avatarDecorationLimit
-      - canImportAntennas
-      - canImportBlocking
-      - canImportFollowing
-      - canImportMuting
-      - canImportUserLists
-      - mutualLinkSectionLimit
-      - mutualLinkLimit
-      - chatAvailability
-    Role:
+      - id
+      - createdAt
+      - ip
+      - headers
+      - success
+    UserDetailedNotMe:
       type: object
       allOf:
       - type: object
-        $ref: '#/components/schemas/RoleLite'
+        $ref: '#/components/schemas/UserLite'
       - type: object
-        properties:
-          createdAt:
-            type: string
-            format: date-time
-          updatedAt:
-            type: string
-            format: date-time
-          target:
-            type: string
-            enum:
-            - manual
-            - conditional
-          condFormula:
-            type: object
-            $ref: '#/components/schemas/RoleCondFormulaValue'
-          isPublic:
-            type: boolean
-            example: false
-          isExplorable:
-            type: boolean
-            example: false
-          asBadge:
-            type: boolean
-            example: false
-          preserveAssignmentOnMoveAccount:
-            type: boolean
-            example: false
-          badgeBehavior:
-            type:
-            - string
-            - 'null'
-          canEditMembersByModerator:
-            type: boolean
-            example: false
-          policies:
-            type: object
-            additionalProperties:
-              anyOf:
-              - type: object
-                properties:
-                  value:
-                    oneOf:
-                    - type: integer
-                    - type: boolean
-                  priority:
-                    type: integer
-                  useDefault:
-                    type: boolean
-          usersCount:
-            type: integer
-        required:
-        - createdAt
-        - updatedAt
-        - target
-        - condFormula
-        - isPublic
-        - isExplorable
-        - asBadge
-        - preserveAssignmentOnMoveAccount
-        - badgeBehavior
-        - canEditMembersByModerator
-        - policies
-        - usersCount
-    SystemWebhook:
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+    RoleCondFormulaValueAssignedRole:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - roleAssignedTo
+        roleId:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+      required:
+      - id
+      - type
+      - roleId
+    RoleCondFormulaValueCreated:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - createdLessThan
+          - createdMoreThan
+        sec:
+          type: number
+      required:
+      - id
+      - type
+      - sec
+    AbuseReportNotificationRecipient:
       type: object
       properties:
         id:
@@ -15446,42 +14897,315 @@ components:
         updatedAt:
           type: string
           format: date-time
-        latestSentAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        latestStatus:
-          type:
-          - number
-          - 'null'
         name:
           type: string
-        'on':
-          type: array
-          items:
-            type: string
-            enum:
-            - abuseReport
-            - abuseReportResolved
-            - userCreated
-            - inactiveModeratorsWarning
-            - inactiveModeratorsInvitationOnlyChanged
-            - reportAutoResolved
-        url:
+        method:
           type: string
-        secret:
+          enum:
+          - email
+          - webhook
+        userId:
           type: string
+        user:
+          type: object
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        systemWebhookId:
+          type: string
+        systemWebhook:
+          type: object
+          anyOf:
+          - $ref: '#/components/schemas/SystemWebhook'
+          - type: 'null'
       required:
       - id
       - isActive
       - updatedAt
-      - latestSentAt
-      - latestStatus
       - name
-      - 'on'
+      - method
+    Note:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        deletedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        text:
+          type:
+          - string
+          - 'null'
+        cw:
+          type:
+          - string
+          - 'null'
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        replyId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        renoteId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        reply:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Note'
+          - type: 'null'
+        renote:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Note'
+          - type: 'null'
+        isHidden:
+          type: boolean
+        visibility:
+          type: string
+          enum:
+          - public
+          - home
+          - followers
+          - specified
+        mentions:
+          type: array
+          items:
+            type: string
+            format: id
+        visibleUserIds:
+          type: array
+          items:
+            type: string
+            format: id
+        fileIds:
+          type: array
+          items:
+            type: string
+            format: id
+        files:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/DriveFile'
+        tags:
+          type: array
+          items:
+            type: string
+        poll:
+          type:
+          - object
+          - 'null'
+          properties:
+            expiresAt:
+              type:
+              - string
+              - 'null'
+              format: date-time
+            multiple:
+              type: boolean
+            choices:
+              type: array
+              items:
+                type: object
+                properties:
+                  isVoted:
+                    type: boolean
+                  text:
+                    type: string
+                  votes:
+                    type: number
+                required:
+                - isVoted
+                - text
+                - votes
+          required:
+          - multiple
+          - choices
+        emojis:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: string
+        channelId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        channel:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            color:
+              type: string
+            isSensitive:
+              type: boolean
+            allowRenoteToExternal:
+              type: boolean
+            userId:
+              type:
+              - string
+              - 'null'
+          required:
+          - id
+          - name
+          - color
+          - isSensitive
+          - allowRenoteToExternal
+          - userId
+        localOnly:
+          type: boolean
+        dimension:
+          type:
+          - integer
+          - 'null'
+        reactionAcceptance:
+          type:
+          - string
+          - 'null'
+          enum:
+          - likeOnly
+          - likeOnlyForRemote
+          - nonSensitiveOnly
+          - nonSensitiveOnlyForLocalLikeOnlyForRemote
+          - null
+        reactionEmojis:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: string
+        reactions:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: number
+        reactionCount:
+          type: number
+        renoteCount:
+          type: number
+        repliesCount:
+          type: number
+        uri:
+          type: string
+        url:
+          type: string
+        reactionAndUserPairCache:
+          type: array
+          items:
+            type: string
+        clippedCount:
+          type: number
+        myReaction:
+          type:
+          - string
+          - 'null'
+      required:
+      - id
+      - createdAt
+      - text
+      - userId
+      - user
+      - visibility
+      - reactionAcceptance
+      - reactionEmojis
+      - reactions
+      - reactionCount
+      - renoteCount
+      - repliesCount
+    EmojiDetailed:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        name:
+          type: string
+        category:
+          type:
+          - string
+          - 'null'
+        host:
+          type:
+          - string
+          - 'null'
+          description: The local host is represented with `null`.
+        url:
+          type: string
+        license:
+          type:
+          - string
+          - 'null'
+        isSensitive:
+          type: boolean
+        localOnly:
+          type: boolean
+        requestedBy:
+          type:
+          - string
+          - 'null'
+        memo:
+          type:
+          - string
+          - 'null'
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+      required:
+      - id
+      - aliases
+      - name
+      - category
+      - host
       - url
-      - secret
+      - license
+      - isSensitive
+      - localOnly
     MeDetailedOnly:
       type: object
       properties:
@@ -16104,7 +15828,53 @@ components:
       - twoFactorEnabled
       - usePasswordLessLogin
       - securityKeys
-    Note:
+    SystemWebhook:
+      type: object
+      properties:
+        id:
+          type: string
+        isActive:
+          type: boolean
+        updatedAt:
+          type: string
+          format: date-time
+        latestSentAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        latestStatus:
+          type:
+          - number
+          - 'null'
+        name:
+          type: string
+        'on':
+          type: array
+          items:
+            type: string
+            enum:
+            - abuseReport
+            - abuseReportResolved
+            - userCreated
+            - inactiveModeratorsWarning
+            - inactiveModeratorsInvitationOnlyChanged
+            - reportAutoResolved
+        url:
+          type: string
+        secret:
+          type: string
+      required:
+      - id
+      - isActive
+      - updatedAt
+      - latestSentAt
+      - latestStatus
+      - name
+      - 'on'
+      - url
+      - secret
+    Page:
       type: object
       properties:
         id:
@@ -16114,211 +15884,86 @@ components:
         createdAt:
           type: string
           format: date-time
-        deletedAt:
-          type:
-          - string
-          - 'null'
+        updatedAt:
+          type: string
           format: date-time
-        text:
-          type:
-          - string
-          - 'null'
-        cw:
-          type:
-          - string
-          - 'null'
         userId:
           type: string
           format: id
         user:
           type: object
           $ref: '#/components/schemas/UserLite'
-        replyId:
+        content:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/PageBlock'
+        variables:
+          type: array
+          items:
+            type: object
+        title:
+          type: string
+        name:
+          type: string
+        summary:
           type:
           - string
           - 'null'
-          format: id
-          example: xxxxxxxxxx
-        renoteId:
+        hideTitleWhenPinned:
+          type: boolean
+        alignCenter:
+          type: boolean
+        font:
+          type: string
+        script:
+          type: string
+        eyeCatchingImageId:
           type:
           - string
           - 'null'
-          format: id
-          example: xxxxxxxxxx
-        reply:
+        eyeCatchingImage:
           type:
           - object
           - 'null'
           anyOf:
-          - $ref: '#/components/schemas/Note'
+          - $ref: '#/components/schemas/DriveFile'
           - type: 'null'
-        renote:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/Note'
-          - type: 'null'
-        isHidden:
+        attachedFiles:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/DriveFile'
+        likedCount:
+          type: number
+        isLiked:
           type: boolean
         visibility:
           type: string
           enum:
           - public
-          - home
-          - followers
-          - specified
-        mentions:
-          type: array
-          items:
-            type: string
-            format: id
-        visibleUserIds:
-          type: array
-          items:
-            type: string
-            format: id
-        fileIds:
-          type: array
-          items:
-            type: string
-            format: id
-        files:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/DriveFile'
-        tags:
-          type: array
-          items:
-            type: string
-        poll:
-          type:
-          - object
-          - 'null'
-          properties:
-            expiresAt:
-              type:
-              - string
-              - 'null'
-              format: date-time
-            multiple:
-              type: boolean
-            choices:
-              type: array
-              items:
-                type: object
-                properties:
-                  isVoted:
-                    type: boolean
-                  text:
-                    type: string
-                  votes:
-                    type: number
-                required:
-                - isVoted
-                - text
-                - votes
-          required:
-          - multiple
-          - choices
-        emojis:
-          type: object
-          additionalProperties:
-            anyOf:
-            - type: string
-        channelId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        channel:
-          type:
-          - object
-          - 'null'
-          properties:
-            id:
-              type: string
-            name:
-              type: string
-            color:
-              type: string
-            isSensitive:
-              type: boolean
-            allowRenoteToExternal:
-              type: boolean
-            userId:
-              type:
-              - string
-              - 'null'
-          required:
-          - id
-          - name
-          - color
-          - isSensitive
-          - allowRenoteToExternal
-          - userId
-        localOnly:
-          type: boolean
-        dimension:
-          type:
-          - integer
-          - 'null'
-        reactionAcceptance:
-          type:
-          - string
-          - 'null'
-          enum:
-          - likeOnly
-          - likeOnlyForRemote
-          - nonSensitiveOnly
-          - nonSensitiveOnlyForLocalLikeOnlyForRemote
-          - null
-        reactionEmojis:
-          type: object
-          additionalProperties:
-            anyOf:
-            - type: string
-        reactions:
-          type: object
-          additionalProperties:
-            anyOf:
-            - type: number
-        reactionCount:
-          type: number
-        renoteCount:
-          type: number
-        repliesCount:
-          type: number
-        uri:
-          type: string
-        url:
-          type: string
-        reactionAndUserPairCache:
-          type: array
-          items:
-            type: string
-        clippedCount:
-          type: number
-        myReaction:
-          type:
-          - string
-          - 'null'
+          - private
       required:
       - id
       - createdAt
-      - text
+      - updatedAt
       - userId
       - user
+      - content
+      - variables
+      - title
+      - name
+      - summary
+      - hideTitleWhenPinned
+      - alignCenter
+      - font
+      - script
+      - eyeCatchingImageId
+      - eyeCatchingImage
+      - attachedFiles
+      - likedCount
       - visibility
-      - reactionAcceptance
-      - reactionEmojis
-      - reactions
-      - reactionCount
-      - renoteCount
-      - repliesCount
-    RoleLite:
+    UserLite:
       type: object
       properties:
         id:
@@ -16326,44 +15971,148 @@ components:
           format: id
           example: xxxxxxxxxx
         name:
-          type: string
-          example: New Role
-        color:
           type:
           - string
           - 'null'
-          example: '#000000'
-        iconUrl:
+          example: 藍
+        username:
+          type: string
+          example: ai
+        host:
           type:
           - string
           - 'null'
-        description:
+          example: misskey.example.com
+          description: The local host is represented with `null`.
+        avatarUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        avatarBlurhash:
+          type:
+          - string
+          - 'null'
+        avatarDecorations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: id
+              angle:
+                type: number
+              flipH:
+                type: boolean
+              url:
+                type: string
+                format: url
+              offsetX:
+                type: number
+              offsetY:
+                type: number
+            required:
+            - id
+            - url
+        isBot:
+          type: boolean
+        isCat:
+          type: boolean
+        requireSigninToViewContents:
+          type: boolean
+        makeNotesFollowersOnlyBefore:
+          type:
+          - number
+          - 'null'
+        makeNotesHiddenBefore:
+          type:
+          - number
+          - 'null'
+        instance:
+          type: object
+          properties:
+            name:
+              type:
+              - string
+              - 'null'
+            softwareName:
+              type:
+              - string
+              - 'null'
+            softwareVersion:
+              type:
+              - string
+              - 'null'
+            iconUrl:
+              type:
+              - string
+              - 'null'
+            faviconUrl:
+              type:
+              - string
+              - 'null'
+            themeColor:
+              type:
+              - string
+              - 'null'
+          required:
+          - name
+          - softwareName
+          - softwareVersion
+          - iconUrl
+          - faviconUrl
+          - themeColor
+        emojis:
+          type: object
+          additionalProperties:
+            type: string
+        onlineStatus:
           type: string
-        isModerator:
-          type: boolean
-          example: false
-        isAdministrator:
-          type: boolean
-          example: false
-        displayOrder:
-          type: integer
-          example: 0
+          enum:
+          - unknown
+          - online
+          - active
+          - offline
+        badgeRoles:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              iconUrl:
+                type:
+                - string
+                - 'null'
+              displayOrder:
+                type: number
+              behavior:
+                type: string
+            required:
+            - name
+            - iconUrl
+            - displayOrder
       required:
       - id
       - name
-      - color
-      - iconUrl
-      - description
-      - isModerator
-      - isAdministrator
-      - displayOrder
-    UserDetailed:
-      oneOf:
+      - username
+      - host
+      - avatarUrl
+      - avatarBlurhash
+      - avatarDecorations
+      - emojis
+      - onlineStatus
+    MeDetailed:
+      type: object
+      allOf:
       - type: object
-        $ref: '#/components/schemas/UserDetailedNotMe'
+        $ref: '#/components/schemas/UserLite'
       - type: object
-        $ref: '#/components/schemas/MeDetailed'
-    RoleCondFormulaValueCreated:
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+      - type: object
+        $ref: '#/components/schemas/MeDetailedOnly'
+    RoleCondFormulaValueUserSettingBooleanSchema:
       type: object
       properties:
         id:
@@ -16371,14 +16120,265 @@ components:
         type:
           type: string
           enum:
-          - createdLessThan
-          - createdMoreThan
-        sec:
-          type: number
+          - isSuspended
+          - isLocked
+          - isBot
+          - isCat
+          - isExplorable
       required:
       - id
       - type
-      - sec
+    UserDetailed:
+      oneOf:
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMe'
+      - type: object
+        $ref: '#/components/schemas/MeDetailed'
+    EmojiDetailedAdmin:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        name:
+          type: string
+        host:
+          type:
+          - string
+          - 'null'
+          description: The local host is represented with `null`.
+        publicUrl:
+          type: string
+        originalUrl:
+          type: string
+        uri:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        category:
+          type:
+          - string
+          - 'null'
+        license:
+          type:
+          - string
+          - 'null'
+        localOnly:
+          type: boolean
+        isSensitive:
+          type: boolean
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: misskey:id
+              name:
+                type: string
+            required:
+            - id
+            - name
+      required:
+      - id
+      - updatedAt
+      - name
+      - host
+      - publicUrl
+      - originalUrl
+      - uri
+      - type
+      - aliases
+      - category
+      - license
+      - localOnly
+      - isSensitive
+      - roleIdsThatCanBeUsedThisEmojiAsReaction
+    Role:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/RoleLite'
+      - type: object
+        properties:
+          createdAt:
+            type: string
+            format: date-time
+          updatedAt:
+            type: string
+            format: date-time
+          target:
+            type: string
+            enum:
+            - manual
+            - conditional
+          condFormula:
+            type: object
+            $ref: '#/components/schemas/RoleCondFormulaValue'
+          isPublic:
+            type: boolean
+            example: false
+          isExplorable:
+            type: boolean
+            example: false
+          asBadge:
+            type: boolean
+            example: false
+          preserveAssignmentOnMoveAccount:
+            type: boolean
+            example: false
+          badgeBehavior:
+            type:
+            - string
+            - 'null'
+          canEditMembersByModerator:
+            type: boolean
+            example: false
+          policies:
+            type: object
+            additionalProperties:
+              anyOf:
+              - type: object
+                properties:
+                  value:
+                    oneOf:
+                    - type: integer
+                    - type: boolean
+                  priority:
+                    type: integer
+                  useDefault:
+                    type: boolean
+          usersCount:
+            type: integer
+        required:
+        - createdAt
+        - updatedAt
+        - target
+        - condFormula
+        - isPublic
+        - isExplorable
+        - asBadge
+        - preserveAssignmentOnMoveAccount
+        - badgeBehavior
+        - canEditMembersByModerator
+        - policies
+        - usersCount
+    DriveFile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+          example: 192.jpg
+        type:
+          type: string
+          example: image/jpeg
+        md5:
+          type: string
+          format: md5
+          example: 15eca7fba0480996e2245f5185bf39f2
+        size:
+          type: number
+          example: 51469
+        isSensitive:
+          type: boolean
+        isSensitiveByModerator:
+          type:
+          - boolean
+          - 'null'
+        blurhash:
+          type:
+          - string
+          - 'null'
+        properties:
+          type: object
+          properties:
+            width:
+              type: number
+              example: 1280
+            height:
+              type: number
+              example: 720
+            orientation:
+              type: number
+              example: 8
+            avgColor:
+              type: string
+              example: rgb(40,65,87)
+        url:
+          type: string
+          format: url
+        thumbnailUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        comment:
+          type:
+          - string
+          - 'null'
+        folderId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        folder:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        user:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - type
+      - md5
+      - size
+      - isSensitive
+      - blurhash
+      - properties
+      - url
+      - thumbnailUrl
+      - comment
+      - folderId
+      - userId
   securitySchemes:
     bearerAuth:
       type: http

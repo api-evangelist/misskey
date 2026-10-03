@@ -1412,7 +1412,7 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    Channel:
+    DriveFolder:
       type: object
       properties:
         id:
@@ -1422,68 +1422,170 @@ components:
         createdAt:
           type: string
           format: date-time
-        lastNotedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
         name:
           type: string
-        description:
-          type:
-          - string
-          - 'null'
-        userId:
+        parentId:
           type:
           - string
           - 'null'
           format: id
-        bannerUrl:
+          example: xxxxxxxxxx
+        foldersCount:
+          type: number
+        filesCount:
+          type: number
+        parent:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - parentId
+    UserLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type:
+          - string
+          - 'null'
+          example: 藍
+        username:
+          type: string
+          example: ai
+        host:
+          type:
+          - string
+          - 'null'
+          example: misskey.example.com
+          description: The local host is represented with `null`.
+        avatarUrl:
           type:
           - string
           - 'null'
           format: url
-        pinnedNoteIds:
-          type: array
-          items:
-            type: string
-            format: id
-        color:
-          type: string
-        isArchived:
-          type: boolean
-        usersCount:
-          type: number
-        notesCount:
-          type: number
-        isSensitive:
-          type: boolean
-        allowRenoteToExternal:
-          type: boolean
-        isFollowing:
-          type: boolean
-        isFavorited:
-          type: boolean
-        pinnedNotes:
+        avatarBlurhash:
+          type:
+          - string
+          - 'null'
+        avatarDecorations:
           type: array
           items:
             type: object
-            $ref: '#/components/schemas/Note'
+            properties:
+              id:
+                type: string
+                format: id
+              angle:
+                type: number
+              flipH:
+                type: boolean
+              url:
+                type: string
+                format: url
+              offsetX:
+                type: number
+              offsetY:
+                type: number
+            required:
+            - id
+            - url
+        isBot:
+          type: boolean
+        isCat:
+          type: boolean
+        requireSigninToViewContents:
+          type: boolean
+        makeNotesFollowersOnlyBefore:
+          type:
+          - number
+          - 'null'
+        makeNotesHiddenBefore:
+          type:
+          - number
+          - 'null'
+        instance:
+          type: object
+          properties:
+            name:
+              type:
+              - string
+              - 'null'
+            softwareName:
+              type:
+              - string
+              - 'null'
+            softwareVersion:
+              type:
+              - string
+              - 'null'
+            iconUrl:
+              type:
+              - string
+              - 'null'
+            faviconUrl:
+              type:
+              - string
+              - 'null'
+            themeColor:
+              type:
+              - string
+              - 'null'
+          required:
+          - name
+          - softwareName
+          - softwareVersion
+          - iconUrl
+          - faviconUrl
+          - themeColor
+        emojis:
+          type: object
+          additionalProperties:
+            type: string
+        onlineStatus:
+          type: string
+          enum:
+          - unknown
+          - online
+          - active
+          - offline
+        badgeRoles:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              iconUrl:
+                type:
+                - string
+                - 'null'
+              displayOrder:
+                type: number
+              behavior:
+                type: string
+            required:
+            - name
+            - iconUrl
+            - displayOrder
       required:
       - id
-      - createdAt
-      - lastNotedAt
       - name
-      - description
-      - userId
-      - bannerUrl
-      - pinnedNoteIds
-      - color
-      - isArchived
-      - usersCount
-      - notesCount
-      - isSensitive
-      - allowRenoteToExternal
+      - username
+      - host
+      - avatarUrl
+      - avatarBlurhash
+      - avatarDecorations
+      - emojis
+      - onlineStatus
     Note:
       type: object
       properties:
@@ -1721,6 +1823,78 @@ components:
           - message
       required:
       - error
+    Channel:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        lastNotedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        name:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+        bannerUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        pinnedNoteIds:
+          type: array
+          items:
+            type: string
+            format: id
+        color:
+          type: string
+        isArchived:
+          type: boolean
+        usersCount:
+          type: number
+        notesCount:
+          type: number
+        isSensitive:
+          type: boolean
+        allowRenoteToExternal:
+          type: boolean
+        isFollowing:
+          type: boolean
+        isFavorited:
+          type: boolean
+        pinnedNotes:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/Note'
+      required:
+      - id
+      - createdAt
+      - lastNotedAt
+      - name
+      - description
+      - userId
+      - bannerUrl
+      - pinnedNoteIds
+      - color
+      - isArchived
+      - usersCount
+      - notesCount
+      - isSensitive
+      - allowRenoteToExternal
     DriveFile:
       type: object
       properties:
@@ -1822,180 +1996,6 @@ components:
       - comment
       - folderId
       - userId
-    DriveFolder:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-        parentId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        foldersCount:
-          type: number
-        filesCount:
-          type: number
-        parent:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - parentId
-    UserLite:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        name:
-          type:
-          - string
-          - 'null'
-          example: 藍
-        username:
-          type: string
-          example: ai
-        host:
-          type:
-          - string
-          - 'null'
-          example: misskey.example.com
-          description: The local host is represented with `null`.
-        avatarUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        avatarBlurhash:
-          type:
-          - string
-          - 'null'
-        avatarDecorations:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                format: id
-              angle:
-                type: number
-              flipH:
-                type: boolean
-              url:
-                type: string
-                format: url
-              offsetX:
-                type: number
-              offsetY:
-                type: number
-            required:
-            - id
-            - url
-        isBot:
-          type: boolean
-        isCat:
-          type: boolean
-        requireSigninToViewContents:
-          type: boolean
-        makeNotesFollowersOnlyBefore:
-          type:
-          - number
-          - 'null'
-        makeNotesHiddenBefore:
-          type:
-          - number
-          - 'null'
-        instance:
-          type: object
-          properties:
-            name:
-              type:
-              - string
-              - 'null'
-            softwareName:
-              type:
-              - string
-              - 'null'
-            softwareVersion:
-              type:
-              - string
-              - 'null'
-            iconUrl:
-              type:
-              - string
-              - 'null'
-            faviconUrl:
-              type:
-              - string
-              - 'null'
-            themeColor:
-              type:
-              - string
-              - 'null'
-          required:
-          - name
-          - softwareName
-          - softwareVersion
-          - iconUrl
-          - faviconUrl
-          - themeColor
-        emojis:
-          type: object
-          additionalProperties:
-            type: string
-        onlineStatus:
-          type: string
-          enum:
-          - unknown
-          - online
-          - active
-          - offline
-        badgeRoles:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              iconUrl:
-                type:
-                - string
-                - 'null'
-              displayOrder:
-                type: number
-              behavior:
-                type: string
-            required:
-            - name
-            - iconUrl
-            - displayOrder
-      required:
-      - id
-      - name
-      - username
-      - host
-      - avatarUrl
-      - avatarBlurhash
-      - avatarDecorations
-      - emojis
-      - onlineStatus
   securitySchemes:
     bearerAuth:
       type: http

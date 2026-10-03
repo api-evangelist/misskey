@@ -3117,71 +3117,214 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    Announcement:
+    MetaDetailedOnly:
+      type: object
+      properties:
+        features:
+          type: object
+          properties:
+            registration:
+              type: boolean
+            emailRequiredForSignup:
+              type: boolean
+            localTimeline:
+              type: boolean
+            globalTimeline:
+              type: boolean
+            hCaptcha:
+              type: boolean
+            hcaptcha:
+              type: boolean
+              description: Alias of hCaptcha
+            mCaptcha:
+              type: boolean
+            mcaptcha:
+              type: boolean
+              description: Alias of mCaptcha
+            reCaptcha:
+              type: boolean
+            recaptcha:
+              type: boolean
+              description: Alias of reCaptcha
+            turnstile:
+              type: boolean
+            objectStorage:
+              type: boolean
+            serviceWorker:
+              type: boolean
+            miauth:
+              type: boolean
+              default: true
+          required:
+          - registration
+          - emailRequiredForSignup
+          - localTimeline
+          - globalTimeline
+          - hCaptcha
+          - hcaptcha
+          - mCaptcha
+          - mcaptcha
+          - reCaptcha
+          - recaptcha
+          - turnstile
+          - objectStorage
+          - serviceWorker
+        proxyAccountName:
+          type:
+          - string
+          - 'null'
+        requireSetup:
+          type: boolean
+          example: false
+        cacheRemoteFiles:
+          type: boolean
+        cacheRemoteSensitiveFiles:
+          type: boolean
+      required:
+      - proxyAccountName
+      - requireSetup
+      - cacheRemoteFiles
+      - cacheRemoteSensitiveFiles
+    UserLite:
       type: object
       properties:
         id:
           type: string
           format: id
           example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
+        name:
           type:
           - string
           - 'null'
-          format: date-time
-        text:
+          example: 藍
+        username:
           type: string
-        title:
-          type: string
-        imageUrl:
+          example: ai
+        host:
           type:
           - string
           - 'null'
-        icon:
+          example: misskey.example.com
+          description: The local host is represented with `null`.
+        avatarUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        avatarBlurhash:
+          type:
+          - string
+          - 'null'
+        avatarDecorations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: id
+              angle:
+                type: number
+              flipH:
+                type: boolean
+              url:
+                type: string
+                format: url
+              offsetX:
+                type: number
+              offsetY:
+                type: number
+            required:
+            - id
+            - url
+        isBot:
+          type: boolean
+        isCat:
+          type: boolean
+        requireSigninToViewContents:
+          type: boolean
+        makeNotesFollowersOnlyBefore:
+          type:
+          - number
+          - 'null'
+        makeNotesHiddenBefore:
+          type:
+          - number
+          - 'null'
+        instance:
+          type: object
+          properties:
+            name:
+              type:
+              - string
+              - 'null'
+            softwareName:
+              type:
+              - string
+              - 'null'
+            softwareVersion:
+              type:
+              - string
+              - 'null'
+            iconUrl:
+              type:
+              - string
+              - 'null'
+            faviconUrl:
+              type:
+              - string
+              - 'null'
+            themeColor:
+              type:
+              - string
+              - 'null'
+          required:
+          - name
+          - softwareName
+          - softwareVersion
+          - iconUrl
+          - faviconUrl
+          - themeColor
+        emojis:
+          type: object
+          additionalProperties:
+            type: string
+        onlineStatus:
           type: string
           enum:
-          - info
-          - warning
-          - error
-          - success
-        display:
-          type: string
-          enum:
-          - dialog
-          - normal
-          - banner
-        needConfirmationToRead:
-          type: boolean
-        needEnrollmentTutorialToRead:
-          type: boolean
-        forYou:
-          type: boolean
-        closeDuration:
-          type: number
-        displayOrder:
-          type: number
-        silence:
-          type: boolean
-        isRead:
-          type: boolean
+          - unknown
+          - online
+          - active
+          - offline
+        badgeRoles:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              iconUrl:
+                type:
+                - string
+                - 'null'
+              displayOrder:
+                type: number
+              behavior:
+                type: string
+            required:
+            - name
+            - iconUrl
+            - displayOrder
       required:
       - id
-      - createdAt
-      - updatedAt
-      - text
-      - title
-      - imageUrl
-      - icon
-      - display
-      - needConfirmationToRead
-      - needEnrollmentTutorialToRead
-      - forYou
-      - closeDuration
-      - displayOrder
-      - silence
+      - name
+      - username
+      - host
+      - avatarUrl
+      - avatarBlurhash
+      - avatarDecorations
+      - emojis
+      - onlineStatus
     InviteCode:
       type: object
       properties:
@@ -3230,29 +3373,6 @@ components:
       - usedBy
       - usedAt
       - used
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
     MetaLite:
       type: object
       properties:
@@ -3570,13 +3690,94 @@ components:
       - noteSearchableScope
       - maxFileSize
       - federation
-    MetaDetailed:
+    Announcement:
       type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/MetaLite'
-      - type: object
-        $ref: '#/components/schemas/MetaDetailedOnly'
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        text:
+          type: string
+        title:
+          type: string
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        icon:
+          type: string
+          enum:
+          - info
+          - warning
+          - error
+          - success
+        display:
+          type: string
+          enum:
+          - dialog
+          - normal
+          - banner
+        needConfirmationToRead:
+          type: boolean
+        needEnrollmentTutorialToRead:
+          type: boolean
+        forYou:
+          type: boolean
+        closeDuration:
+          type: number
+        displayOrder:
+          type: number
+        silence:
+          type: boolean
+        isRead:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - updatedAt
+      - text
+      - title
+      - imageUrl
+      - icon
+      - display
+      - needConfirmationToRead
+      - needEnrollmentTutorialToRead
+      - forYou
+      - closeDuration
+      - displayOrder
+      - silence
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
     EmojiSimple:
       type: object
       properties:
@@ -3835,214 +4036,13 @@ components:
       - mutualLinkSectionLimit
       - mutualLinkLimit
       - chatAvailability
-    MetaDetailedOnly:
+    MetaDetailed:
       type: object
-      properties:
-        features:
-          type: object
-          properties:
-            registration:
-              type: boolean
-            emailRequiredForSignup:
-              type: boolean
-            localTimeline:
-              type: boolean
-            globalTimeline:
-              type: boolean
-            hCaptcha:
-              type: boolean
-            hcaptcha:
-              type: boolean
-              description: Alias of hCaptcha
-            mCaptcha:
-              type: boolean
-            mcaptcha:
-              type: boolean
-              description: Alias of mCaptcha
-            reCaptcha:
-              type: boolean
-            recaptcha:
-              type: boolean
-              description: Alias of reCaptcha
-            turnstile:
-              type: boolean
-            objectStorage:
-              type: boolean
-            serviceWorker:
-              type: boolean
-            miauth:
-              type: boolean
-              default: true
-          required:
-          - registration
-          - emailRequiredForSignup
-          - localTimeline
-          - globalTimeline
-          - hCaptcha
-          - hcaptcha
-          - mCaptcha
-          - mcaptcha
-          - reCaptcha
-          - recaptcha
-          - turnstile
-          - objectStorage
-          - serviceWorker
-        proxyAccountName:
-          type:
-          - string
-          - 'null'
-        requireSetup:
-          type: boolean
-          example: false
-        cacheRemoteFiles:
-          type: boolean
-        cacheRemoteSensitiveFiles:
-          type: boolean
-      required:
-      - proxyAccountName
-      - requireSetup
-      - cacheRemoteFiles
-      - cacheRemoteSensitiveFiles
-    UserLite:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        name:
-          type:
-          - string
-          - 'null'
-          example: 藍
-        username:
-          type: string
-          example: ai
-        host:
-          type:
-          - string
-          - 'null'
-          example: misskey.example.com
-          description: The local host is represented with `null`.
-        avatarUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        avatarBlurhash:
-          type:
-          - string
-          - 'null'
-        avatarDecorations:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                format: id
-              angle:
-                type: number
-              flipH:
-                type: boolean
-              url:
-                type: string
-                format: url
-              offsetX:
-                type: number
-              offsetY:
-                type: number
-            required:
-            - id
-            - url
-        isBot:
-          type: boolean
-        isCat:
-          type: boolean
-        requireSigninToViewContents:
-          type: boolean
-        makeNotesFollowersOnlyBefore:
-          type:
-          - number
-          - 'null'
-        makeNotesHiddenBefore:
-          type:
-          - number
-          - 'null'
-        instance:
-          type: object
-          properties:
-            name:
-              type:
-              - string
-              - 'null'
-            softwareName:
-              type:
-              - string
-              - 'null'
-            softwareVersion:
-              type:
-              - string
-              - 'null'
-            iconUrl:
-              type:
-              - string
-              - 'null'
-            faviconUrl:
-              type:
-              - string
-              - 'null'
-            themeColor:
-              type:
-              - string
-              - 'null'
-          required:
-          - name
-          - softwareName
-          - softwareVersion
-          - iconUrl
-          - faviconUrl
-          - themeColor
-        emojis:
-          type: object
-          additionalProperties:
-            type: string
-        onlineStatus:
-          type: string
-          enum:
-          - unknown
-          - online
-          - active
-          - offline
-        badgeRoles:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              iconUrl:
-                type:
-                - string
-                - 'null'
-              displayOrder:
-                type: number
-              behavior:
-                type: string
-            required:
-            - name
-            - iconUrl
-            - displayOrder
-      required:
-      - id
-      - name
-      - username
-      - host
-      - avatarUrl
-      - avatarBlurhash
-      - avatarDecorations
-      - emojis
-      - onlineStatus
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/MetaLite'
+      - type: object
+        $ref: '#/components/schemas/MetaDetailedOnly'
   securitySchemes:
     bearerAuth:
       type: http
