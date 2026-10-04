@@ -4980,156 +4980,6 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    DriveFolder:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-        parentId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        foldersCount:
-          type: number
-        filesCount:
-          type: number
-        parent:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - parentId
-    Clip:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        lastClippedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        name:
-          type: string
-        description:
-          type:
-          - string
-          - 'null'
-        isPublic:
-          type: boolean
-        favoritedCount:
-          type: number
-        isFavorited:
-          type: boolean
-        notesCount:
-          type: integer
-      required:
-      - id
-      - createdAt
-      - lastClippedAt
-      - userId
-      - user
-      - name
-      - description
-      - isPublic
-      - favoritedCount
-    App:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        callbackUrl:
-          type:
-          - string
-          - 'null'
-        permission:
-          type: array
-          items:
-            type: string
-        secret:
-          type: string
-        isAuthorized:
-          type: boolean
-      required:
-      - id
-      - name
-      - callbackUrl
-      - permission
-    Flash:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        title:
-          type: string
-        summary:
-          type: string
-        script:
-          type: string
-        visibility:
-          type: string
-          enum:
-          - private
-          - public
-        likedCount:
-          type:
-          - number
-          - 'null'
-        isLiked:
-          type: boolean
-      required:
-      - id
-      - createdAt
-      - updatedAt
-      - userId
-      - user
-      - title
-      - summary
-      - script
-      - visibility
-      - likedCount
     Announcement:
       type: object
       properties:
@@ -5195,336 +5045,89 @@ components:
       - closeDuration
       - displayOrder
       - silence
-    ChatRoom:
+    Role:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/RoleLite'
+      - type: object
+        properties:
+          createdAt:
+            type: string
+            format: date-time
+          updatedAt:
+            type: string
+            format: date-time
+          target:
+            type: string
+            enum:
+            - manual
+            - conditional
+          condFormula:
+            type: object
+            $ref: '#/components/schemas/RoleCondFormulaValue'
+          isPublic:
+            type: boolean
+            example: false
+          isExplorable:
+            type: boolean
+            example: false
+          asBadge:
+            type: boolean
+            example: false
+          preserveAssignmentOnMoveAccount:
+            type: boolean
+            example: false
+          badgeBehavior:
+            type:
+            - string
+            - 'null'
+          canEditMembersByModerator:
+            type: boolean
+            example: false
+          policies:
+            type: object
+            additionalProperties:
+              anyOf:
+              - type: object
+                properties:
+                  value:
+                    oneOf:
+                    - type: integer
+                    - type: boolean
+                  priority:
+                    type: integer
+                  useDefault:
+                    type: boolean
+          usersCount:
+            type: integer
+        required:
+        - createdAt
+        - updatedAt
+        - target
+        - condFormula
+        - isPublic
+        - isExplorable
+        - asBadge
+        - preserveAssignmentOnMoveAccount
+        - badgeBehavior
+        - canEditMembersByModerator
+        - policies
+        - usersCount
+    Muting:
       type: object
       properties:
         id:
           type: string
+          format: id
+          example: xxxxxxxxxx
         createdAt:
           type: string
           format: date-time
-        ownerId:
-          type: string
-        owner:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        name:
-          type: string
-        description:
-          type: string
-        isMuted:
-          type: boolean
-      required:
-      - id
-      - createdAt
-      - ownerId
-      - owner
-      - name
-      - description
-    PageBlock:
-      type: object
-      oneOf:
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-            enum:
-            - text
-          text:
-            type: string
-        required:
-        - id
-        - type
-        - text
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-            enum:
-            - section
-          title:
-            type: string
-          children:
-            type: array
-            items:
-              type: object
-        required:
-        - id
-        - type
-        - title
-        - children
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-            enum:
-            - image
-          fileId:
-            type:
-            - string
-            - 'null'
-        required:
-        - id
-        - type
-        - fileId
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-            enum:
-            - note
-          detailed:
-            type: boolean
-          note:
-            type:
-            - string
-            - 'null'
-        required:
-        - id
-        - type
-        - detailed
-        - note
-    RolePolicies:
-      type: object
-      properties:
-        gtlAvailable:
-          type: boolean
-        ltlAvailable:
-          type: boolean
-        canPublicNote:
-          type: boolean
-        canScheduleNote:
-          type: boolean
-        scheduleNoteLimit:
-          type: integer
-        scheduleNoteMaxDays:
-          type: integer
-        canInitiateConversation:
-          type: boolean
-        canCreateContent:
-          type: boolean
-        canUpdateContent:
-          type: boolean
-        canDeleteContent:
-          type: boolean
-        canPurgeAccount:
-          type: boolean
-        canUpdateAvatar:
-          type: boolean
-        canUpdateBanner:
-          type: boolean
-        mentionLimit:
-          type: integer
-        canInvite:
-          type: boolean
-        inviteLimit:
-          type: integer
-        inviteLimitCycle:
-          type: integer
-        inviteExpirationTime:
-          type: integer
-        canManageCustomEmojis:
-          type: boolean
-        canManageAvatarDecorations:
-          type: boolean
-        canSearchNotes:
-          type: boolean
-        canUseTranslator:
-          type: boolean
-        canUseDriveFileInSoundSettings:
-          type: boolean
-        canUseReaction:
-          type: boolean
-        canHideAds:
-          type: boolean
-        driveCapacityMb:
-          type: integer
-        maxFileSizeMb:
-          type: integer
-        alwaysMarkNsfw:
-          type: boolean
-        skipNsfwDetection:
-          type: boolean
-        canUpdateBioMedia:
-          type: boolean
-        pinLimit:
-          type: integer
-        antennaLimit:
-          type: integer
-        antennaNotesLimit:
-          type: integer
-        wordMuteLimit:
-          type: integer
-        webhookLimit:
-          type: integer
-        clipLimit:
-          type: integer
-        noteEachClipsLimit:
-          type: integer
-        userListLimit:
-          type: integer
-        userEachUserListsLimit:
-          type: integer
-        rateLimitFactor:
-          type: integer
-        avatarDecorationLimit:
-          type: integer
-        canImportAntennas:
-          type: boolean
-        canImportBlocking:
-          type: boolean
-        canImportFollowing:
-          type: boolean
-        canImportMuting:
-          type: boolean
-        canImportUserLists:
-          type: boolean
-        mutualLinkSectionLimit:
-          type: integer
-        mutualLinkLimit:
-          type: integer
-        chatAvailability:
-          type: string
-          enum:
-          - available
-          - readonly
-          - unavailable
-      required:
-      - gtlAvailable
-      - ltlAvailable
-      - canPublicNote
-      - canScheduleNote
-      - scheduleNoteLimit
-      - scheduleNoteMaxDays
-      - canInitiateConversation
-      - canCreateContent
-      - canUpdateContent
-      - canDeleteContent
-      - canPurgeAccount
-      - canUpdateAvatar
-      - canUpdateBanner
-      - mentionLimit
-      - canInvite
-      - inviteLimit
-      - inviteLimitCycle
-      - inviteExpirationTime
-      - canManageCustomEmojis
-      - canManageAvatarDecorations
-      - canSearchNotes
-      - canUseTranslator
-      - canUseDriveFileInSoundSettings
-      - canUseReaction
-      - canHideAds
-      - driveCapacityMb
-      - maxFileSizeMb
-      - alwaysMarkNsfw
-      - skipNsfwDetection
-      - canUpdateBioMedia
-      - pinLimit
-      - antennaLimit
-      - antennaNotesLimit
-      - wordMuteLimit
-      - webhookLimit
-      - clipLimit
-      - noteEachClipsLimit
-      - userListLimit
-      - userEachUserListsLimit
-      - rateLimitFactor
-      - avatarDecorationLimit
-      - canImportAntennas
-      - canImportBlocking
-      - canImportFollowing
-      - canImportMuting
-      - canImportUserLists
-      - mutualLinkSectionLimit
-      - mutualLinkLimit
-      - chatAvailability
-    RoleLite:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        name:
-          type: string
-          example: New Role
-        color:
+        expiresAt:
           type:
           - string
           - 'null'
-          example: '#000000'
-        iconUrl:
-          type:
-          - string
-          - 'null'
-        description:
-          type: string
-        isModerator:
-          type: boolean
-          example: false
-        isAdministrator:
-          type: boolean
-          example: false
-        displayOrder:
-          type: integer
-          example: 0
-      required:
-      - id
-      - name
-      - color
-      - iconUrl
-      - description
-      - isModerator
-      - isAdministrator
-      - displayOrder
-    RoleCondFormulaValue:
-      type: object
-      oneOf:
-      - $ref: '#/components/schemas/RoleCondFormulaLogics'
-      - $ref: '#/components/schemas/RoleCondFormulaValueNot'
-      - $ref: '#/components/schemas/RoleCondFormulaValueIsLocalOrRemote'
-      - $ref: '#/components/schemas/RoleCondFormulaValueUserSettingBooleanSchema'
-      - $ref: '#/components/schemas/RoleCondFormulaValueAssignedRole'
-      - $ref: '#/components/schemas/RoleCondFormulaValueCreated'
-      - $ref: '#/components/schemas/RoleCondFormulaFollowersOrFollowingOrNotes'
-    RoleCondFormulaFollowersOrFollowingOrNotes:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - followersLessThanOrEq
-          - followersMoreThanOrEq
-          - followingLessThanOrEq
-          - followingMoreThanOrEq
-          - notesLessThanOrEq
-          - notesMoreThanOrEq
-        value:
-          type: number
-      required:
-      - id
-      - type
-      - value
-    RenoteMuting:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
           format: date-time
         muteeId:
           type: string
@@ -5535,517 +5138,43 @@ components:
       required:
       - id
       - createdAt
+      - expiresAt
       - muteeId
       - mutee
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
-    RoleCondFormulaValueIsLocalOrRemote:
+    DriveFolder:
       type: object
       properties:
         id:
           type: string
-        type:
-          type: string
-          enum:
-          - isLocal
-          - isRemote
-      required:
-      - id
-      - type
-    UserDetailedNotMeOnly:
-      type: object
-      properties:
-        url:
-          type:
-          - string
-          - 'null'
-          format: url
-        uri:
-          type:
-          - string
-          - 'null'
-          format: uri
-        movedTo:
-          type:
-          - string
-          - 'null'
-          format: uri
-        alsoKnownAs:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: id
+          format: id
+          example: xxxxxxxxxx
         createdAt:
           type: string
           format: date-time
-        updatedAt:
+        name:
+          type: string
+        parentId:
           type:
           - string
           - 'null'
-          format: date-time
-        lastFetchedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        bannerUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        bannerBlurhash:
-          type:
-          - string
-          - 'null'
-        isLocked:
-          type: boolean
-        isSilenced:
-          type: boolean
-        isLimited:
-          type: boolean
-        isSuspended:
-          type: boolean
-          example: false
-        description:
-          type:
-          - string
-          - 'null'
-          example: Hi masters, I am Ai!
-        location:
-          type:
-          - string
-          - 'null'
-        birthday:
-          type:
-          - string
-          - 'null'
-          example: '2018-03-12'
-        lang:
-          type:
-          - string
-          - 'null'
-          example: ja-JP
-        fields:
-          type: array
-          maxItems: 16
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              value:
-                type: string
-            required:
-            - name
-            - value
-        verifiedLinks:
-          type: array
-          items:
-            type: string
-            format: url
-        followersCount:
+          format: id
+          example: xxxxxxxxxx
+        foldersCount:
           type: number
-        followingCount:
+        filesCount:
           type: number
-        notesCount:
-          type: number
-        pinnedNoteIds:
-          type: array
-          items:
-            type: string
-            format: id
-        pinnedNotes:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/Note'
-        pinnedPageId:
-          type:
-          - string
-          - 'null'
-        pinnedPage:
+        parent:
           type:
           - object
           - 'null'
           anyOf:
-          - $ref: '#/components/schemas/Page'
+          - $ref: '#/components/schemas/DriveFolder'
           - type: 'null'
-        publicReactions:
-          type: boolean
-        followingVisibility:
-          type: string
-          enum:
-          - public
-          - followers
-          - private
-        followersVisibility:
-          type: string
-          enum:
-          - public
-          - followers
-          - private
-        chatScope:
-          type: string
-          enum:
-          - everyone
-          - following
-          - followers
-          - mutual
-          - none
-        canChat:
-          type: boolean
-        roles:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/RoleLite'
-        followedMessage:
-          type:
-          - string
-          - 'null'
-        memo:
-          type:
-          - string
-          - 'null'
-        moderationNote:
-          type: string
-        twoFactorEnabled:
-          type: boolean
-        usePasswordLessLogin:
-          type: boolean
-        securityKeys:
-          type: boolean
-        mutualLinkSections:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type:
-                - string
-                - 'null'
-              mutualLinks:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                      format: misskey:id
-                    url:
-                      type: string
-                      format: url
-                    fileId:
-                      type: string
-                      format: misskey:id
-                    description:
-                      type:
-                      - string
-                      - 'null'
-                    imgSrc:
-                      type: string
-                  required:
-                  - id
-                  - url
-                  - fileId
-                  - description
-                  - imgSrc
-            required:
-            - name
-            - mutualLinks
-        isFollowing:
-          type: boolean
-        isFollowed:
-          type: boolean
-        hasPendingFollowRequestFromYou:
-          type: boolean
-        hasPendingFollowRequestToYou:
-          type: boolean
-        isBlocking:
-          type: boolean
-        isBlocked:
-          type: boolean
-        isMuted:
-          type: boolean
-        isRenoteMuted:
-          type: boolean
-        notify:
-          type: string
-          enum:
-          - normal
-          - none
-        withReplies:
-          type: boolean
       required:
-      - url
-      - uri
-      - movedTo
-      - alsoKnownAs
+      - id
       - createdAt
-      - updatedAt
-      - lastFetchedAt
-      - bannerUrl
-      - bannerBlurhash
-      - isLocked
-      - isSilenced
-      - isLimited
-      - isSuspended
-      - description
-      - location
-      - birthday
-      - lang
-      - fields
-      - verifiedLinks
-      - followersCount
-      - followingCount
-      - notesCount
-      - pinnedNoteIds
-      - pinnedNotes
-      - pinnedPageId
-      - pinnedPage
-      - publicReactions
-      - followingVisibility
-      - followersVisibility
-      - chatScope
-      - canChat
-      - roles
-      - memo
-      - mutualLinkSections
-    UserDetailedNotMe:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-    RoleCondFormulaLogics:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - and
-          - or
-        values:
-          type: array
-          items:
-            $ref: '#/components/schemas/RoleCondFormulaValue'
-      required:
-      - id
-      - type
-      - values
-    RoleCondFormulaValueNot:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - not
-        value:
-          type: object
-          $ref: '#/components/schemas/RoleCondFormulaValue'
-      required:
-      - id
-      - type
-      - value
-    NoteDraft:
-      type: object
-      properties:
-        id:
-          type: string
-          format: misskey:id
-        updatedAt:
-          type: string
-          format: date-time
-        scheduledAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        reason:
-          type: string
-        channel:
-          type:
-          - object
-          - 'null'
-          properties:
-            id:
-              type: string
-              format: misskey:id
-            name:
-              type: string
-          required:
-          - id
-          - name
-        renote:
-          type:
-          - object
-          - 'null'
-          properties:
-            id:
-              type: string
-              format: misskey:id
-            text:
-              type:
-              - string
-              - 'null'
-            user:
-              type: object
-              properties:
-                id:
-                  type: string
-                  format: misskey:id
-                username:
-                  type: string
-                host:
-                  type:
-                  - string
-                  - 'null'
-              required:
-              - id
-              - username
-              - host
-          required:
-          - id
-          - text
-          - user
-        reply:
-          type:
-          - object
-          - 'null'
-          properties:
-            id:
-              type: string
-              format: misskey:id
-            text:
-              type:
-              - string
-              - 'null'
-            user:
-              type: object
-              properties:
-                id:
-                  type: string
-                  format: misskey:id
-                username:
-                  type: string
-                host:
-                  type:
-                  - string
-                  - 'null'
-              required:
-              - id
-              - username
-              - host
-          required:
-          - id
-          - text
-          - user
-        data:
-          type: object
-          properties:
-            text:
-              type:
-              - string
-              - 'null'
-            useCw:
-              type: boolean
-            cw:
-              type:
-              - string
-              - 'null'
-            visibility:
-              type: string
-              enum:
-              - public
-              - home
-              - followers
-              - specified
-            localOnly:
-              type: boolean
-            lang:
-              type:
-              - string
-              - 'null'
-            dimension:
-              type:
-              - integer
-              - 'null'
-            files:
-              type: array
-              items:
-                type: object
-                $ref: '#/components/schemas/DriveFile'
-            poll:
-              type:
-              - object
-              - 'null'
-              properties:
-                choices:
-                  type: array
-                  items:
-                    type: string
-                multiple:
-                  type: boolean
-                expiresAt:
-                  type:
-                  - integer
-                  - 'null'
-                expiredAfter:
-                  type:
-                  - integer
-                  - 'null'
-                  minimum: 1
-              required:
-              - choices
-              - multiple
-              - expiresAt
-              - expiredAfter
-            visibleUserIds:
-              type: array
-              items:
-                type: string
-                format: misskey:id
-          required:
-          - text
-          - useCw
-          - cw
-          - visibility
-          - localOnly
-          - files
-          - poll
-      required:
-      - id
-      - updatedAt
-      - scheduledAt
-      - data
+      - name
+      - parentId
     Notification:
       type: object
       oneOf:
@@ -6715,354 +5844,509 @@ components:
         - id
         - createdAt
         - type
-    RoleCondFormulaValueAssignedRole:
+    PageBlock:
+      type: object
+      oneOf:
+      - type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+            enum:
+            - text
+          text:
+            type: string
+        required:
+        - id
+        - type
+        - text
+      - type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+            enum:
+            - section
+          title:
+            type: string
+          children:
+            type: array
+            items:
+              type: object
+        required:
+        - id
+        - type
+        - title
+        - children
+      - type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+            enum:
+            - image
+          fileId:
+            type:
+            - string
+            - 'null'
+        required:
+        - id
+        - type
+        - fileId
+      - type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+            enum:
+            - note
+          detailed:
+            type: boolean
+          note:
+            type:
+            - string
+            - 'null'
+        required:
+        - id
+        - type
+        - detailed
+        - note
+    RolePolicies:
       type: object
       properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - roleAssignedTo
-        roleId:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-      required:
-      - id
-      - type
-      - roleId
-    Blocking:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        blockeeId:
-          type: string
-          format: id
-        blockee:
-          type: object
-          $ref: '#/components/schemas/UserDetailedNotMe'
-      required:
-      - id
-      - createdAt
-      - blockeeId
-      - blockee
-    RoleCondFormulaValueCreated:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - createdLessThan
-          - createdMoreThan
-        sec:
-          type: number
-      required:
-      - id
-      - type
-      - sec
-    ChatRoomInvitation:
-      type: object
-      properties:
-        id:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        userId:
-          type: string
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        roomId:
-          type: string
-        room:
-          type: object
-          $ref: '#/components/schemas/ChatRoom'
-      required:
-      - id
-      - createdAt
-      - userId
-      - user
-      - roomId
-      - room
-    Note:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        deletedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        text:
-          type:
-          - string
-          - 'null'
-        cw:
-          type:
-          - string
-          - 'null'
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        replyId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        renoteId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        reply:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/Note'
-          - type: 'null'
-        renote:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/Note'
-          - type: 'null'
-        isHidden:
+        gtlAvailable:
           type: boolean
-        visibility:
-          type: string
-          enum:
-          - public
-          - home
-          - followers
-          - specified
-        mentions:
-          type: array
-          items:
-            type: string
-            format: id
-        visibleUserIds:
-          type: array
-          items:
-            type: string
-            format: id
-        fileIds:
-          type: array
-          items:
-            type: string
-            format: id
-        files:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/DriveFile'
-        tags:
-          type: array
-          items:
-            type: string
-        poll:
-          type:
-          - object
-          - 'null'
-          properties:
-            expiresAt:
-              type:
-              - string
-              - 'null'
-              format: date-time
-            multiple:
-              type: boolean
-            choices:
-              type: array
-              items:
-                type: object
-                properties:
-                  isVoted:
-                    type: boolean
-                  text:
-                    type: string
-                  votes:
-                    type: number
-                required:
-                - isVoted
-                - text
-                - votes
-          required:
-          - multiple
-          - choices
-        emojis:
-          type: object
-          additionalProperties:
-            anyOf:
-            - type: string
-        channelId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        channel:
-          type:
-          - object
-          - 'null'
-          properties:
-            id:
-              type: string
-            name:
-              type: string
-            color:
-              type: string
-            isSensitive:
-              type: boolean
-            allowRenoteToExternal:
-              type: boolean
-            userId:
-              type:
-              - string
-              - 'null'
-          required:
-          - id
-          - name
-          - color
-          - isSensitive
-          - allowRenoteToExternal
-          - userId
-        localOnly:
+        ltlAvailable:
           type: boolean
-        dimension:
-          type:
-          - integer
-          - 'null'
-        reactionAcceptance:
-          type:
-          - string
-          - 'null'
-          enum:
-          - likeOnly
-          - likeOnlyForRemote
-          - nonSensitiveOnly
-          - nonSensitiveOnlyForLocalLikeOnlyForRemote
-          - null
-        reactionEmojis:
-          type: object
-          additionalProperties:
-            anyOf:
-            - type: string
-        reactions:
-          type: object
-          additionalProperties:
-            anyOf:
-            - type: number
-        reactionCount:
-          type: number
-        renoteCount:
-          type: number
-        repliesCount:
-          type: number
-        uri:
+        canPublicNote:
+          type: boolean
+        canScheduleNote:
+          type: boolean
+        scheduleNoteLimit:
+          type: integer
+        scheduleNoteMaxDays:
+          type: integer
+        canInitiateConversation:
+          type: boolean
+        canCreateContent:
+          type: boolean
+        canUpdateContent:
+          type: boolean
+        canDeleteContent:
+          type: boolean
+        canPurgeAccount:
+          type: boolean
+        canUpdateAvatar:
+          type: boolean
+        canUpdateBanner:
+          type: boolean
+        mentionLimit:
+          type: integer
+        canInvite:
+          type: boolean
+        inviteLimit:
+          type: integer
+        inviteLimitCycle:
+          type: integer
+        inviteExpirationTime:
+          type: integer
+        canManageCustomEmojis:
+          type: boolean
+        canManageAvatarDecorations:
+          type: boolean
+        canSearchNotes:
+          type: boolean
+        canUseTranslator:
+          type: boolean
+        canUseDriveFileInSoundSettings:
+          type: boolean
+        canUseReaction:
+          type: boolean
+        canHideAds:
+          type: boolean
+        driveCapacityMb:
+          type: integer
+        maxFileSizeMb:
+          type: integer
+        alwaysMarkNsfw:
+          type: boolean
+        skipNsfwDetection:
+          type: boolean
+        canUpdateBioMedia:
+          type: boolean
+        pinLimit:
+          type: integer
+        antennaLimit:
+          type: integer
+        antennaNotesLimit:
+          type: integer
+        wordMuteLimit:
+          type: integer
+        webhookLimit:
+          type: integer
+        clipLimit:
+          type: integer
+        noteEachClipsLimit:
+          type: integer
+        userListLimit:
+          type: integer
+        userEachUserListsLimit:
+          type: integer
+        rateLimitFactor:
+          type: integer
+        avatarDecorationLimit:
+          type: integer
+        canImportAntennas:
+          type: boolean
+        canImportBlocking:
+          type: boolean
+        canImportFollowing:
+          type: boolean
+        canImportMuting:
+          type: boolean
+        canImportUserLists:
+          type: boolean
+        mutualLinkSectionLimit:
+          type: integer
+        mutualLinkLimit:
+          type: integer
+        chatAvailability:
           type: string
+          enum:
+          - available
+          - readonly
+          - unavailable
+      required:
+      - gtlAvailable
+      - ltlAvailable
+      - canPublicNote
+      - canScheduleNote
+      - scheduleNoteLimit
+      - scheduleNoteMaxDays
+      - canInitiateConversation
+      - canCreateContent
+      - canUpdateContent
+      - canDeleteContent
+      - canPurgeAccount
+      - canUpdateAvatar
+      - canUpdateBanner
+      - mentionLimit
+      - canInvite
+      - inviteLimit
+      - inviteLimitCycle
+      - inviteExpirationTime
+      - canManageCustomEmojis
+      - canManageAvatarDecorations
+      - canSearchNotes
+      - canUseTranslator
+      - canUseDriveFileInSoundSettings
+      - canUseReaction
+      - canHideAds
+      - driveCapacityMb
+      - maxFileSizeMb
+      - alwaysMarkNsfw
+      - skipNsfwDetection
+      - canUpdateBioMedia
+      - pinLimit
+      - antennaLimit
+      - antennaNotesLimit
+      - wordMuteLimit
+      - webhookLimit
+      - clipLimit
+      - noteEachClipsLimit
+      - userListLimit
+      - userEachUserListsLimit
+      - rateLimitFactor
+      - avatarDecorationLimit
+      - canImportAntennas
+      - canImportBlocking
+      - canImportFollowing
+      - canImportMuting
+      - canImportUserLists
+      - mutualLinkSectionLimit
+      - mutualLinkLimit
+      - chatAvailability
+    UserDetailedNotMeOnly:
+      type: object
+      properties:
         url:
-          type: string
-        reactionAndUserPairCache:
-          type: array
-          items:
-            type: string
-        clippedCount:
-          type: number
-        myReaction:
           type:
           - string
           - 'null'
-      required:
-      - id
-      - createdAt
-      - text
-      - userId
-      - user
-      - visibility
-      - reactionAcceptance
-      - reactionEmojis
-      - reactions
-      - reactionCount
-      - renoteCount
-      - repliesCount
-    GalleryPost:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
+          format: url
+        uri:
+          type:
+          - string
+          - 'null'
+          format: uri
+        movedTo:
+          type:
+          - string
+          - 'null'
+          format: uri
+        alsoKnownAs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: id
         createdAt:
           type: string
           format: date-time
         updatedAt:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        title:
-          type: string
+        lastFetchedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        bannerUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        bannerBlurhash:
+          type:
+          - string
+          - 'null'
+        isLocked:
+          type: boolean
+        isSilenced:
+          type: boolean
+        isLimited:
+          type: boolean
+        isSuspended:
+          type: boolean
+          example: false
         description:
           type:
           - string
           - 'null'
-        fileIds:
+          example: Hi masters, I am Ai!
+        location:
+          type:
+          - string
+          - 'null'
+        birthday:
+          type:
+          - string
+          - 'null'
+          example: '2018-03-12'
+        lang:
+          type:
+          - string
+          - 'null'
+          example: ja-JP
+        fields:
+          type: array
+          maxItems: 16
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+            required:
+            - name
+            - value
+        verifiedLinks:
+          type: array
+          items:
+            type: string
+            format: url
+        followersCount:
+          type: number
+        followingCount:
+          type: number
+        notesCount:
+          type: number
+        pinnedNoteIds:
           type: array
           items:
             type: string
             format: id
-        files:
+        pinnedNotes:
           type: array
           items:
             type: object
-            $ref: '#/components/schemas/DriveFile'
-        tags:
+            $ref: '#/components/schemas/Note'
+        pinnedPageId:
+          type:
+          - string
+          - 'null'
+        pinnedPage:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Page'
+          - type: 'null'
+        publicReactions:
+          type: boolean
+        followingVisibility:
+          type: string
+          enum:
+          - public
+          - followers
+          - private
+        followersVisibility:
+          type: string
+          enum:
+          - public
+          - followers
+          - private
+        chatScope:
+          type: string
+          enum:
+          - everyone
+          - following
+          - followers
+          - mutual
+          - none
+        canChat:
+          type: boolean
+        roles:
           type: array
           items:
-            type: string
-        isSensitive:
+            type: object
+            $ref: '#/components/schemas/RoleLite'
+        followedMessage:
+          type:
+          - string
+          - 'null'
+        memo:
+          type:
+          - string
+          - 'null'
+        moderationNote:
+          type: string
+        twoFactorEnabled:
           type: boolean
-        likedCount:
-          type: number
-        isLiked:
+        usePasswordLessLogin:
+          type: boolean
+        securityKeys:
+          type: boolean
+        mutualLinkSections:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type:
+                - string
+                - 'null'
+              mutualLinks:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      format: misskey:id
+                    url:
+                      type: string
+                      format: url
+                    fileId:
+                      type: string
+                      format: misskey:id
+                    description:
+                      type:
+                      - string
+                      - 'null'
+                    imgSrc:
+                      type: string
+                  required:
+                  - id
+                  - url
+                  - fileId
+                  - description
+                  - imgSrc
+            required:
+            - name
+            - mutualLinks
+        isFollowing:
+          type: boolean
+        isFollowed:
+          type: boolean
+        hasPendingFollowRequestFromYou:
+          type: boolean
+        hasPendingFollowRequestToYou:
+          type: boolean
+        isBlocking:
+          type: boolean
+        isBlocked:
+          type: boolean
+        isMuted:
+          type: boolean
+        isRenoteMuted:
+          type: boolean
+        notify:
+          type: string
+          enum:
+          - normal
+          - none
+        withReplies:
           type: boolean
       required:
-      - id
+      - url
+      - uri
+      - movedTo
+      - alsoKnownAs
       - createdAt
       - updatedAt
-      - userId
-      - user
-      - title
+      - lastFetchedAt
+      - bannerUrl
+      - bannerBlurhash
+      - isLocked
+      - isSilenced
+      - isLimited
+      - isSuspended
       - description
-      - isSensitive
-      - likedCount
+      - location
+      - birthday
+      - lang
+      - fields
+      - verifiedLinks
+      - followersCount
+      - followingCount
+      - notesCount
+      - pinnedNoteIds
+      - pinnedNotes
+      - pinnedPageId
+      - pinnedPage
+      - publicReactions
+      - followingVisibility
+      - followersVisibility
+      - chatScope
+      - canChat
+      - roles
+      - memo
+      - mutualLinkSections
+    RoleCondFormulaValueUserSettingBooleanSchema:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - isSuspended
+          - isLocked
+          - isBot
+          - isCat
+          - isExplorable
+      required:
+      - id
+      - type
     NoteFavorite:
       type: object
       properties:
@@ -7084,6 +6368,243 @@ components:
       - createdAt
       - note
       - noteId
+    RoleCondFormulaLogics:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - and
+          - or
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleCondFormulaValue'
+      required:
+      - id
+      - type
+      - values
+    MeDetailed:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+      - type: object
+        $ref: '#/components/schemas/MeDetailedOnly'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
+    NoteDraft:
+      type: object
+      properties:
+        id:
+          type: string
+          format: misskey:id
+        updatedAt:
+          type: string
+          format: date-time
+        scheduledAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        reason:
+          type: string
+        channel:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: string
+              format: misskey:id
+            name:
+              type: string
+          required:
+          - id
+          - name
+        renote:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: string
+              format: misskey:id
+            text:
+              type:
+              - string
+              - 'null'
+            user:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: misskey:id
+                username:
+                  type: string
+                host:
+                  type:
+                  - string
+                  - 'null'
+              required:
+              - id
+              - username
+              - host
+          required:
+          - id
+          - text
+          - user
+        reply:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: string
+              format: misskey:id
+            text:
+              type:
+              - string
+              - 'null'
+            user:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: misskey:id
+                username:
+                  type: string
+                host:
+                  type:
+                  - string
+                  - 'null'
+              required:
+              - id
+              - username
+              - host
+          required:
+          - id
+          - text
+          - user
+        data:
+          type: object
+          properties:
+            text:
+              type:
+              - string
+              - 'null'
+            useCw:
+              type: boolean
+            cw:
+              type:
+              - string
+              - 'null'
+            visibility:
+              type: string
+              enum:
+              - public
+              - home
+              - followers
+              - specified
+            localOnly:
+              type: boolean
+            lang:
+              type:
+              - string
+              - 'null'
+            dimension:
+              type:
+              - integer
+              - 'null'
+            files:
+              type: array
+              items:
+                type: object
+                $ref: '#/components/schemas/DriveFile'
+            poll:
+              type:
+              - object
+              - 'null'
+              properties:
+                choices:
+                  type: array
+                  items:
+                    type: string
+                multiple:
+                  type: boolean
+                expiresAt:
+                  type:
+                  - integer
+                  - 'null'
+                expiredAfter:
+                  type:
+                  - integer
+                  - 'null'
+                  minimum: 1
+              required:
+              - choices
+              - multiple
+              - expiresAt
+              - expiredAfter
+            visibleUserIds:
+              type: array
+              items:
+                type: string
+                format: misskey:id
+          required:
+          - text
+          - useCw
+          - cw
+          - visibility
+          - localOnly
+          - files
+          - poll
+      required:
+      - id
+      - updatedAt
+      - scheduledAt
+      - data
+    RoleCondFormulaValueCreated:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - createdLessThan
+          - createdMoreThan
+        sec:
+          type: number
+      required:
+      - id
+      - type
+      - sec
     MeDetailedOnly:
       type: object
       properties:
@@ -7706,6 +7227,291 @@ components:
       - twoFactorEnabled
       - usePasswordLessLogin
       - securityKeys
+    RoleCondFormulaValueAssignedRole:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - roleAssignedTo
+        roleId:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+      required:
+      - id
+      - type
+      - roleId
+    RenoteMuting:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        muteeId:
+          type: string
+          format: id
+        mutee:
+          type: object
+          $ref: '#/components/schemas/UserDetailedNotMe'
+      required:
+      - id
+      - createdAt
+      - muteeId
+      - mutee
+    RoleCondFormulaValue:
+      type: object
+      oneOf:
+      - $ref: '#/components/schemas/RoleCondFormulaLogics'
+      - $ref: '#/components/schemas/RoleCondFormulaValueNot'
+      - $ref: '#/components/schemas/RoleCondFormulaValueIsLocalOrRemote'
+      - $ref: '#/components/schemas/RoleCondFormulaValueUserSettingBooleanSchema'
+      - $ref: '#/components/schemas/RoleCondFormulaValueAssignedRole'
+      - $ref: '#/components/schemas/RoleCondFormulaValueCreated'
+      - $ref: '#/components/schemas/RoleCondFormulaFollowersOrFollowingOrNotes'
+    DriveFile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+          example: 192.jpg
+        type:
+          type: string
+          example: image/jpeg
+        md5:
+          type: string
+          format: md5
+          example: 15eca7fba0480996e2245f5185bf39f2
+        size:
+          type: number
+          example: 51469
+        isSensitive:
+          type: boolean
+        isSensitiveByModerator:
+          type:
+          - boolean
+          - 'null'
+        blurhash:
+          type:
+          - string
+          - 'null'
+        properties:
+          type: object
+          properties:
+            width:
+              type: number
+              example: 1280
+            height:
+              type: number
+              example: 720
+            orientation:
+              type: number
+              example: 8
+            avgColor:
+              type: string
+              example: rgb(40,65,87)
+        url:
+          type: string
+          format: url
+        thumbnailUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        comment:
+          type:
+          - string
+          - 'null'
+        folderId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        folder:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        user:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - type
+      - md5
+      - size
+      - isSensitive
+      - blurhash
+      - properties
+      - url
+      - thumbnailUrl
+      - comment
+      - folderId
+      - userId
+    Flash:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        title:
+          type: string
+        summary:
+          type: string
+        script:
+          type: string
+        visibility:
+          type: string
+          enum:
+          - private
+          - public
+        likedCount:
+          type:
+          - number
+          - 'null'
+        isLiked:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - updatedAt
+      - userId
+      - user
+      - title
+      - summary
+      - script
+      - visibility
+      - likedCount
+    Clip:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        lastClippedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        name:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        isPublic:
+          type: boolean
+        favoritedCount:
+          type: number
+        isFavorited:
+          type: boolean
+        notesCount:
+          type: integer
+      required:
+      - id
+      - createdAt
+      - lastClippedAt
+      - userId
+      - user
+      - name
+      - description
+      - isPublic
+      - favoritedCount
+    RoleCondFormulaValueNot:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - not
+        value:
+          type: object
+          $ref: '#/components/schemas/RoleCondFormulaValue'
+      required:
+      - id
+      - type
+      - value
+    UserDetailedNotMe:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+    Blocking:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        blockeeId:
+          type: string
+          format: id
+        blockee:
+          type: object
+          $ref: '#/components/schemas/UserDetailedNotMe'
+      required:
+      - id
+      - createdAt
+      - blockeeId
+      - blockee
     Page:
       type: object
       properties:
@@ -7795,7 +7601,7 @@ components:
       - attachedFiles
       - likedCount
       - visibility
-    Muting:
+    Note:
       type: object
       properties:
         id:
@@ -7805,23 +7611,269 @@ components:
         createdAt:
           type: string
           format: date-time
-        expiresAt:
+        deletedAt:
           type:
           - string
           - 'null'
           format: date-time
-        muteeId:
+        text:
+          type:
+          - string
+          - 'null'
+        cw:
+          type:
+          - string
+          - 'null'
+        userId:
           type: string
           format: id
-        mutee:
+        user:
           type: object
-          $ref: '#/components/schemas/UserDetailedNotMe'
+          $ref: '#/components/schemas/UserLite'
+        replyId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        renoteId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        reply:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Note'
+          - type: 'null'
+        renote:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Note'
+          - type: 'null'
+        isHidden:
+          type: boolean
+        visibility:
+          type: string
+          enum:
+          - public
+          - home
+          - followers
+          - specified
+        mentions:
+          type: array
+          items:
+            type: string
+            format: id
+        visibleUserIds:
+          type: array
+          items:
+            type: string
+            format: id
+        fileIds:
+          type: array
+          items:
+            type: string
+            format: id
+        files:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/DriveFile'
+        tags:
+          type: array
+          items:
+            type: string
+        poll:
+          type:
+          - object
+          - 'null'
+          properties:
+            expiresAt:
+              type:
+              - string
+              - 'null'
+              format: date-time
+            multiple:
+              type: boolean
+            choices:
+              type: array
+              items:
+                type: object
+                properties:
+                  isVoted:
+                    type: boolean
+                  text:
+                    type: string
+                  votes:
+                    type: number
+                required:
+                - isVoted
+                - text
+                - votes
+          required:
+          - multiple
+          - choices
+        emojis:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: string
+        channelId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        channel:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            color:
+              type: string
+            isSensitive:
+              type: boolean
+            allowRenoteToExternal:
+              type: boolean
+            userId:
+              type:
+              - string
+              - 'null'
+          required:
+          - id
+          - name
+          - color
+          - isSensitive
+          - allowRenoteToExternal
+          - userId
+        localOnly:
+          type: boolean
+        dimension:
+          type:
+          - integer
+          - 'null'
+        reactionAcceptance:
+          type:
+          - string
+          - 'null'
+          enum:
+          - likeOnly
+          - likeOnlyForRemote
+          - nonSensitiveOnly
+          - nonSensitiveOnlyForLocalLikeOnlyForRemote
+          - null
+        reactionEmojis:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: string
+        reactions:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: number
+        reactionCount:
+          type: number
+        renoteCount:
+          type: number
+        repliesCount:
+          type: number
+        uri:
+          type: string
+        url:
+          type: string
+        reactionAndUserPairCache:
+          type: array
+          items:
+            type: string
+        clippedCount:
+          type: number
+        myReaction:
+          type:
+          - string
+          - 'null'
       required:
       - id
       - createdAt
-      - expiresAt
-      - muteeId
-      - mutee
+      - text
+      - userId
+      - user
+      - visibility
+      - reactionAcceptance
+      - reactionEmojis
+      - reactions
+      - reactionCount
+      - renoteCount
+      - repliesCount
+    ChatRoom:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        ownerId:
+          type: string
+        owner:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        name:
+          type: string
+        description:
+          type: string
+        isMuted:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - ownerId
+      - owner
+      - name
+      - description
+    RoleCondFormulaFollowersOrFollowingOrNotes:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - followersLessThanOrEq
+          - followersMoreThanOrEq
+          - followingLessThanOrEq
+          - followingMoreThanOrEq
+          - notesLessThanOrEq
+          - notesMoreThanOrEq
+        value:
+          type: number
+      required:
+      - id
+      - type
+      - value
+    RoleCondFormulaValueIsLocalOrRemote:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - isLocal
+          - isRemote
+      required:
+      - id
+      - type
     UserLite:
       type: object
       properties:
@@ -7962,101 +8014,95 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
-    MeDetailed:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-      - type: object
-        $ref: '#/components/schemas/MeDetailedOnly'
-    RoleCondFormulaValueUserSettingBooleanSchema:
+    App:
       type: object
       properties:
         id:
           type: string
-        type:
+        name:
           type: string
-          enum:
-          - isSuspended
-          - isLocked
-          - isBot
-          - isCat
-          - isExplorable
+        callbackUrl:
+          type:
+          - string
+          - 'null'
+        permission:
+          type: array
+          items:
+            type: string
+        secret:
+          type: string
+        isAuthorized:
+          type: boolean
       required:
       - id
-      - type
-    Role:
+      - name
+      - callbackUrl
+      - permission
+    ChatRoomInvitation:
       type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/RoleLite'
-      - type: object
-        properties:
-          createdAt:
-            type: string
-            format: date-time
-          updatedAt:
-            type: string
-            format: date-time
-          target:
-            type: string
-            enum:
-            - manual
-            - conditional
-          condFormula:
-            type: object
-            $ref: '#/components/schemas/RoleCondFormulaValue'
-          isPublic:
-            type: boolean
-            example: false
-          isExplorable:
-            type: boolean
-            example: false
-          asBadge:
-            type: boolean
-            example: false
-          preserveAssignmentOnMoveAccount:
-            type: boolean
-            example: false
-          badgeBehavior:
-            type:
-            - string
-            - 'null'
-          canEditMembersByModerator:
-            type: boolean
-            example: false
-          policies:
-            type: object
-            additionalProperties:
-              anyOf:
-              - type: object
-                properties:
-                  value:
-                    oneOf:
-                    - type: integer
-                    - type: boolean
-                  priority:
-                    type: integer
-                  useDefault:
-                    type: boolean
-          usersCount:
-            type: integer
-        required:
-        - createdAt
-        - updatedAt
-        - target
-        - condFormula
-        - isPublic
-        - isExplorable
-        - asBadge
-        - preserveAssignmentOnMoveAccount
-        - badgeBehavior
-        - canEditMembersByModerator
-        - policies
-        - usersCount
-    DriveFile:
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        userId:
+          type: string
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        roomId:
+          type: string
+        room:
+          type: object
+          $ref: '#/components/schemas/ChatRoom'
+      required:
+      - id
+      - createdAt
+      - userId
+      - user
+      - roomId
+      - room
+    RoleLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type: string
+          example: New Role
+        color:
+          type:
+          - string
+          - 'null'
+          example: '#000000'
+        iconUrl:
+          type:
+          - string
+          - 'null'
+        description:
+          type: string
+        isModerator:
+          type: boolean
+          example: false
+        isAdministrator:
+          type: boolean
+          example: false
+        displayOrder:
+          type: integer
+          example: 0
+      required:
+      - id
+      - name
+      - color
+      - iconUrl
+      - description
+      - isModerator
+      - isAdministrator
+      - displayOrder
+    GalleryPost:
       type: object
       properties:
         id:
@@ -8066,97 +8112,51 @@ components:
         createdAt:
           type: string
           format: date-time
-        name:
+        updatedAt:
           type: string
-          example: 192.jpg
-        type:
+          format: date-time
+        userId:
           type: string
-          example: image/jpeg
-        md5:
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        title:
           type: string
-          format: md5
-          example: 15eca7fba0480996e2245f5185bf39f2
-        size:
-          type: number
-          example: 51469
+        description:
+          type:
+          - string
+          - 'null'
+        fileIds:
+          type: array
+          items:
+            type: string
+            format: id
+        files:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/DriveFile'
+        tags:
+          type: array
+          items:
+            type: string
         isSensitive:
           type: boolean
-        isSensitiveByModerator:
-          type:
-          - boolean
-          - 'null'
-        blurhash:
-          type:
-          - string
-          - 'null'
-        properties:
-          type: object
-          properties:
-            width:
-              type: number
-              example: 1280
-            height:
-              type: number
-              example: 720
-            orientation:
-              type: number
-              example: 8
-            avgColor:
-              type: string
-              example: rgb(40,65,87)
-        url:
-          type: string
-          format: url
-        thumbnailUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        comment:
-          type:
-          - string
-          - 'null'
-        folderId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        folder:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-        userId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        user:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
+        likedCount:
+          type: number
+        isLiked:
+          type: boolean
       required:
       - id
       - createdAt
-      - name
-      - type
-      - md5
-      - size
-      - isSensitive
-      - blurhash
-      - properties
-      - url
-      - thumbnailUrl
-      - comment
-      - folderId
+      - updatedAt
       - userId
+      - user
+      - title
+      - description
+      - isSensitive
+      - likedCount
   securitySchemes:
     bearerAuth:
       type: http

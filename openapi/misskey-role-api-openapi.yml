@@ -457,40 +457,6 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    DriveFolder:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-        parentId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        foldersCount:
-          type: number
-        filesCount:
-          type: number
-        parent:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - parentId
     Announcement:
       type: object
       properties:
@@ -556,6 +522,109 @@ components:
       - closeDuration
       - displayOrder
       - silence
+    Role:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/RoleLite'
+      - type: object
+        properties:
+          createdAt:
+            type: string
+            format: date-time
+          updatedAt:
+            type: string
+            format: date-time
+          target:
+            type: string
+            enum:
+            - manual
+            - conditional
+          condFormula:
+            type: object
+            $ref: '#/components/schemas/RoleCondFormulaValue'
+          isPublic:
+            type: boolean
+            example: false
+          isExplorable:
+            type: boolean
+            example: false
+          asBadge:
+            type: boolean
+            example: false
+          preserveAssignmentOnMoveAccount:
+            type: boolean
+            example: false
+          badgeBehavior:
+            type:
+            - string
+            - 'null'
+          canEditMembersByModerator:
+            type: boolean
+            example: false
+          policies:
+            type: object
+            additionalProperties:
+              anyOf:
+              - type: object
+                properties:
+                  value:
+                    oneOf:
+                    - type: integer
+                    - type: boolean
+                  priority:
+                    type: integer
+                  useDefault:
+                    type: boolean
+          usersCount:
+            type: integer
+        required:
+        - createdAt
+        - updatedAt
+        - target
+        - condFormula
+        - isPublic
+        - isExplorable
+        - asBadge
+        - preserveAssignmentOnMoveAccount
+        - badgeBehavior
+        - canEditMembersByModerator
+        - policies
+        - usersCount
+    DriveFolder:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        foldersCount:
+          type: number
+        filesCount:
+          type: number
+        parent:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - parentId
     PageBlock:
       type: object
       oneOf:
@@ -782,145 +851,6 @@ components:
       - mutualLinkSectionLimit
       - mutualLinkLimit
       - chatAvailability
-    RoleLite:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        name:
-          type: string
-          example: New Role
-        color:
-          type:
-          - string
-          - 'null'
-          example: '#000000'
-        iconUrl:
-          type:
-          - string
-          - 'null'
-        description:
-          type: string
-        isModerator:
-          type: boolean
-          example: false
-        isAdministrator:
-          type: boolean
-          example: false
-        displayOrder:
-          type: integer
-          example: 0
-      required:
-      - id
-      - name
-      - color
-      - iconUrl
-      - description
-      - isModerator
-      - isAdministrator
-      - displayOrder
-    RoleCondFormulaValue:
-      type: object
-      oneOf:
-      - $ref: '#/components/schemas/RoleCondFormulaLogics'
-      - $ref: '#/components/schemas/RoleCondFormulaValueNot'
-      - $ref: '#/components/schemas/RoleCondFormulaValueIsLocalOrRemote'
-      - $ref: '#/components/schemas/RoleCondFormulaValueUserSettingBooleanSchema'
-      - $ref: '#/components/schemas/RoleCondFormulaValueAssignedRole'
-      - $ref: '#/components/schemas/RoleCondFormulaValueCreated'
-      - $ref: '#/components/schemas/RoleCondFormulaFollowersOrFollowingOrNotes'
-    RoleCondFormulaFollowersOrFollowingOrNotes:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - followersLessThanOrEq
-          - followersMoreThanOrEq
-          - followingLessThanOrEq
-          - followingMoreThanOrEq
-          - notesLessThanOrEq
-          - notesMoreThanOrEq
-        value:
-          type: number
-      required:
-      - id
-      - type
-      - value
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
-    RoleCondFormulaValueIsLocalOrRemote:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - isLocal
-          - isRemote
-      required:
-      - id
-      - type
-    RoleCondFormulaValueNot:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - not
-        value:
-          type: object
-          $ref: '#/components/schemas/RoleCondFormulaValue'
-      required:
-      - id
-      - type
-      - value
-    RoleCondFormulaLogics:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - and
-          - or
-        values:
-          type: array
-          items:
-            $ref: '#/components/schemas/RoleCondFormulaValue'
-      required:
-      - id
-      - type
-      - values
     UserDetailedNotMeOnly:
       type: object
       properties:
@@ -1182,14 +1112,13 @@ components:
       - roles
       - memo
       - mutualLinkSections
-    UserDetailedNotMe:
-      type: object
-      allOf:
+    UserDetailed:
+      oneOf:
       - type: object
-        $ref: '#/components/schemas/UserLite'
+        $ref: '#/components/schemas/UserDetailedNotMe'
       - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-    RoleCondFormulaValueAssignedRole:
+        $ref: '#/components/schemas/MeDetailed'
+    RoleCondFormulaValueUserSettingBooleanSchema:
       type: object
       properties:
         id:
@@ -1197,15 +1126,64 @@ components:
         type:
           type: string
           enum:
-          - roleAssignedTo
-        roleId:
-          type: string
-          format: id
-          example: xxxxxxxxxx
+          - isSuspended
+          - isLocked
+          - isBot
+          - isCat
+          - isExplorable
       required:
       - id
       - type
-      - roleId
+    RoleCondFormulaLogics:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - and
+          - or
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleCondFormulaValue'
+      required:
+      - id
+      - type
+      - values
+    MeDetailed:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+      - type: object
+        $ref: '#/components/schemas/MeDetailedOnly'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
     RoleCondFormulaValueCreated:
       type: object
       properties:
@@ -1222,220 +1200,6 @@ components:
       - id
       - type
       - sec
-    Note:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        deletedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        text:
-          type:
-          - string
-          - 'null'
-        cw:
-          type:
-          - string
-          - 'null'
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        replyId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        renoteId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        reply:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/Note'
-          - type: 'null'
-        renote:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/Note'
-          - type: 'null'
-        isHidden:
-          type: boolean
-        visibility:
-          type: string
-          enum:
-          - public
-          - home
-          - followers
-          - specified
-        mentions:
-          type: array
-          items:
-            type: string
-            format: id
-        visibleUserIds:
-          type: array
-          items:
-            type: string
-            format: id
-        fileIds:
-          type: array
-          items:
-            type: string
-            format: id
-        files:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/DriveFile'
-        tags:
-          type: array
-          items:
-            type: string
-        poll:
-          type:
-          - object
-          - 'null'
-          properties:
-            expiresAt:
-              type:
-              - string
-              - 'null'
-              format: date-time
-            multiple:
-              type: boolean
-            choices:
-              type: array
-              items:
-                type: object
-                properties:
-                  isVoted:
-                    type: boolean
-                  text:
-                    type: string
-                  votes:
-                    type: number
-                required:
-                - isVoted
-                - text
-                - votes
-          required:
-          - multiple
-          - choices
-        emojis:
-          type: object
-          additionalProperties:
-            anyOf:
-            - type: string
-        channelId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        channel:
-          type:
-          - object
-          - 'null'
-          properties:
-            id:
-              type: string
-            name:
-              type: string
-            color:
-              type: string
-            isSensitive:
-              type: boolean
-            allowRenoteToExternal:
-              type: boolean
-            userId:
-              type:
-              - string
-              - 'null'
-          required:
-          - id
-          - name
-          - color
-          - isSensitive
-          - allowRenoteToExternal
-          - userId
-        localOnly:
-          type: boolean
-        dimension:
-          type:
-          - integer
-          - 'null'
-        reactionAcceptance:
-          type:
-          - string
-          - 'null'
-          enum:
-          - likeOnly
-          - likeOnlyForRemote
-          - nonSensitiveOnly
-          - nonSensitiveOnlyForLocalLikeOnlyForRemote
-          - null
-        reactionEmojis:
-          type: object
-          additionalProperties:
-            anyOf:
-            - type: string
-        reactions:
-          type: object
-          additionalProperties:
-            anyOf:
-            - type: number
-        reactionCount:
-          type: number
-        renoteCount:
-          type: number
-        repliesCount:
-          type: number
-        uri:
-          type: string
-        url:
-          type: string
-        reactionAndUserPairCache:
-          type: array
-          items:
-            type: string
-        clippedCount:
-          type: number
-        myReaction:
-          type:
-          - string
-          - 'null'
-      required:
-      - id
-      - createdAt
-      - text
-      - userId
-      - user
-      - visibility
-      - reactionAcceptance
-      - reactionEmojis
-      - reactions
-      - reactionCount
-      - renoteCount
-      - repliesCount
     MeDetailedOnly:
       type: object
       properties:
@@ -2058,6 +1822,157 @@ components:
       - twoFactorEnabled
       - usePasswordLessLogin
       - securityKeys
+    RoleCondFormulaValueAssignedRole:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - roleAssignedTo
+        roleId:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+      required:
+      - id
+      - type
+      - roleId
+    RoleCondFormulaValue:
+      type: object
+      oneOf:
+      - $ref: '#/components/schemas/RoleCondFormulaLogics'
+      - $ref: '#/components/schemas/RoleCondFormulaValueNot'
+      - $ref: '#/components/schemas/RoleCondFormulaValueIsLocalOrRemote'
+      - $ref: '#/components/schemas/RoleCondFormulaValueUserSettingBooleanSchema'
+      - $ref: '#/components/schemas/RoleCondFormulaValueAssignedRole'
+      - $ref: '#/components/schemas/RoleCondFormulaValueCreated'
+      - $ref: '#/components/schemas/RoleCondFormulaFollowersOrFollowingOrNotes'
+    DriveFile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+          example: 192.jpg
+        type:
+          type: string
+          example: image/jpeg
+        md5:
+          type: string
+          format: md5
+          example: 15eca7fba0480996e2245f5185bf39f2
+        size:
+          type: number
+          example: 51469
+        isSensitive:
+          type: boolean
+        isSensitiveByModerator:
+          type:
+          - boolean
+          - 'null'
+        blurhash:
+          type:
+          - string
+          - 'null'
+        properties:
+          type: object
+          properties:
+            width:
+              type: number
+              example: 1280
+            height:
+              type: number
+              example: 720
+            orientation:
+              type: number
+              example: 8
+            avgColor:
+              type: string
+              example: rgb(40,65,87)
+        url:
+          type: string
+          format: url
+        thumbnailUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        comment:
+          type:
+          - string
+          - 'null'
+        folderId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        folder:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        user:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - type
+      - md5
+      - size
+      - isSensitive
+      - blurhash
+      - properties
+      - url
+      - thumbnailUrl
+      - comment
+      - folderId
+      - userId
+    RoleCondFormulaValueNot:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - not
+        value:
+          type: object
+          $ref: '#/components/schemas/RoleCondFormulaValue'
+      required:
+      - id
+      - type
+      - value
+    UserDetailedNotMe:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
     Page:
       type: object
       properties:
@@ -2147,6 +2062,253 @@ components:
       - attachedFiles
       - likedCount
       - visibility
+    Note:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        deletedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        text:
+          type:
+          - string
+          - 'null'
+        cw:
+          type:
+          - string
+          - 'null'
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        replyId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        renoteId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        reply:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Note'
+          - type: 'null'
+        renote:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Note'
+          - type: 'null'
+        isHidden:
+          type: boolean
+        visibility:
+          type: string
+          enum:
+          - public
+          - home
+          - followers
+          - specified
+        mentions:
+          type: array
+          items:
+            type: string
+            format: id
+        visibleUserIds:
+          type: array
+          items:
+            type: string
+            format: id
+        fileIds:
+          type: array
+          items:
+            type: string
+            format: id
+        files:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/DriveFile'
+        tags:
+          type: array
+          items:
+            type: string
+        poll:
+          type:
+          - object
+          - 'null'
+          properties:
+            expiresAt:
+              type:
+              - string
+              - 'null'
+              format: date-time
+            multiple:
+              type: boolean
+            choices:
+              type: array
+              items:
+                type: object
+                properties:
+                  isVoted:
+                    type: boolean
+                  text:
+                    type: string
+                  votes:
+                    type: number
+                required:
+                - isVoted
+                - text
+                - votes
+          required:
+          - multiple
+          - choices
+        emojis:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: string
+        channelId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        channel:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            color:
+              type: string
+            isSensitive:
+              type: boolean
+            allowRenoteToExternal:
+              type: boolean
+            userId:
+              type:
+              - string
+              - 'null'
+          required:
+          - id
+          - name
+          - color
+          - isSensitive
+          - allowRenoteToExternal
+          - userId
+        localOnly:
+          type: boolean
+        dimension:
+          type:
+          - integer
+          - 'null'
+        reactionAcceptance:
+          type:
+          - string
+          - 'null'
+          enum:
+          - likeOnly
+          - likeOnlyForRemote
+          - nonSensitiveOnly
+          - nonSensitiveOnlyForLocalLikeOnlyForRemote
+          - null
+        reactionEmojis:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: string
+        reactions:
+          type: object
+          additionalProperties:
+            anyOf:
+            - type: number
+        reactionCount:
+          type: number
+        renoteCount:
+          type: number
+        repliesCount:
+          type: number
+        uri:
+          type: string
+        url:
+          type: string
+        reactionAndUserPairCache:
+          type: array
+          items:
+            type: string
+        clippedCount:
+          type: number
+        myReaction:
+          type:
+          - string
+          - 'null'
+      required:
+      - id
+      - createdAt
+      - text
+      - userId
+      - user
+      - visibility
+      - reactionAcceptance
+      - reactionEmojis
+      - reactions
+      - reactionCount
+      - renoteCount
+      - repliesCount
+    RoleCondFormulaFollowersOrFollowingOrNotes:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - followersLessThanOrEq
+          - followersMoreThanOrEq
+          - followingLessThanOrEq
+          - followingMoreThanOrEq
+          - notesLessThanOrEq
+          - notesMoreThanOrEq
+        value:
+          type: number
+      required:
+      - id
+      - type
+      - value
+    RoleCondFormulaValueIsLocalOrRemote:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - isLocal
+          - isRemote
+      required:
+      - id
+      - type
     UserLite:
       type: object
       properties:
@@ -2287,207 +2449,45 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
-    MeDetailed:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-      - type: object
-        $ref: '#/components/schemas/MeDetailedOnly'
-    RoleCondFormulaValueUserSettingBooleanSchema:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - isSuspended
-          - isLocked
-          - isBot
-          - isCat
-          - isExplorable
-      required:
-      - id
-      - type
-    UserDetailed:
-      oneOf:
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMe'
-      - type: object
-        $ref: '#/components/schemas/MeDetailed'
-    Role:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/RoleLite'
-      - type: object
-        properties:
-          createdAt:
-            type: string
-            format: date-time
-          updatedAt:
-            type: string
-            format: date-time
-          target:
-            type: string
-            enum:
-            - manual
-            - conditional
-          condFormula:
-            type: object
-            $ref: '#/components/schemas/RoleCondFormulaValue'
-          isPublic:
-            type: boolean
-            example: false
-          isExplorable:
-            type: boolean
-            example: false
-          asBadge:
-            type: boolean
-            example: false
-          preserveAssignmentOnMoveAccount:
-            type: boolean
-            example: false
-          badgeBehavior:
-            type:
-            - string
-            - 'null'
-          canEditMembersByModerator:
-            type: boolean
-            example: false
-          policies:
-            type: object
-            additionalProperties:
-              anyOf:
-              - type: object
-                properties:
-                  value:
-                    oneOf:
-                    - type: integer
-                    - type: boolean
-                  priority:
-                    type: integer
-                  useDefault:
-                    type: boolean
-          usersCount:
-            type: integer
-        required:
-        - createdAt
-        - updatedAt
-        - target
-        - condFormula
-        - isPublic
-        - isExplorable
-        - asBadge
-        - preserveAssignmentOnMoveAccount
-        - badgeBehavior
-        - canEditMembersByModerator
-        - policies
-        - usersCount
-    DriveFile:
+    RoleLite:
       type: object
       properties:
         id:
           type: string
           format: id
           example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
         name:
           type: string
-          example: 192.jpg
-        type:
+          example: New Role
+        color:
+          type:
+          - string
+          - 'null'
+          example: '#000000'
+        iconUrl:
+          type:
+          - string
+          - 'null'
+        description:
           type: string
-          example: image/jpeg
-        md5:
-          type: string
-          format: md5
-          example: 15eca7fba0480996e2245f5185bf39f2
-        size:
-          type: number
-          example: 51469
-        isSensitive:
+        isModerator:
           type: boolean
-        isSensitiveByModerator:
-          type:
-          - boolean
-          - 'null'
-        blurhash:
-          type:
-          - string
-          - 'null'
-        properties:
-          type: object
-          properties:
-            width:
-              type: number
-              example: 1280
-            height:
-              type: number
-              example: 720
-            orientation:
-              type: number
-              example: 8
-            avgColor:
-              type: string
-              example: rgb(40,65,87)
-        url:
-          type: string
-          format: url
-        thumbnailUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        comment:
-          type:
-          - string
-          - 'null'
-        folderId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        folder:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-        userId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        user:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
+          example: false
+        isAdministrator:
+          type: boolean
+          example: false
+        displayOrder:
+          type: integer
+          example: 0
       required:
       - id
-      - createdAt
       - name
-      - type
-      - md5
-      - size
-      - isSensitive
-      - blurhash
-      - properties
-      - url
-      - thumbnailUrl
-      - comment
-      - folderId
-      - userId
+      - color
+      - iconUrl
+      - description
+      - isModerator
+      - isAdministrator
+      - displayOrder
   securitySchemes:
     bearerAuth:
       type: http

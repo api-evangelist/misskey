@@ -660,51 +660,6 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    Clip:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        lastClippedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        name:
-          type: string
-        description:
-          type:
-          - string
-          - 'null'
-        isPublic:
-          type: boolean
-        favoritedCount:
-          type: number
-        isFavorited:
-          type: boolean
-        notesCount:
-          type: integer
-      required:
-      - id
-      - createdAt
-      - lastClippedAt
-      - userId
-      - user
-      - name
-      - description
-      - isPublic
-      - favoritedCount
     Error:
       type: object
       properties:
@@ -868,6 +823,51 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
+    Clip:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        lastClippedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        name:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        isPublic:
+          type: boolean
+        favoritedCount:
+          type: number
+        isFavorited:
+          type: boolean
+        notesCount:
+          type: integer
+      required:
+      - id
+      - createdAt
+      - lastClippedAt
+      - userId
+      - user
+      - name
+      - description
+      - isPublic
+      - favoritedCount
   securitySchemes:
     bearerAuth:
       type: http

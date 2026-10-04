@@ -3117,74 +3117,129 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    MetaDetailedOnly:
+    EmojiSimple:
       type: object
       properties:
-        features:
-          type: object
-          properties:
-            registration:
-              type: boolean
-            emailRequiredForSignup:
-              type: boolean
-            localTimeline:
-              type: boolean
-            globalTimeline:
-              type: boolean
-            hCaptcha:
-              type: boolean
-            hcaptcha:
-              type: boolean
-              description: Alias of hCaptcha
-            mCaptcha:
-              type: boolean
-            mcaptcha:
-              type: boolean
-              description: Alias of mCaptcha
-            reCaptcha:
-              type: boolean
-            recaptcha:
-              type: boolean
-              description: Alias of reCaptcha
-            turnstile:
-              type: boolean
-            objectStorage:
-              type: boolean
-            serviceWorker:
-              type: boolean
-            miauth:
-              type: boolean
-              default: true
-          required:
-          - registration
-          - emailRequiredForSignup
-          - localTimeline
-          - globalTimeline
-          - hCaptcha
-          - hcaptcha
-          - mCaptcha
-          - mcaptcha
-          - reCaptcha
-          - recaptcha
-          - turnstile
-          - objectStorage
-          - serviceWorker
-        proxyAccountName:
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        name:
+          type: string
+        category:
           type:
           - string
           - 'null'
-        requireSetup:
+        url:
+          type: string
+        localOnly:
           type: boolean
-          example: false
-        cacheRemoteFiles:
+        isSensitive:
           type: boolean
-        cacheRemoteSensitiveFiles:
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+      required:
+      - aliases
+      - name
+      - category
+      - url
+    Announcement:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        text:
+          type: string
+        title:
+          type: string
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        icon:
+          type: string
+          enum:
+          - info
+          - warning
+          - error
+          - success
+        display:
+          type: string
+          enum:
+          - dialog
+          - normal
+          - banner
+        needConfirmationToRead:
+          type: boolean
+        needEnrollmentTutorialToRead:
+          type: boolean
+        forYou:
+          type: boolean
+        closeDuration:
+          type: number
+        displayOrder:
+          type: number
+        silence:
+          type: boolean
+        isRead:
           type: boolean
       required:
-      - proxyAccountName
-      - requireSetup
-      - cacheRemoteFiles
-      - cacheRemoteSensitiveFiles
+      - id
+      - createdAt
+      - updatedAt
+      - text
+      - title
+      - imageUrl
+      - icon
+      - display
+      - needConfirmationToRead
+      - needEnrollmentTutorialToRead
+      - forYou
+      - closeDuration
+      - displayOrder
+      - silence
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
     UserLite:
       type: object
       properties:
@@ -3325,54 +3380,13 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
-    InviteCode:
+    MetaDetailed:
       type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        code:
-          type: string
-          example: GR6S02ERUA5VR
-        expiresAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdAt:
-          type: string
-          format: date-time
-        createdBy:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        usedBy:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        usedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        used:
-          type: boolean
-      required:
-      - id
-      - code
-      - expiresAt
-      - createdAt
-      - createdBy
-      - usedBy
-      - usedAt
-      - used
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/MetaLite'
+      - type: object
+        $ref: '#/components/schemas/MetaDetailedOnly'
     MetaLite:
       type: object
       properties:
@@ -3690,197 +3704,54 @@ components:
       - noteSearchableScope
       - maxFileSize
       - federation
-    Announcement:
+    InviteCode:
       type: object
       properties:
         id:
           type: string
           format: id
           example: xxxxxxxxxx
+        code:
+          type: string
+          example: GR6S02ERUA5VR
+        expiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
         createdAt:
           type: string
           format: date-time
-        updatedAt:
+        createdBy:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        usedBy:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        usedAt:
           type:
           - string
           - 'null'
           format: date-time
-        text:
-          type: string
-        title:
-          type: string
-        imageUrl:
-          type:
-          - string
-          - 'null'
-        icon:
-          type: string
-          enum:
-          - info
-          - warning
-          - error
-          - success
-        display:
-          type: string
-          enum:
-          - dialog
-          - normal
-          - banner
-        needConfirmationToRead:
-          type: boolean
-        needEnrollmentTutorialToRead:
-          type: boolean
-        forYou:
-          type: boolean
-        closeDuration:
-          type: number
-        displayOrder:
-          type: number
-        silence:
-          type: boolean
-        isRead:
+        used:
           type: boolean
       required:
       - id
+      - code
+      - expiresAt
       - createdAt
-      - updatedAt
-      - text
-      - title
-      - imageUrl
-      - icon
-      - display
-      - needConfirmationToRead
-      - needEnrollmentTutorialToRead
-      - forYou
-      - closeDuration
-      - displayOrder
-      - silence
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
-    EmojiSimple:
-      type: object
-      properties:
-        aliases:
-          type: array
-          items:
-            type: string
-            format: id
-        name:
-          type: string
-        category:
-          type:
-          - string
-          - 'null'
-        url:
-          type: string
-        localOnly:
-          type: boolean
-        isSensitive:
-          type: boolean
-        roleIdsThatCanBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-      required:
-      - aliases
-      - name
-      - category
-      - url
-    EmojiDetailed:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        aliases:
-          type: array
-          items:
-            type: string
-            format: id
-        name:
-          type: string
-        category:
-          type:
-          - string
-          - 'null'
-        host:
-          type:
-          - string
-          - 'null'
-          description: The local host is represented with `null`.
-        url:
-          type: string
-        license:
-          type:
-          - string
-          - 'null'
-        isSensitive:
-          type: boolean
-        localOnly:
-          type: boolean
-        requestedBy:
-          type:
-          - string
-          - 'null'
-        memo:
-          type:
-          - string
-          - 'null'
-        roleIdsThatCanBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
-      required:
-      - id
-      - aliases
-      - name
-      - category
-      - host
-      - url
-      - license
-      - isSensitive
-      - localOnly
+      - createdBy
+      - usedBy
+      - usedAt
+      - used
     RolePolicies:
       type: object
       properties:
@@ -4036,13 +3907,142 @@ components:
       - mutualLinkSectionLimit
       - mutualLinkLimit
       - chatAvailability
-    MetaDetailed:
+    EmojiDetailed:
       type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/MetaLite'
-      - type: object
-        $ref: '#/components/schemas/MetaDetailedOnly'
+      properties:
+        id:
+          type: string
+          format: id
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        name:
+          type: string
+        category:
+          type:
+          - string
+          - 'null'
+        host:
+          type:
+          - string
+          - 'null'
+          description: The local host is represented with `null`.
+        url:
+          type: string
+        license:
+          type:
+          - string
+          - 'null'
+        isSensitive:
+          type: boolean
+        localOnly:
+          type: boolean
+        requestedBy:
+          type:
+          - string
+          - 'null'
+        memo:
+          type:
+          - string
+          - 'null'
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+      required:
+      - id
+      - aliases
+      - name
+      - category
+      - host
+      - url
+      - license
+      - isSensitive
+      - localOnly
+    MetaDetailedOnly:
+      type: object
+      properties:
+        features:
+          type: object
+          properties:
+            registration:
+              type: boolean
+            emailRequiredForSignup:
+              type: boolean
+            localTimeline:
+              type: boolean
+            globalTimeline:
+              type: boolean
+            hCaptcha:
+              type: boolean
+            hcaptcha:
+              type: boolean
+              description: Alias of hCaptcha
+            mCaptcha:
+              type: boolean
+            mcaptcha:
+              type: boolean
+              description: Alias of mCaptcha
+            reCaptcha:
+              type: boolean
+            recaptcha:
+              type: boolean
+              description: Alias of reCaptcha
+            turnstile:
+              type: boolean
+            objectStorage:
+              type: boolean
+            serviceWorker:
+              type: boolean
+            miauth:
+              type: boolean
+              default: true
+          required:
+          - registration
+          - emailRequiredForSignup
+          - localTimeline
+          - globalTimeline
+          - hCaptcha
+          - hcaptcha
+          - mCaptcha
+          - mcaptcha
+          - reCaptcha
+          - recaptcha
+          - turnstile
+          - objectStorage
+          - serviceWorker
+        proxyAccountName:
+          type:
+          - string
+          - 'null'
+        requireSetup:
+          type: boolean
+          example: false
+        cacheRemoteFiles:
+          type: boolean
+        cacheRemoteSensitiveFiles:
+          type: boolean
+      required:
+      - proxyAccountName
+      - requireSetup
+      - cacheRemoteFiles
+      - cacheRemoteSensitiveFiles
   securitySchemes:
     bearerAuth:
       type: http
