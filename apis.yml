@@ -1084,7 +1084,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/misskey.png
 access: 3rd-Party
 created: '2026-06-13'
-modified: '2026-06-13'
+modified: '2026-10-06'
 position: Consuming
 description: >-
   Misskey is a free, open-source, decentralized microblogging platform that implements
@@ -1100,6 +1100,8 @@ maintainers:
     email: info@apievangelist.com
 specificationVersion: '0.23'
 common:
+  - url: https://misskey-hub.net/en/blog/
+    type: Blog
   - type: CapabilityMap
     url: capabilities/misskey-capability-edges.yml
     name: Misskey Business Capability Map
