@@ -1,21 +1,591 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/misskey-openapi.json
+source: openapi/misskey-account-api-openapi.yml, openapi/misskey-admin-api-openapi.yml, openapi/misskey-antennas-api-openapi.yml,
+  openapi/misskey-app-api-openapi.yml, openapi/misskey-auth-api-openapi.yml, openapi/misskey-bubble-game-api-openapi.yml,
+  openapi/misskey-channels-api-openapi.yml, openapi/misskey-charts-api-openapi.yml, openapi/misskey-clip-api-openapi.yml,
+  openapi/misskey-clips-api-openapi.yml, openapi/misskey-drive-api-openapi.yml, openapi/misskey-export-custom-emojis-api-openapi.yml,
+  openapi/misskey-federation-api-openapi.yml, openapi/misskey-flash-api-openapi.yml, openapi/misskey-flashs-api-openapi.yml,
+  openapi/misskey-following-api-openapi.yml, openapi/misskey-gallery-api-openapi.yml, openapi/misskey-hashtags-api-openapi.yml,
+  openapi/misskey-i-api-openapi.yml, openapi/misskey-lists-api-openapi.yml, openapi/misskey-meta-api-openapi.yml,
+  openapi/misskey-non-productive-api-openapi.yml, openapi/misskey-notes-api-openapi.yml, openapi/misskey-notifications-api-openapi.yml,
+  openapi/misskey-page-push-api-openapi.yml, openapi/misskey-pages-api-openapi.yml, openapi/misskey-reactions-api-openapi.yml,
+  openapi/misskey-reset-password-api-openapi.yml, openapi/misskey-reversi-api-openapi.yml, openapi/misskey-role-api-openapi.yml,
+  openapi/misskey-users-api-openapi.yml, openapi/misskey-webhooks-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 439
   by_action_class:
-    acting: 412
-    connected: 27
+    acting: 408
+    connected: 31
   by_consequence:
-    write: 403
+    write: 399
     safety-critical: 6
     physical: 3
-    read: 27
+    read: 31
   human_in_the_loop_required: 6
 operations:
+- path: /blocking/create
+  method: post
+  operationId: post___blocking___create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /blocking/delete
+  method: post
+  operationId: post___blocking___delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /blocking/list
+  method: post
+  operationId: post___blocking___list
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /clips/add-note
+  method: post
+  operationId: post___clips___add-note
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /clips/my-favorites
+  method: post
+  operationId: post___clips___my-favorites
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /clips/notes
+  method: post
+  operationId: post___clips___notes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /clips/remove-note
+  method: post
+  operationId: post___clips___remove-note
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /flash/my
+  method: post
+  operationId: post___flash___my
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /flash/my-likes
+  method: post
+  operationId: post___flash___my-likes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i
+  method: post
+  operationId: post___i
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/favorites
+  method: post
+  operationId: post___i___favorites
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/gallery/likes
+  method: post
+  operationId: post___i___gallery___likes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/gallery/posts
+  method: post
+  operationId: post___i___gallery___posts
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/notifications
+  method: post
+  operationId: post___i___notifications
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/notifications-grouped
+  method: post
+  operationId: post___i___notifications-grouped
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/page-likes
+  method: post
+  operationId: post___i___page-likes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/pages
+  method: post
+  operationId: post___i___pages
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/pin
+  method: post
+  operationId: post___i___pin
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/purge-timeline-cache
+  method: post
+  operationId: post___i___purge-timeline-cache
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/read-announcement
+  method: post
+  operationId: post___i___read-announcement
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/unpin
+  method: post
+  operationId: post___i___unpin
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/update
+  method: post
+  operationId: post___i___update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /mute/create
+  method: post
+  operationId: post___mute___create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /mute/delete
+  method: post
+  operationId: post___mute___delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /mute/list
+  method: post
+  operationId: post___mute___list
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /my/apps
+  method: post
+  operationId: post___my___apps
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /renote-mute/create
+  method: post
+  operationId: post___renote-mute___create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /renote-mute/delete
+  method: post
+  operationId: post___renote-mute___delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /renote-mute/list
+  method: post
+  operationId: post___renote-mute___list
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /sw/register
+  method: post
+  operationId: post___sw___register
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /sw/show-registration
+  method: post
+  operationId: post___sw___show-registration
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /sw/unregister
+  method: post
+  operationId: post___sw___unregister
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /sw/update-registration
+  method: post
+  operationId: post___sw___update-registration
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/update-memo
+  method: post
+  operationId: post___users___update-memo
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/emoji/import-zip
+  method: post
+  operationId: post___admin___emoji___import-zip
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /admin/abuse-report-resolver/create
   method: post
   operationId: post___admin___abuse-report-resolver___create
@@ -640,22 +1210,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /admin/emoji/import-zip
-  method: post
-  operationId: post___admin___emoji___import-zip
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /admin/emoji/list
   method: post
   operationId: post___admin___emoji___list
@@ -979,22 +1533,6 @@ operations:
 - path: /admin/invite/list
   method: post
   operationId: post___admin___invite___list
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /admin/meta
-  method: post
-  operationId: post___admin___meta
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1586,22 +2124,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /admin/system-webhook/test
-  method: post
-  operationId: post___admin___system-webhook___test
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /admin/system-webhook/update
   method: post
   operationId: post___admin___system-webhook___update
@@ -1762,41 +2284,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /announcement
+- path: /v2/admin/emoji/list
   method: post
-  operationId: post___announcement
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /announcements
-  method: post
-  operationId: post___announcements
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /announcements/show
-  method: post
-  operationId: post___announcements___show
+  operationId: post___v2___admin___emoji___list
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1906,38 +2396,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /ap/get
-  method: post
-  operationId: post___ap___get
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /ap/show
-  method: post
-  operationId: post___ap___show
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /app/create
   method: post
   operationId: post___app___create
@@ -2034,41 +2492,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /blocking/create
+- path: /miauth/gen-token
   method: post
-  operationId: post___blocking___create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /blocking/delete
-  method: post
-  operationId: post___blocking___delete
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /blocking/list
-  method: post
-  operationId: post___blocking___list
+  operationId: post___miauth___gen-token
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2271,22 +2697,6 @@ operations:
 - path: /channels/show
   method: post
   operationId: post___channels___show
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /channels/timeline
-  method: post
-  operationId: post___channels___timeline
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2660,9 +3070,25 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /clips/add-note
+- path: /clips/favorite
   method: post
-  operationId: post___clips___add-note
+  operationId: post___clips___favorite
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /clips/unfavorite
+  method: post
+  operationId: post___clips___unfavorite
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2708,73 +3134,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /clips/favorite
-  method: post
-  operationId: post___clips___favorite
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /clips/list
   method: post
   operationId: post___clips___list
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /clips/my-favorites
-  method: post
-  operationId: post___clips___my-favorites
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /clips/notes
-  method: post
-  operationId: post___clips___notes
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /clips/remove-note
-  method: post
-  operationId: post___clips___remove-note
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2804,9 +3166,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /clips/unfavorite
+- path: /clips/update
   method: post
-  operationId: post___clips___unfavorite
+  operationId: post___clips___update
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2820,9 +3182,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /clips/update
+- path: /notes/clips
   method: post
-  operationId: post___clips___update
+  operationId: post___notes___clips
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3124,109 +3486,41 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /email-address/available
-  method: post
-  operationId: post___email-address___available
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /emoji
-  method: get
-  operationId: get___emoji
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /emoji
-  method: post
-  operationId: post___emoji
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /emojis
-  method: get
-  operationId: get___emojis
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /emojis
-  method: post
-  operationId: post___emojis
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /endpoint
-  method: post
-  operationId: post___endpoint
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /endpoints
-  method: post
-  operationId: post___endpoints
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /export-custom-emojis
   method: post
   operationId: post___export-custom-emojis
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ap/get
+  method: post
+  operationId: post___ap___get
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ap/show
+  method: post
+  operationId: post___ap___show
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3372,67 +3666,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /fetch-external-resources
-  method: post
-  operationId: post___fetch-external-resources
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /fetch-rss
-  method: get
-  operationId: get___fetch-rss
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /fetch-rss
-  method: post
-  operationId: post___fetch-rss
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /flash/create
   method: post
   operationId: post___flash___create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /flash/delete
-  method: post
-  operationId: post___flash___delete
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3478,54 +3714,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /flash/my
-  method: post
-  operationId: post___flash___my
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /flash/my-likes
-  method: post
-  operationId: post___flash___my-likes
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /flash/show
-  method: post
-  operationId: post___flash___show
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /flash/unlike
   method: post
   operationId: post___flash___unlike
@@ -3545,6 +3733,38 @@ operations:
 - path: /flash/update
   method: post
   operationId: post___flash___update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /flash/delete
+  method: post
+  operationId: post___flash___delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /flash/show
+  method: post
+  operationId: post___flash___show
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3862,48 +4082,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /get-avatar-decorations
-  method: post
-  operationId: post___get-avatar-decorations
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /get-online-users-count
-  method: get
-  operationId: get___get-online-users-count
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /get-online-users-count
-  method: post
-  operationId: post___get-online-users-count
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /hashtags/list
   method: post
   operationId: post___hashtags___list
@@ -3981,22 +4159,6 @@ operations:
 - path: /hashtags/users
   method: post
   operationId: post___hashtags___users
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i
-  method: post
-  operationId: post___i
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4346,54 +4508,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /i/favorites
-  method: post
-  operationId: post___i___favorites
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/gallery/likes
-  method: post
-  operationId: post___i___gallery___likes
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/gallery/posts
-  method: post
-  operationId: post___i___gallery___posts
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /i/import-antennas
   method: post
   operationId: post___i___import-antennas
@@ -4461,134 +4575,6 @@ operations:
 - path: /i/import-user-lists
   method: post
   operationId: post___i___import-user-lists
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/move
-  method: post
-  operationId: post___i___move
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/notifications
-  method: post
-  operationId: post___i___notifications
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/notifications-grouped
-  method: post
-  operationId: post___i___notifications-grouped
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/page-likes
-  method: post
-  operationId: post___i___page-likes
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/pages
-  method: post
-  operationId: post___i___pages
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/pin
-  method: post
-  operationId: post___i___pin
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/purge-timeline-cache
-  method: post
-  operationId: post___i___purge-timeline-cache
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/read-announcement
-  method: post
-  operationId: post___i___read-announcement
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4778,38 +4764,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /i/unpin
-  method: post
-  operationId: post___i___unpin
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /i/update
-  method: post
-  operationId: post___i___update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /i/update-email
   method: post
   operationId: post___i___update-email
@@ -4826,9 +4780,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /i/webhooks/create
+- path: /users/lists/create
   method: post
-  operationId: post___i___webhooks___create
+  operationId: post___users___lists___create
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4842,9 +4796,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /i/webhooks/delete
+- path: /users/lists/delete
   method: post
-  operationId: post___i___webhooks___delete
+  operationId: post___users___lists___delete
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4858,9 +4812,27 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /i/webhooks/list
+- path: /users/lists/get-memberships
   method: post
-  operationId: post___i___webhooks___list
+  operationId: post___users___lists___get-memberships
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/lists/list
+  method: post
+  operationId: post___users___lists___list
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4874,9 +4846,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /i/webhooks/show
+- path: /users/lists/pull
   method: post
-  operationId: post___i___webhooks___show
+  operationId: post___users___lists___pull
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4890,9 +4862,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /i/webhooks/test
+- path: /users/lists/push
   method: post
-  operationId: post___i___webhooks___test
+  operationId: post___users___lists___push
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4906,9 +4878,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /i/webhooks/update
+- path: /users/lists/show
   method: post
-  operationId: post___i___webhooks___update
+  operationId: post___users___lists___show
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4922,6 +4894,238 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /users/lists/update
+  method: post
+  operationId: post___users___lists___update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/lists/update-membership
+  method: post
+  operationId: post___users___lists___update-membership
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/meta
+  method: post
+  operationId: post___admin___meta
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /announcement
+  method: post
+  operationId: post___announcement
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /announcements
+  method: post
+  operationId: post___announcements
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /announcements/show
+  method: post
+  operationId: post___announcements___show
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /emoji
+  method: get
+  operationId: get___emoji
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /emoji
+  method: post
+  operationId: post___emoji
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /emojis
+  method: get
+  operationId: get___emojis
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /emojis
+  method: post
+  operationId: post___emojis
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /endpoint
+  method: post
+  operationId: post___endpoint
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /endpoints
+  method: post
+  operationId: post___endpoints
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /fetch-external-resources
+  method: post
+  operationId: post___fetch-external-resources
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fetch-rss
+  method: get
+  operationId: get___fetch-rss
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fetch-rss
+  method: post
+  operationId: post___fetch-rss
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /get-online-users-count
+  method: get
+  operationId: get___get-online-users-count
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /get-online-users-count
+  method: post
+  operationId: post___get-online-users-count
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /invite/create
   method: post
   operationId: post___invite___create
@@ -5012,9 +5216,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /miauth/gen-token
+- path: /ping
   method: post
-  operationId: post___miauth___gen-token
+  operationId: post___ping
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5028,9 +5232,19 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /mute/create
+- path: /stats
+  method: get
+  operationId: get___stats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /stats
   method: post
-  operationId: post___mute___create
+  operationId: post___stats
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5044,9 +5258,25 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /mute/delete
+- path: /reset-db
   method: post
-  operationId: post___mute___delete
+  operationId: post___reset-db
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /test
+  method: post
+  operationId: post___test
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5060,25 +5290,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /mute/list
+- path: /channels/timeline
   method: post
-  operationId: post___mute___list
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /my/apps
-  method: post
-  operationId: post___my___apps
+  operationId: post___channels___timeline
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5111,22 +5325,6 @@ operations:
 - path: /notes/children
   method: post
   operationId: post___notes___children
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /notes/clips
-  method: post
-  operationId: post___notes___clips
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5368,38 +5566,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /notes/reactions/create
-  method: post
-  operationId: post___notes___reactions___create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /notes/reactions/delete
-  method: post
-  operationId: post___notes___reactions___delete
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /notes/renotes
   method: post
   operationId: post___notes___renotes
@@ -5624,6 +5790,48 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /promo/read
+  method: post
+  operationId: post___promo___read
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/featured-notes
+  method: get
+  operationId: get___users___featured-notes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /users/featured-notes
+  method: post
+  operationId: post___users___featured-notes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /notifications/create
   method: post
   operationId: post___notifications___create
@@ -5816,9 +6024,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /ping
+- path: /notes/reactions/create
   method: post
-  operationId: post___ping
+  operationId: post___notes___reactions___create
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5832,73 +6040,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /pinned-users
+- path: /notes/reactions/delete
   method: post
-  operationId: post___pinned-users
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /promo/read
-  method: post
-  operationId: post___promo___read
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /renote-mute/create
-  method: post
-  operationId: post___renote-mute___create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /renote-mute/delete
-  method: post
-  operationId: post___renote-mute___delete
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /renote-mute/list
-  method: post
-  operationId: post___renote-mute___list
+  operationId: post___notes___reactions___delete
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5928,22 +6072,6 @@ operations:
     escalation:
       human-in-the-loop: required
     audit: required
-- path: /reset-db
-  method: post
-  operationId: post___reset-db
-  x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
 - path: /reset-password
   method: post
   operationId: post___reset-password
@@ -5959,32 +6087,6 @@ operations:
       proof-of-possession: true
     escalation:
       human-in-the-loop: required
-    audit: required
-- path: /retention
-  method: get
-  operationId: get___retention
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /retention
-  method: post
-  operationId: post___retention
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
     audit: required
 - path: /reversi/cancel-match
   method: post
@@ -6162,9 +6264,89 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /stats
-  method: get
-  operationId: get___stats
+- path: /users/achievements
+  method: post
+  operationId: post___users___achievements
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/lists/create-from-public
+  method: post
+  operationId: post___users___lists___create-from-public
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/lists/favorite
+  method: post
+  operationId: post___users___lists___favorite
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/lists/unfavorite
+  method: post
+  operationId: post___users___lists___unfavorite
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /email-address/available
+  method: post
+  operationId: post___email-address___available
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /get-avatar-decorations
+  method: post
+  operationId: post___get-avatar-decorations
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -6172,9 +6354,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /stats
+- path: /i/move
   method: post
-  operationId: post___stats
+  operationId: post___i___move
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -6188,9 +6370,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /sw/register
+- path: /pinned-users
   method: post
-  operationId: post___sw___register
+  operationId: post___pinned-users
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -6204,57 +6386,19 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /sw/show-registration
-  method: post
-  operationId: post___sw___show-registration
+- path: /retention
+  method: get
+  operationId: get___retention
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /sw/unregister
+      max-ttl: 3600
+    audit: none
+- path: /retention
   method: post
-  operationId: post___sw___unregister
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /sw/update-registration
-  method: post
-  operationId: post___sw___update-registration
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /test
-  method: post
-  operationId: post___test
+  operationId: post___retention
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -6300,51 +6444,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /users/achievements
-  method: post
-  operationId: post___users___achievements
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /users/clips
   method: post
   operationId: post___users___clips
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/featured-notes
-  method: get
-  operationId: get___users___featured-notes
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /users/featured-notes
-  method: post
-  operationId: post___users___featured-notes
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -6490,202 +6592,6 @@ operations:
     audience: null
     token:
       max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/create
-  method: post
-  operationId: post___users___lists___create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/create-from-public
-  method: post
-  operationId: post___users___lists___create-from-public
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/delete
-  method: post
-  operationId: post___users___lists___delete
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/favorite
-  method: post
-  operationId: post___users___lists___favorite
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/get-memberships
-  method: post
-  operationId: post___users___lists___get-memberships
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/list
-  method: post
-  operationId: post___users___lists___list
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/pull
-  method: post
-  operationId: post___users___lists___pull
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/push
-  method: post
-  operationId: post___users___lists___push
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/show
-  method: post
-  operationId: post___users___lists___show
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/unfavorite
-  method: post
-  operationId: post___users___lists___unfavorite
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/update
-  method: post
-  operationId: post___users___lists___update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /users/lists/update-membership
-  method: post
-  operationId: post___users___lists___update-membership
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
     escalation:
       human-in-the-loop: conditional
       triggers:
@@ -6852,9 +6758,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /users/update-memo
+- path: /admin/system-webhook/test
   method: post
-  operationId: post___users___update-memo
+  operationId: post___admin___system-webhook___test
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -6868,9 +6774,89 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v2/admin/emoji/list
+- path: /i/webhooks/create
   method: post
-  operationId: post___v2___admin___emoji___list
+  operationId: post___i___webhooks___create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/webhooks/delete
+  method: post
+  operationId: post___i___webhooks___delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/webhooks/list
+  method: post
+  operationId: post___i___webhooks___list
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/webhooks/show
+  method: post
+  operationId: post___i___webhooks___show
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/webhooks/test
+  method: post
+  operationId: post___i___webhooks___test
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /i/webhooks/update
+  method: post
+  operationId: post___i___webhooks___update
   x-agentic-access:
     action-class: acting
     consequence: write
