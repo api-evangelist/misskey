@@ -1,0 +1,20 @@
+edges:
+- partner_name: ActivityPub
+  partner: activitypub
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: activitypub
+  type: docs
+  degree: declared-unqualified
+  evidence: https://misskey-hub.net/en/docs/about-misskey/
+  evidence_kind: own-docs
+  evidence_file: https://github.com/api-evangelist/misskey/blob/main/evidence/compatibility/misskey-activitypub-1.md
+  quote: No. Misskey is a project completely different from Mastodon or other alike projects. It has been in development
+    for a long time already. However, it only became a decentralized network after the appearance of Mastodon. Besides
+    both projects
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-15'
+generated: '2026-10-15'
+method: searched

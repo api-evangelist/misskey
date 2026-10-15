@@ -1,0 +1,14 @@
+fetched: '2026-10-15'
+method: fetched
+source: https://misskey-hub.net/en/docs/about-misskey/
+page: https://misskey-hub.net/en/docs/about-misskey/
+file: misskey-activitypub-1.md
+bytes: 12680
+sha256: b1631c5751f1c64bc979d33c9c326aae0247f8a5b8f622fb907d9b469a962812
+anchor: activitypub
+shape: activitypub
+classification: declares-compatibility
+quote: No. Misskey is a project completely different from Mastodon or other alike projects. It has been in development
+  for a long time already. However, it only became a decentralized network after the appearance of Mastodon. Besides
+  both projects implementing the ActivityPub protocol, there is no relation
+note: text extracted from the provider's own page (tags stripped), saved for evidence
