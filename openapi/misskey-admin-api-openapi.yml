@@ -14012,25 +14012,107 @@ components:
           - message
       required:
       - error
-    QueueCount:
+    DriveFile:
       type: object
       properties:
-        waiting:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+          example: 192.jpg
+        type:
+          type: string
+          example: image/jpeg
+        md5:
+          type: string
+          format: md5
+          example: 15eca7fba0480996e2245f5185bf39f2
+        size:
           type: number
-        active:
-          type: number
-        completed:
-          type: number
-        failed:
-          type: number
-        delayed:
-          type: number
+          example: 51469
+        isSensitive:
+          type: boolean
+        isSensitiveByModerator:
+          type:
+          - boolean
+          - 'null'
+        blurhash:
+          type:
+          - string
+          - 'null'
+        properties:
+          type: object
+          properties:
+            width:
+              type: number
+              example: 1280
+            height:
+              type: number
+              example: 720
+            orientation:
+              type: number
+              example: 8
+            avgColor:
+              type: string
+              example: rgb(40,65,87)
+        url:
+          type: string
+          format: url
+        thumbnailUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        comment:
+          type:
+          - string
+          - 'null'
+        folderId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        folder:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        user:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
       required:
-      - waiting
-      - active
-      - completed
-      - failed
-      - delayed
+      - id
+      - createdAt
+      - name
+      - type
+      - md5
+      - size
+      - isSensitive
+      - blurhash
+      - properties
+      - url
+      - thumbnailUrl
+      - comment
+      - folderId
+      - userId
     Announcement:
       type: object
       properties:
@@ -14096,109 +14178,90 @@ components:
       - closeDuration
       - displayOrder
       - silence
-    Role:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/RoleLite'
-      - type: object
-        properties:
-          createdAt:
-            type: string
-            format: date-time
-          updatedAt:
-            type: string
-            format: date-time
-          target:
-            type: string
-            enum:
-            - manual
-            - conditional
-          condFormula:
-            type: object
-            $ref: '#/components/schemas/RoleCondFormulaValue'
-          isPublic:
-            type: boolean
-            example: false
-          isExplorable:
-            type: boolean
-            example: false
-          asBadge:
-            type: boolean
-            example: false
-          preserveAssignmentOnMoveAccount:
-            type: boolean
-            example: false
-          badgeBehavior:
-            type:
-            - string
-            - 'null'
-          canEditMembersByModerator:
-            type: boolean
-            example: false
-          policies:
-            type: object
-            additionalProperties:
-              anyOf:
-              - type: object
-                properties:
-                  value:
-                    oneOf:
-                    - type: integer
-                    - type: boolean
-                  priority:
-                    type: integer
-                  useDefault:
-                    type: boolean
-          usersCount:
-            type: integer
-        required:
-        - createdAt
-        - updatedAt
-        - target
-        - condFormula
-        - isPublic
-        - isExplorable
-        - asBadge
-        - preserveAssignmentOnMoveAccount
-        - badgeBehavior
-        - canEditMembersByModerator
-        - policies
-        - usersCount
-    DriveFolder:
+    EmojiDetailed:
       type: object
       properties:
         id:
           type: string
           format: id
-          example: xxxxxxxxxx
         createdAt:
           type: string
           format: date-time
-        name:
-          type: string
-        parentId:
+        updatedAt:
           type:
           - string
           - 'null'
-          format: id
-          example: xxxxxxxxxx
-        foldersCount:
-          type: number
-        filesCount:
-          type: number
-        parent:
+          format: date-time
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        name:
+          type: string
+        category:
           type:
-          - object
+          - string
           - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
+        host:
+          type:
+          - string
+          - 'null'
+          description: The local host is represented with `null`.
+        url:
+          type: string
+        license:
+          type:
+          - string
+          - 'null'
+        isSensitive:
+          type: boolean
+        localOnly:
+          type: boolean
+        requestedBy:
+          type:
+          - string
+          - 'null'
+        memo:
+          type:
+          - string
+          - 'null'
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
+        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: string
+            format: id
       required:
       - id
-      - createdAt
+      - aliases
       - name
-      - parentId
+      - category
+      - host
+      - url
+      - license
+      - isSensitive
+      - localOnly
+    RoleCondFormulaValueNot:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - not
+        value:
+          type: object
+          $ref: '#/components/schemas/RoleCondFormulaValue'
+      required:
+      - id
+      - type
+      - value
     PageBlock:
       type: object
       oneOf:
@@ -14270,74 +14333,26 @@ components:
         - type
         - detailed
         - note
-    Signin:
+    RoleCondFormulaFollowersOrFollowingOrNotes:
       type: object
       properties:
         id:
           type: string
-        createdAt:
+        type:
           type: string
-          format: date-time
-        ip:
-          type: string
-        headers:
-          type: object
-        success:
-          type: boolean
+          enum:
+          - followersLessThanOrEq
+          - followersMoreThanOrEq
+          - followingLessThanOrEq
+          - followingMoreThanOrEq
+          - notesLessThanOrEq
+          - notesMoreThanOrEq
+        value:
+          type: number
       required:
       - id
-      - createdAt
-      - ip
-      - headers
-      - success
-    InviteCode:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        code:
-          type: string
-          example: GR6S02ERUA5VR
-        expiresAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdAt:
-          type: string
-          format: date-time
-        createdBy:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        usedBy:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        usedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        used:
-          type: boolean
-      required:
-      - id
-      - code
-      - expiresAt
-      - createdAt
-      - createdBy
-      - usedBy
-      - usedAt
-      - used
+      - type
+      - value
     RolePolicies:
       type: object
       properties:
@@ -14754,88 +14769,7 @@ components:
       - roles
       - memo
       - mutualLinkSections
-    EmojiDetailedAdmin:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-        updatedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        name:
-          type: string
-        host:
-          type:
-          - string
-          - 'null'
-          description: The local host is represented with `null`.
-        publicUrl:
-          type: string
-        originalUrl:
-          type: string
-        uri:
-          type:
-          - string
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-        aliases:
-          type: array
-          items:
-            type: string
-            format: id
-        category:
-          type:
-          - string
-          - 'null'
-        license:
-          type:
-          - string
-          - 'null'
-        localOnly:
-          type: boolean
-        isSensitive:
-          type: boolean
-        roleIdsThatCanBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                format: misskey:id
-              name:
-                type: string
-            required:
-            - id
-            - name
-      required:
-      - id
-      - updatedAt
-      - name
-      - host
-      - publicUrl
-      - originalUrl
-      - uri
-      - type
-      - aliases
-      - category
-      - license
-      - localOnly
-      - isSensitive
-      - roleIdsThatCanBeUsedThisEmojiAsReaction
-    UserDetailed:
-      oneOf:
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMe'
-      - type: object
-        $ref: '#/components/schemas/MeDetailed'
-    RoleCondFormulaValueUserSettingBooleanSchema:
+    RoleCondFormulaValueIsLocalOrRemote:
       type: object
       properties:
         id:
@@ -14843,57 +14777,11 @@ components:
         type:
           type: string
           enum:
-          - isSuspended
-          - isLocked
-          - isBot
-          - isCat
-          - isExplorable
+          - isLocal
+          - isRemote
       required:
       - id
       - type
-    RoleCondFormulaLogics:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - and
-          - or
-        values:
-          type: array
-          items:
-            $ref: '#/components/schemas/RoleCondFormulaValue'
-      required:
-      - id
-      - type
-      - values
-    MeDetailed:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-      - type: object
-        $ref: '#/components/schemas/MeDetailedOnly'
-    RoleCondFormulaValueCreated:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - createdLessThan
-          - createdMoreThan
-        sec:
-          type: number
-      required:
-      - id
-      - type
-      - sec
     MeDetailedOnly:
       type: object
       properties:
@@ -15516,23 +15404,6 @@ components:
       - twoFactorEnabled
       - usePasswordLessLogin
       - securityKeys
-    RoleCondFormulaValueAssignedRole:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - roleAssignedTo
-        roleId:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-      required:
-      - id
-      - type
-      - roleId
     RoleCondFormulaValue:
       type: object
       oneOf:
@@ -15543,348 +15414,181 @@ components:
       - $ref: '#/components/schemas/RoleCondFormulaValueAssignedRole'
       - $ref: '#/components/schemas/RoleCondFormulaValueCreated'
       - $ref: '#/components/schemas/RoleCondFormulaFollowersOrFollowingOrNotes'
-    DriveFile:
+    QueueCount:
       type: object
       properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-          example: 192.jpg
-        type:
-          type: string
-          example: image/jpeg
-        md5:
-          type: string
-          format: md5
-          example: 15eca7fba0480996e2245f5185bf39f2
-        size:
+        waiting:
           type: number
-          example: 51469
-        isSensitive:
-          type: boolean
-        isSensitiveByModerator:
-          type:
-          - boolean
-          - 'null'
-        blurhash:
-          type:
-          - string
-          - 'null'
-        properties:
-          type: object
-          properties:
-            width:
-              type: number
-              example: 1280
-            height:
-              type: number
-              example: 720
-            orientation:
-              type: number
-              example: 8
-            avgColor:
-              type: string
-              example: rgb(40,65,87)
-        url:
-          type: string
-          format: url
-        thumbnailUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        comment:
-          type:
-          - string
-          - 'null'
-        folderId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        folder:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-        userId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        user:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - type
-      - md5
-      - size
-      - isSensitive
-      - blurhash
-      - properties
-      - url
-      - thumbnailUrl
-      - comment
-      - folderId
-      - userId
-    SystemWebhook:
-      type: object
-      properties:
-        id:
-          type: string
-        isActive:
-          type: boolean
-        updatedAt:
-          type: string
-          format: date-time
-        latestSentAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        latestStatus:
-          type:
-          - number
-          - 'null'
-        name:
-          type: string
-        'on':
-          type: array
-          items:
-            type: string
-            enum:
-            - abuseReport
-            - abuseReportResolved
-            - userCreated
-            - inactiveModeratorsWarning
-            - inactiveModeratorsInvitationOnlyChanged
-            - reportAutoResolved
-        url:
-          type: string
-        secret:
-          type: string
-      required:
-      - id
-      - isActive
-      - updatedAt
-      - latestSentAt
-      - latestStatus
-      - name
-      - 'on'
-      - url
-      - secret
-    Ad:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        expiresAt:
-          type: string
-          format: date-time
-        startsAt:
-          type: string
-          format: date-time
-        place:
-          type: string
-        priority:
-          type: string
-        ratio:
+        active:
           type: number
-        url:
-          type: string
-        imageUrl:
-          type: string
-        imageBlurhash:
-          type:
-          - string
-          - 'null'
-        memo:
-          type: string
-        dayOfWeek:
-          type: integer
-        isSensitive:
-          type: boolean
+        completed:
+          type: number
+        failed:
+          type: number
+        delayed:
+          type: number
       required:
-      - id
-      - expiresAt
-      - startsAt
-      - place
-      - priority
-      - ratio
-      - url
-      - imageUrl
-      - imageBlurhash
-      - memo
-      - dayOfWeek
-      - isSensitive
-    RoleCondFormulaValueNot:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - not
-        value:
-          type: object
-          $ref: '#/components/schemas/RoleCondFormulaValue'
-      required:
-      - id
-      - type
-      - value
-    UserDetailedNotMe:
+      - waiting
+      - active
+      - completed
+      - failed
+      - delayed
+    Role:
       type: object
       allOf:
       - type: object
-        $ref: '#/components/schemas/UserLite'
+        $ref: '#/components/schemas/RoleLite'
       - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-    AbuseReportNotificationRecipient:
-      type: object
-      properties:
-        id:
-          type: string
-        isActive:
-          type: boolean
-        updatedAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-        method:
-          type: string
-          enum:
-          - email
-          - webhook
-        userId:
-          type: string
-        user:
-          type: object
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-        systemWebhookId:
-          type: string
-        systemWebhook:
-          type: object
-          anyOf:
-          - $ref: '#/components/schemas/SystemWebhook'
-          - type: 'null'
-      required:
-      - id
-      - isActive
-      - updatedAt
-      - name
-      - method
-    Page:
+        properties:
+          createdAt:
+            type: string
+            format: date-time
+          updatedAt:
+            type: string
+            format: date-time
+          target:
+            type: string
+            enum:
+            - manual
+            - conditional
+          condFormula:
+            type: object
+            $ref: '#/components/schemas/RoleCondFormulaValue'
+          isPublic:
+            type: boolean
+            example: false
+          isExplorable:
+            type: boolean
+            example: false
+          asBadge:
+            type: boolean
+            example: false
+          preserveAssignmentOnMoveAccount:
+            type: boolean
+            example: false
+          badgeBehavior:
+            type:
+            - string
+            - 'null'
+          canEditMembersByModerator:
+            type: boolean
+            example: false
+          policies:
+            type: object
+            additionalProperties:
+              anyOf:
+              - type: object
+                properties:
+                  value:
+                    oneOf:
+                    - type: integer
+                    - type: boolean
+                  priority:
+                    type: integer
+                  useDefault:
+                    type: boolean
+          usersCount:
+            type: integer
+        required:
+        - createdAt
+        - updatedAt
+        - target
+        - condFormula
+        - isPublic
+        - isExplorable
+        - asBadge
+        - preserveAssignmentOnMoveAccount
+        - badgeBehavior
+        - canEditMembersByModerator
+        - policies
+        - usersCount
+    InviteCode:
       type: object
       properties:
         id:
           type: string
           format: id
           example: xxxxxxxxxx
+        code:
+          type: string
+          example: GR6S02ERUA5VR
+        expiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
         createdAt:
           type: string
           format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        content:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/PageBlock'
-        variables:
-          type: array
-          items:
-            type: object
-        title:
-          type: string
-        name:
-          type: string
-        summary:
-          type:
-          - string
-          - 'null'
-        hideTitleWhenPinned:
-          type: boolean
-        alignCenter:
-          type: boolean
-        font:
-          type: string
-        script:
-          type: string
-        eyeCatchingImageId:
-          type:
-          - string
-          - 'null'
-        eyeCatchingImage:
+        createdBy:
           type:
           - object
           - 'null'
           anyOf:
-          - $ref: '#/components/schemas/DriveFile'
+          - $ref: '#/components/schemas/UserLite'
           - type: 'null'
-        attachedFiles:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/DriveFile'
-        likedCount:
-          type: number
-        isLiked:
+        usedBy:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        usedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        used:
           type: boolean
-        visibility:
-          type: string
-          enum:
-          - public
-          - private
       required:
       - id
+      - code
+      - expiresAt
       - createdAt
-      - updatedAt
-      - userId
-      - user
-      - content
-      - variables
-      - title
+      - createdBy
+      - usedBy
+      - usedAt
+      - used
+    RoleLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type: string
+          example: New Role
+        color:
+          type:
+          - string
+          - 'null'
+          example: '#000000'
+        iconUrl:
+          type:
+          - string
+          - 'null'
+        description:
+          type: string
+        isModerator:
+          type: boolean
+          example: false
+        isAdministrator:
+          type: boolean
+          example: false
+        displayOrder:
+          type: integer
+          example: 0
+      required:
+      - id
       - name
-      - summary
-      - hideTitleWhenPinned
-      - alignCenter
-      - font
-      - script
-      - eyeCatchingImageId
-      - eyeCatchingImage
-      - attachedFiles
-      - likedCount
-      - visibility
+      - color
+      - iconUrl
+      - description
+      - isModerator
+      - isAdministrator
+      - displayOrder
     Note:
       type: object
       properties:
@@ -16099,7 +15803,154 @@ components:
       - reactionCount
       - renoteCount
       - repliesCount
-    RoleCondFormulaFollowersOrFollowingOrNotes:
+    Signin:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        ip:
+          type: string
+        headers:
+          type: object
+        success:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - ip
+      - headers
+      - success
+    SystemWebhook:
+      type: object
+      properties:
+        id:
+          type: string
+        isActive:
+          type: boolean
+        updatedAt:
+          type: string
+          format: date-time
+        latestSentAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        latestStatus:
+          type:
+          - number
+          - 'null'
+        name:
+          type: string
+        'on':
+          type: array
+          items:
+            type: string
+            enum:
+            - abuseReport
+            - abuseReportResolved
+            - userCreated
+            - inactiveModeratorsWarning
+            - inactiveModeratorsInvitationOnlyChanged
+            - reportAutoResolved
+        url:
+          type: string
+        secret:
+          type: string
+      required:
+      - id
+      - isActive
+      - updatedAt
+      - latestSentAt
+      - latestStatus
+      - name
+      - 'on'
+      - url
+      - secret
+    UserDetailed:
+      oneOf:
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMe'
+      - type: object
+        $ref: '#/components/schemas/MeDetailed'
+    EmojiDetailedAdmin:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        name:
+          type: string
+        host:
+          type:
+          - string
+          - 'null'
+          description: The local host is represented with `null`.
+        publicUrl:
+          type: string
+        originalUrl:
+          type: string
+        uri:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        aliases:
+          type: array
+          items:
+            type: string
+            format: id
+        category:
+          type:
+          - string
+          - 'null'
+        license:
+          type:
+          - string
+          - 'null'
+        localOnly:
+          type: boolean
+        isSensitive:
+          type: boolean
+        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: misskey:id
+              name:
+                type: string
+            required:
+            - id
+            - name
+      required:
+      - id
+      - updatedAt
+      - name
+      - host
+      - publicUrl
+      - originalUrl
+      - uri
+      - type
+      - aliases
+      - category
+      - license
+      - localOnly
+      - isSensitive
+      - roleIdsThatCanBeUsedThisEmojiAsReaction
+    RoleCondFormulaValueUserSettingBooleanSchema:
       type: object
       properties:
         id:
@@ -16107,19 +15958,120 @@ components:
         type:
           type: string
           enum:
-          - followersLessThanOrEq
-          - followersMoreThanOrEq
-          - followingLessThanOrEq
-          - followingMoreThanOrEq
-          - notesLessThanOrEq
-          - notesMoreThanOrEq
-        value:
+          - isSuspended
+          - isLocked
+          - isBot
+          - isCat
+          - isExplorable
+      required:
+      - id
+      - type
+    RoleCondFormulaLogics:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - and
+          - or
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleCondFormulaValue'
+      required:
+      - id
+      - type
+      - values
+    RoleCondFormulaValueCreated:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - createdLessThan
+          - createdMoreThan
+        sec:
           type: number
       required:
       - id
       - type
-      - value
-    RoleCondFormulaValueIsLocalOrRemote:
+      - sec
+    DriveFolder:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        foldersCount:
+          type: number
+        filesCount:
+          type: number
+        parent:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - parentId
+    AbuseReportNotificationRecipient:
+      type: object
+      properties:
+        id:
+          type: string
+        isActive:
+          type: boolean
+        updatedAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+        method:
+          type: string
+          enum:
+          - email
+          - webhook
+        userId:
+          type: string
+        user:
+          type: object
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+        systemWebhookId:
+          type: string
+        systemWebhook:
+          type: object
+          anyOf:
+          - $ref: '#/components/schemas/SystemWebhook'
+          - type: 'null'
+      required:
+      - id
+      - isActive
+      - updatedAt
+      - name
+      - method
+    RoleCondFormulaValueAssignedRole:
       type: object
       properties:
         id:
@@ -16127,11 +16079,15 @@ components:
         type:
           type: string
           enum:
-          - isLocal
-          - isRemote
+          - roleAssignedTo
+        roleId:
+          type: string
+          format: id
+          example: xxxxxxxxxx
       required:
       - id
       - type
+      - roleId
     UserLite:
       type: object
       properties:
@@ -16272,113 +16228,157 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
-    RoleLite:
+    Ad:
       type: object
       properties:
         id:
           type: string
           format: id
           example: xxxxxxxxxx
-        name:
+        expiresAt:
           type: string
-          example: New Role
-        color:
+          format: date-time
+        startsAt:
+          type: string
+          format: date-time
+        place:
+          type: string
+        priority:
+          type: string
+        ratio:
+          type: number
+        url:
+          type: string
+        imageUrl:
+          type: string
+        imageBlurhash:
           type:
           - string
           - 'null'
-          example: '#000000'
-        iconUrl:
-          type:
-          - string
-          - 'null'
-        description:
+        memo:
           type: string
-        isModerator:
-          type: boolean
-          example: false
-        isAdministrator:
-          type: boolean
-          example: false
-        displayOrder:
+        dayOfWeek:
           type: integer
-          example: 0
+        isSensitive:
+          type: boolean
       required:
       - id
-      - name
-      - color
-      - iconUrl
-      - description
-      - isModerator
-      - isAdministrator
-      - displayOrder
-    EmojiDetailed:
+      - expiresAt
+      - startsAt
+      - place
+      - priority
+      - ratio
+      - url
+      - imageUrl
+      - imageBlurhash
+      - memo
+      - dayOfWeek
+      - isSensitive
+    MeDetailed:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+      - type: object
+        $ref: '#/components/schemas/MeDetailedOnly'
+    UserDetailedNotMe:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+    Page:
       type: object
       properties:
         id:
           type: string
           format: id
+          example: xxxxxxxxxx
         createdAt:
           type: string
           format: date-time
         updatedAt:
-          type:
-          - string
-          - 'null'
+          type: string
           format: date-time
-        aliases:
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        content:
           type: array
           items:
-            type: string
-            format: id
+            type: object
+            $ref: '#/components/schemas/PageBlock'
+        variables:
+          type: array
+          items:
+            type: object
+        title:
+          type: string
         name:
           type: string
-        category:
+        summary:
           type:
           - string
           - 'null'
-        host:
-          type:
-          - string
-          - 'null'
-          description: The local host is represented with `null`.
-        url:
+        hideTitleWhenPinned:
+          type: boolean
+        alignCenter:
+          type: boolean
+        font:
           type: string
-        license:
+        script:
+          type: string
+        eyeCatchingImageId:
           type:
           - string
           - 'null'
-        isSensitive:
-          type: boolean
-        localOnly:
-          type: boolean
-        requestedBy:
+        eyeCatchingImage:
           type:
-          - string
+          - object
           - 'null'
-        memo:
-          type:
-          - string
-          - 'null'
-        roleIdsThatCanBeUsedThisEmojiAsReaction:
+          anyOf:
+          - $ref: '#/components/schemas/DriveFile'
+          - type: 'null'
+        attachedFiles:
           type: array
           items:
-            type: string
-            format: id
-        roleIdsThatCanNotBeUsedThisEmojiAsReaction:
-          type: array
-          items:
-            type: string
-            format: id
+            type: object
+            $ref: '#/components/schemas/DriveFile'
+        likedCount:
+          type: number
+        isLiked:
+          type: boolean
+        visibility:
+          type: string
+          enum:
+          - public
+          - private
       required:
       - id
-      - aliases
+      - createdAt
+      - updatedAt
+      - userId
+      - user
+      - content
+      - variables
+      - title
       - name
-      - category
-      - host
-      - url
-      - license
-      - isSensitive
-      - localOnly
+      - summary
+      - hideTitleWhenPinned
+      - alignCenter
+      - font
+      - script
+      - eyeCatchingImageId
+      - eyeCatchingImage
+      - attachedFiles
+      - likedCount
+      - visibility
   securitySchemes:
     bearerAuth:
       type: http

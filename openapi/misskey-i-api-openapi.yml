@@ -4557,231 +4557,6 @@ paths:
       - I
 components:
   schemas:
-    PageBlock:
-      type: object
-      oneOf:
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-            enum:
-            - text
-          text:
-            type: string
-        required:
-        - id
-        - type
-        - text
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-            enum:
-            - section
-          title:
-            type: string
-          children:
-            type: array
-            items:
-              type: object
-        required:
-        - id
-        - type
-        - title
-        - children
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-            enum:
-            - image
-          fileId:
-            type:
-            - string
-            - 'null'
-        required:
-        - id
-        - type
-        - fileId
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-            enum:
-            - note
-          detailed:
-            type: boolean
-          note:
-            type:
-            - string
-            - 'null'
-        required:
-        - id
-        - type
-        - detailed
-        - note
-    Announcement:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        text:
-          type: string
-        title:
-          type: string
-        imageUrl:
-          type:
-          - string
-          - 'null'
-        icon:
-          type: string
-          enum:
-          - info
-          - warning
-          - error
-          - success
-        display:
-          type: string
-          enum:
-          - dialog
-          - normal
-          - banner
-        needConfirmationToRead:
-          type: boolean
-        needEnrollmentTutorialToRead:
-          type: boolean
-        forYou:
-          type: boolean
-        closeDuration:
-          type: number
-        displayOrder:
-          type: number
-        silence:
-          type: boolean
-        isRead:
-          type: boolean
-      required:
-      - id
-      - createdAt
-      - updatedAt
-      - text
-      - title
-      - imageUrl
-      - icon
-      - display
-      - needConfirmationToRead
-      - needEnrollmentTutorialToRead
-      - forYou
-      - closeDuration
-      - displayOrder
-      - silence
-    Page:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        content:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/PageBlock'
-        variables:
-          type: array
-          items:
-            type: object
-        title:
-          type: string
-        name:
-          type: string
-        summary:
-          type:
-          - string
-          - 'null'
-        hideTitleWhenPinned:
-          type: boolean
-        alignCenter:
-          type: boolean
-        font:
-          type: string
-        script:
-          type: string
-        eyeCatchingImageId:
-          type:
-          - string
-          - 'null'
-        eyeCatchingImage:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFile'
-          - type: 'null'
-        attachedFiles:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/DriveFile'
-        likedCount:
-          type: number
-        isLiked:
-          type: boolean
-        visibility:
-          type: string
-          enum:
-          - public
-          - private
-      required:
-      - id
-      - createdAt
-      - updatedAt
-      - userId
-      - user
-      - content
-      - variables
-      - title
-      - name
-      - summary
-      - hideTitleWhenPinned
-      - alignCenter
-      - font
-      - script
-      - eyeCatchingImageId
-      - eyeCatchingImage
-      - attachedFiles
-      - likedCount
-      - visibility
     DriveFile:
       type: object
       properties:
@@ -4883,6 +4658,144 @@ components:
       - comment
       - folderId
       - userId
+    Announcement:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        text:
+          type: string
+        title:
+          type: string
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        icon:
+          type: string
+          enum:
+          - info
+          - warning
+          - error
+          - success
+        display:
+          type: string
+          enum:
+          - dialog
+          - normal
+          - banner
+        needConfirmationToRead:
+          type: boolean
+        needEnrollmentTutorialToRead:
+          type: boolean
+        forYou:
+          type: boolean
+        closeDuration:
+          type: number
+        displayOrder:
+          type: number
+        silence:
+          type: boolean
+        isRead:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - updatedAt
+      - text
+      - title
+      - imageUrl
+      - icon
+      - display
+      - needConfirmationToRead
+      - needEnrollmentTutorialToRead
+      - forYou
+      - closeDuration
+      - displayOrder
+      - silence
+    DriveFolder:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        foldersCount:
+          type: number
+        filesCount:
+          type: number
+        parent:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - parentId
+    RoleLite:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        name:
+          type: string
+          example: New Role
+        color:
+          type:
+          - string
+          - 'null'
+          example: '#000000'
+        iconUrl:
+          type:
+          - string
+          - 'null'
+        description:
+          type: string
+        isModerator:
+          type: boolean
+          example: false
+        isAdministrator:
+          type: boolean
+          example: false
+        displayOrder:
+          type: integer
+          example: 0
+      required:
+      - id
+      - name
+      - color
+      - iconUrl
+      - description
+      - isModerator
+      - isAdministrator
+      - displayOrder
     Note:
       type: object
       properties:
@@ -5097,72 +5010,6 @@ components:
       - reactionCount
       - renoteCount
       - repliesCount
-    DriveFolder:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-        parentId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        foldersCount:
-          type: number
-        filesCount:
-          type: number
-        parent:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - parentId
-    MeDetailed:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-      - type: object
-        $ref: '#/components/schemas/MeDetailedOnly'
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
     UserLite:
       type: object
       properties:
@@ -5303,6 +5150,545 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
+    Signin:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        ip:
+          type: string
+        headers:
+          type: object
+        success:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - ip
+      - headers
+      - success
+    PageBlock:
+      type: object
+      oneOf:
+      - type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+            enum:
+            - text
+          text:
+            type: string
+        required:
+        - id
+        - type
+        - text
+      - type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+            enum:
+            - section
+          title:
+            type: string
+          children:
+            type: array
+            items:
+              type: object
+        required:
+        - id
+        - type
+        - title
+        - children
+      - type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+            enum:
+            - image
+          fileId:
+            type:
+            - string
+            - 'null'
+        required:
+        - id
+        - type
+        - fileId
+      - type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+            enum:
+            - note
+          detailed:
+            type: boolean
+          note:
+            type:
+            - string
+            - 'null'
+        required:
+        - id
+        - type
+        - detailed
+        - note
+    MeDetailed:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+      - type: object
+        $ref: '#/components/schemas/MeDetailedOnly'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
+    RolePolicies:
+      type: object
+      properties:
+        gtlAvailable:
+          type: boolean
+        ltlAvailable:
+          type: boolean
+        canPublicNote:
+          type: boolean
+        canScheduleNote:
+          type: boolean
+        scheduleNoteLimit:
+          type: integer
+        scheduleNoteMaxDays:
+          type: integer
+        canInitiateConversation:
+          type: boolean
+        canCreateContent:
+          type: boolean
+        canUpdateContent:
+          type: boolean
+        canDeleteContent:
+          type: boolean
+        canPurgeAccount:
+          type: boolean
+        canUpdateAvatar:
+          type: boolean
+        canUpdateBanner:
+          type: boolean
+        mentionLimit:
+          type: integer
+        canInvite:
+          type: boolean
+        inviteLimit:
+          type: integer
+        inviteLimitCycle:
+          type: integer
+        inviteExpirationTime:
+          type: integer
+        canManageCustomEmojis:
+          type: boolean
+        canManageAvatarDecorations:
+          type: boolean
+        canSearchNotes:
+          type: boolean
+        canUseTranslator:
+          type: boolean
+        canUseDriveFileInSoundSettings:
+          type: boolean
+        canUseReaction:
+          type: boolean
+        canHideAds:
+          type: boolean
+        driveCapacityMb:
+          type: integer
+        maxFileSizeMb:
+          type: integer
+        alwaysMarkNsfw:
+          type: boolean
+        skipNsfwDetection:
+          type: boolean
+        canUpdateBioMedia:
+          type: boolean
+        pinLimit:
+          type: integer
+        antennaLimit:
+          type: integer
+        antennaNotesLimit:
+          type: integer
+        wordMuteLimit:
+          type: integer
+        webhookLimit:
+          type: integer
+        clipLimit:
+          type: integer
+        noteEachClipsLimit:
+          type: integer
+        userListLimit:
+          type: integer
+        userEachUserListsLimit:
+          type: integer
+        rateLimitFactor:
+          type: integer
+        avatarDecorationLimit:
+          type: integer
+        canImportAntennas:
+          type: boolean
+        canImportBlocking:
+          type: boolean
+        canImportFollowing:
+          type: boolean
+        canImportMuting:
+          type: boolean
+        canImportUserLists:
+          type: boolean
+        mutualLinkSectionLimit:
+          type: integer
+        mutualLinkLimit:
+          type: integer
+        chatAvailability:
+          type: string
+          enum:
+          - available
+          - readonly
+          - unavailable
+      required:
+      - gtlAvailable
+      - ltlAvailable
+      - canPublicNote
+      - canScheduleNote
+      - scheduleNoteLimit
+      - scheduleNoteMaxDays
+      - canInitiateConversation
+      - canCreateContent
+      - canUpdateContent
+      - canDeleteContent
+      - canPurgeAccount
+      - canUpdateAvatar
+      - canUpdateBanner
+      - mentionLimit
+      - canInvite
+      - inviteLimit
+      - inviteLimitCycle
+      - inviteExpirationTime
+      - canManageCustomEmojis
+      - canManageAvatarDecorations
+      - canSearchNotes
+      - canUseTranslator
+      - canUseDriveFileInSoundSettings
+      - canUseReaction
+      - canHideAds
+      - driveCapacityMb
+      - maxFileSizeMb
+      - alwaysMarkNsfw
+      - skipNsfwDetection
+      - canUpdateBioMedia
+      - pinLimit
+      - antennaLimit
+      - antennaNotesLimit
+      - wordMuteLimit
+      - webhookLimit
+      - clipLimit
+      - noteEachClipsLimit
+      - userListLimit
+      - userEachUserListsLimit
+      - rateLimitFactor
+      - avatarDecorationLimit
+      - canImportAntennas
+      - canImportBlocking
+      - canImportFollowing
+      - canImportMuting
+      - canImportUserLists
+      - mutualLinkSectionLimit
+      - mutualLinkLimit
+      - chatAvailability
+    UserDetailedNotMeOnly:
+      type: object
+      properties:
+        url:
+          type:
+          - string
+          - 'null'
+          format: url
+        uri:
+          type:
+          - string
+          - 'null'
+          format: uri
+        movedTo:
+          type:
+          - string
+          - 'null'
+          format: uri
+        alsoKnownAs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: id
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastFetchedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        bannerUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        bannerBlurhash:
+          type:
+          - string
+          - 'null'
+        isLocked:
+          type: boolean
+        isSilenced:
+          type: boolean
+        isLimited:
+          type: boolean
+        isSuspended:
+          type: boolean
+          example: false
+        description:
+          type:
+          - string
+          - 'null'
+          example: Hi masters, I am Ai!
+        location:
+          type:
+          - string
+          - 'null'
+        birthday:
+          type:
+          - string
+          - 'null'
+          example: '2018-03-12'
+        lang:
+          type:
+          - string
+          - 'null'
+          example: ja-JP
+        fields:
+          type: array
+          maxItems: 16
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+            required:
+            - name
+            - value
+        verifiedLinks:
+          type: array
+          items:
+            type: string
+            format: url
+        followersCount:
+          type: number
+        followingCount:
+          type: number
+        notesCount:
+          type: number
+        pinnedNoteIds:
+          type: array
+          items:
+            type: string
+            format: id
+        pinnedNotes:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/Note'
+        pinnedPageId:
+          type:
+          - string
+          - 'null'
+        pinnedPage:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/Page'
+          - type: 'null'
+        publicReactions:
+          type: boolean
+        followingVisibility:
+          type: string
+          enum:
+          - public
+          - followers
+          - private
+        followersVisibility:
+          type: string
+          enum:
+          - public
+          - followers
+          - private
+        chatScope:
+          type: string
+          enum:
+          - everyone
+          - following
+          - followers
+          - mutual
+          - none
+        canChat:
+          type: boolean
+        roles:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/RoleLite'
+        followedMessage:
+          type:
+          - string
+          - 'null'
+        memo:
+          type:
+          - string
+          - 'null'
+        moderationNote:
+          type: string
+        twoFactorEnabled:
+          type: boolean
+        usePasswordLessLogin:
+          type: boolean
+        securityKeys:
+          type: boolean
+        mutualLinkSections:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type:
+                - string
+                - 'null'
+              mutualLinks:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      format: misskey:id
+                    url:
+                      type: string
+                      format: url
+                    fileId:
+                      type: string
+                      format: misskey:id
+                    description:
+                      type:
+                      - string
+                      - 'null'
+                    imgSrc:
+                      type: string
+                  required:
+                  - id
+                  - url
+                  - fileId
+                  - description
+                  - imgSrc
+            required:
+            - name
+            - mutualLinks
+        isFollowing:
+          type: boolean
+        isFollowed:
+          type: boolean
+        hasPendingFollowRequestFromYou:
+          type: boolean
+        hasPendingFollowRequestToYou:
+          type: boolean
+        isBlocking:
+          type: boolean
+        isBlocked:
+          type: boolean
+        isMuted:
+          type: boolean
+        isRenoteMuted:
+          type: boolean
+        notify:
+          type: string
+          enum:
+          - normal
+          - none
+        withReplies:
+          type: boolean
+      required:
+      - url
+      - uri
+      - movedTo
+      - alsoKnownAs
+      - createdAt
+      - updatedAt
+      - lastFetchedAt
+      - bannerUrl
+      - bannerBlurhash
+      - isLocked
+      - isSilenced
+      - isLimited
+      - isSuspended
+      - description
+      - location
+      - birthday
+      - lang
+      - fields
+      - verifiedLinks
+      - followersCount
+      - followingCount
+      - notesCount
+      - pinnedNoteIds
+      - pinnedNotes
+      - pinnedPageId
+      - pinnedPage
+      - publicReactions
+      - followingVisibility
+      - followersVisibility
+      - chatScope
+      - canChat
+      - roles
+      - memo
+      - mutualLinkSections
     MeDetailedOnly:
       type: object
       properties:
@@ -5925,481 +6311,95 @@ components:
       - twoFactorEnabled
       - usePasswordLessLogin
       - securityKeys
-    RoleLite:
+    Page:
       type: object
       properties:
         id:
           type: string
           format: id
           example: xxxxxxxxxx
-        name:
-          type: string
-          example: New Role
-        color:
-          type:
-          - string
-          - 'null'
-          example: '#000000'
-        iconUrl:
-          type:
-          - string
-          - 'null'
-        description:
-          type: string
-        isModerator:
-          type: boolean
-          example: false
-        isAdministrator:
-          type: boolean
-          example: false
-        displayOrder:
-          type: integer
-          example: 0
-      required:
-      - id
-      - name
-      - color
-      - iconUrl
-      - description
-      - isModerator
-      - isAdministrator
-      - displayOrder
-    Signin:
-      type: object
-      properties:
-        id:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        ip:
-          type: string
-        headers:
-          type: object
-        success:
-          type: boolean
-      required:
-      - id
-      - createdAt
-      - ip
-      - headers
-      - success
-    RolePolicies:
-      type: object
-      properties:
-        gtlAvailable:
-          type: boolean
-        ltlAvailable:
-          type: boolean
-        canPublicNote:
-          type: boolean
-        canScheduleNote:
-          type: boolean
-        scheduleNoteLimit:
-          type: integer
-        scheduleNoteMaxDays:
-          type: integer
-        canInitiateConversation:
-          type: boolean
-        canCreateContent:
-          type: boolean
-        canUpdateContent:
-          type: boolean
-        canDeleteContent:
-          type: boolean
-        canPurgeAccount:
-          type: boolean
-        canUpdateAvatar:
-          type: boolean
-        canUpdateBanner:
-          type: boolean
-        mentionLimit:
-          type: integer
-        canInvite:
-          type: boolean
-        inviteLimit:
-          type: integer
-        inviteLimitCycle:
-          type: integer
-        inviteExpirationTime:
-          type: integer
-        canManageCustomEmojis:
-          type: boolean
-        canManageAvatarDecorations:
-          type: boolean
-        canSearchNotes:
-          type: boolean
-        canUseTranslator:
-          type: boolean
-        canUseDriveFileInSoundSettings:
-          type: boolean
-        canUseReaction:
-          type: boolean
-        canHideAds:
-          type: boolean
-        driveCapacityMb:
-          type: integer
-        maxFileSizeMb:
-          type: integer
-        alwaysMarkNsfw:
-          type: boolean
-        skipNsfwDetection:
-          type: boolean
-        canUpdateBioMedia:
-          type: boolean
-        pinLimit:
-          type: integer
-        antennaLimit:
-          type: integer
-        antennaNotesLimit:
-          type: integer
-        wordMuteLimit:
-          type: integer
-        webhookLimit:
-          type: integer
-        clipLimit:
-          type: integer
-        noteEachClipsLimit:
-          type: integer
-        userListLimit:
-          type: integer
-        userEachUserListsLimit:
-          type: integer
-        rateLimitFactor:
-          type: integer
-        avatarDecorationLimit:
-          type: integer
-        canImportAntennas:
-          type: boolean
-        canImportBlocking:
-          type: boolean
-        canImportFollowing:
-          type: boolean
-        canImportMuting:
-          type: boolean
-        canImportUserLists:
-          type: boolean
-        mutualLinkSectionLimit:
-          type: integer
-        mutualLinkLimit:
-          type: integer
-        chatAvailability:
-          type: string
-          enum:
-          - available
-          - readonly
-          - unavailable
-      required:
-      - gtlAvailable
-      - ltlAvailable
-      - canPublicNote
-      - canScheduleNote
-      - scheduleNoteLimit
-      - scheduleNoteMaxDays
-      - canInitiateConversation
-      - canCreateContent
-      - canUpdateContent
-      - canDeleteContent
-      - canPurgeAccount
-      - canUpdateAvatar
-      - canUpdateBanner
-      - mentionLimit
-      - canInvite
-      - inviteLimit
-      - inviteLimitCycle
-      - inviteExpirationTime
-      - canManageCustomEmojis
-      - canManageAvatarDecorations
-      - canSearchNotes
-      - canUseTranslator
-      - canUseDriveFileInSoundSettings
-      - canUseReaction
-      - canHideAds
-      - driveCapacityMb
-      - maxFileSizeMb
-      - alwaysMarkNsfw
-      - skipNsfwDetection
-      - canUpdateBioMedia
-      - pinLimit
-      - antennaLimit
-      - antennaNotesLimit
-      - wordMuteLimit
-      - webhookLimit
-      - clipLimit
-      - noteEachClipsLimit
-      - userListLimit
-      - userEachUserListsLimit
-      - rateLimitFactor
-      - avatarDecorationLimit
-      - canImportAntennas
-      - canImportBlocking
-      - canImportFollowing
-      - canImportMuting
-      - canImportUserLists
-      - mutualLinkSectionLimit
-      - mutualLinkLimit
-      - chatAvailability
-    UserDetailedNotMeOnly:
-      type: object
-      properties:
-        url:
-          type:
-          - string
-          - 'null'
-          format: url
-        uri:
-          type:
-          - string
-          - 'null'
-          format: uri
-        movedTo:
-          type:
-          - string
-          - 'null'
-          format: uri
-        alsoKnownAs:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: id
         createdAt:
           type: string
           format: date-time
         updatedAt:
-          type:
-          - string
-          - 'null'
+          type: string
           format: date-time
-        lastFetchedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        bannerUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        bannerBlurhash:
-          type:
-          - string
-          - 'null'
-        isLocked:
-          type: boolean
-        isSilenced:
-          type: boolean
-        isLimited:
-          type: boolean
-        isSuspended:
-          type: boolean
-          example: false
-        description:
-          type:
-          - string
-          - 'null'
-          example: Hi masters, I am Ai!
-        location:
-          type:
-          - string
-          - 'null'
-        birthday:
-          type:
-          - string
-          - 'null'
-          example: '2018-03-12'
-        lang:
-          type:
-          - string
-          - 'null'
-          example: ja-JP
-        fields:
-          type: array
-          maxItems: 16
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              value:
-                type: string
-            required:
-            - name
-            - value
-        verifiedLinks:
-          type: array
-          items:
-            type: string
-            format: url
-        followersCount:
-          type: number
-        followingCount:
-          type: number
-        notesCount:
-          type: number
-        pinnedNoteIds:
-          type: array
-          items:
-            type: string
-            format: id
-        pinnedNotes:
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        content:
           type: array
           items:
             type: object
-            $ref: '#/components/schemas/Note'
-        pinnedPageId:
+            $ref: '#/components/schemas/PageBlock'
+        variables:
+          type: array
+          items:
+            type: object
+        title:
+          type: string
+        name:
+          type: string
+        summary:
           type:
           - string
           - 'null'
-        pinnedPage:
+        hideTitleWhenPinned:
+          type: boolean
+        alignCenter:
+          type: boolean
+        font:
+          type: string
+        script:
+          type: string
+        eyeCatchingImageId:
+          type:
+          - string
+          - 'null'
+        eyeCatchingImage:
           type:
           - object
           - 'null'
           anyOf:
-          - $ref: '#/components/schemas/Page'
+          - $ref: '#/components/schemas/DriveFile'
           - type: 'null'
-        publicReactions:
-          type: boolean
-        followingVisibility:
-          type: string
-          enum:
-          - public
-          - followers
-          - private
-        followersVisibility:
-          type: string
-          enum:
-          - public
-          - followers
-          - private
-        chatScope:
-          type: string
-          enum:
-          - everyone
-          - following
-          - followers
-          - mutual
-          - none
-        canChat:
-          type: boolean
-        roles:
+        attachedFiles:
           type: array
           items:
             type: object
-            $ref: '#/components/schemas/RoleLite'
-        followedMessage:
-          type:
-          - string
-          - 'null'
-        memo:
-          type:
-          - string
-          - 'null'
-        moderationNote:
-          type: string
-        twoFactorEnabled:
+            $ref: '#/components/schemas/DriveFile'
+        likedCount:
+          type: number
+        isLiked:
           type: boolean
-        usePasswordLessLogin:
-          type: boolean
-        securityKeys:
-          type: boolean
-        mutualLinkSections:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type:
-                - string
-                - 'null'
-              mutualLinks:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                      format: misskey:id
-                    url:
-                      type: string
-                      format: url
-                    fileId:
-                      type: string
-                      format: misskey:id
-                    description:
-                      type:
-                      - string
-                      - 'null'
-                    imgSrc:
-                      type: string
-                  required:
-                  - id
-                  - url
-                  - fileId
-                  - description
-                  - imgSrc
-            required:
-            - name
-            - mutualLinks
-        isFollowing:
-          type: boolean
-        isFollowed:
-          type: boolean
-        hasPendingFollowRequestFromYou:
-          type: boolean
-        hasPendingFollowRequestToYou:
-          type: boolean
-        isBlocking:
-          type: boolean
-        isBlocked:
-          type: boolean
-        isMuted:
-          type: boolean
-        isRenoteMuted:
-          type: boolean
-        notify:
+        visibility:
           type: string
           enum:
-          - normal
-          - none
-        withReplies:
-          type: boolean
+          - public
+          - private
       required:
-      - url
-      - uri
-      - movedTo
-      - alsoKnownAs
+      - id
       - createdAt
       - updatedAt
-      - lastFetchedAt
-      - bannerUrl
-      - bannerBlurhash
-      - isLocked
-      - isSilenced
-      - isLimited
-      - isSuspended
-      - description
-      - location
-      - birthday
-      - lang
-      - fields
-      - verifiedLinks
-      - followersCount
-      - followingCount
-      - notesCount
-      - pinnedNoteIds
-      - pinnedNotes
-      - pinnedPageId
-      - pinnedPage
-      - publicReactions
-      - followingVisibility
-      - followersVisibility
-      - chatScope
-      - canChat
-      - roles
-      - memo
-      - mutualLinkSections
+      - userId
+      - user
+      - content
+      - variables
+      - title
+      - name
+      - summary
+      - hideTitleWhenPinned
+      - alignCenter
+      - font
+      - script
+      - eyeCatchingImageId
+      - eyeCatchingImage
+      - attachedFiles
+      - likedCount
+      - visibility
   securitySchemes:
     bearerAuth:
       type: http

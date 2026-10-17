@@ -3999,29 +3999,6 @@ paths:
                       id: 5d37dbcb-891e-41ca-a3d6-e690c97775ac
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
     UserList:
       type: object
       properties:
@@ -4046,6 +4023,130 @@ components:
       - createdAt
       - name
       - isPublic
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
+    DriveFile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+          example: 192.jpg
+        type:
+          type: string
+          example: image/jpeg
+        md5:
+          type: string
+          format: md5
+          example: 15eca7fba0480996e2245f5185bf39f2
+        size:
+          type: number
+          example: 51469
+        isSensitive:
+          type: boolean
+        isSensitiveByModerator:
+          type:
+          - boolean
+          - 'null'
+        blurhash:
+          type:
+          - string
+          - 'null'
+        properties:
+          type: object
+          properties:
+            width:
+              type: number
+              example: 1280
+            height:
+              type: number
+              example: 720
+            orientation:
+              type: number
+              example: 8
+            avgColor:
+              type: string
+              example: rgb(40,65,87)
+        url:
+          type: string
+          format: url
+        thumbnailUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        comment:
+          type:
+          - string
+          - 'null'
+        folderId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        folder:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        user:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/UserLite'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - type
+      - md5
+      - size
+      - isSensitive
+      - blurhash
+      - properties
+      - url
+      - thumbnailUrl
+      - comment
+      - folderId
+      - userId
     Announcement:
       type: object
       properties:
@@ -4111,7 +4212,7 @@ components:
       - closeDuration
       - displayOrder
       - silence
-    DriveFolder:
+    NoteReaction:
       type: object
       properties:
         id:
@@ -4121,30 +4222,16 @@ components:
         createdAt:
           type: string
           format: date-time
-        name:
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        type:
           type: string
-        parentId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        foldersCount:
-          type: number
-        filesCount:
-          type: number
-        parent:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
       required:
       - id
       - createdAt
-      - name
-      - parentId
+      - user
+      - type
     PageBlock:
       type: object
       oneOf:
@@ -4632,52 +4719,6 @@ components:
       - roles
       - memo
       - mutualLinkSections
-    UserDetailed:
-      oneOf:
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMe'
-      - type: object
-        $ref: '#/components/schemas/MeDetailed'
-    Following:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        followeeId:
-          type: string
-          format: id
-        followerId:
-          type: string
-          format: id
-        followee:
-          type: object
-          anyOf:
-          - $ref: '#/components/schemas/UserDetailedNotMe'
-          - type: 'null'
-        follower:
-          type: object
-          anyOf:
-          - $ref: '#/components/schemas/UserDetailedNotMe'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - followeeId
-      - followerId
-    MeDetailed:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-      - type: object
-        $ref: '#/components/schemas/MeDetailedOnly'
     MeDetailedOnly:
       type: object
       properties:
@@ -5300,127 +5341,6 @@ components:
       - twoFactorEnabled
       - usePasswordLessLogin
       - securityKeys
-    NoteReaction:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        type:
-          type: string
-      required:
-      - id
-      - createdAt
-      - user
-      - type
-    DriveFile:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-          example: 192.jpg
-        type:
-          type: string
-          example: image/jpeg
-        md5:
-          type: string
-          format: md5
-          example: 15eca7fba0480996e2245f5185bf39f2
-        size:
-          type: number
-          example: 51469
-        isSensitive:
-          type: boolean
-        isSensitiveByModerator:
-          type:
-          - boolean
-          - 'null'
-        blurhash:
-          type:
-          - string
-          - 'null'
-        properties:
-          type: object
-          properties:
-            width:
-              type: number
-              example: 1280
-            height:
-              type: number
-              example: 720
-            orientation:
-              type: number
-              example: 8
-            avgColor:
-              type: string
-              example: rgb(40,65,87)
-        url:
-          type: string
-          format: url
-        thumbnailUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        comment:
-          type:
-          - string
-          - 'null'
-        folderId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        folder:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-        userId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        user:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/UserLite'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - type
-      - md5
-      - size
-      - isSensitive
-      - blurhash
-      - properties
-      - url
-      - thumbnailUrl
-      - comment
-      - folderId
-      - userId
     Flash:
       type: object
       properties:
@@ -5468,12 +5388,6 @@ components:
       - script
       - visibility
       - likedCount
-    User:
-      oneOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailed'
     Clip:
       type: object
       properties:
@@ -5519,102 +5433,45 @@ components:
       - description
       - isPublic
       - favoritedCount
-    UserDetailedNotMe:
-      type: object
-      allOf:
-      - type: object
-        $ref: '#/components/schemas/UserLite'
-      - type: object
-        $ref: '#/components/schemas/UserDetailedNotMeOnly'
-    Page:
+    RoleLite:
       type: object
       properties:
         id:
           type: string
           format: id
           example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        userId:
-          type: string
-          format: id
-        user:
-          type: object
-          $ref: '#/components/schemas/UserLite'
-        content:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/PageBlock'
-        variables:
-          type: array
-          items:
-            type: object
-        title:
-          type: string
         name:
           type: string
-        summary:
+          example: New Role
+        color:
           type:
           - string
           - 'null'
-        hideTitleWhenPinned:
-          type: boolean
-        alignCenter:
-          type: boolean
-        font:
-          type: string
-        script:
-          type: string
-        eyeCatchingImageId:
+          example: '#000000'
+        iconUrl:
           type:
           - string
           - 'null'
-        eyeCatchingImage:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFile'
-          - type: 'null'
-        attachedFiles:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/DriveFile'
-        likedCount:
-          type: number
-        isLiked:
-          type: boolean
-        visibility:
+        description:
           type: string
-          enum:
-          - public
-          - private
+        isModerator:
+          type: boolean
+          example: false
+        isAdministrator:
+          type: boolean
+          example: false
+        displayOrder:
+          type: integer
+          example: 0
       required:
       - id
-      - createdAt
-      - updatedAt
-      - userId
-      - user
-      - content
-      - variables
-      - title
       - name
-      - summary
-      - hideTitleWhenPinned
-      - alignCenter
-      - font
-      - script
-      - eyeCatchingImageId
-      - eyeCatchingImage
-      - attachedFiles
-      - likedCount
-      - visibility
+      - color
+      - iconUrl
+      - description
+      - isModerator
+      - isAdministrator
+      - displayOrder
     Note:
       type: object
       properties:
@@ -5829,6 +5686,138 @@ components:
       - reactionCount
       - renoteCount
       - repliesCount
+    User:
+      oneOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailed'
+    GalleryPost:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        userId:
+          type: string
+          format: id
+        user:
+          type: object
+          $ref: '#/components/schemas/UserLite'
+        title:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        fileIds:
+          type: array
+          items:
+            type: string
+            format: id
+        files:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/DriveFile'
+        tags:
+          type: array
+          items:
+            type: string
+        isSensitive:
+          type: boolean
+        likedCount:
+          type: number
+        isLiked:
+          type: boolean
+      required:
+      - id
+      - createdAt
+      - updatedAt
+      - userId
+      - user
+      - title
+      - description
+      - isSensitive
+      - likedCount
+    Following:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        followeeId:
+          type: string
+          format: id
+        followerId:
+          type: string
+          format: id
+        followee:
+          type: object
+          anyOf:
+          - $ref: '#/components/schemas/UserDetailedNotMe'
+          - type: 'null'
+        follower:
+          type: object
+          anyOf:
+          - $ref: '#/components/schemas/UserDetailedNotMe'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - followeeId
+      - followerId
+    UserDetailed:
+      oneOf:
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMe'
+      - type: object
+        $ref: '#/components/schemas/MeDetailed'
+    DriveFolder:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        foldersCount:
+          type: number
+        filesCount:
+          type: number
+        parent:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - parentId
     UserLite:
       type: object
       properties:
@@ -5969,46 +5958,23 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
-    RoleLite:
+    MeDetailed:
       type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        name:
-          type: string
-          example: New Role
-        color:
-          type:
-          - string
-          - 'null'
-          example: '#000000'
-        iconUrl:
-          type:
-          - string
-          - 'null'
-        description:
-          type: string
-        isModerator:
-          type: boolean
-          example: false
-        isAdministrator:
-          type: boolean
-          example: false
-        displayOrder:
-          type: integer
-          example: 0
-      required:
-      - id
-      - name
-      - color
-      - iconUrl
-      - description
-      - isModerator
-      - isAdministrator
-      - displayOrder
-    GalleryPost:
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+      - type: object
+        $ref: '#/components/schemas/MeDetailedOnly'
+    UserDetailedNotMe:
+      type: object
+      allOf:
+      - type: object
+        $ref: '#/components/schemas/UserLite'
+      - type: object
+        $ref: '#/components/schemas/UserDetailedNotMeOnly'
+    Page:
       type: object
       properties:
         id:
@@ -6027,42 +5993,76 @@ components:
         user:
           type: object
           $ref: '#/components/schemas/UserLite'
+        content:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/PageBlock'
+        variables:
+          type: array
+          items:
+            type: object
         title:
           type: string
-        description:
+        name:
+          type: string
+        summary:
           type:
           - string
           - 'null'
-        fileIds:
-          type: array
-          items:
-            type: string
-            format: id
-        files:
+        hideTitleWhenPinned:
+          type: boolean
+        alignCenter:
+          type: boolean
+        font:
+          type: string
+        script:
+          type: string
+        eyeCatchingImageId:
+          type:
+          - string
+          - 'null'
+        eyeCatchingImage:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFile'
+          - type: 'null'
+        attachedFiles:
           type: array
           items:
             type: object
             $ref: '#/components/schemas/DriveFile'
-        tags:
-          type: array
-          items:
-            type: string
-        isSensitive:
-          type: boolean
         likedCount:
           type: number
         isLiked:
           type: boolean
+        visibility:
+          type: string
+          enum:
+          - public
+          - private
       required:
       - id
       - createdAt
       - updatedAt
       - userId
       - user
+      - content
+      - variables
       - title
-      - description
-      - isSensitive
+      - name
+      - summary
+      - hideTitleWhenPinned
+      - alignCenter
+      - font
+      - script
+      - eyeCatchingImageId
+      - eyeCatchingImage
+      - attachedFiles
       - likedCount
+      - visibility
   securitySchemes:
     bearerAuth:
       type: http

@@ -1513,6 +1513,40 @@ components:
       - comment
       - folderId
       - userId
+    DriveFolder:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentId:
+          type:
+          - string
+          - 'null'
+          format: id
+          example: xxxxxxxxxx
+        foldersCount:
+          type: number
+        filesCount:
+          type: number
+        parent:
+          type:
+          - object
+          - 'null'
+          anyOf:
+          - $ref: '#/components/schemas/DriveFolder'
+          - type: 'null'
+      required:
+      - id
+      - createdAt
+      - name
+      - parentId
     Note:
       type: object
       properties:
@@ -1727,135 +1761,6 @@ components:
       - reactionCount
       - renoteCount
       - repliesCount
-    Channel:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        lastNotedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        name:
-          type: string
-        description:
-          type:
-          - string
-          - 'null'
-        userId:
-          type:
-          - string
-          - 'null'
-          format: id
-        bannerUrl:
-          type:
-          - string
-          - 'null'
-          format: url
-        pinnedNoteIds:
-          type: array
-          items:
-            type: string
-            format: id
-        color:
-          type: string
-        isArchived:
-          type: boolean
-        usersCount:
-          type: number
-        notesCount:
-          type: number
-        isSensitive:
-          type: boolean
-        allowRenoteToExternal:
-          type: boolean
-        isFollowing:
-          type: boolean
-        isFavorited:
-          type: boolean
-        pinnedNotes:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/Note'
-      required:
-      - id
-      - createdAt
-      - lastNotedAt
-      - name
-      - description
-      - userId
-      - bannerUrl
-      - pinnedNoteIds
-      - color
-      - isArchived
-      - usersCount
-      - notesCount
-      - isSensitive
-      - allowRenoteToExternal
-    DriveFolder:
-      type: object
-      properties:
-        id:
-          type: string
-          format: id
-          example: xxxxxxxxxx
-        createdAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-        parentId:
-          type:
-          - string
-          - 'null'
-          format: id
-          example: xxxxxxxxxx
-        foldersCount:
-          type: number
-        filesCount:
-          type: number
-        parent:
-          type:
-          - object
-          - 'null'
-          anyOf:
-          - $ref: '#/components/schemas/DriveFolder'
-          - type: 'null'
-      required:
-      - id
-      - createdAt
-      - name
-      - parentId
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          description: An error object.
-          properties:
-            code:
-              type: string
-              description: An error code. Unique within the endpoint.
-            message:
-              type: string
-              description: An error message.
-            id:
-              type: string
-              format: uuid
-              description: An error ID. This ID is static.
-          required:
-          - code
-          - id
-          - message
-      required:
-      - error
     UserLite:
       type: object
       properties:
@@ -1996,6 +1901,101 @@ components:
       - avatarDecorations
       - emojis
       - onlineStatus
+    Channel:
+      type: object
+      properties:
+        id:
+          type: string
+          format: id
+          example: xxxxxxxxxx
+        createdAt:
+          type: string
+          format: date-time
+        lastNotedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        name:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: id
+        bannerUrl:
+          type:
+          - string
+          - 'null'
+          format: url
+        pinnedNoteIds:
+          type: array
+          items:
+            type: string
+            format: id
+        color:
+          type: string
+        isArchived:
+          type: boolean
+        usersCount:
+          type: number
+        notesCount:
+          type: number
+        isSensitive:
+          type: boolean
+        allowRenoteToExternal:
+          type: boolean
+        isFollowing:
+          type: boolean
+        isFavorited:
+          type: boolean
+        pinnedNotes:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/Note'
+      required:
+      - id
+      - createdAt
+      - lastNotedAt
+      - name
+      - description
+      - userId
+      - bannerUrl
+      - pinnedNoteIds
+      - color
+      - isArchived
+      - usersCount
+      - notesCount
+      - isSensitive
+      - allowRenoteToExternal
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          description: An error object.
+          properties:
+            code:
+              type: string
+              description: An error code. Unique within the endpoint.
+            message:
+              type: string
+              description: An error message.
+            id:
+              type: string
+              format: uuid
+              description: An error ID. This ID is static.
+          required:
+          - code
+          - id
+          - message
+      required:
+      - error
   securitySchemes:
     bearerAuth:
       type: http
